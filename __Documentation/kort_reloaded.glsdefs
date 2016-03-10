@@ -178,6 +178,36 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{CI}{}%
+{%
+\gls@defglossaryentry{CI}%
+{%
+name={Continuous Integration},%
+sort={Continuous Integration},%
+type={main},%
+first={Continuous Integration},%
+firstplural={Continuous Integrations},%
+text={Continuous Integration},%
+plural={Continuous Integrations},%
+description={Unter dem Begriff \emph {Continuous Integration}\cite {cont-integration} beschreibt die Idee, dass Änderungen an einer Software schnell eingebracht werden sollen. Dazu zählt, dass diese in einem Versionsverwaltungs-Tool eingetragen und durch automatisierte Tests geprüft werden},%
+descriptionplural={Unter dem Begriff \emph {Continuous Integration}\cite {cont-integration} beschreibt die Idee, dass Änderungen an einer Software schnell eingebracht werden sollen. Dazu zählt, dass diese in einem Versionsverwaltungs-Tool eingetragen und durch automatisierte Tests geprüft werden},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{POI}{}%
 {%
 \gls@defglossaryentry{POI}%
