@@ -1,0 +1,540 @@
+\ifglsentryexists{API}{}%
+{%
+\gls@defglossaryentry{API}%
+{%
+name={API},%
+sort={API},%
+type={main},%
+first={API},%
+firstplural={APIs},%
+text={API},%
+plural={APIs},%
+description={Application Programming Interface, Schnittstelle für die Programmierung},%
+descriptionplural={Application Programming Interface, Schnittstelle für die Programmierung},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{OAuth}{}%
+{%
+\gls@defglossaryentry{OAuth}%
+{%
+name={OAuth},%
+sort={OAuth},%
+type={main},%
+first={OAuth},%
+firstplural={OAuths},%
+text={OAuth},%
+plural={OAuths},%
+description={OAuth ist ein offenes Protokoll, das eine standardisierte, sichere API-Autorisierung erlaubt\cite {oauth}},%
+descriptionplural={OAuth ist ein offenes Protokoll, das eine standardisierte, sichere API-Autorisierung erlaubt\cite {oauth}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{CRUD}{}%
+{%
+\gls@defglossaryentry{CRUD}%
+{%
+name={CRUD},%
+sort={CRUD},%
+type={main},%
+first={CRUD},%
+firstplural={CRUDs},%
+text={CRUD},%
+plural={CRUDs},%
+description={Das Akronym CRUD beschreibt die 4 Standardoperationen einer Datenbank: \textbf {C}reate, \textbf {R}ead, \textbf {U}pdate, \textbf {D}elete\cite {crud}},%
+descriptionplural={Das Akronym CRUD beschreibt die 4 Standardoperationen einer Datenbank: \textbf {C}reate, \textbf {R}ead, \textbf {U}pdate, \textbf {D}elete\cite {crud}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{WebApp}{}%
+{%
+\gls@defglossaryentry{WebApp}%
+{%
+name={Web-App},%
+sort={Web-App},%
+type={main},%
+first={Web-App},%
+firstplural={Web-Apps},%
+text={Web-App},%
+plural={Web-Apps},%
+description={Der Begriff Web-App (von der englischen Kurzform für web application), bezeichnet im allgemeinen Sprachgebrauch Apps für mobile Endgeräte wie Smartphones und Tablet-Computer, die über einen in das Betriebssystem integrierten Browser aus dem Internet geladen und so ohne Installation auf dem mobilen Endgerät genutzt werden können\cite {webapp}},%
+descriptionplural={Der Begriff Web-App (von der englischen Kurzform für web application), bezeichnet im allgemeinen Sprachgebrauch Apps für mobile Endgeräte wie Smartphones und Tablet-Computer, die über einen in das Betriebssystem integrierten Browser aus dem Internet geladen und so ohne Installation auf dem mobilen Endgerät genutzt werden können\cite {webapp}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{REST}{}%
+{%
+\gls@defglossaryentry{REST}%
+{%
+name={REST},%
+sort={REST},%
+type={main},%
+first={REST},%
+firstplural={RESTs},%
+text={REST},%
+plural={RESTs},%
+description={Representational State Transfer\cite {rest} ist ein Programmierparadigma, welches besagt, dass sich der Zustand einer Webapplikation als Ressource in Form einer URL beschreiben lässt. Auf eine solche Ressourcen können folgende Befehle angewendet werden: \inlinecode {GET}, \inlinecode {POST}, \inlinecode {PUT}, \inlinecode {PATCH}, \inlinecode {DELETE}, \inlinecode {HEAD} und \inlinecode {OPTIONS}. HTTP ist ein Protokoll welches REST implementiert},%
+descriptionplural={Representational State Transfer\cite {rest} ist ein Programmierparadigma, welches besagt, dass sich der Zustand einer Webapplikation als Ressource in Form einer URL beschreiben lässt. Auf eine solche Ressourcen können folgende Befehle angewendet werden: \inlinecode {GET}, \inlinecode {POST}, \inlinecode {PUT}, \inlinecode {PATCH}, \inlinecode {DELETE}, \inlinecode {HEAD} und \inlinecode {OPTIONS}. HTTP ist ein Protokoll welches REST implementiert},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Git}{}%
+{%
+\gls@defglossaryentry{Git}%
+{%
+name={Git},%
+sort={Git},%
+type={main},%
+first={Git},%
+firstplural={Gits},%
+text={Git},%
+plural={Gits},%
+description={Git ist ein verteiltes Versionsverwaltungssystem für Dateien. Ursprünglich wurde es für die Entwicklung des Linux Kernels kreiert},%
+descriptionplural={Git ist ein verteiltes Versionsverwaltungssystem für Dateien. Ursprünglich wurde es für die Entwicklung des Linux Kernels kreiert},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{POI}{}%
+{%
+\gls@defglossaryentry{POI}%
+{%
+name={POI},%
+sort={POI},%
+type={main},%
+first={POI},%
+firstplural={POIs},%
+text={POI},%
+plural={POIs},%
+description={Abkürzung für Point of Interest. Dies ist ein allgemeiner Begriff für einen Ort mit irgendeiner Bedeutung, sei es eine Schule, Kirche, Bushaltestelle oder sonst etwas von besonderem Interesse},%
+descriptionplural={Abkürzung für Point of Interest. Dies ist ein allgemeiner Begriff für einen Ort mit irgendeiner Bedeutung, sei es eine Schule, Kirche, Bushaltestelle oder sonst etwas von besonderem Interesse},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Mapper}{}%
+{%
+\gls@defglossaryentry{Mapper}%
+{%
+name={Mapper},%
+sort={Mapper},%
+type={main},%
+first={Mapper},%
+firstplural={Mappers},%
+text={Mapper},%
+plural={Mappers},%
+description={Personen welche auf OpenStreetMap die Karten ergänzen und pflegen, nennen sich selbst \emph {Mapper}},%
+descriptionplural={Personen welche auf OpenStreetMap die Karten ergänzen und pflegen, nennen sich selbst \emph {Mapper}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{App Store}{}%
+{%
+\gls@defglossaryentry{App Store}%
+{%
+name={App Store},%
+sort={App Store},%
+type={main},%
+first={App Store},%
+firstplural={App Stores},%
+text={App Store},%
+plural={App Stores},%
+description={Ein App Store ist eine Verkaufsplattform eines Betriebssystemherstellers für Smartphones, beispielsweise Google Play für Android, Apple App Store für iOS},%
+descriptionplural={Ein App Store ist eine Verkaufsplattform eines Betriebssystemherstellers für Smartphones, beispielsweise Google Play für Android, Apple App Store für iOS},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Node}{}%
+{%
+\gls@defglossaryentry{Node}%
+{%
+name={Node},%
+sort={Node},%
+type={main},%
+first={Node},%
+firstplural={Nodes},%
+text={Node},%
+plural={Nodes},%
+description={Ein Node ist das grundlegendste Objekt in OpenStreetMap, es wird durch seine Attribute (genannt \glspl {Tag}) genauer bestimmt. Nodes können Teil eines \gls {Way} sein},%
+descriptionplural={Ein Node ist das grundlegendste Objekt in OpenStreetMap, es wird durch seine Attribute (genannt \glspl {Tag}) genauer bestimmt. Nodes können Teil eines \gls {Way} sein},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Way}{}%
+{%
+\gls@defglossaryentry{Way}%
+{%
+name={Way},%
+sort={Way},%
+type={main},%
+first={Way},%
+firstplural={Ways},%
+text={Way},%
+plural={Ways},%
+description={Ein Weg oder eine Strasse wird in OpenStreetMap als \emph {Way} bezeichnet. Es handelt sich dabei um eine Serie von miteinander verbundenen Nodes},%
+descriptionplural={Ein Weg oder eine Strasse wird in OpenStreetMap als \emph {Way} bezeichnet. Es handelt sich dabei um eine Serie von miteinander verbundenen Nodes},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Relation}{}%
+{%
+\gls@defglossaryentry{Relation}%
+{%
+name={Relation},%
+sort={Relation},%
+type={main},%
+first={Relation},%
+firstplural={Relations},%
+text={Relation},%
+plural={Relations},%
+description={Eine Relation stellt eine Verbindung zwischen verschiedenen OSM-Objekten dar. Relationen werden meist dazu gebraucht, um übergeordnete Beziehungen darzustellen. Beispielsweise können alle Bushaltestellen einer Buslinie über eine Relation miteinander verknüpft sein},%
+descriptionplural={Eine Relation stellt eine Verbindung zwischen verschiedenen OSM-Objekten dar. Relationen werden meist dazu gebraucht, um übergeordnete Beziehungen darzustellen. Beispielsweise können alle Bushaltestellen einer Buslinie über eine Relation miteinander verknüpft sein},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Tag}{}%
+{%
+\gls@defglossaryentry{Tag}%
+{%
+name={Tag},%
+sort={Tag},%
+type={main},%
+first={Tag},%
+firstplural={Tags},%
+text={Tag},%
+plural={Tags},%
+description={Ein Tag bezeichnet ein Attribut eines \glslink {Node}{Nodes}. Es besteht aus einem Namen und einem Wert. Ein \gls {Node} kann beliebig viele Tags beinhalten},%
+descriptionplural={Ein Tag bezeichnet ein Attribut eines \glslink {Node}{Nodes}. Es besteht aus einem Namen und einem Wert. Ein \gls {Node} kann beliebig viele Tags beinhalten},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{OpenStreetMap}{}%
+{%
+\gls@defglossaryentry{OpenStreetMap}%
+{%
+name={OpenStreetMap},%
+sort={OpenStreetMap},%
+type={main},%
+first={OpenStreetMap},%
+firstplural={OpenStreetMaps},%
+text={OpenStreetMap},%
+plural={OpenStreetMaps},%
+description={OpenStreetMap ist ein freies Projekt, das für jeden frei nutzbare Geodaten sammelt (Open Data). Mit Hilfe dieser Daten können Weltkarten errechnet oder Spezialkarten abgeleitet werden sowie Navigation betrieben werden},%
+descriptionplural={OpenStreetMap ist ein freies Projekt, das für jeden frei nutzbare Geodaten sammelt (Open Data). Mit Hilfe dieser Daten können Weltkarten errechnet oder Spezialkarten abgeleitet werden sowie Navigation betrieben werden},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Gamification}{}%
+{%
+\gls@defglossaryentry{Gamification}%
+{%
+name={Gamification},%
+sort={Gamification},%
+type={main},%
+first={Gamification},%
+firstplural={Gamifications},%
+text={Gamification},%
+plural={Gamifications},%
+description={Unter Gamification versteht man das Hinzufügen von Spiel-Elementen in einem nicht spieltypischen Kontext\cite {for-the-win}},%
+descriptionplural={Unter Gamification versteht man das Hinzufügen von Spiel-Elementen in einem nicht spieltypischen Kontext\cite {for-the-win}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{MVC}{}%
+{%
+\gls@defglossaryentry{MVC}%
+{%
+name={MVC},%
+sort={MVC},%
+type={main},%
+first={MVC},%
+firstplural={MVCs},%
+text={MVC},%
+plural={MVCs},%
+description={Der englischsprachige Begriff \emph {model view controller} (MVC) ist ein Muster zur Strukturierung von Software-Entwicklung in die drei Einheiten Datenmodell (model), Präsentation (view) und Programmsteuerung (controller)\cite {patterns}},%
+descriptionplural={Der englischsprachige Begriff \emph {model view controller} (MVC) ist ein Muster zur Strukturierung von Software-Entwicklung in die drei Einheiten Datenmodell (model), Präsentation (view) und Programmsteuerung (controller)\cite {patterns}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Crowdsourcing}{}%
+{%
+\gls@defglossaryentry{Crowdsourcing}%
+{%
+name={Crowdsourcing},%
+sort={Crowdsourcing},%
+type={main},%
+first={Crowdsourcing},%
+firstplural={Crowdsourcings},%
+text={Crowdsourcing},%
+plural={Crowdsourcings},%
+description={Unter Crowdsourcing versteht man die Auslagerung von Auslagerung von traditionell internen Teilaufgaben an eine Menge von freiwilligen Usern im Internet\cite {crowdsourcing}},%
+descriptionplural={Unter Crowdsourcing versteht man die Auslagerung von Auslagerung von traditionell internen Teilaufgaben an eine Menge von freiwilligen Usern im Internet\cite {crowdsourcing}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Routing}{}%
+{%
+\gls@defglossaryentry{Routing}%
+{%
+name={Routing},%
+sort={Routing},%
+type={main},%
+first={Routing},%
+firstplural={Routings},%
+text={Routing},%
+plural={Routings},%
+description={Routing beschreibt den Vorgang einen optimalen Weg zwischen zwei oder mehr Punkten zu finden. Eine so gefundene Strecke wird oft als \emph {Route} bezeichnet},%
+descriptionplural={Routing beschreibt den Vorgang einen optimalen Weg zwischen zwei oder mehr Punkten zu finden. Eine so gefundene Strecke wird oft als \emph {Route} bezeichnet},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
