@@ -1,0 +1,96 @@
+\input{formatting/preamble}
+\begin{document}
+
+% -----------------------------------------
+% HEAD
+% -----------------------------------------
+% Titelseite
+\title{Kort Reloaded - A Gamified App for Collecting OpenStreetMap Data}
+\author{Marino Melchiori
+		\and
+		Dominic Mülhaupt}
+%\date{10. März 2016}
+
+%\input{head/titelseite.tex}
+
+% Seitennummerierung mit roemischen Zeichen
+\pagenumbering{roman}
+
+% Glossar (muss vor Body inkludiert werden, damit Referenzen funktionieren)
+%\input{foot/glossar.tex}
+
+% TODO Liste
+
+
+% Impressum
+%\input{head/impressum.tex}
+
+% Erklaerung
+%\input{head/eigenstaendigkeitserklaerung.tex}
+
+% Abstract
+%\input{head/abstract.tex}
+
+% Management Summary
+%\input{head/management_summary.tex}
+
+% Aufgabenstellung
+%\input{head/aufgabenstellung.tex}
+
+% Inhaltsverzeichnis
+\tableofcontents
+
+% -----------------------------------------
+% BODY
+% -----------------------------------------
+% Neue Seite beginnen (um Seitennummerierung zurückzusetzen)
+\cleardoublepage
+
+% Seitennummerierung mit arabischen Zeichen
+\pagenumbering{arabic}
+
+% Einführung
+\part{Technischer Bericht}
+%\input{body/technischer_bericht/technischer_bericht.tex}
+
+% Neue Seite beginnen
+\cleardoublepage
+
+% Projektdokumentation
+\part{Projektdokumentation}
+%\input{body/projektdokumentation/projektdokumentation.tex}
+
+% Neue Seite beginnen
+\cleardoublepage
+
+% Projektmanagement
+\part{Projektmanagement}
+%\input{body/projektmanagement/projektmanagement.tex}
+
+% -----------------------------------------
+% FOOT
+% -----------------------------------------
+% Neue Seite beginnen
+\cleardoublepage
+
+% Anhänge
+\part{Anhänge}
+
+% Inhalt der CD
+%\input{foot/cd_inhalt.tex}
+
+% Glossar
+\printglossary[style=altlist,title=Glossar,toctitle=Glossar]
+\label{glossar}
+
+% Literaturverzeichnis
+\bibliographystyle{plainurl}
+%\bibliography{foot/literatur}
+
+% Abbildungsverzeichnis
+\listoffigures
+
+% Tabellenverzeichnis
+\listoftables
+
+\end{document}
