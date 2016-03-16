@@ -1,0 +1,36 @@
+\chapter*{Management Summary}
+\thispagestyle{scrheadings}
+% Titel auch in Kopfzeile anzeigen
+\markboth{Management Summary}{Management Summary}
+
+\section*{Ausgangslage}
+Das \brand{OpenStreetMap}-Projekt beinhaltet eine sehr grosse Menge an Daten, welche frei zugänglich ist.
+Für die Pflege dieser Daten ist es daher naheliegend, auf unterstützende Software zurückzugreifen.
+Zu diesem Zweck gibt es eine Reihe von Applikationen, welche sich grob in zwei Kategorien einteilen lassen:
+Editoren und Tools zur Qualitätssicherung.
+
+Mit den Editoren lässt sich direkt oder indirekt die \brand{OpenStreetMap}-Karte verändern und ergänzen.
+Die Qualitätssicherungstools haben sich zum Ziel gesetzt, fehlende oder falsche Daten aufzuspüren.
+Diese werden dann entweder automatisch korrigiert oder übersichtlich dargestellt, um eine manuelle Korrektur zu ermöglichen.
+
+Einige Tools wie \brand{KeepRight}\footnote{\url{http://keepright.ipax.at/}} oder \brand{Osmose}\footnote{\url{http://osmose.openstreetmap.fr/map/}} berechnen aus den Karten-Rohdaten die vorhandenen Fehler.
+Dazu werden einige Heuristiken verwendet oder einfache Plausibilitätsprüfungen durchgeführt.
+Typische Fehler aus diesen Quellen sind \glspl{POI} ohne Namen oder Strassen ohne definierte Geschwindigkeitslimiten.
+
+Zur Behebung dieser Fehler ist die cross-platform \gls{WebApp} \kort{} in Form einer Bachelorarbeit von Jürg Hunziker und Stefan Oderbolz, im Herbstsemester 2012/13, entwickelt  worden. 
+Diese ist in JavaScript geschrieben und basiert auf dem \brand{Sencha Touch 2}-Framework.
+Im Backend kommt eine \brand{PostgreSQL}-Datenbank zum Einsatz. Die komplette Kommunikation ist mit \gls{REST}-Schnittstellen realisiert.
+
+%Warum machen wir das Projekt?
+%Welche Ziele wurden gesteckt (Kann-Ziele, Muss-Ziele)
+%Was machen andere / welche ähnlichen Arbeiten gibt es zum Thema?
+%Vorgehen: Was wurde gemacht? In welchen Teilschritten?
+%Risiken der Arbeit?
+%Wer war involviert (Durchführung, Entscheide usw.)?
+%Was konnte von anderen verwendet werden?
+
+\section*{Ergebnisse}
+
+\subsection*{Frontend}
+
+\section*{Ausblick}
