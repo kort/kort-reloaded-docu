@@ -598,3 +598,33 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{Minimum Viable Product}{}%
+{%
+\gls@defglossaryentry{Minimum Viable Product}%
+{%
+name={Minimum Viable Product},%
+sort={Minimum Viable Product},%
+type={main},%
+first={Minimum Viable Product},%
+firstplural={Minimum Viable Products},%
+text={Minimum Viable Product},%
+plural={Minimum Viable Products},%
+description={Das Minimum Viable Product ist ein Produkt, welches gerade die Kernfunktionalität aufweist, die nötig ist, um es zu veröffentlichen. \cite {mvp}},%
+descriptionplural={Das Minimum Viable Product ist ein Produkt, welches gerade die Kernfunktionalität aufweist, die nötig ist, um es zu veröffentlichen. \cite {mvp}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

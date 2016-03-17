@@ -1,34 +1,121 @@
 \chapter{Projektmanagement}
 \label{pm-projektmanagement}
 
-\section{Prototypen, Releases, Meilensteine}
+\section{Prototypen, Releases}
 
 
 \section{Team, Rollen, Verantwortlichkeiten}
 
 
-\section{Aufwandschätzung, Zeitplan, Projektplan}
+\section{Risikomanagement}
+Daher, dass  Kort bereits in einer vorhergehenden Bachelorarbeit erfolgreich umgesetzt werden konnte und Anklang gefunden hat, wurden bereits viele Risiken abgedeckt.
+Dennoch sollte das Risikomanagement nicht vernachlässigt werden.
+
+\subsection{Risikoanalyse Sprint 1}
+Am 17. März 2016 wurden folgende Risiken identifiziert:
+
+\subsubsection{Mangelnde Erfahrung mit JavaScript, React und React Native wirkt sich negativ auf Design und Programmcode aus}
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{0.25\twocelltabwidth}|p{0.75\twocelltabwidth}|}
+\hline 
+\small{\textbf{Auswirkung}} & Da wir uns mit den zugrundeliegenden Programmierkonzepten vertraut machen während wir bereits planen und Entscheidungen treffen, teilweise sogar schon programmieren müssen, kann und wird es vorkommen, dass gewisse Entscheidungen schlecht getroffen und gewisse Konzepte nicht sauber umgesetzt werden. \newline
+Dies kann zu Verspätungen oder unsauberem Programmcode führen. \\
+\hline 
+\small{\textbf{Wahrscheinlichkeit}} & hoch \\
+\hline 
+\small{\textbf{Massnahme zur Verhinderung}} & Wir haben mit Herr Keller besprochen, dass das \gls{Minimum Viable Product} der Bachelorarbeit eine Android App mit der gleichen Funktionalität, wie sie bereits im ursprünglichen Kort Game umgesetzt wurde, sein wird. So laufen wir nicht Gefahr, dass wir am Ende viele begonnene Arbeiten und dennoch kein brauchbares Produkt haben.\newline
+Da im Rahmen dieser Arbeit schlicht keine Zeit bleibt um sich umfassend in die Technologien einzuarbeiten bevor die restliche Arbeit angepackt wird, wird vor allem zu Beginn vermehrt auf \gls{Pair Programming} gesetzt. Wir werden uns auch in regelmässigen Abständen die Zeit nehmen, ein Code Review durchzuführen. Ausserdem ist es wichtig, dass bei Schwierigkeiten nicht zu lange gezögert wird, den Kontakt zu Experten im jeweiligen Bereich zu suchen. \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Es existiert keine passende Map Library für \brand{React Native}}
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{0.25\twocelltabwidth}|p{0.75\twocelltabwidth}|}
+\hline 
+\small{\textbf{Auswirkung}} & Es müsste statt \{brand{React Native} ein alternatives mobiles Framework gefunden werden, mit welchem wir die  \brand{\gls{OpenStreetMap}}-Daten anzeigen können. \\
+\hline 
+\small{\textbf{Wahrscheinlichkeit}} & tief \\
+\hline 
+\small{\textbf{Massnahme zur Verhinderung}} & Zu Beginn des Projektes muss eine \brand{React Native} Prototyp-Applikation implementiert werden, welche \brand{\gls{OpenStreetMap}}-Daten auf der Karte darstellt. \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{\brand{KeepRight} stellt den Dienst ein}
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{0.25\twocelltabwidth}|p{0.75\twocelltabwidth}|}
+\hline 
+\small{\textbf{Auswirkung}} & Es wäre nicht mehr möglich, Missionen – wie bisher umgesetzt – anzuzeigen. Ein anderer Dienst (z.B. \brand{Osmose}) müsste eingesetzt werden, was vor allem Änderungen im Backend erfordern würde.\\
+\hline 
+\small{\textbf{Wahrscheinlichkeit}} & tief \\
+\hline 
+\small{\textbf{Massnahme zur Verhinderung}} & Bereits früh im Projekt wird das Thema mit dem Projektpartner besprochen um festzustellen, ob dieser bereit wäre, sich dieser Problematik anzunehmen. \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Projektplan}
+% Zeitstrahl
+% Anwendung von Scrum in unserem Projekt
+
+\section{Meilensteine}
+\subsection{MS1: Kickoff}
+% Meeting
+
+\subsection{MS2: Ende Elaboration}
+\label{pm-ms2}
+\textbf{Fällig am 25.03.2016}
+\subsubsection{Resultate}
+\begin{itemize}
+	\item Infrastruktur
+	\begin{itemize}
+		\item Datenbank
+		\item CI
+		\item uservoice
+		\item Redmine
+		\item Installationsskripte
+	\end{itemize}
+	\item Ausgangslage
+	\item Aufgabenstellung
+	\item Projektplan
+	\item Risikomanagement
+	\item Testspezifikation
+	\item Map Komponente ausgewählt und eingesetzt
+	
+\end{itemize}
+
+\section{Sprints}
+\subsection{Sprint 1}
+\textbf{14.03.2016 bis 27.03.2016}
+
+\subsubsection{Hauptaufgaben / Fokussierung im Sprint}
+\begin{itemize}
+	\item Projektmanagement
+	\item Infrastruktur
+	\item Map Komponente
+	\item Abschluss MS2
+\end{itemize}
+
+\subsubsection{Deliverables}
+Die Deliverables wurden im Kapitel \nameref{pm-ms2} definiert.
+
+\subsubsection{Probleme}
 
 
-\section{Risiken}
+\subsection{Sprint 2}
 
 
-\section{Prozessmodell}
+\subsection{Sprint 3}
 
 
-\section{Sprint 1}
+\subsection{Sprint 4}
 
 
-\section{Sprint 2}
+\subsection{Sprint 5}
 
 
-\section{Sprint 3}
-
-
-\section{Sprint 4}
-
-
-\section{Sprint 5}
-
-
-\section{Sprint 6}
+\subsection{Sprint 6}
