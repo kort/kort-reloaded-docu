@@ -27,4 +27,12 @@
 *.tdo
 *.ldb
 *.bak
+<<<<<<< HEAD
 __Documentation/kort_reloaded.pdf
+=======
+<<<<<<< HEAD
+/kort_reloaded.pdf
+=======
+__Documentation/kort_reloaded.pdf
+>>>>>>> 0b55fbd668e7db21abd8447e033d4c6ac0f7f6f8
+>>>>>>> 42fc894e25f70eb0b47e4b48ed5a3432ac145aa3
