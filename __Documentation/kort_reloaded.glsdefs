@@ -568,3 +568,33 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{Pair Programming}{}%
+{%
+\gls@defglossaryentry{Pair Programming}%
+{%
+name={Pair Programming},%
+sort={Pair Programming},%
+type={main},%
+first={Pair Programming},%
+firstplural={Pair Programmings},%
+text={Pair Programming},%
+plural={Pair Programmings},%
+description={Bei Pair Programming handelt es sich um eine Arbeitsweise, bei der zwei Programmierer an einem Rechner arbeiten. Dabei ist ein Programmierer damit beschäftigt, den Code zu schreiben, während der andere über die Problemstellungen nachdenkt, den geschriebenen Code kontrolliert sowie Probleme, die ihm dabei auffallen, sofort anspricht. \cite {pairprogramming}},%
+descriptionplural={Bei Pair Programming handelt es sich um eine Arbeitsweise, bei der zwei Programmierer an einem Rechner arbeiten. Dabei ist ein Programmierer damit beschäftigt, den Code zu schreiben, während der andere über die Problemstellungen nachdenkt, den geschriebenen Code kontrolliert sowie Probleme, die ihm dabei auffallen, sofort anspricht. \cite {pairprogramming}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
