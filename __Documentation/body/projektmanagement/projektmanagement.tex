@@ -8,7 +8,7 @@
 
 
 \section{Risikomanagement}
-Daher, dass  Kort bereits in einer vorhergehenden Bachelorarbeit erfolgreich umgesetzt werden konnte und Anklang gefunden hat, wurden bereits viele Risiken abgedeckt.
+Daher, dass  Kort bereits in einer vorhergehenden Bachelorarbeit erfolgreich umgesetzt werden konnte und Anklang gefunden hat, wurden bereits viele Risiken abgedeckt.\newline
 Dennoch sollte das Risikomanagement nicht vernachlässigt werden.
 
 \subsection{Risikoanalyse Sprint 1}
@@ -19,13 +19,16 @@ Am 17. März 2016 wurden folgende Risiken identifiziert:
 \centering
 \begin{tabular}{|p{0.25\twocelltabwidth}|p{0.75\twocelltabwidth}|}
 \hline 
-\small{\textbf{Auswirkung}} & Da wir uns mit den zugrundeliegenden Programmierkonzepten vertraut machen während wir bereits planen und Entscheidungen treffen, teilweise sogar schon programmieren müssen, kann und wird es vorkommen, dass gewisse Entscheidungen schlecht getroffen und gewisse Konzepte nicht sauber umgesetzt werden. \newline
+\small{\textbf{Auswirkung}} & Da wir uns mit den zugrundeliegenden Programmierkonzepten vertraut machen während wir bereits planen und Entscheidungen treffen, teilweise sogar schon programmieren müssen, kann und wird es vorkommen, dass gewisse Entscheidungen schlecht getroffen und gewisse Konzepte nicht sauber umgesetzt werden. 
 Dies kann zu Verspätungen oder unsauberem Programmcode führen. \\
 \hline 
 \small{\textbf{Wahrscheinlichkeit}} & hoch \\
 \hline 
-\small{\textbf{Massnahme zur Verhinderung}} & Wir haben mit Herr Keller besprochen, dass das \gls{Minimum Viable Product} der Bachelorarbeit eine Android App mit der gleichen Funktionalität, wie sie bereits im ursprünglichen Kort Game umgesetzt wurde, sein wird. So laufen wir nicht Gefahr, dass wir am Ende viele begonnene Arbeiten und dennoch kein brauchbares Produkt haben.\newline
-Da im Rahmen dieser Arbeit schlicht keine Zeit bleibt um sich umfassend in die Technologien einzuarbeiten bevor die restliche Arbeit angepackt wird, wird vor allem zu Beginn vermehrt auf \gls{Pair Programming} gesetzt. Wir werden uns auch in regelmässigen Abständen die Zeit nehmen, ein Code Review durchzuführen. Ausserdem ist es wichtig, dass bei Schwierigkeiten nicht zu lange gezögert wird, den Kontakt zu Experten im jeweiligen Bereich zu suchen. \\
+\small{\textbf{Massnahme zur Verhinderung}} & Wir haben mit Herr Keller besprochen, dass das \gls{Minimum Viable Product} der Bachelorarbeit eine Android App mit der gleichen Funktionalität, wie sie bereits im ursprünglichen Kort Game umgesetzt wurde, sein wird.
+So laufen wir nicht Gefahr, dass wir am Ende viele begonnene Arbeiten und dennoch kein brauchbares Produkt haben.\newline
+Da im Rahmen dieser Arbeit schlicht keine Zeit bleibt um sich umfassend in die Technologien einzuarbeiten bevor die restliche Arbeit angepackt wird, wird vor allem zu Beginn vermehrt auf \gls{Pair Programming} gesetzt.
+Wir werden uns auch in regelmässigen Abständen die Zeit nehmen, ein Code Review durchzuführen.
+Ausserdem ist es wichtig, dass bei Schwierigkeiten nicht zu lange gezögert wird, den Kontakt zu Experten im jeweiligen Bereich zu suchen. \\
 \hline
 \end{tabular}
 \end{table}
@@ -49,11 +52,30 @@ Da im Rahmen dieser Arbeit schlicht keine Zeit bleibt um sich umfassend in die T
 \centering
 \begin{tabular}{|p{0.25\twocelltabwidth}|p{0.75\twocelltabwidth}|}
 \hline 
-\small{\textbf{Auswirkung}} & Es wäre nicht mehr möglich, Missionen – wie bisher umgesetzt – anzuzeigen. Ein anderer Dienst (z.B. \brand{Osmose}) müsste eingesetzt werden, was vor allem Änderungen im Backend erfordern würde.\\
+\small{\textbf{Auswirkung}} & Es wäre nicht mehr möglich, Missionen – wie bisher umgesetzt – anzuzeigen.
+Ein anderer Dienst (z.B. \brand{Osmose}) müsste eingesetzt werden, was vor allem Änderungen im Backend erfordern würde.\\
 \hline 
 \small{\textbf{Wahrscheinlichkeit}} & tief \\
 \hline 
 \small{\textbf{Massnahme zur Verhinderung}} & Bereits früh im Projekt wird das Thema mit dem Projektpartner besprochen um festzustellen, ob dieser bereit wäre, sich dieser Problematik anzunehmen. \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{\brand{React Native} ist noch nicht ausgereift genug für \brand{Android}}
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{0.25\twocelltabwidth}|p{0.75\twocelltabwidth}|}
+\hline 
+\small{\textbf{Auswirkung}} & \brand{Android} wird erst seit Oktober 2015 durch \brand{React Native} unterstützt. 
+Es stehen noch nicht alle Funktionalitäten wie für \brand{iOS} zur Verfügung. \\
+\hline 
+\small{\textbf{Wahrscheinlichkeit}} & tief \\
+\hline 
+\small{\textbf{Massnahme zur Verhinderung}} & Die mangelnden Funktionalitäten – wie z.B. im Testing – werden bereits bevor mit der Implementation begonnen wird, so weit möglich, analysiert.
+Grundsätzlich sollte es möglich sein, die App für \brand{Android} umzusetzen da bereits komplexere Apps damit erstellt wurden.
+Wahrscheinlich wird es vorkommen, dass Workarounds nötig sein werden. 
+Im schlimmsten Fall müsste während der Entwicklung auf \brand{iOS} umgestellt werden, was grundsätzlich möglich ist. \\
 \hline
 \end{tabular}
 \end{table}
