@@ -4,7 +4,7 @@
 \markboth{Management Summary}{Management Summary}
 
 \section*{Ausgangslage}
-Das \brand{OpenStreetMap}-Projekt beinhaltet eine sehr grosse Menge an Daten, welche frei zugänglich ist.
+Das \brand{OpenStreetMap}-Projekt beinhaltet eine sehr grosse Menge an Daten, welche frei zugänglich sind.
 Für die Pflege dieser Daten ist es daher naheliegend, auf unterstützende Software zurückzugreifen.
 Zu diesem Zweck gibt es eine Reihe von Applikationen, welche sich grob in zwei Kategorien einteilen lassen:
 Editoren und Tools zur Qualitätssicherung.
@@ -17,9 +17,13 @@ Einige Tools wie \brand{KeepRight}\footnote{\url{http://keepright.ipax.at/}} ode
 Dazu werden einige Heuristiken verwendet oder einfache Plausibilitätsprüfungen durchgeführt.
 Typische Fehler aus diesen Quellen sind \glspl{POI} ohne Namen oder Strassen ohne definierte Geschwindigkeitslimiten.
 
-Zur Behebung dieser Fehler ist die cross-platform \gls{WebApp} \kort{} in Form einer Bachelorarbeit von Jürg Hunziker und Stefan Oderbolz, im Herbstsemester 2012/13, entwickelt  worden. 
-Diese ist in JavaScript geschrieben und basiert auf dem \brand{Sencha Touch 2}-Framework.
-Im Backend kommt eine \brand{PostgreSQL}-Datenbank zum Einsatz. Die komplette Kommunikation ist mit \gls{REST}-Schnittstellen realisiert.
+Zur Behebung dieser Fehler ist die cross-platform \gls{WebApp} \kort{} in Form einer Bachelorarbeit von Jürg Hunziker und Stefan Oderbolz, im Herbstsemester 2012/13, entwickelt  worden.
+
+Unsere Aufgabe war es die nicht mehr voll funktionsfähige \gls{WebApp} mit einer native Android App zu ersetzen.
+Als Ziel setzten wir uns die Einbettung der \brand{OpenStreetMap}-Karte.
+Dazu gibt es für \brand{React-Native} nämlich noch keine bekannte Lösung. 
+Dieses Risiko, mussten wir mit der höchsten Priorität möglichst schnell beseitigen.
+Verwenden konnten wir die ganze Infrastruktur der \kort{} Bachelorarbeit.
 
 %Warum machen wir das Projekt?
 %Welche Ziele wurden gesteckt (Kann-Ziele, Muss-Ziele)
