@@ -628,3 +628,33 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{Framework}{}%
+{%
+\gls@defglossaryentry{Framework}%
+{%
+name={Framework},%
+sort={Framework},%
+type={main},%
+first={Framework},%
+firstplural={Frameworks},%
+text={Framework},%
+plural={Frameworks},%
+description={Ein Framework ist \cite {framework}},%
+descriptionplural={Ein Framework ist \cite {framework}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
