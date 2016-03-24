@@ -26,15 +26,14 @@ Für die Darstellung der Karte mit \brand{React Native} haben wir diese Möglich
 Die Native Map APIs von \brand{Google} und \brand{Apple} kamen für uns nicht in Frage.
 Wir möchten mit unserer App \brand{OpenStreetMap} Daten verbessern und setzen somit aus moralischen Aspekten auch auf die entsprechende Karte.
 %Google Lizenz-Grund nicht erwähnt, da eventuell referenziert werden müsste.
-Bei der \brand{React Native} Map-Komponente gab es keine Möglichkeit Bilder auf der Karte darzustellen.
-Die Raster-Tiles "von Hand" anzuzeigen wäre schlicht zu aufwendig. 
-Es liesse sich auch keine schöne Map designen.
+Bei der \brand{React Native} Map-Komponente gab es keine Möglichkeit Bilder auf der Karte darzustellen und die Raster-Tiles "von Hand" anzuzeigen wäre schlicht zu aufwendig. 
+Es liesse sich auch nur sehr umständlich eine schöne Map designen.
 
-Somit sprang uns als erstes die Portierung von Leaflet für \brand{React} ins Auge. 
-Nach dem betrachten vom Code fiel uns aber auf, dass diese Variante nur möglich ist, wenn die Karte in einer WebView-Komponente von \brand{React Native} dargestellt wird.
+Somit sprang uns als erstes die Portierung von Leaflet\footnote{\url{https://github.com/PaulLeCam/react-leaflet}} für \brand{React} ins Auge. 
+Nach dem betrachten vom Code fiel uns aber auf, dass diese Variante eventuell nur möglich ist, wenn die Karte in einer WebView-Komponente von \brand{React Native} dargestellt wird.
 Eine Lösung mit der WebView war zu Aufwendig um richtig getestet zu werden. 
-Wir waren uns nicht sicher, ob dann wirklich alles sauber funktioniert.
+Es widerspricht auch der Grundidee, da mit \brand{React Native} native Applikationen entwickelt werden.
 
-Als letzte Möglichkeit blieb die MapBox GL Library.
-Diese hat uns nach dem Testen überzeugt.
-Der einzige Haken wäre das Pricing, welches bei einer sehr hohen Benutzeranzahl beachtet werden muss.
+Als letzte Möglichkeit blieb die MapBox GL Library\footnote{\url{https://github.com/mapbox/react-native-mapbox-gl}}.
+Diese hat beim Testen auf Anhieb funktioniert und uns überzeugt.
+Der einzige Haken wäre das Pricing, welches bei einer sehr hohen Benutzeranzahl (beschränkt auf 50'000) beachtet werden muss.
