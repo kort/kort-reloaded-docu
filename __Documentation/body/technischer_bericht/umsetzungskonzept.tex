@@ -8,19 +8,23 @@ Für die Darstellung der Karte mit \brand{React Native} haben wir diese Möglich
 
 %Eventuell in Tabelle darstellen:
 \begin{itemize}
-    \item Extended React Native Map Komponente (empfohlen von Facebook): https://github.com/lelandrichardson/react-native-maps
+    \item Extended React Native Map Komponente\footnote{\url{https://github.com/lelandrichardson/react-native-maps}} (empfohlen von Facebook, anstelle der MapView)
     \begin{itemize}
     	\item Haken: Native Map API von Apple iOS und Android SDK nutzen (fest mit Apple/Google Maps verbunden)
 	\end{itemize}
 	
-    \item React Native "Map" Komponente nutzen: http://browniefed.com/blog/2015/05/30/create-a-map-with-react-art/
+    \item React Native "Map" Komponente\footnote{\url{http://browniefed.com/blog/2015/05/30/create-a-map-with-react-art/}} nutzen
     \begin{itemize}
-    	\item Haken: "Pattern Fill" issue (Raster Tiles) - Es lassen sich keine Bilder, oder Missions-Icons, auf der Karte darstellen.
+    	\item Haken: Pattern Fill issue (Raster Tiles) - Es lassen sich keine Bilder, oder Missions-Icons, auf der Karte darstellen.
 	\end{itemize}     
 
-    \item MapBox GL Library mit Android/iOS SDK https://libraries.io/npm/react-native-mapbox-gl, eventuell mit Offline-Kacheln zu füttern http://osm2vectortiles.org/downloads/ (Vector Tiles)
-    \item Portierung von Leaflet nach React: https://github.com/PaulLeCam/react-leaflet
-    \item Raster Tiles "von Hand" anzeigen
+    \item MapBox GL Library\footnote{\url{https://libraries.io/npm/react-native-mapbox-gl}} mit Android/iOS SDK  (eventuell mit Offline-Kacheln von\\* osm2vectortiles\footnote{\url{http://osm2vectortiles.org/downloads/}} zu füttern (Vektor Kacheln)
+    \begin{itemize}
+    	\item Haken: Offline-Unterstützung problematisch.
+	\end{itemize}   
+	
+    \item Portierung von Leaflet nach React\footnote{\url{https://github.com/PaulLeCam/react-leaflet}}
+    \item Raster Tiles von Hand anzeigen
 \end{itemize}
 
 Die Native Map APIs von \brand{Google} und \brand{Apple} kamen für uns nicht in Frage.
@@ -29,11 +33,14 @@ Wir möchten mit unserer App \brand{OpenStreetMap} Daten verbessern und setzen s
 Bei der \brand{React Native} Map-Komponente gab es keine Möglichkeit Bilder auf der Karte darzustellen und die Raster-Tiles "von Hand" anzuzeigen wäre schlicht zu aufwendig. 
 Es liesse sich auch nur sehr umständlich eine schöne Map designen.
 
-Somit sprang uns als erstes die Portierung von Leaflet\footnote{\url{https://github.com/PaulLeCam/react-leaflet}} für \brand{React} ins Auge. 
+Somit sprang uns als erstes die Portierung von Leaflet für \brand{React} ins Auge. 
 Nach dem betrachten vom Code fiel uns aber auf, dass diese Variante eventuell nur möglich ist, wenn die Karte in einer WebView-Komponente von \brand{React Native} dargestellt wird.
 Eine Lösung mit der WebView war zu Aufwendig um richtig getestet zu werden. 
 Es widerspricht auch der Grundidee, da mit \brand{React Native} native Applikationen entwickelt werden.
 
-Als letzte Möglichkeit blieb die MapBox GL Library\footnote{\url{https://github.com/mapbox/react-native-mapbox-gl}}.
+Als letzte Möglichkeit blieb die MapBox GL Library.
 Diese hat beim Testen auf Anhieb funktioniert und uns überzeugt.
 Der einzige Haken wäre das Pricing, welches bei einer sehr hohen Benutzeranzahl (beschränkt auf 50'000) beachtet werden muss.
+Den Gedanke zur Offline-Unterstützung hatten wir auch.
+Nur gäbe es da Probleme mit der Grösse der App, da die Vektor-Kacheln und die Missionen im Voraus heruntergeladen und mit installiert werden müssten.
+
