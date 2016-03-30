@@ -13,7 +13,7 @@ Für die Darstellung der Karte mit \brand{React Native} haben wir diese Möglich
     	\item Haken: Native Map API von Apple iOS und Android SDK nutzen (fest mit Apple/Google Maps verbunden)
 	\end{itemize}
 	
-    \item React Native "Map" Komponente\footnote{\url{http://browniefed.com/blog/2015/05/30/create-a-map-with-react-art/}} nutzen
+    \item \brand{React Native} "Map" Komponente\footnote{\url{http://browniefed.com/blog/2015/05/30/create-a-map-with-react-art/}} nutzen
     \begin{itemize}
     	\item Haken: Pattern Fill issue (Raster Tiles) - Es lassen sich keine Bilder, oder Missions-Icons, auf der Karte darstellen.
 	\end{itemize}     
@@ -44,3 +44,9 @@ Der einzige Haken wäre das Pricing, welches bei einer sehr hohen Benutzeranzahl
 Den Gedanke zur Offline-Unterstützung hatten wir auch.
 Nur gäbe es da Probleme mit der Grösse der App, da die Vektor-Kacheln und die Missionen im Voraus heruntergeladen und mit installiert werden müssten.
 
+\section{Plattformunabhängigkeit}
+Eine Stärke von \brand{React Native} ist die Plattformunabhängigkeit. 
+Wenn keine spezifische \brand{Android}- oder \brand{iOS}-Komponenten verwendet werden, kann der Code auch für beide Plattformen genutzt werden.
+Also haben wir beim Entwickeln der \brand{Android}-App darauf geachtet, möglichst keine spezifische Komponenten zu nutzen. 
+Mit einer Blacklist für Komponenten, die vom React Native Packager\footnote{\url{https://github.com/facebook/react-native/tree/master/packager}} angeboten wird, konnten wir das Maximum an wiederverwendbarem Code herausholen. 
+Wenn möglich wurden auch alle Dateien mit der Endung \textit{.android.js} ignoriert, da diese ein davon abweichendes Pendant für \brand{iOS} (mit der Endung \textit{.ios.js}) haben.
