@@ -10,35 +10,78 @@
 % Weitere: Aktivitätsdiagramme, Fallbeispiele, Szenarien, Prototypen...
 
 \section{Anforderungen an die Arbeit} 
-Aufgrund der Probleme der aktuellen \kort{}-\gls{WebApp} wird eine neue native App mit \brand{React-Native} erstellt. 
-Da wir uns neu in JavaScript und React einarbeiten mussten, entschieden wir den Fokus nur auf \brand{Android} zu setzen.
-Die "News", ein Tab in der derzeitigen \kort{}-\gls{WebApp}, fallen weg.
+Die \hyperref[pm-rollen]{Autoren} hatten im Vorfeld der Arbeit wenige Kenntnisse über Webtechnologien und gar keine Erfahrung damit – insbesondere mit \brand{JavaScript}.
+Insofern war der machbare Umfang des Projekts schwer absehbar.
+In Abstimmung mit dem \hyperref[pm-rollen]{Betreuer} und dem \hyperref[pm-rollen]{Projektpartner} wurde deshalb festgelegt, dass der Fokus auf dem Frontend liegt, so dass man sich nicht auch noch in die Technologien des Backends einarbeiten muss.
+
+In der Anforderungsanalyse konnten viele Aufgaben erkannt werden, mit welchen man sich beschäftigen könnte. Im Rahmen dieser Arbeit ist nur ein Bruchteil davon umsetzbar – zum einen aus zeitlichen Gründen, zum anderen, weil Anpassungen am Backend nötig wären.
+All diese Anforderungen wurden in \emph{Muss}, \emph{Soll}, \emph{Kann}, \emph{zukünftige Arbeiten} und \emph{abgewiesene Arbeiten} unterteilt.
+
+\subsection{Muss}
+\begin{itemize}
+	\item Native App für \brand{Android} mit derselben Funktionalität wie der \gls{WebApp}\footnote{\url{play.kort.ch}}
+\end{itemize}
+
+\subsection{Soll}
+\begin{itemize}
+	\item Native App für \brand{iOS}
+\end{itemize}
+
+\subsection{Kann}
+\begin{itemize}
+	\item Social Media einbinden
+	\item Einbindung in \brand{Game Center} der jeweiligen Plattform
+	\item einführende Hilfestellung für Neuanwender
+	\item zu \brand{MapRoulette}\footnote{\url{http://maproulette.org}} weiterleiten wenn keine Aufgaben mehr zur Verfügung stehen\footnote{\url{https://github.com/kort/kort/issues/83}}
+\end{itemize}
+
+\subsection{Zukünftige Arbeiten}
+\begin{itemize}
+	\item Benutzerlogin mit weiteren \brand{OAuth} Diensten erweitern (z.B. \brand{Twitter}, \brand{GitHub})
+	\item \gls{Gamification}
+	\begin{itemize}
+		\item zeitlich begrenzte Promotionen (z.B. bei Events), bei denen man zusätzliche Punkte sammeln kann; sollen über Datenbank erstellt werden können
+		\item von gesammelten \emph{Koins} abhängige Levels einführen (z.B. bestimmte Fehlertypen erst ab fortgeschrittenem Level anzeigen, Avatars, Levelbezeichnungen)
+		\item weitere Badges einführen (Ideen finden sich hier: \url{https://wiki.openstreetmap.org/wiki/Badges})
+		\item verschiedene Highscores anzeigen (z.B. zeitlich oder regional begrenzte, nach Fehlertypen kategorisiert, schnellste Aufsteiger)
+	\end{itemize}
+	\item neue Fehlertypen\footnote{\url{https://github.com/kort/kort/issues/81}}
+	\begin{itemize}
+		\item realistisch
+		\begin{itemize}
+			\item Hausnummern
+			\item Stockwerke
+			\item Einbahnstrassen erfassen
+			\item Öffnungszeiten von öffentlichen Gebäuden
+		\end{itemize}
+		\item weniger realistisch
+		\begin{itemize}
+			\item Kreisel erfassen
+			\item Bushaltestellen von \brand{DIDOK}\footnote{\url{https://didok.osm.ch/}}
+		\end{itemize}
+	\end{itemize}
+	\item Erkennen von Benutzern, die nicht sorgfältig validieren\footnote{\url{https://github.com/kort/kort/issues/7}}
+	\item ausführliche Statistiken für individuelle Benutzer\footnote{\url{https://github.com/kort/kort/issues/71}}
+	\item Funktionalität um als Benutzer neue Fehlertypen erfassen zu können
+	\item Ersetzen der bisherigen Validierung durch anderen Prüfmechanismus (z.B. nur noch Aufträge anzeigen – wenn dreimal die gleiche Antwort angegeben wurde gilt der Auftrag als verifiziert)
+	\item \brand{KeepRight} durch \brand{Osmose} ersetzen
+	\item Aufträge aus \brand{wheelmap}\footnote{\url{http://wheelmap.org}}	 einfügen
+\end{itemize}
+
+\subsection{Abgewiesene Arbeiten}
+\begin{itemize}
+	\item Erweitern der Verifizierung mit der Möglichkeit, ein Foto als Beweis hochzuladen
+	\item Übertragungssicherheit zwischen Webserver und Datenbank durch Verwendung von HTTPS erhöhen
+	\item standortunabhängig Aufgaben lösen (Gefahr von Couch Crowdsourcing)
+\end{itemize}
 
 %TODO: Entscheid zur min/max Android SDK-Version / API-Level
-
-\subsection{Prototyp}
-Die Anforderungen an den Prototyp sind: 
-
-\begin{itemize}
-	\item Karten Ansicht
-	\item Missionen anzeigen (mit Symbolen/Bildern der Missions-Kategorie)
-	\item Eigene Profilseite
-	\item Badges
-	\item Highscore
-	\item About
-\end{itemize}
 
 %II 2.2 Use Cases (Success Scenario / Success Diagramm)
 \section{Use Cases}
 
 
 \section{System-Sequenzdiagramme}
-
-
-\section{Weitere Funktionen}
-
-
-\section{Nicht-funktionale Anforderungen}
 
 
 \section{Detailspezifikation}
