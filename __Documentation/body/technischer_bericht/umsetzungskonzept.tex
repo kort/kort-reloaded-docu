@@ -44,6 +44,23 @@ Der einzige Haken wäre das Pricing, welches bei einer sehr hohen Benutzeranzahl
 Den Gedanke zur Offline-Unterstützung hatten wir auch.
 Nur gäbe es da Probleme mit der Grösse der App, da die Vektor-Kacheln und die Missionen im Voraus heruntergeladen und mit installiert werden müssten.
 
+
+Für die Authentifizierung haben wir diese Möglichkeiten evaluiert:
+
+\begin{itemize}
+	\item Auth0: react-native-lock (für iOS und Android).\footnote{\url{https://github.com/auth0/react-native-lock}}
+	\begin{itemize}
+    	\item Haken: Nicht Open Source. Nur unter diesen Bedingungen kostenlos verwendbar:
+    	\begin{itemize}
+    		\item Der gesamte Code muss frei auf GitHub verfügbar sein.
+    		\item Es dar kein Geld für das Open Source Projekt oder für Derivate verlangt werden. 
+    		\item Es muss ein Auth0 Badge auf der Webseite hinzugefügt werden.
+    		\item Das Projekt darf nicht von einem anderen Unternehmen weitergeführt werden um Einkünfte zu erzielen.
+		\end{itemize} 
+	\end{itemize} 
+	\item eigene Entwicklung
+\end{itemize}
+
 \section{Plattformunabhängigkeit}
 Eine Stärke von \brand{React Native} ist die Plattformunabhängigkeit. 
 Wenn keine spezifische \brand{Android}- oder \brand{iOS}-Komponenten verwendet werden, kann der Code auch für beide Plattformen genutzt werden.
