@@ -1,3 +1,33 @@
+\ifglsentryexists{NativeApp}{}%
+{%
+\gls@defglossaryentry{NativeApp}%
+{%
+name={Native App},%
+sort={Native App},%
+type={main},%
+first={Native App},%
+firstplural={Native Apps},%
+text={Native App},%
+plural={Native Apps},%
+description={Native Apps im engeren Sinn zeichnen sich dadurch aus, dass sie speziell an die Zielplattform angepasst und sehr leicht über ein herstellerspezifisches Online-Portal bezogen und installiert werden können.\cite {mobileapp}},%
+descriptionplural={Native Apps im engeren Sinn zeichnen sich dadurch aus, dass sie speziell an die Zielplattform angepasst und sehr leicht über ein herstellerspezifisches Online-Portal bezogen und installiert werden können.\cite {mobileapp}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{API}{}%
 {%
 \gls@defglossaryentry{API}%
@@ -639,8 +669,8 @@ first={Framework},%
 firstplural={Frameworks},%
 text={Framework},%
 plural={Frameworks},%
-description={Ein Framework ist \cite {framework}},%
-descriptionplural={Ein Framework ist \cite {framework}},%
+description={Ein Framework ist noch kein fertiges Programm, sondern ein Rahmen, ein Gerüst, das der Programmierer verwenden kann um sein eigenes, persönliches Programm zu erstellen. \cite {framework}},%
+descriptionplural={Ein Framework ist noch kein fertiges Programm, sondern ein Rahmen, ein Gerüst, das der Programmierer verwenden kann um sein eigenes, persönliches Programm zu erstellen. \cite {framework}},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
