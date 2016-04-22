@@ -24,7 +24,7 @@ All diese Anforderungen wurden in \emph{Muss}, \emph{Soll}, \emph{Kann}, \emph{z
 
 \subsection{Soll}
 \begin{itemize}
-	\item Native App für \brand{iOS}
+	\item Native App für \brand{iOS}erstellt werden können
 \end{itemize}
 
 \subsection{Kann}
@@ -32,50 +32,6 @@ All diese Anforderungen wurden in \emph{Muss}, \emph{Soll}, \emph{Kann}, \emph{z
 	\item Social Media einbinden
 	\item auf \brand{MapRoulette}\footnote{\url{http://maproulette.org}} oder de \brand{Vespucci OSM Editor}\footnote{\url{https://play.google.com/store/apps/details?id=de.blau.android}} verweisen wenn keine Aufgaben mehr zur Verfügung stehen
 	\item Instruktions- und Promotionsvideo über die App
-\end{itemize}
-
-\subsection{Zukünftige Arbeiten}
-\begin{itemize}
-	\item Benutzerlogin mit weiteren \brand{OAuth} Diensten erweitern (z.B. \brand{Twitter}, \brand{GitHub})
-	\item \gls{Gamification}
-	\begin{itemize}
-		\item zeitlich begrenzte Promotionen (z.B. bei Events), bei denen man zusätzliche Punkte sammeln kann; sollen über Datenbank erstellt werden können
-		\item von gesammelten \emph{Koins} abhängige Levels einführen (z.B. bestimmte Fehlertypen erst ab fortgeschrittenem Level anzeigen, Avatars, Levelbezeichnungen)
-		\item Einbindung in \brand{Game Center} der jeweiligen Plattform
-		\item weitere Badges einführen (Ideen finden sich hier: \url{https://wiki.openstreetmap.org/wiki/Badges})
-		\item verschiedene Highscores anzeigen (z.B. zeitlich oder regional begrenzte, nach Fehlertypen kategorisiert, schnellste Aufsteiger)
-	\end{itemize}
-	\item neue Fehlertypen\footnote{\url{https://github.com/kort/kort/issues/81}}
-	\begin{itemize}
-		\item realistisch
-		\begin{itemize}
-			\item Hausnummern
-			\item Stockwerke
-			\item Einbahnstrassen erfassen
-			\item Öffnungszeiten von öffentlichen Gebäuden
-		\end{itemize}
-		\item weniger realistisch
-		\begin{itemize}
-			\item Kreisel erfassen
-			\item Bushaltestellen von \brand{DIDOK}\footnote{\url{https://didok.osm.ch/}}
-		\end{itemize}
-	\end{itemize}
-	\item Erkennen von Benutzern, die nicht sorgfältig validieren\footnote{\url{https://github.com/kort/kort/issues/7}}
-	\item ausführliche Statistiken für individuelle Benutzer\footnote{\url{https://github.com/kort/kort/issues/71}}
-	\item Funktionalität um als Benutzer neue Fehlertypen erfassen zu können
-	\item Ersetzen der bisherigen Validierung durch anderen Prüfmechanismus (z.B. nur noch Aufträge anzeigen – wenn dreimal die gleiche Antwort angegeben wurde gilt der Auftrag als verifiziert)
-	\item \brand{KeepRight} durch \brand{Osmose} ersetzen
-	\item Aufträge aus \brand{wheelmap}\footnote{\url{http://wheelmap.org}}	 einfügen
-	\item Offline-Fähigkeit (offline Maps für \brand{React Native} wären erforderlich)
-	\item einführende Hilfestellung für Neuanwender
-	\item wenn Aufträge nicht gelöst werden können (z.B. drei Mal) eine \brand{OSM}-Notiz generieren oder manuell eintragen
-\end{itemize}
-
-\subsection{Abgewiesene Arbeiten}
-\begin{itemize}
-	\item Erweitern der Verifizierung mit der Möglichkeit, ein Foto als Beweis hochzuladen
-	\item Übertragungssicherheit zwischen Webserver und Datenbank durch Verwendung von HTTPS erhöhen
-	\item standortunabhängig Aufgaben lösen (Gefahr von Couch Crowdsourcing)
 \end{itemize}
 
 %TODO: Entscheid zur min/max Android SDK-Version / API-Level
