@@ -3,51 +3,48 @@
 
 \section{Problemstellung, Vision}
 \kort{} ist eine \gls{WebApp}, entwickelt mit dem \brand{Sencha Touch 2} \gls{Framework}.
-Diese Technologie ist jetzt aber veraltet und die Implementation funktioniert auf neuen Browsern nicht mehr sinngemäss.
+Die Implementation funktioniert auf neuen Browsern nicht mehr sinngemäss.
 Zum Beispiel ist das Scrollen blockiert.
 So ist es auf einem mobilen Gerät unmöglich, das Login-Feld überhaupt auszufüllen.
+Die Ortung und die HTTP Requests funktionieren nur noch mit dem \brand{Firefox}.
+\brand{Google Chrome} erlaubt die Geolocation nur noch mit einer HTTPS-Verbindung und diese wird vom \kort{}-Backend nicht unterstützt.
 
-Aus diesem Grund entstand die Idee, die \kort{} \gls{WebApp} mit einer anderen Technologie, neu zu schreiben.
+Aus diesem Grund entstand die Idee, die \kort{}-\gls{WebApp} mit einer anderen Technologie, neu zu schreiben.
 Dazu bot sich \brand{React-Native} an. 
-Diese ganz neue Technologie ermöglicht es uns, native \brand{iOS} und - seit Oktober 2015 - auch \brand{Android} Apps mit \brand{JavaScript} zu erstellen. 
+Diese ganz neue Technologie ermöglicht es native \brand{iOS} und - seit Oktober 2015 - auch \brand{Android} Apps mit \brand{JavaScript} zu erstellen. 
 
 
 \section{Ziele}
-Unser Ziel ist es eine \brand{Android} App mit gleicher Funktionalität wie die derzeitige \gls{WebApp} zu erstellen.
-Zusätzlich gibt es optionale Ziele, wie das Hinzufügen weiterer Mission-Types.
-Zum Beispiel das Korrigieren von Hausnummern oder eine weitere Option zur  Authentifizierungs über Twitter (mit \gls{OAuth}).
-%Social Media Integrations Ziel genauer definieren:
-Besprochen wurde auch die Integration von Social Media zum Austausch von Aktivitäten und das Erweitern vom Konzept für Gamification.
+\label{tb-einfuehrung-ziele}
+Ziel ist es eine \brand{Android} App mit gleicher Funktionalität wie die derzeitige \gls{WebApp} zu erstellen.
+Zusätzlich gibt es optionale Ziele, wie das Erstellen einer \brand{iOS}-App.
 
 \begin{itemize}
-	\item Erstellen einer \brand{Android} App mit \brand{React-Native}
-	\item Einsatz der \brand{React-Native} Geolocation Komponente zur Ansteuerung vom GPS.
+    Getestete Software-Entwicklungsumgebung 
+	\item Erstellen einer \brand{Android} App mit \brand{React-Native} - gleiche Funktionalität mit neuem Framework, damit die mobile App mit den neusten Technologien arbeitet und künftig besser wartbar ist.
+	\item Neue Erkenntnisse zu einem aktuellen Framework zur Realisierung von Native Mobile Apps "React Native".
 	\item Als Basis sollen Daten und Webdienste des \brand{OpenStreetMap}-Projekts verwendet werden.
-	\item Es soll geprüft werden, wie viel Aufwand eine \brand{iOS} App mit dem bestehenden Code der \brand{Android} Version erstellen lässt.
 	\item Es soll ein Erfahrungsbericht zu \brand{React-Native} erstellt werden.
-	\item Es sollen Vorkehrungen getroffen werden, um die Internationalisierung einfach zu ermöglichen.
+	\item Die Internationalisierung soll einfach umgesetzt sein.
 \end{itemize}
 
 
-\section{Rahmenbedingungen, Umfeld, Definitionen, Abgrenzungen}
+\section{Rahmenbedingungen}
 \begin{itemize}
-\item Es gelten die Rahmenbedingungen, Vorgaben und Termine der HSR.
-\item Die Projektabwicklung orientiert sich an einer iterativen, agilen Vorgehensweise. Als Vorgabe dient dabei Scrum.
-\item Die Kommunikation in der Projektgruppe, in der Dokumentation und an den Präsentationen erfolgt auf Deutsch.
+	\item Es gelten die Rahmenbedingungen, Vorgaben und Termine der HSR.
+	\item Die Projektabwicklung orientiert sich an einer iterativen, agilen Vorgehensweise. Als Vorgabe dient dabei Scrum.
 \end{itemize}
 
 
-\section{Vorgehen, Aufbau der Arbeit}
-Die Arbeit besteht aus drei Teilen. Der Bericht bildet den ersten Teil.
-Er enthält eine Einleitung zum Projekt mit den Zielen und Erklärungen zu den verwendeten Begriffen und Technologien.
+\section{Vorgehen}
+\begin{itemize}
+	\item Einarbeiten in JavaScript und React Native sowie damit verbundenen Technologien.
+	\item Einarbeiten in den Code und die Infrastruktur von (play-)Kort.
+	\item Iteratives Entwickeln des Prototyps.
+	\item Dokumentation abschliessen.
+\end{itemize}
 
-Im zweiten Teil beginnt die Dokumentation der eigentlichen Arbeitsresultate. 
-Da beschreiben wird den Vorgang zur Implementation
-der App, wie die bestehende Infrastruktur verwendet wurde und unsere Erfahrungsberichte zu \brand{React-Native}.
-Der dritte Teil beinhaltet die Projektmanagement- und monitoring Themen.
-Neben diesem Dokument umfasst die Arbeit die implementierte native App \kort{}-Reloaded. Der Source Code ist auf \brand{GitHub} frei zugänglich und auch auf der beigelegten CD, der Abgabe, zu finden.
-
-%Ergänzen mit:
-%Vorgehen: Was wurde gemacht? In welchen Teilschritten? %Risiken der Arbeit? Wer war involviert (Durchführung, %Entscheide usw.)? Details in anderen Kapiteln.
-%Einführung in die Problem- und Aufgabenstellun.
-%Übersicht über die übrigen Teile der Abgabe.
+Ziele und Resultate werden im technischen Bericht, Unterkapitel \nameref{tb-einfuehrung-ziele} und im Kapitel \nameref{tb-resultate}, erläutert.
+Alle Risiken sind im Kapitel \nameref{pm-projektmanagement-risikomanagement} definiert und die Meilensteine im Kapitel \nameref{pm-ms}.
+Das Team und die verschiedenen Rollen sind im Kapitel \nameref{pm-rollen} deklariert.
+Der Source Code ist auf \brand{GitHub} frei zugänglich.
