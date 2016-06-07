@@ -3,15 +3,14 @@
 
 \section{Resultate}
 
-\section{Möglichkeiten der Weiterentwicklung}
+\section{Weiterentwicklung}
 \kort{} hat ein grosses Potenzial um weiterentwickelt zu werden.
 Dieses umfasst vor allem zwei Bereiche:
 Wie kann \kort{} besser dazu beitragen, \brand{OpenStreetMap} Daten zu verbessern?
 Und wie kann der Benutzer mithilfe von Konzepten der Gamification weiter motiviert werden, zur Datenpflegung beizutragen?\newline
-Wir haben uns Gedanken dazu gemacht und hier zusammengefasst, womit \kort{} weiter optimiert werden könnte:
+Wir haben uns Gedanken dazu gemacht und hier zusammengefasst, wie \kort{} weiter optimiert werden könnte:
 \begin{itemize}
-  \item \kort{} als Web App (umgesetzt mit React)
-	\item Benutzerlogin mit weiteren \brand{OAuth} Diensten erweitern (z.B. \brand{Twitter}, \brand{GitHub})
+	\item Benutzerlogin mit weiteren OAuth Diensten erweitern (z.B. \brand{Twitter}, \brand{GitHub})
 	\item \gls{Gamification}
 	\begin{itemize}
 		\item von gesammelten \emph{Koins} abhängige Levels einführen (z.B. bestimmte Fehlertypen erst ab fortgeschrittenem Level anzeigen, Avatars, Levelbezeichnungen)
@@ -19,31 +18,23 @@ Wir haben uns Gedanken dazu gemacht und hier zusammengefasst, womit \kort{} weit
 		\item weitere Badges einführen (Ideen finden sich hier: \url{https://wiki.openstreetmap.org/wiki/Badges})
 		\item verschiedene Highscores anzeigen (z.B. zeitlich oder regional begrenzte, nach Fehlertypen kategorisiert, schnellste Aufsteiger)
 	\end{itemize}
-	\item neue Fehlertypen\footnote{\url{https://github.com/kort/kort/issues/81}}
+	\item neue realistische Fehlertypen:\footnote{\url{https://github.com/kort/kort/issues/81}}
 	\begin{itemize}
-		\item realistisch
-		\begin{itemize}
-			\item Hausnummern
-			\item Stockwerke
-			\item Einbahnstrassen erfassen
-			\item Öffnungszeiten von öffentlichen Gebäuden
-		\end{itemize}
-		\item weniger realistisch
+		\item Hausnummern
+		\item Stockwerke
+		\item Einbahnstrassen erfassen
+		\item Öffnungszeiten von öffentlichen Gebäuden
+	\end{itemize}
+	\item weniger realistische Fehlertypen:
 		\begin{itemize}
 			\item Kreisel erfassen
 			\item Bushaltestellen von \brand{DIDOK}\footnote{\url{https://didok.osm.ch/}}
 		\end{itemize}
-	\end{itemize}
 	\item Erkennen von Benutzern, die nicht sorgfältig validieren\footnote{\url{https://github.com/kort/kort/issues/7}}
 	\item ausführliche Statistiken für individuelle Benutzer\footnote{\url{https://github.com/kort/kort/issues/71}}
-	\item Funktionalität um als Benutzer neue Fehlertypen erfassen zu können
-	\item Ersetzen der bisherigen Validierung durch anderen Prüfmechanismus (z.B. nur noch Aufträge anzeigen – wenn dreimal die gleiche Antwort angegeben wurde gilt der Auftrag als verifiziert)
-	\item \brand{KeepRight} durch \brand{Osmose} ersetzen
-	\item Aufträge aus \brand{wheelmap}\footnote{\url{http://wheelmap.org}}	 einfügen
+	\item Aufträge aus \brand{wheelmap}\footnote{\url{http://wheelmap.org}}	einfügen
 	\item Offline-Fähigkeit (offline Maps für \brand{React Native} wären erforderlich)
-	\item einführende Hilfestellung für Neuanwender
-	\item wenn Aufträge nicht gelöst werden können (z.B. drei Mal) eine \brand{OSM}-Notiz generieren oder manuell eintragen
-	\item Übertragungssicherheit zwischen Webserver und Datenbank durch Verwendung von HTTPS erhöhen
+	\item wenn Aufträge nicht gelöst werden können (z.B. drei Mal) soll eine \brand{OSM}-Notiz generiert werden
 \end{itemize}
 
 \subsection{Unrealistische Arbeiten}
@@ -52,7 +43,7 @@ Wir haben uns Gedanken dazu gemacht und hier zusammengefasst, womit \kort{} weit
 	\begin{itemize}
 	  \item \emph{Begründung:} Aspekte des Datenschutzes bergen ein gewisses Risiko. Benutzer müssten fürs Hochladen von Bildern zusätzliche Bedingungen akzeptieren.
 	\end{itemize}
-	\item standortunabhängig Aufgaben lösen (Gefahr von Couch Crowdsourcing)
+	\item standortunabhängige Aufgaben lösen (Gefahr von Couch Crowdsourcing)
 	\begin{itemize}
 	  \item \emph{Begründung:} Es ist ein Anliegen der \brand{OpenStreetMap} Community, dass die Mapper vor Ort sein sollen um Aufträge zu lösen. 
 	\end{itemize}
