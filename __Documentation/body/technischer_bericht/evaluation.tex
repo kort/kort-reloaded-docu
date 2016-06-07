@@ -4,8 +4,21 @@ An einem \brand{React Native} Meetup an der HSR konnten erste Entscheidungen zur
 Unter den vielen \brand{JavaScript}-Editoren haben wir uns für \brand{Atom} entschieden, da \brand{Facebook} ein \brand{React Native}-Package (\brand{Nuclide}\footnote{\url{https://nuclide.io/}}) dafür veröffentlicht hat. 
 Weitere Hinweise zur Entwicklungsumgebung und den verwendeten Werkzeugen sind im Kapitel \nameref{pm-projektmanagement} beschrieben.
 %ToDo: React Native Erfahrungsbericht referenzieren.
-Für die Darstellung der Karte mit \brand{React Native} haben wir diese Varianten ausfindig gemacht:
 
+
+\section{Flux Architektur}
+
+\subsection{Fazit}
+OAuth.
+
+\section{App Navigation}
+
+\subsection{Fazit}
+OAuth.
+
+\section{Karte}
+
+Für die Darstellung der Karte mit \brand{React Native} haben wir mehrere Varianten ausfindig gemacht.
 
 \subsection{Variante A: React Native Map Komponente}
 
@@ -17,7 +30,6 @@ Für die Darstellung der Karte mit \brand{React Native} haben wir diese Variante
 \end{figure}
 
 Am \brand{React Native} Meetup wurde ein Blogpost zur \brand{React Native} Map-Komponente\footnote{\url{http://browniefed.com/blog/2015/05/30/create-a-map-with-react-art/}} vorgestellt. Diese Variante steht standardmässig zur Verfügung.
-
 
 \subsection{Variante B: Extended React Native Map Komponente}
 
@@ -92,7 +104,7 @@ Lässt sich mit Offline-Kacheln von \brand{OSM2VectorTiles}\footnote{\url{http:/
 Vorteile & Nachteile \\
 \hline
 Wäre eine der einzigen Möglichkeiten, falls keine andere Variante in Frage kommt.
- & Zu hoher Aufwand. \\
+ & Darstellung nur im Browser möglich. \\
 \hline
 \multicolumn{2}{|c|}{\textbf{Variante E: Raster-Tiles selbst darstellen}} \\
 \hline
@@ -107,39 +119,73 @@ Wäre eine der einzigen Möglichkeiten, falls keine andere Variante in Frage kom
 
 \subsection{Fazit}
 
-Die Native Map APIs von \brand{Google} und \brand{Apple} kamen für uns nicht in Frage.
-Wir möchten mit unserer App \brand{OpenStreetMap} Daten verbessern und setzen somit aus moralischen Aspekten auch auf die entsprechende Karte.
-%Google Lizenz-Grund nicht erwähnt, da eventuell referenziert werden müsste.
+Varianen, die Native Map APIs von \brand{Google} und \brand{Apple} verwenden, kamen für uns nicht in Frage.
+Wir möchten mit unserer App \brand{OpenStreetMap} Daten verbessern und setzen somit aus moralischen Aspekten auch auf diese Karten.
 Bei der \brand{React Native} Map-Komponente gab es keine Möglichkeit Bilder auf der Karte darzustellen und die Raster-Tiles "von Hand" anzuzeigen wäre schlicht zu aufwendig. 
 Es liesse sich auch nur sehr umständlich eine schöne Map designen.
 
 Somit sprang uns als erstes die Portierung von Leaflet für \brand{React} ins Auge. 
 Nach dem betrachten vom Code fiel uns aber auf, dass diese Variante eventuell nur möglich ist, wenn die Karte in einer WebView-Komponente von \brand{React Native} dargestellt wird.
-Eine Lösung mit der WebView war zu Aufwendig um richtig getestet zu werden. 
-Es widerspricht auch der Grundidee, da mit \brand{React Native} native Applikationen entwickelt werden.
 
 Als letzte Möglichkeit blieb die MapBox GL Library.
 Diese hat beim Testen auf Anhieb funktioniert und uns überzeugt.
-Der einzige Haken wäre das Pricing, welches bei einer sehr hohen Benutzeranzahl (beschränkt auf 50'000) beachtet werden muss.
-Den Gedanke zur Offline-Unterstützung hatten wir auch.
+Der einzige Haken wären die Kosten, welche bei einer sehr hohen Benutzeranzahl (ab 50'000 Nutzern) beachtet werden müssen.
+Den Gedanken zur Offline-Unterstützung hatten wir auch.
 Nur gäbe es da Probleme mit der Grösse der App, da die Vektor-Kacheln und die Missionen im Voraus heruntergeladen und mit installiert werden müssten.
 
+\section{OAuth}
+Gebraucht wird ein Login-Dienst für \brand{Google}-, \brand{Facebook}- und \brand{OpenStreetMap}-Konten. 
+Für die Authentifizierung wurden diese Möglichkeiten evaluiert:
 
-Für die Authentifizierung haben wir diese Möglichkeiten evaluiert:
+\subsection{Variante A: Auth0}
 
-\begin{itemize}
-	\item Auth0: react-native-lock (für iOS und Android).\footnote{\url{https://github.com/auth0/react-native-lock}}
-	\begin{itemize}
-    	\item Haken: Nicht Open Source. Nur unter diesen Bedingungen kostenlos verwendbar:
-    	\begin{itemize}
-    		\item Der gesamte Code muss frei auf GitHub verfügbar sein.
-    		\item Es dar kein Geld für das Open Source Projekt oder für Derivate verlangt werden. 
-    		\item Es muss ein Auth0 Badge auf der Webseite hinzugefügt werden.
-    		\item Das Projekt darf nicht von einem anderen Unternehmen weitergeführt werden um Einkünfte zu erzielen.
-		\end{itemize} 
-	\end{itemize} 
-	\item eigene Entwicklung
-\end{itemize}
+\brand{Auth0}\footnote{\url{https://github.com/auth0/react-native-lock}}\footnote{\url{https://auth0.com/}} bietet eine Implementation für beliebige OAuth 2-Dienste. 
+
+\subsection{Variante B: Open-Source-Projekte}
+
+Ein Projekt für die \brand{Google}-Authentifizierung wäre react-native-google-signin\footnote{\url{https://github.com/devfd/react-native-google-signin}}. 
+Für \brand{Facebook} bot sich react-native-facebook-login
+\footnote{\url{https://github.com/magus/react-native-facebook-login}} an.
+
+
+\begin{table}[H]
+\centering
+\label{tb-evaluation-oauth-komponente}
+\begin{tabular}{|p{7cm}|p{7cm}|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Variante A: \brand{Auth0}}} \\
+\hline
+Vorteile & Nachteile \\
+\hline
+Sehr einfach Einbindung.
+ & Keine OAuth 1.0a Unterstützung. \\
+\hline
+Kostenlos für Open-Source-Projekte.
+ & Schlecht erweiterbar mit eigenem Login für \brand{OpenStreetMap}. \\
+\hline
+\multicolumn{2}{|c|}{\textbf{Variante B: Open-Source-Projekte}} \\
+\hline
+Vorteile & Nachteile \\
+\hline
+.
+ & Es braucht für jeden Dienst ein eigenes Open-Source-Projekt.
+ Es gibt kein Projekt, welches alle benötigten Login-Dienste für \brand{iOS} und \brand{Android}  unterstützt. \\
+\hline
+ & Keine Lösung für einen \brand{OpenStreetMap}-Login vorhanden. \\
+\hline
+\end{tabular}
+\caption{Bewertung OAuth-Komponente}
+\end{table}
+
+
+\subsection{Fazit}
+\brand{Auth0} kam definitiv nicht in Frage, da es nicht mit einem OAuth 1.0a-Login erweiterbar ist.
+Entschieden haben wir uns für das react-native-google-signin-Projekt.
+Es funktioniert auf beiden Plattformen und liefert ein Token, das vom \kort{}-Backend überprüft werden kann.
+\brand{Facebook} wird vom \kort{}-Backend nicht unterstützt und das react-native-facebook-login-Projekt auf Github liefert auch kein Token, wie es beim \brand{Google}-Login der Fall ist.
+Weitere Anpassungen am Backend wären nötig wären.
+Wir hatten uns dazu entschieden, keine Backend-Anpassungen durchzuführen.
+
 
 \section{Plattformunabhängigkeit}
 Eine Stärke von \brand{React Native} ist die Plattformunabhängigkeit. 
@@ -147,13 +193,3 @@ Wenn keine spezifische \brand{Android}- oder \brand{iOS}-Komponenten verwendet w
 Also haben wir beim Entwickeln der \brand{Android}-App darauf geachtet, möglichst keine spezifische Komponenten zu nutzen. 
 Mit einer Blacklist für Komponenten, die vom React Native Packager\footnote{\url{https://github.com/facebook/react-native/tree/master/packager}} angeboten wird, konnten wir das Maximum an wiederverwendbarem Code herausholen. 
 Wenn möglich wurden auch alle Dateien mit der Endung \textit{.android.js} ignoriert, da diese ein davon abweichendes Pendant für \brand{iOS} (mit der Endung \textit{.ios.js}) haben.
-
-\section{Flux}
-
-\section{App Navigation}
-
-\section{Karte}
-
-\section{OAuth}
-
-\section{Fazit}
