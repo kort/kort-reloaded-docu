@@ -31,15 +31,14 @@
 \end{itemize}
 
 \subsubsection{Erledigte Arbeiten}
-Dokumentiert wurden die Ausgangslage, die Anforderungsspezifikation, der Projektplan und das Risikomanagement.
-Die Aufgabenstellung wurde soweit definiert, dass sie mit dem Projektplan übereinstimmt.
-Die endgültige Aufgabenstellung ist erst zur Zwischenpräsentation, in der Mitte des Semesters, geplant.
-Für die Map Komponente wurde die MapBox GL Library\footnote{\url{https://libraries.io/npm/react-native-mapbox-gl}} mit den Vektor Daten von osm2vectortiles\footnote{\url{http://osm2vectortiles.org/}}.
-Nebenbei konnten wichtige Erfahrungen in den Technologien (\brand{Java Script}, \brand{React}, \brand{React Native}) gemacht werden.
+Eine erste Version der Aufgabenstellung konnte erarbeitet werden. 
+Die Dokumentation wurde eingeleitet.
+Es gelang uns einen automatisierten Build der App, aus dem \brand{GitHub}-Sourcecode, mit \brand{Travis CI} aufzusetzen.
+Für die Map Komponente wurde die MapBox GL Library\footnote{\url{https://libraries.io/npm/react-native-mapbox-gl}} mit den Vektor Daten von osm2vectortiles\footnote{\url{http://osm2vectortiles.org/}} evaluiert und getestet.
+Nebenbei konnten wichtige Erfahrungen in den verwendeten Technologien (\brand{Java Script}, \brand{React} und \brand{React Native}) gemacht werden.
 Zusätzlich wurde ein für \brand{Android} angepasstes Design entworfen und Grundkonzepte der Architektur erarbeitet.
 Die Architektur ist noch nicht final, sie erleichtert uns aber den Einstig beim Programmieren.
 Die Infrastruktur ist soweit aufgesetzt.
-Es fehlten zu diesem Zeitpunkt nur noch die Zugangsdaten, welche aber noch nicht dringend gebraucht wurden.
 
 \subsubsection{Probleme}
 Für die detaillierte Erarbeitung der Testspezifikation fehlte noch die nötige Erfahrung in \brand{React Native}.
@@ -54,26 +53,29 @@ Für die detaillierte Erarbeitung der Testspezifikation fehlte noch die nötige 
 	\begin{itemize}
 		\item Tab Navigation
 		\item Darstellung der Karte
+		\item Evaluation der flux-Architektur und Implementation des Grundgerüstes
 		\item Missionen auf Map anzeigen
 		\item Authentifizierung mit OAuth
 	\end{itemize}
 \end{itemize}
 
 \subsubsection{Erledigte Arbeiten}
-Die Entwicklungsumgebung wurde besser eingerichtet – das \brand{Travis} Konfigurationsfile verfeinert, \brand{ESLint}\footnote{\url{http://eslint.org/}} und \brand{flow}\footnote{\url{http://flowtype.org/}} aufgesetzt und konfiguriert.\newline
+Die Entwicklungsumgebung wurde optimiert. Das \brand{Travis}-Konfigurationsfile prüft den Code nun mit \brand{ESLint}\footnote{\url{http://eslint.org/}} (\brand{JavaScript linter, checkt Styleguides}) und \brand{flow}\footnote{\url{http://flowtype.org/}} (static type checker).\newline
 Für die Tab Navigation konnte eine Demo mit \brand{react-native-scrollable-tab-view}\footnote{\url{https://github.com/brentvatne/react-native-scrollable-tab-view}} umgesetzt werden. Diese muss noch in der \kort{} App eingebaut werden.\newline
-Die Authentifizierung mit \brand{OAuth} konnte ebenfalls anhand einer Demo getestet werden – allerdings nur mit \brand{Facebook} und \brand{Google}, \brand{OpenStreetMap} erfordert noch zusätzliche Arbeiten.\newline
-Die Darstellung der Karte aus \nameref{pm-ms2} wurde leicht ausgebaut. Neu wird nun der Standort des Benutzers ermittelt und die Missionen im Umkreis geladen, allerdings noch nicht dargestellt.
+\brand{OAuth} konnte ebenfalls anhand einer Demo getestet werden – allerdings nur mit \brand{Facebook} und \brand{Google}.\newline
+Die Darstellung der Karte aus \nameref{pm-ms2} wurde leicht ausgebaut. Neu wird nun der Standort des Benutzers ermittelt.
+Wir haben die Architekturvarianten evaluiert und uns für die flux-Architektur entschieden.
+Daraufhin wurde ein Grundgerüst für die Verwendung vom \kort{}-API mit der flux-Architektur erstellt. 
+Somit konnten die Missionen im Umkreis von fünf Kilometern geladen werden.
 
 \subsubsection{Probleme}
 Schwierigkeiten traten vor allem im Zusammenhang mit \brand{React Native} auf.
-Oft konnte das Projekt aus scheinbar willkürlichen Gründen nicht kompiliert werden.
-Die Fehlerbehandlung hat uns enorm viel Zeit gekostet.
+Oft gab es Build-Fehler bei gleicher Code-Basis.
+Die Fehlerbehandlung hat uns enorm viel Zeit gekostet und es war schwer im Internet Hilfestellungen zu erhalten.
+Da \brand{React Native} jede zwei Wochen ein Update erhält, sind die Dokumentationen oder die Diskussionen im Internet teilweise schon wieder veraltet.\newline
 Im Austausch mit anderen \brand{React Native} Entwicklern haben wir dasselbe Feedback erhalten.\newline
-Des Weiteren ist es schwer, im Internet Hilfestellungen zu erhalten.
-Dies liegt vor allem daran, dass \brand{React Native} noch immer in den Kinderschuhen steckt und ständig weiterentwickelt wird.
-Deshalb ist die Dokumentation oder die Diskussionen im Internet teilweise schon wieder veraltet oder noch unvollständig.\newline
-Der Prototyp konnte nicht wie geplant fertiggestellt werden und einige Arbeiten müssen auf den nächsten Meilenstein ausgelagert werden.
+Der Prototyp konnte nicht wie geplant fertiggestellt werden und einige Arbeiten mussten auf den nächsten Meilenstein ausgelagert werden.
+Die Authentifizierung mit dem Backend konnte noch nicht umgesetzt werden.
 
 \subsection{MS4: Zwischenpräsentation}
 \label{pm-ms4}
@@ -82,8 +84,7 @@ Der Prototyp konnte nicht wie geplant fertiggestellt werden und einige Arbeiten 
 \begin{itemize}
 	\item 1. Prototyp fertig (s. \nameref{pm-ms3})
 	\begin{itemize}
-		\item OAuth mit \brand{Google} und \brand{Facebook}
-		\item Missionen auf Karte darstellen (Annotations)
+		\item Missionen auf Karte darstellen (Annotation-Marker)
 		\item Tab Navigation
 	\end{itemize}
 	\item Zwischenpräsentation (Dauer ca. 30 Minuten)
@@ -96,30 +97,62 @@ Der Prototyp konnte nicht wie geplant fertiggestellt werden und einige Arbeiten 
 \end{itemize}
 
 \subsubsection{Erledigte Arbeiten}
-
+Der Prototyp enthielt nun die Kartenansicht in einer Tab-Ansicht. 
+Marker an den jeweiligen Positionen der geladenen Missionen konnten eingefügt werden.
+Durch einen Klick auf einen Marker konnte der Titel der Mission erfolgreich in die Konsole geloggt werden.
+Leider konnte noch immer keine Lösung für die Implementation eines Logins mit OAuth 1.0a (\brand{OpenStreetMap}) gefunden werden.
+Dieses Feature noch zur Abgabe zu liefern wäre unrealistisch.
+Deswegen wurde es auf den \hyperref[pm-ms9]{Meilenstein 9: Salzburg Konferenz} verschoben.
 
 \subsubsection{Probleme}
 Weiterhin traten Schwierigkeiten mit willkürlichen Fehlern der \brand{React Native} App auf. 
-Wir hatten beim gleichen Stand mit unterschiedlichen Fehlern zu kämpfen.
 Aus diesen Gründen konnte die Navigation und die Struktur der App nicht abschliessend umgesetzt werden.
-Das gilt auch für die Authentifizierung, mit \brand{Google} und \brand{Facebook}, welche in einer eigenständigen App getestet wurde.
+Dass der Benutzer nach dem Login automatisch zur Tab-Ansicht weitergeleitet wurde, hatte noch nicht geklappt.
+Zwischenzeitlich wurde aus diesem Grund das Erhalten des Login-Tokens, nach der Authentifizierung über \brand{Google} und \brand{Facebook}, in einer separaten App getestet.
+
 
 \subsection{MS5: 1. Release}
 \label{pm-ms5}
 \textbf{Fällig am 20.05.2016}
 \subsubsection{Resultate}
 \begin{itemize}
-	\item die Funktionalität der ursprünglichen \kort{} \gls{WebApp} ist als \gls{NativeApp} implementiert
-	\item \brand{OpenStreetMap} Authentifizierung umgesetzt
+	\item View-Komponenten fertig entworfen
+	\item Backend API mit der flux-Architektur eingebunden
+	\item Token basierte Authentifizierung im Frontend umgesetzt, nachdem das Backend von Stefan Oderbolz dafür angepasst wurde.
 \end{itemize}
+
+\subsubsection{Erledigte Arbeiten}
+Unterdessen konnte die GUI grösstenteils fertiggestellt werden. 
+Es fehlte noch die dynamische Behandlung von gewissen View-Komponenten.
+Zum Beispiel die Unterscheidung ob beim Lösen einer Mission ein Picker, zum Auswählen der Antwort, gerendert wird, oder ob ein Text-Input-Feld angeboten wird.
+Gleichzeitig wurden alle API-Aufrufe mit der flux-Architektur eingebunden - aber noch nicht vollständig getestet.
+
+\subsubsection{Probleme}
+Weiterhin war es nicht möglich mit der Router-Flux-Navigationskomponente eine Weiterleitung, nach Erfolgreichem Login, zur Kartenansicht umzusetzen.
+Hierbei handelte es sich um einen bekannten Fehler dieser Komponente.
+Das Verzögerte leider das geplante Ziel: eine Mission zu lösen.
 
 \subsection{MS6: 2. Release}
 \label{pm-ms6}
 \textbf{Fällig am 03.06.2016}
 \subsubsection{Resultate}
 \begin{itemize}
-	\item die Native App enthält alle vorgegebenen Features
+	\item View-Komponenten fertiggestellt
+	\item Login Weiterleitung
+	\item Fertigstellung der Architektur
+	\item Testing abgeschlossen
 \end{itemize}
+
+\subsubsection{Erledigte Arbeiten}
+Alle View-Komponenten sind nun dynamisch und zeigen je nach Zustand der Komponente die entsprechende Oberfläche.
+Durch eine zusätzliche App-Loader-View konnte das Problem der Weiterleitung nach dem Login behoben werden.
+Diese Komponente lädt nun alles im Voraus und erst danach wird je nach Zustand, ob der Benutzer eingeloggt ist, oder nicht, entsprechend weitergeleitet.
+Parallel wurde die Architektur und die Logik fertiggestellt und konnte nach und nach von den View-Komponenten verwendet werden.
+Schlussendlich konnten wir erfolgreich eine Mission lösen.
+% ToDo: Weitere erledigte Arbeiten
+
+\subsubsection{Probleme}
+
 
 \subsection{MS7: Schlussabgabe}
 \label{pm-ms7}
@@ -131,8 +164,13 @@ Das gilt auch für die Authentifizierung, mit \brand{Google} und \brand{Facebook
 	\item CD mit Abgabe eingereicht
 	\item Abstract eingereicht
 	\item Poster eingereicht
-	\item evtl. App deployed
 \end{itemize}
+
+\subsubsection{Erledigte Arbeiten}
+
+
+\subsubsection{Probleme}
+
 
 \subsection{MS: Schlusspräsentation}
 \label{pm-m8}
