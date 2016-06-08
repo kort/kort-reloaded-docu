@@ -3,23 +3,83 @@
 An einem \brand{React Native} Meetup an der HSR konnten erste Entscheidungen zur Software-Entwicklungsumgebung und welche Lösungskonzepte es für die Darstellung der Karte gibt, geklärt werden.
 Unter den vielen \brand{JavaScript}-Editoren haben wir uns für \brand{Atom} entschieden, da \brand{Facebook} ein \brand{React Native}-Package (\brand{Nuclide}\footnote{\url{https://nuclide.io/}}) dafür veröffentlicht hat. 
 Weitere Hinweise zur Entwicklungsumgebung und den verwendeten Werkzeugen sind im Kapitel \nameref{pm-projektmanagement} beschrieben.
-%ToDo: React Native Erfahrungsbericht referenzieren.
 
-
-\section{Flux Architektur}
+\section{Architektur}
+\begin{table}[]
+\centering
+\label{tb-evaluation-architektur}
+\begin{tabular}{|p{7cm}|p{7cm}|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Variante A: flux-Architektur}} \\
+\hline
+Vorteile & Nachteile \\
+\hline
+\brand{Android} und \brand{iOS} Unterstützung 
+& Schlechte Dokumentation zur Verwendung. \\
+\hline
+Flexibel und für einfache Use Cases gedacht
+ & Schlecht erweiterbar für komplexere Use Cases in zukünftigen Versionen \\
+\hline
+\multicolumn{2}{|c|}{\textbf{Variante B: }} \\
+\hline
+Vorteile & Nachteile \\
+\hline
+  &  \\
+\hline
+  &  \\
+\hline
+  &  \\
+\hline
+\end{tabular}
+\caption{Bewertung Architektur}
+\end{table}
 
 \subsection{Fazit}
-OAuth.
 
 \section{App Navigation}
+\begin{table}[]
+\centering
+\label{tb-evaluation-app-navigation}
+\begin{tabular}{|p{7cm}|p{7cm}|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Variante A: \brand{React Native} Navigator-Komponente}} \\
+\hline
+Vorteile & Nachteile \\
+\hline
+\brand{Android} und \brand{iOS} Unterstützung 
+& Schlechte Dokumentation zur Verwendung. \\
+\hline
+Flexibel und für einfache Use Cases gedacht
+ & Schlecht erweiterbar für komplexere Use Cases in zukünftigen Versionen \\
+\hline
+\multicolumn{2}{|c|}{\textbf{Variante B: React-Native-Router-Flux\footnote{\url{https://github.com/aksonov/react-native-router-flux}}}} \\
+\hline
+Vorteile & Nachteile \\
+\hline
+Bestens geeignet für die angewendete flux-Architektur & Zusätzlicher Zeitaufwand \\
+\hline
+Leicht erweiterbar und wartbar.
+Wird verbreitet eingesetzt.
+ & Stellt eine weitere Abhängigkeit an ein externes Projekt dar. \\
+\hline
+Alle Views sind an einem Ort deklariert.
+Das heisst, es müssen keine Navigator-Objekte herumgereicht werden. 
+Ein Wechsel der View ist mit einem Funktionsaufruf von überall aus möglich. 
+ &  \\
+\hline
+\end{tabular}
+\caption{Bewertung Navigation-Komponente}
+\end{table}
 
 \subsection{Fazit}
-OAuth.
+Nachdem die Entscheidung zur Verwendung der flux-Architektur gefallen ist, fiel hier die Entscheidung zugunsten vom React-Native-Router-Flux.
+Alle Views sind an einem Ort im Code festgelegt und lassen sich bequem erweitern.
+Das macht den Code auch verständlicher.
 
 \section{Karte}
 \label{tb-evaluation-karte}
 
-Für die Darstellung der Karte mit \brand{React Native} haben wir mehrere Varianten ausfindig gemacht.
+Für die Darstellung der Karte mit \brand{React Native} sind mehrere Varianten ausfindig gemacht worden.
 
 \subsection{Variante A: React Native Map Komponente}
 
@@ -71,7 +131,7 @@ Die letzte mögliche Variante war, dass wir die benötigten Raster-Kacheln, die 
 \label{tb-evaluation-map-komponente}
 \begin{tabular}{|p{7cm}|p{7cm}|}
 \hline
-\multicolumn{2}{|c|}{\textbf{Variante A: React Native Map Komponente}} \\
+\multicolumn{2}{|c|}{\textbf{Variante A: \brand{React Native} Map Komponente}} \\
 \hline
 Vorteile & Nachteile \\
 \hline

@@ -58,8 +58,15 @@ Viele Informationen sind in GitHub-Issues\footnote{\url{https://github.com/faceb
 
 
 \section{OpenStreetMap OAuth}
-Im Gegensatz zu den anderen Social-Login-Varianten (\brand{Google} und \brand{Facebook}), die OAuth 2.0 anbieten, unterstützt \brand{OpenStreetMap} noch OAuth 1.0a.
+Im Gegensatz zu den anderen Social-Login-Varianten (\brand{Google} und \brand{Facebook}), die OAuth 2.0 anbieten, unterstützt \brand{OpenStreetMap} noch OAuth 1.0a\footnote{\url{http://wiki.openstreetmap.org/wiki/OAuth}}.
 
 
 \section{Kort Schnittstelle}
+Die \kort{}-\gls{WebApp} nutzte eine Session-basierte (Cookie-based) Authentifizierung. 
+Eine Session-ID wird auf der Seite des Clients in einem Cookie gespeichert. 
+Bei jedem Request sendet der Client-Browser das Cookie an den Server und wird so wiedererkannt. 
+Der Server geht dann davon aus, dass es sich beim Client um den Inhaber der Session-ID handelt. 
+\kort{} als native App kann aber keine Session zu einem Server aufbauen.
+Das \kort{}-Backend wurde von Stefan Oderbolz und Jürg Hunziker dann so angepasst, dass eine Token-basierte Authentifizierung unterstützt wird.
+Vorerst wurde nur eine Unterstützung für eine Login-Variante über \brand{Google} umgesetzt.
 
