@@ -128,6 +128,29 @@ Dabei wurden die Themengebiete zum Einlesen aufgeteilt und am schlussendlich bes
 \caption{Risiko R05}
 \end{table}
 
+\begin{table}[H]
+\centering
+\label{pm-projektmanagement-risikomanagement-r06}
+\begin{tabular}{|p{4.5cm}|p{11cm}|}
+\hline
+\multicolumn{2}{|l|}{\textbf{R06: Mangelnde Erfahrung mit OAuth}} \\
+\hline
+\textbf{Beschreibung} & Keiner der Entwickler ist mit OAuth vertraut. Dadurch, dass sich die Implementation der Authentifizierung bei einem native Client zu einer Implementation einer \gls{Webapp} unterscheidet (Token- vs. Session-Basiert), wird mehr Zeit beansprucht. \\
+\hline
+\textbf{Schadenspotential} & 40h \\
+\hline
+\textbf{Eintrittswahrsch.} & 60\% \\
+\hline
+\textbf{Auswirkung} & Die \brand{OpenStreetMap}-Community würde nur sehr ungern auf einen entsprechenden Login verzichten. \\
+\hline
+\textbf{Vorbeugung} & Mehr Aufwand in die Evaluation stecken. \\
+\hline
+\textbf{Massnahmen beim Eintreffen} & Rücksprache mit Herrn. Prof. S. Keller \\
+\hline
+\end{tabular}
+\caption{Risiko R06}
+\end{table}
+
 \subsubsection{Risikoanalyse MS2: Ende Elaboration}
 Am 29. März 2016 (Fälligkeitsdatum des Meilensteins) wurden die Risiken erneut besprochen.
 \textbf{R01 Mangelnde Erfahrung mit \brand{JavaScript}, \brand{React} und \brand{React Native}}: Die Eintrittswahrscheinlichkeit konnte auf 50\% gesenkt werden. \textbf{R03} wurde nach Absprache mit Jürg Hunziker und Stefan Oderbolz ganz eliminiert.
@@ -146,3 +169,4 @@ Das Eintreten von \textbf{R02 Es existiert keine passende Map Library für \bran
 
 \subsubsection{Risikoanalyse MS7: Schlussabgabe}
 \textbf{R04: \brand{React Native} ist noch nicht ausgereift genug für \brand{Android}} wurde dank einer Lauffähigen Version auf 10\% gesenkt.
+\textbf{R06: Mangelnde Erfahrung mit OAuth} ist ein weiterhin bestehendes Risiko - die \brand{OpenStreetMap}-Authentifizierung konnte leider nicht umgesetzt werden.
