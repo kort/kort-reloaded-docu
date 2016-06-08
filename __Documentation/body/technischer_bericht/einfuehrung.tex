@@ -2,43 +2,68 @@
 \label{tb-einfuehrung}
 
 \section{Problemstellung}
-\kort{} ist eine \gls{WebApp}, entwickelt mit dem \brand{Sencha Touch 2} \gls{Framework}.
+Das \brand{OpenStreetMap}-Projekt beinhaltet eine sehr grosse Menge an Daten, welche frei zugänglich sind.
+Für die Pflege dieser Daten ist es daher naheliegend, auf unterstützende Software zurückzugreifen.
+Zu diesem Zweck gibt es eine Reihe von Applikationen, welche sich grob in zwei Kategorien einteilen lassen:
+Editoren und Tools zur Qualitätssicherung.
+
+Mit den Editoren lässt sich direkt oder indirekt die \brand{OpenStreetMap}-Karte verändern und ergänzen.
+Die Qualitätssicherungstools haben sich zum Ziel gesetzt, fehlende oder falsche Daten aufzuspüren.
+Diese werden dann entweder automatisch korrigiert oder übersichtlich dargestellt, um eine manuelle Korrektur zu ermöglichen.
+
+Einige Tools wie \brand{KeepRight}\footnote{\url{http://keepright.ipax.at/}} oder \brand{Osmose}\footnote{\url{http://osmose.openstreetmap.fr/map/}} berechnen aus den Karten-Rohdaten die vorhandenen Fehler.
+Dazu werden einige Heuristiken verwendet oder einfache Plausibilitätsprüfungen durchgeführt.
+Typische Fehler aus diesen Quellen sind \glspl{POI} ohne Namen oder Strassen ohne definierte Geschwindigkeitslimiten.
+
+Zur Behebung dieser Fehler ist die cross-platform \gls{WebApp} \kort{}\footnote{\url{http://play.kort.ch/}} in Form einer Bachelorarbeit von Jürg Hunziker und Stefan Oderbolz, im Herbstsemester 2012/13, entwickelt  worden.
+
+\kort{} wurde mit dem \brand{Sencha Touch 2} \gls{Framework} entwickelt.
 Die Implementation funktioniert auf neuen Browsern nicht mehr sinngemäss.
 Zum Beispiel ist das Scrollen blockiert.
 So ist es auf einem mobilen Gerät unmöglich, das Login-Feld überhaupt auszufüllen.
 Die Ortung und die HTTP Requests funktionieren nur noch mit dem \brand{Firefox}.
 \brand{Google Chrome} erlaubt die Geolocation nur noch mit einer HTTPS-Verbindung und diese wird vom \kort{}-Backend nicht unterstützt.
 
-Aus diesem Grund entstand die Idee, die \kort{}-\gls{WebApp} mit einer anderen Technologie, neu zu schreiben.
+Aus diesem Grund entstand die Idee, die \kort{}-\gls{WebApp} mit einem native Client zu ersetzen.
 Dazu bot sich \brand{React-Native} an. 
 Diese ganz neue Technologie ermöglicht es native \brand{iOS} und - seit Oktober 2015 - auch \brand{Android} Apps mit \brand{JavaScript} zu erstellen. 
-
+Dadurch, dass \brand{React-Native} noch in den Kinderschuhen steckt und die Entwickler noch keine Erfahrung mit \brand{JavaScript} haben, stellt dies ein grosses \hyperref[pm-projektmanagement-risikomanagement]{Risiko} für diese Bachelorarbeit dar.
 
 \section{Ziele}
 \label{tb-einfuehrung-ziele}
 Ziel ist es eine \brand{Android} App mit gleicher Funktionalität wie die derzeitige \gls{WebApp} zu erstellen.
-Zusätzlich gibt es optionale Ziele, wie das Erstellen einer \brand{iOS}-App.
+Zusätzlich gibt es optionale Ziele, wie das Erstellen der \brand{iOS}-App.
+Es entstand die Idee, den Validationsmechanismus von \kort{} abzulösen.
+Bis jetzt wurden viel zu viele Missionen gelöst, die nie von anderen Benutzern validiert worden sind.
+Das führte dazu, dass nur sehr wenige Änderungen überhaupt in der \brand{OpenStreetMap}-Datenbank eingefügt wurden.
+Weglassen kam aber nicht in Frage, denn die \brand{OpenStreetMap}-Community forderte, dass die Antworten geprüft werden müssen.
+Validationsaufträge werden dem Benutzer nun einfach als normalen Auftrag angezeigt.
+Sobald die abgeschickte Antwort mit der zu validierenden Antwort übereinstimmt, wird im Hintergrund eine positive Bewertung versendet.
+Ab drei positiven Bewertungen gilt die Antwort als korrekt und sie schafft es in die \brand{OpenStreetMap}-Datenbank.
 
 \begin{itemize}
 	\item Erstellen einer \brand{Android} App mit \brand{React-Native} - gleiche Funktionalität mit neuem Framework, damit die mobile App mit den neusten Technologien arbeitet und künftig besser wartbar ist.
-	\item Neue Erkenntnisse zum aktuellen Framework (\brand{React-Native}), zur Realisierung von native mobile Apps, sammeln.
 	\item Als Basis sollen Daten und Webdienste des \brand{OpenStreetMap}-Projekts verwendet werden.
+	\item Validationsmechanismus soll abgelöst werden.
+	\item Neue Erkenntnisse zum aktuellen Framework (\brand{React-Native}), zur Realisierung von native mobile Apps, sammeln.
 	\item Es soll ein Erfahrungsbericht zu \brand{React-Native} erstellt werden.
 	\item Die Internationalisierung soll einfach umgesetzt sein.
 \end{itemize}
 
-
 \section{Rahmenbedingungen}
+Die \brand{React-Native} baut auf das bestehende \kort{}-Backend auf.
+Folglich geht des bei der Entwicklung nur um das Frontend - also um den native Client.
+Anpassungen am Backend lagen nicht im Aufgabenbereich der Entwickler.
 \begin{itemize}
 	\item Es gelten die Rahmenbedingungen, Vorgaben und Termine der HSR.
-	\item Die Projektabwicklung orientiert sich an einer iterativen, agilen Vorgehensweise. Als Vorgabe dient dabei Scrum.
+	\item Die Projektabwicklung orientiert sich an einer iterativen, agilen Vorgehensweise. 
+	Als Vorgabe dient dabei Scrum.
 \end{itemize}
-
 
 \section{Vorgehen}
 \begin{itemize}
-	\item Einarbeiten in JavaScript und React Native sowie damit verbundenen Technologien.
-	\item Einarbeiten in den Code und die Infrastruktur von (play-)Kort.
+	\item Einarbeiten in \brand{JavaScript} und \brand{React Native} sowie damit verbundenen Technologien.
+	\item Einarbeiten in den Code und die Infrastruktur von \kort{}.
 	\item Iteratives Entwickeln des Prototyps.
 	\item Dokumentation abschliessen.
 \end{itemize}
