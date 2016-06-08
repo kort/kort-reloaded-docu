@@ -3,21 +3,23 @@
 % Titel auch in Kopfzeile anzeigen
 \markboth{Abstract}{Abstract}
 
-\brand{OpenStreetMap} ist ein freies Projekt und wird von Mappern aus der ganzen Welt erstellt. 
-Wege, Gebäude und viele andere geographische Daten werden weltweit in der Datenbank erfasst und gepflegt. 
- \brand{OpenStreetMap} setzt auf lokales Wissen der Autoren, ist Community Driven und kann für jeden Zweck verwendet werden. 
- Aus diesem Grund ist es nicht ausgeschlossen, dass fehlerhafte oder unvollständige Daten enthalten sind.
+\brand{OpenStreetMap} ist ein freies Projekt und wird von Mappern aus der ganzen Welt unterstützt.
+ Wege, Gebäude und viele andere geographische Daten werden weltweit in der Datenbank erfasst und gepflegt. 
+ OpenStreetMap kann von jedem bearbeitet werden, besteht aus einer grossen Community und setzt auf lokales Wissen der Autoren. 
+ Aus diesem Grund ist es nicht ausgeschlossen, dass fehlerhafte oder unvollständige Daten enthalten sind.
+                    
+Zur Korrektur der Daten gibt es viele verschiedene Tools, die von Experten genutzt werden können.
+ Um eine breitere Masse anzusprechen, entstand 2012 die \gls{WebApp} \kort{} im Rahmen einer Bachelorarbeit. 
+ Mit \kort{} kann der Benutzer Aufträge lösen, welche zur Verbesserung der Daten in \brand{OpenStreetMap} beitragen. 
+ Auf einer Kartenansicht werden die Aufträge, welche sich im Umfeld des Benutzers befinden, dargestellt. 
+ Für das Eintragen einer Lösung wird man mit Punkten (sogenannte Koins) belohnt und kann so in der Rangliste aufsteigen.
  
- Zur Korrektur der Daten gibt es viele verschiedene Tools, die von Experten genutzt werden können.
- Um eine breitere Masse anzusprechen entstand 2012 die \gls{WebApp} \kort{} als Bachelorarbeit von Jürg Hunziker und Stefan Oderbolz.
- Die \kort{}-\gls{WebApp} sammelt mit dem \brand{KeepRight}-Dienst Korrekturaufträge für die Nutzer in einer \brand{PostgreSQL} Datenbank.
- In einem Umkreis von fünf Kilometern erhält der Nutzer diese Aufträge auf der Kartenansicht und kann sie lösen.
- 
- Da die \gls{WebApp} nur noch im Firefox funktioniert, wurde \kort{} in dieser Bachelorarbeit als native \brand{Android}-App neu entwickelt. 
- Die App ist in \brand{JavaScript} geschrieben und basiert auf dem \brand{React Native} Framework von \brand{Facebook}.
- Das bestehende \kort{}-Backend konnte grundsätzlich  wiederverwendet werden.
- Kommuniziert wird weiterhin mit den vorhandenen \gls{REST}-Schnittstellen.
- Um das Backend effektiv zu nutzen wurde die \brand{flux}-Architektur eingesetzt.
- 
- Die vielen Spiel-Elemente, aus dem \gls{Gamification}-Ansatz der \kort{}-\gls{WebApp}, wurden beibehalten.
+Die ursprüngliche \gls{WebApp} wurde nicht weiter gepflegt und ist heute nicht mehr benutzbar. 
+Allerdings konnte die bestehende Backend-Lösung weiterverwendet werden. 
+\kort{} wurde in dieser Bachelorarbeit als native App für \brand{Android} und \brand{iOS} neu entwickelt. 
+Die App ist in \brand{JavaScript} geschrieben und basiert auf dem \brand{React Native} Framework von \brand{Facebook}. 
+Dabei wird \brand{JavaScript}-Code in \brand{Android}- und \brand{iOS}-Komponenten übersetzt und bietet dem Benutzer die Erfahrung einer native App.
+Die entwickelte App wird in Kürze im \brand{Apple} App Store und im \brand{Google Play} Store veröffentlicht.
+
+
  
