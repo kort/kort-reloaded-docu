@@ -74,7 +74,7 @@ Die letzte mögliche Variante war, dass wir die benötigten Raster-Kacheln, die 
 \hline
 Vorteile & Nachteile \\
 \hline
-Komponente von \brand{Facebook}/\brand{React Native} & Pattern Fill ist nicht implementiert und auch nicht in Planung.
+Komponente von \brand{Facebook} - \brand{React Native} & Pattern Fill ist nicht implementiert und auch nicht in Planung.
 Dadurch lassen sich keine eigene Marker auf der Kartenansicht darstellen. \\
 \hline
  & Es lassen sich keine Map-Kacheln von einem beliebigen Service darstellen.  \\
@@ -139,7 +139,7 @@ Für die Authentifizierung wurden diese Möglichkeiten evaluiert:
 
 \subsection{Variante A: Auth0}
 
-\brand{Auth0}\footnote{\url{https://github.com/auth0/react-native-lock}}\footnote{\url{https://auth0.com/}} bietet eine Implementation für beliebige OAuth 2-Dienste. 
+\brand{Auth0}\footnote{\url{https://github.com/auth0/react-native-lock}} \footnote{\url{https://auth0.com/}} bietet eine Implementation für beliebige OAuth 2-Dienste. 
 
 \subsection{Variante B: Open-Source-Projekte}
 
@@ -179,11 +179,11 @@ Vorteile & Nachteile \\
 
 
 \subsection{Fazit}
-\brand{Auth0} kam definitiv nicht in Frage, da es nicht mit einem OAuth 1.0a-Login erweiterbar ist.
+\brand{Auth0} kam definitiv nicht in Frage, da es nicht mit einer OAuth 1.0a-Authentifizierung, wie sie von \brand{OpenStreetMap} unterstützt wird, erweiterbar ist.
 Entschieden haben wir uns für das react-native-google-signin-Projekt.
 Es funktioniert auf beiden Plattformen und liefert ein Token, das vom \kort{}-Backend überprüft werden kann.
 \brand{Facebook} wird vom \kort{}-Backend nicht unterstützt und das react-native-facebook-login-Projekt auf Github liefert auch kein Token, wie es beim \brand{Google}-Login der Fall ist.
-Weitere Anpassungen am Backend wären nötig wären.
+Weitere Anpassungen am Backend wären nötig gewesen.
 Wir hatten uns dazu entschieden, keine Backend-Anpassungen durchzuführen.
 
 
