@@ -1,38 +1,24 @@
 \chapter{Evaluation}
 \label{tb-evaluation}
 An einem \brand{React Native} Meetup an der HSR konnten erste Entscheidungen zur Software-Entwicklungsumgebung und welche Lösungskonzepte es für die Darstellung der Karte gibt, geklärt werden.
-Unter den vielen \brand{JavaScript}-Editoren haben wir uns für \brand{Atom} entschieden, da \brand{Facebook} ein \brand{React Native}-Package (\brand{Nuclide}\footnote{\url{https://nuclide.io/}}) dafür veröffentlicht hat. 
+Unter den vielen \brand{JavaScript}-Editoren haben wir uns für \brand{Atom} entschieden.
+\brand{Facebook} hat für \brand{React Native} das \brand{Atom}-Package \brand{Nuclide}\footnote{\url{https://nuclide.io/}} veröffentlicht. 
+\brand{Atom} ist Open Source und bietet viele weitere Community-Packages.
+
 Weitere Hinweise zur Entwicklungsumgebung und den verwendeten Werkzeugen sind im Kapitel \nameref{pm-projektmanagement} beschrieben.
 
 \section{Architektur}
-\begin{table}[H]
-\centering
-\label{tb-evaluation-architektur}
-\begin{tabular}{|p{7cm}|p{7cm}|}
-\hline
-\multicolumn{2}{|c|}{\textbf{Variante A: flux-Architektur}} \\
-\hline
-Vorteile & Nachteile \\
-\hline
-  &  \\
-\hline
-  &  \\
-\hline
-\multicolumn{2}{|c|}{\textbf{Variante B: }} \\
-\hline
-Vorteile & Nachteile \\
-\hline
-  &  \\
-\hline
-  &  \\
-\hline
-  &  \\
-\hline
-\end{tabular}
-\caption{Bewertung Architektur}
-\end{table}
+
+
+\subsubsection{Variante A: flux-Architektur}
+
+
+\subsubsection{Variante B: MVC}
+
 
 \subsection{Fazit}
+
+
 
 \section{App Navigation}
 \begin{table}[H]
@@ -54,32 +40,36 @@ Flexibel und für einfache Use Cases gedacht
 \hline
 Vorteile & Nachteile \\
 \hline
-Bestens geeignet für die angewendete flux-Architektur & Zusätzlicher Zeitaufwand \\
-\hline
-Leicht erweiterbar und wartbar.
-Wird verbreitet eingesetzt.
+Alle Views (Scenes) sind an einem Ort deklariert. 
+Es müssen keine Navigator-Objekte herumgereicht werden. 
  & Stellt eine weitere Abhängigkeit an ein externes Projekt dar. \\
 \hline
-Alle Views sind an einem Ort deklariert.
-Das heisst, es müssen keine Navigator-Objekte herumgereicht werden. 
+Leicht erweiterbar und wartbar.
+Integrierte Tab-Navigation.
+ & Der aktuelle Zustand ist nicht genau definiert. \\
+\hline
 Ein Wechsel der View ist mit einem Funktionsaufruf von überall aus möglich. 
- &  \\
+ & Die Hintergrundabläufe und der Lebenszyklus sind nicht erkennbar. \\
 \hline
 \end{tabular}
-\caption{Bewertung Navigation-Komponente}
+\caption{Bewertung Navigations-Komponente}
 \end{table}
 
 \subsection{Fazit}
-Nachdem die Entscheidung zur Verwendung der flux-Architektur gefallen ist, fiel hier die Entscheidung zugunsten vom React-Native-Router-Flux.
-Alle Views sind an einem Ort im Code festgelegt und lassen sich bequem erweitern.
-Das macht den Code auch verständlicher.
+Da \brand{React Native} standardmässig keine Tab-Navigation anbietet, wurde React-Native-Router-Flux als Navigations-Variante evaluiert.
+Der erste Prototyp mit dem React-Native-Router-Flux erfüllte die Anforderungen.
+Alle Views sind an einem Ort im Code festgelegt und es lassen sich bequem weitere hinzufügen.
+
+Während dem Verlauf vom Projekt sind dann aber vermehrt Fehler aufgetreten.
+Im Nachhinein wäre es sinnvoller gewesen, die Navigator-Komponente zu verwenden.
+Das Verhalten vom React-Native-Router-Flux war nicht voraussehbar.
 
 \section{Karte}
 \label{tb-evaluation-karte}
 
 Für die Darstellung der Karte mit \brand{React Native} sind mehrere Varianten ausfindig gemacht worden.
 
-\subsection{Variante A: React Native Map Komponente}
+\subsubsection{Variante A: React Native Map Komponente}
 
 \begin{figure}[H]
 	\centering
@@ -90,7 +80,7 @@ Für die Darstellung der Karte mit \brand{React Native} sind mehrere Varianten a
 
 Am \brand{React Native} Meetup wurde ein Blogpost zur \brand{React Native} Map-Komponente\footnote{\url{http://browniefed.com/blog/2015/05/30/create-a-map-with-react-art/}} vorgestellt. Diese Variante steht standardmässig zur Verfügung.
 
-\subsection{Variante B: Extended React Native Map Komponente}
+\subsubsection{Variante B: Extended React Native Map Komponente}
 
 \begin{figure}[H]
 	\centering
@@ -102,7 +92,7 @@ Am \brand{React Native} Meetup wurde ein Blogpost zur \brand{React Native} Map-K
 Diese Komponente (Extended React Native Map Komponente\footnote{\url{https://github.com/lelandrichardson/react-native-maps}}) wurde von \brand{Facebook} anstelle der Standard MapView-Komponente, von \brand{React Native}, empfohlen.
 
 
-\subsection{Variante C: MapBox GL Library}
+\subsubsection{Variante C: MapBox GL Library}
 
 \begin{figure}[H]
 	\centering
@@ -114,13 +104,13 @@ Diese Komponente (Extended React Native Map Komponente\footnote{\url{https://git
 \brand{MapBox} bietet mit dieser experimentellen \brand{React Native}-Komponente (MapBox GL Library\footnote{\url{https://libraries.io/npm/react-native-mapbox-gl}}) eine weitere Lösung für \brand{iOS} und \brand{Android}.
 
 
-\subsection{Variante D: Portierung von Leaflet nach React}
+\subsubsection{Variante D: Portierung von Leaflet nach React}
 
 Für \brand{React} gibt es eine Map-Komponente namens React-Leaflet\footnote{\url{https://github.com/PaulLeCam/react-leaflet}}. 
 Das liesse sich für \brand{React Native} portieren.
 Schon in der \kort{}-\gls{WebApp} wurde die \brand{Leaflet}\footnote{\url{http://leafletjs.com/t}}-Library verwendet.
 
-\subsection{Variante E: Raster-Kacheln selbst darstellen}
+\subsubsection{Variante E: Raster-Kacheln selbst darstellen}
 
 Die letzte mögliche Variante war, dass wir die benötigten Raster-Kacheln, die der Benutzer braucht, entsprechend laden und anzeigen.
 
@@ -196,11 +186,11 @@ Nur gäbe es da Probleme mit der Grösse der App, da die Vektor-Kacheln und die 
 Gebraucht wird ein Login-Dienst für \brand{Google}-, \brand{Facebook}- und \brand{OpenStreetMap}-Konten. 
 Für die Authentifizierung wurden diese Möglichkeiten evaluiert:
 
-\subsection{Variante A: Auth0}
+\subsubsection{Variante A: Auth0}
 
 \brand{Auth0}\footnote{\url{https://github.com/auth0/react-native-lock}} \footnote{\url{https://auth0.com/}} bietet eine Implementation für beliebige \gls{OAuth} 2-Dienste. 
 
-\subsection{Variante B: Open-Source-Projekte}
+\subsubsection{Variante B: Open-Source-Projekte}
 
 Ein Projekt für die \brand{Google}-Authentifizierung wäre react-native-google-signin\footnote{\url{https://github.com/devfd/react-native-google-signin}}. 
 Für \brand{Facebook} bot sich react-native-facebook-login
