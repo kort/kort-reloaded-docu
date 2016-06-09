@@ -114,7 +114,7 @@ Schon in der \kort{}-\gls{WebApp} wurde die \brand{Leaflet}\footnote{\url{http:/
 
 Die letzte mögliche Variante war, dass wir die benötigten Raster-Kacheln, die der Benutzer braucht, entsprechend laden und anzeigen.
 
-\begin{table}[]
+\begin{table}[H]
 \centering
 \label{tb-evaluation-map-komponente}
 \begin{tabular}{|p{7cm}|p{7cm}|}
@@ -212,16 +212,6 @@ Sehr einfach Einbindung.
 Kostenlos für Open-Source-Projekte.
  & Schlecht erweiterbar mit eigenem Login für \brand{OpenStreetMap}. \\
 \hline
-\multicolumn{2}{|c|}{\textbf{Variante B: Open-Source-Projekte}} \\
-\hline
-Vorteile & Nachteile \\
-\hline
-.
- & Es braucht für jeden Dienst ein eigenes Open-Source-Projekt.
- Es gibt kein Projekt, welches alle benötigten Login-Dienste für \brand{iOS} und \brand{Android}  unterstützt. \\
-\hline
- & Keine Lösung für einen \brand{OpenStreetMap}-Login vorhanden. \\
-\hline
 \end{tabular}
 \caption{Bewertung OAuth-Komponente}
 \end{table}
@@ -231,7 +221,9 @@ Vorteile & Nachteile \\
 \brand{Auth0} kam definitiv nicht in Frage, da es nicht mit einer \gls{OAuth} 1.0a-Authentifizierung, wie sie von \brand{OpenStreetMap} unterstützt wird, erweiterbar ist.
 Entschieden haben wir uns für das react-native-google-signin-Projekt.
 Es funktioniert auf beiden Plattformen und liefert ein Token, das vom \kort{}-Backend überprüft werden kann.
-\brand{Facebook} wird vom \kort{}-Backend nicht unterstützt und das react-native-facebook-login-Projekt auf Github liefert auch kein Token, wie es beim \brand{Google}-Login der Fall ist.
+Der Nachteil ist, dass es kein Open Source Projekt gab, welches alle gewünschten Social-Logins für \brand{iOS} und \brand{Android} anbietet.
+
+\brand{Facebook} wird vom \kort{}-Backend derzeit nicht unterstützt und das react-native-facebook-login-Projekt auf Github liefert auch kein Token, wie es beim \brand{Google}-Login der Fall ist.
 Weitere Anpassungen am Backend wären nötig gewesen.
 Wir hatten uns dazu entschieden, keine Backend-Anpassungen durchzuführen.
 
