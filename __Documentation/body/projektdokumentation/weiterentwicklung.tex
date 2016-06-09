@@ -64,7 +64,7 @@ Ein sehr wichtiges Feature, das bisher noch nicht umsetzbar war, ist das \brand{
 Neben den Änderungen am Backend, damit dieses Feature überhaupt realisierbar ist, gibt es folgende Schritte zu erledigen:
 
 \begin{enumerate}
-	\item App mit Callback-URL registrieren
+	\item App bei \brand{OpenStreetMap} mit Callback-URL registrieren
 	\begin{itemize}
 		\item Als Callback-URL könnte zum Beispiel 'http://www.kort.ch/' verwendet werden.
 	\end{itemize}
@@ -74,25 +74,24 @@ Neben den Änderungen am Backend, damit dieses Feature überhaupt realisierbar i
 	\item Wenn sich der Benutzer eingeloggt hat, wird er zur Callback-Seite, mit dem OAuth-Token und dem OAuth-Verifier in der URL, umgeleitet.
 	\item WebView schliessen
 	\item Request Access-Token-URL
-	\item Kommunikation mit dem Backend
+	\item dem Backend das Token zur Überprüfung senden
 \end{enumerate}
 
 Dieses Vorgehen wurde noch nicht getestet und dient nur als Idee zur möglichen Umsetzung.
 Die korrekten Request-URLs können aus der Dokumentation im \brand{OpenStreetMap}-Wiki\footnote{\url{http://wiki.openstreetmap.org/wiki/OAuth}} entnommen werden.
 
-% Badges
-
-% Highscore
-
-% Karte fürs Missionen lösen
-
 Als nächstes müsste für den \gls{Gamification}-Ansatz das Design weiter verbessert werden. 
+Dafür wäre zuerst eine Änderung am Backend geplant, um die Validationen endgültig abzuschaffen, indem sie als normale Mission gezählt werden. 
+Dann wäre es auch wieder möglich korrekte Badges für den Missions-Counter anzuzeigen. 
+
 Zum Beispiel durch den Einsatz von Farben oder einem Hintergrundbild beim Login-Screen. 
 Passend dazu könnten die verwendeten Bilder und Icons einheitlich gestaltet und erneuert werden. 
 Meldungen, die dem Benutzer die Anzahl gewonnener Koins anzeigen, erscheinen momentan im Vollbildmodus. 
 Das liegt an einem Fehler, der eingesetzten Navigations-Komponente, die keine transparenten Hintergründe zulässt. 
 In Zukunft könnte das aber noch behoben werden. 
 Dann wäre es eleganter, Meldungen in einem Fenster zu zeigen.
+
+Um die Funktionalität der \gls{WebApp} komplett umgesetzt zu haben fehlt nur noch die zweite Highscore-Ansicht und die Karte, die beim Lösen einer Mission angezeigt wird.
 
 Gerne hätten wir noch Tests der Komponenten durchgeführt, doch die Priorität dafür war zu tief und die Zeit zu knapp. 
 Dazu haben wir die Enzyme\footnote{\url{http://airbnb.io/enzyme/}}-Testing-API (für Komponenten-Tests) und das Mocha\footnote{\url{https://github.com/mochajs/mocha}}-\gls{Framework} (um die Tests laufen zu lassen) für die Zukunft evaluiert.
