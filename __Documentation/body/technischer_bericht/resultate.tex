@@ -14,13 +14,37 @@ Nur noch das Marker-Icon auf der Karte verrät etwas über den Missionstyp und w
 \section{Zielerreichung}
 Erreichte Ziele:
 
+%Unterpunkte Android(fehlende Kartenansicht) - iOS (nicht getestet)
+%Badges fehlen (Validation)
+%Design nicht umgesetzt
+
+
 \begin{itemize}
 	\item \brand{Android}-App mit gleicher Funktionalität, wie die \gls{WebApp}
 	\item \brand{iOS}-App mit gleicher Funktionalität, wie die \gls{WebApp}
+	\begin{itemize}
+		\item Nicht getestet
+	\end{itemize}
 	\item neuer Validationsmechanismus
 	\item Erfahrungsbericht zu \brand{React-Native}
 	\item Internationalisierung umgesetzt
 \end{itemize}
+
+Dadurch, dass das Backend nicht angepasst werden sollte, konnte kein Login für \brand{OpenStreetMap} und \brand{Facebook} realisiert werden.
+Für \brand{Google} wurde eine Ausnahme gemacht.
+
+Die Badges konnten nach dem Ablösen des Validationsmechanismus nicht mehr verwendet werden.
+Das Backend macht nämlich immer noch die Unterscheidung zwischen Missionen und Validationen.
+
+Um die zweite Highscore-Ansicht zu erstellen, gab es technische Schwierigkeiten mit der verwendeten Navigations-Komponente.
+Die Highscore-Ansicht befindet sich in der Haupt-Tab-Ansicht der App. 
+Im Highscore-Screen selber müsste eine weitere geschachtelte Tab-Komponente eingefügt werden.
+Diese Ansicht würde die Ranglistenposition vom Benutzer, verglichen mit dem Rang der Benutzer direkt vor und nach ihm, in der globalen Highscore anzeigen. 
+
+Leider hat es zeitlich auch nicht mehr gereicht, um die Kartenansicht beim Lösen einer Mission anzuzeigen.
+
+Für eine finale Version, die veröffentlicht werden kann, muss das Design aufgebessert werden. 
+Wie diese zusätzlichen Arbeiten umgesetzt werden könnten wurde im Kapitel \hyperref[pd-weiterentwicklung-vorgehen]{Vorgehen} dokumentiert.
 
 \section{Ausblick}
 Offene Punkte und nächste geplante Arbeiten mit höherer Priorität:
@@ -36,18 +60,13 @@ Das genaue Vorgehen, wie die offenen Punkte umgesetzt werden, wird im Kapitel \h
 Für die Zukunft gibt es bereits viele weitere Ideen. 
 Eine Liste wurde im Kapitel \hyperref[pd-weiterentwicklung-realistisch]{Weiterentwicklung} erstellt. 
 
-% ToDo: verschieben?
-Leider hat es zeitlich auch nicht mehr gereicht um die zweite Highscore-Ansicht zu erstellen. 
-Diese Ansicht würde die Ranglistenposition vom Benutzer zentriert in der globalen Highscore anzeigen. 
-Hier gab es technische Schwierigkeiten um mit dem verwendeten \gls{Framework} \brand{React Native} eine geschachtelte Tab-Ansicht zu erstellen.
-
 \section{Persönliche Berichte}
 
 \subsubsection{Dominic Mülhaupt}
 
 \subsubsection{Marino Melchiori}
 Beim Start von diesem Projekt hatte ich keine \brand{JavaScript}-Vorkenntnisse.
-Im Verlauf der Arbeit gelang es mir aber, dank der Zusammenarbeit in unserem Team, mich einzuarbeiten.
-Das Highlight dieser Arbeit war für mich die Implementation der App mit \brand{React} und die Gestaltung der Benutzeroberfläche mit \brand{JSX}.
+Im Verlauf der Arbeit gelang es mir aber, dank der Zusammenarbeit in unserem Team, mich gut  einzuarbeiten.
+Das Highlight dieser Arbeit war für mich die Implementation der App mit \brand{React Native} und die Gestaltung der Benutzeroberfläche mit \brand{JSX}.
 Trotzt all den neuen und teilweise unreifen Technologien, ist es uns gelungen, eine gute App-Idee neu zu entwickeln.
 Ich bin froh, dass ich \brand{JavaScript}-Erfahrungen sammeln konnte.
