@@ -2,7 +2,7 @@
 \label{tb-einfuehrung}
 
 \section{Problemstellung}
-Das \brand{OpenStreetMap}-Projekt beinhaltet eine sehr grosse Menge an Daten, welche frei zugänglich sind.
+Das \brand{OpenStreetMap}-Projekt beinhaltet eine sehr grosse Menge an Geodaten, welche frei zugänglich sind.
 Für die Pflege dieser Daten ist es daher naheliegend, auf unterstützende Software zurückzugreifen.
 Zu diesem Zweck gibt es eine Reihe von Applikationen, welche sich grob in zwei Kategorien einteilen lassen:
 Editoren und Tools zur Qualitätssicherung.
@@ -15,7 +15,7 @@ Einige Tools wie \brand{KeepRight}\footnote{\url{http://keepright.ipax.at/}} ode
 Dazu werden einige Heuristiken verwendet oder einfache Plausibilitätsprüfungen durchgeführt.
 Typische Fehler aus diesen Quellen sind \glspl{POI} ohne Namen oder Strassen ohne definierte Geschwindigkeitslimiten.
 
-Zur Behebung dieser Fehler ist die cross-platform \gls{WebApp} \kort{}\footnote{\url{http://play.kort.ch/}} in Form einer Bachelorarbeit von Jürg Hunziker und Stefan Oderbolz, im Herbstsemester 2012/13, entwickelt  worden.
+Zur Behebung dieser Fehler ist die \gls{WebApp} \kort{}\footnote{\url{http://play.kort.ch/}} in Form einer Bachelorarbeit von Jürg Hunziker und Stefan Oderbolz, im Herbstsemester 2012/13, entwickelt  worden.
 
 \kort{} wurde mit dem \brand{Sencha Touch 2} \gls{Framework} entwickelt.
 Die Implementation funktioniert auf neuen Browsern nicht mehr sinngemäss.
@@ -24,7 +24,7 @@ So ist es auf einem mobilen Gerät unmöglich, das Login-Feld überhaupt auszuf�
 Die Ortung und die HTTP Requests funktionieren nur noch mit dem \brand{Firefox}.
 \brand{Google Chrome} erlaubt die Geolocation nur noch mit einer HTTPS-Verbindung und diese wird vom \kort{}-Backend nicht unterstützt.
 
-Aus diesem Grund entstand die Idee, die \kort{}-\gls{WebApp} mit einem native Client zu ersetzen.
+Aus diesem Grund entstand die Idee, die \kort{} mit einem native Client zu ersetzen.
 Dazu bot sich \brand{React-Native} an. 
 Diese ganz neue Technologie ermöglicht es native \brand{iOS} und - seit Oktober 2015 - auch \brand{Android} Apps mit \brand{JavaScript} zu erstellen. 
 Dadurch, dass \brand{React-Native} noch in den Kinderschuhen steckt und die Entwickler noch keine Erfahrung mit \brand{JavaScript} haben, stellt dies ein grosses \hyperref[pm-projektmanagement-risikomanagement]{Risiko} für diese Bachelorarbeit dar.
@@ -69,7 +69,6 @@ Anpassungen am Backend lagen nicht im \hyperref[pd-anforderungsspezifikation]{Au
 	\item Dokumentation abschliessen.
 \end{itemize}
 
-Ziele und Resultate werden im technischen Bericht, Unterkapitel \nameref{tb-einfuehrung-ziele} und im Kapitel \nameref{tb-resultate}, erläutert.
-Alle Risiken sind im Kapitel \nameref{pm-projektmanagement-risikomanagement} definiert und die Meilensteine im Kapitel \nameref{pm-ms}.
-Das Team und die verschiedenen Rollen sind im Kapitel \nameref{pm-rollen} deklariert.
+\nameref{tb-einfuehrung-ziele} und \nameref{tb-resultate} werden im technischen Bericht erläutert.
+Die \nameref{pm-projektmanagement-risikoanalyse}, die \nameref{pm-meilensteine} und das \nameref{pm-team} befinden sich im Kapitel Projektmanagement. 
 Der Source Code ist auf \brand{GitHub} frei zugänglich.

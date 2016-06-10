@@ -1,5 +1,5 @@
 \section{Meilensteine}
-\label{pm-ms}
+\label{pm-meilensteine}
 \subsection{MS1: Kickoff}
 \label{pm-ms1}
 \textbf{Fällig am 25.02.2016}
@@ -60,10 +60,13 @@ Für die detaillierte Erarbeitung der Testspezifikation fehlte noch die nötige 
 \end{itemize}
 
 \subsubsection{Erledigte Arbeiten}
-Die Entwicklungsumgebung wurde optimiert. Das \brand{Travis}-Konfigurationsfile prüft den Code nun mit \brand{ESLint}\footnote{\url{http://eslint.org/}} (\brand{JavaScript linter, checkt Styleguides}) und \brand{flow}\footnote{\url{http://flowtype.org/}} (static type checker).\newline
-Für die Tab-Navigation konnte eine Demo mit \brand{react-native-scrollable-tab-view}\footnote{\url{https://github.com/brentvatne/react-native-scrollable-tab-view}} umgesetzt werden. Diese muss noch in der \kort{} App eingebaut werden.\newline
-\gls{OAuth} konnte ebenfalls anhand einer Demo getestet werden – allerdings nur mit \brand{Facebook} und \brand{Google}.\newline
+Die Entwicklungsumgebung wurde optimiert. Das \brand{Travis}-Konfigurationsfile prüft den Code nun mit \brand{ESLint}\footnote{\url{http://eslint.org/}} (\brand{JavaScript} linter, checkt Styleguidelines) und \brand{flow}\footnote{\url{http://flowtype.org/}} (static type checker). 
+
+Für die Tab-Navigation konnte eine Demo mit react-native-router-flux\footnote{\url{https://github.com/aksonov/react-native-router-flux}} umgesetzt werden. Diese muss noch in der \kort{} App eingebaut werden. 
+
+\gls{OAuth} (nur Client-Seitig, ohne Backend Kommunikation) konnte ebenfalls anhand einer Demo getestet werden –- allerdings nur mit \brand{Facebook} und \brand{Google}.\newline
 Die Darstellung der Karte aus \nameref{pm-ms2} wurde leicht ausgebaut. Neu wird nun der Standort des Benutzers ermittelt.
+
 Wir haben die Architekturvarianten evaluiert und uns für die flux-Architektur entschieden.
 Daraufhin wurde ein Grundgerüst für die Verwendung vom \kort{}-API mit der flux-Architektur erstellt. 
 Somit konnten die Missionen im Umkreis von fünf Kilometern geladen werden.
@@ -75,6 +78,7 @@ Die Fehlerbehandlung hat uns enorm viel Zeit gekostet und es war schwer im Inter
 Da \brand{React Native} jede zwei Wochen ein Update erhält, sind die Dokumentationen oder die Diskussionen im Internet teilweise schon wieder veraltet.\newline
 Im Austausch mit anderen \brand{React Native} Entwicklern haben wir dasselbe Feedback erhalten.\newline
 Der Prototyp konnte nicht wie geplant fertiggestellt werden und einige Arbeiten mussten auf den nächsten Meilenstein ausgelagert werden.
+
 Die Authentifizierung mit dem Backend konnte noch nicht umgesetzt werden.
 
 \subsection{MS4: Zwischenpräsentation}
@@ -85,14 +89,14 @@ Die Authentifizierung mit dem Backend konnte noch nicht umgesetzt werden.
 	\item 1. Prototyp fertig (s. \nameref{pm-ms3})
 	\begin{itemize}
 		\item Missionen auf Karte darstellen (Annotation-Marker)
-		\item Tab-Navigation
+		\item Tab-Navigation eingebaut
 	\end{itemize}
 	\item Zwischenpräsentation (Dauer ca. 30 Minuten)
 	\begin{itemize}
 		\item Aufgabenstellung, Problembesprechung
 		\item IST-Situation
 		\item geplantes Resultat
-		\item Beschlussprotokoll für den \hyperref[pm-rollen]{Betreuer}
+		\item Beschlussprotokoll für den \hyperref[pm-team]{Betreuer}
 	\end{itemize}
 \end{itemize}
 
@@ -100,6 +104,7 @@ Die Authentifizierung mit dem Backend konnte noch nicht umgesetzt werden.
 Der Prototyp enthielt nun die Kartenansicht in einer Tab-Ansicht. 
 Marker an den jeweiligen Positionen der geladenen Missionen konnten eingefügt werden.
 Durch einen Klick auf einen Marker konnte der Titel der Mission erfolgreich in die Konsole geloggt werden.
+
 Leider konnte noch immer keine Lösung für die Implementation eines Logins mit \gls{OAuth} 1.0a (\brand{OpenStreetMap}) gefunden werden.
 Dieses Feature noch zur Abgabe zu liefern wäre unrealistisch.
 Deswegen wurde es auf den \hyperref[pm-ms9]{Meilenstein 9: Salzburg Konferenz} verschoben.
@@ -107,7 +112,7 @@ Deswegen wurde es auf den \hyperref[pm-ms9]{Meilenstein 9: Salzburg Konferenz} v
 \subsubsection{Probleme}
 Weiterhin traten Schwierigkeiten mit willkürlichen Fehlern der \brand{React Native} App auf. 
 Aus diesen Gründen konnte die Navigation und die Struktur der App nicht abschliessend umgesetzt werden.
-Dass der Benutzer nach dem Login automatisch zur Tab-Ansicht weitergeleitet wurde, hatte noch nicht geklappt.
+Dass der Benutzer nach dem Login automatisch zur Tab-Ansicht weitergeleitet wurde, hatte wegen einem Fehler in der Navigations-Library nicht geklappt.
 Zwischenzeitlich wurde aus diesem Grund das Erhalten des Login-Tokens, nach der Authentifizierung über \brand{Google} und \brand{Facebook}, in einer separaten App getestet.
 
 
@@ -118,18 +123,18 @@ Zwischenzeitlich wurde aus diesem Grund das Erhalten des Login-Tokens, nach der 
 \begin{itemize}
 	\item View-Komponenten fertig entworfen
 	\item Backend API mit der flux-Architektur eingebunden
-	\item Token basierte Authentifizierung im Frontend umgesetzt, nachdem das Backend von Stefan Oderbolz dafür angepasst wurde.
+	\item Token basierte \brand{Google}-Authentifizierung im Frontend umgesetzt, nachdem das Backend von Stefan Oderbolz dafür angepasst wurde.
 \end{itemize}
 
 \subsubsection{Erledigte Arbeiten}
 Unterdessen konnte die GUI grösstenteils fertiggestellt werden. 
 Es fehlte noch die dynamische Behandlung von gewissen View-Komponenten.
 Zum Beispiel die Unterscheidung ob beim Lösen einer Mission ein Picker, zum Auswählen der Antwort, gerendert wird, oder ob ein Text-Input-Feld angeboten wird.
-Gleichzeitig wurden alle API-Aufrufe mit der flux-Architektur eingebunden - aber noch nicht vollständig getestet.
+Gleichzeitig wurden alle API-Aufrufe mit der flux-Architektur eingebunden, aber noch nicht vollständig getestet.
 
 \subsubsection{Probleme}
 Weiterhin war es nicht möglich mit der Router-Flux-Navigationskomponente eine Weiterleitung, nach Erfolgreichem Login, zur Kartenansicht umzusetzen.
-Hierbei handelte es sich um einen bekannten Fehler dieser Komponente.
+Hierbei handelte es sich um den bekannten Fehler dieser Komponente.
 Das Verzögerte leider das geplante Ziel: eine Mission zu lösen.
 
 \subsection{MS6: 2. Release}
@@ -137,7 +142,7 @@ Das Verzögerte leider das geplante Ziel: eine Mission zu lösen.
 \textbf{Fällig am 03.06.2016}
 \subsubsection{Resultate}
 \begin{itemize}
-	\item View-Komponenten fertiggestellt
+	\item dynamische View-Komponenten fertiggestellt
 	\item Login Weiterleitung
 	\item Fertigstellung der Architektur
 	\item Testing abgeschlossen
@@ -146,8 +151,9 @@ Das Verzögerte leider das geplante Ziel: eine Mission zu lösen.
 \subsubsection{Erledigte Arbeiten}
 Alle View-Komponenten sind nun dynamisch und zeigen je nach Zustand der Komponente die entsprechende Oberfläche.
 Durch eine zusätzliche App-Loader-View konnte das Problem der Weiterleitung nach dem Login behoben werden.
-Diese Komponente lädt nun alles im Voraus und erst danach wird je nach Zustand, ob der Benutzer eingeloggt ist, oder nicht, entsprechend weitergeleitet.
+Diese Komponente lädt nun alles im Voraus und erst danach wird je nach Zustand, ob der Benutzer eingeloggt ist, oder nicht, die entsprechende Ansicht angezeigt.
 Parallel wurde die Architektur und die Logik fertiggestellt und konnte nach und nach von den View-Komponenten verwendet werden.
+
 Schlussendlich konnten wir erfolgreich eine Mission lösen.
 % ToDo: Weitere erledigte Arbeiten
 
@@ -162,8 +168,7 @@ Schlussendlich konnten wir erfolgreich eine Mission lösen.
 \subsubsection{Resultate}
 
 \begin{itemize}
-	\item Dokumentation vollständig
-	\item gebundene Dokumentation eingereicht
+	\item gebundene, vollständige Dokumentation eingereicht
 	\item CD mit Abgabe eingereicht
 	\item Abstract eingereicht
 	\item Poster eingereicht
@@ -175,7 +180,7 @@ Schlussendlich konnten wir erfolgreich eine Mission lösen.
 \subsubsection{Probleme}
 
 
-\subsection{MS: Schlusspräsentation}
+\subsection{MS8: Schlusspräsentation}
 \label{pm-m8}
 
 \textbf{Fällig am 29.06.2016}
@@ -187,3 +192,6 @@ Schlussendlich konnten wir erfolgreich eine Mission lösen.
 	\item aktualisierte Dokumentation
 	\item Design Verbesserungen
 \end{itemize}
+
+\subsection{MS9: Salzburg-Konferenz}
+\label{pm-ms9}

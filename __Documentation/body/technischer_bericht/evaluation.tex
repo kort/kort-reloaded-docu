@@ -2,7 +2,7 @@
 \label{tb-evaluation}
 An einem \brand{React Native} Meetup an der HSR konnten erste Entscheidungen zur Software-Entwicklungsumgebung und welche Lösungskonzepte es für die Darstellung der Karte gibt, geklärt werden.
 Unter den vielen \brand{JavaScript}-Editoren haben wir uns für \brand{Atom} entschieden.
-\brand{Facebook} hat für \brand{React Native} das \brand{Atom}-Package \brand{Nuclide}\footnote{\url{https://nuclide.io/}} veröffentlicht. 
+\brand{Facebook} hat speziell für \brand{React}, \brand{React Native} das \brand{Atom}-Package \brand{Nuclide}\footnote{\url{https://nuclide.io/}} veröffentlicht. 
 \brand{Atom} ist Open Source und bietet viele weitere Community-Packages.
 
 Weitere Hinweise zur Entwicklungsumgebung und den verwendeten Werkzeugen sind im Kapitel \nameref{pm-projektmanagement} beschrieben.
@@ -46,7 +46,7 @@ Es müssen keine Navigator-Objekte herumgereicht werden.
 \hline
 Leicht erweiterbar und wartbar.
 Integrierte Tab-Navigation.
- & Der aktuelle Zustand ist nicht genau definiert. \\
+ & Der aktuelle Navigationszustand ist nicht genau definiert. \\
 \hline
 Ein Wechsel der View ist mit einem Funktionsaufruf von überall aus möglich. 
  & Die Hintergrundabläufe und der Lebenszyklus sind nicht erkennbar. \\
@@ -57,7 +57,7 @@ Ein Wechsel der View ist mit einem Funktionsaufruf von überall aus möglich.
 
 \subsection{Fazit}
 Da \brand{React Native} standardmässig keine Tab-Navigation anbietet, wurde React-Native-Router-Flux als Navigations-Variante evaluiert.
-Der erste Prototyp mit dem React-Native-Router-Flux erfüllte die Anforderungen.
+Der erste Prototyp mit dieser Library erfüllte die Anforderungen.
 Alle Views sind an einem Ort im Code festgelegt und es lassen sich bequem weitere hinzufügen.
 
 Während dem Verlauf vom Projekt sind dann aber vermehrt Fehler aufgetreten.
@@ -78,7 +78,7 @@ Für die Darstellung der Karte mit \brand{React Native} sind mehrere Varianten a
 	\label{image-variante-a-map}
 \end{figure}
 
-Am \brand{React Native} Meetup wurde ein Blogpost zur \brand{React Native} Map-Komponente\footnote{\url{http://browniefed.com/blog/2015/05/30/create-a-map-with-react-art/}} vorgestellt. Diese Variante steht standardmässig zur Verfügung.
+Am \brand{React Native} Meetup wurde ein Blogpost zur \brand{React Native} Map-Komponente\footnote{\url{http://browniefed.com/blog/2015/05/30/create-a-map-with-react-art/}} vorgestellt. Diese Variante wird standardmässig als MapView-Komponente zur Verfügung gestellt.
 
 \subsubsection{Variante B: Extended React Native Map Komponente}
 
@@ -89,7 +89,7 @@ Am \brand{React Native} Meetup wurde ein Blogpost zur \brand{React Native} Map-K
 	\label{image-variante-b-map}
 \end{figure}
 
-Diese Komponente (Extended React Native Map Komponente\footnote{\url{https://github.com/lelandrichardson/react-native-maps}}) wurde von \brand{Facebook} anstelle der Standard MapView-Komponente, von \brand{React Native}, empfohlen.
+Die Extended React Native Map Komponente\footnote{\url{https://github.com/lelandrichardson/react-native-maps}}) wird von \brand{Facebook} anstelle der Standard-MapView-Komponente, empfohlen.
 
 
 \subsubsection{Variante C: MapBox GL Library}
@@ -98,7 +98,7 @@ Diese Komponente (Extended React Native Map Komponente\footnote{\url{https://git
 	\centering
 	\includegraphics[width=\textwidth]{images/technischer_bericht/react-native-mapbox-gl.jpg}
 	\caption{React Native Mapbox GL - Marker Verwendung}
-	\label{image-variante-b-map}
+	\label{image-variante-c-map}
 \end{figure}
 
 \brand{MapBox} bietet mit dieser experimentellen \brand{React Native}-Komponente (MapBox GL Library\footnote{\url{https://libraries.io/npm/react-native-mapbox-gl}}) eine weitere Lösung für \brand{iOS} und \brand{Android}.
@@ -134,8 +134,7 @@ Vorteile & Nachteile \\
 \hline
 Bietet alle benötigten Funktionen (eigene klickbare Marker platzieren und vieles mehr).
  & Nutzt die native Map API von \brand{Apple iOS} und \brand{Android} SDK. 
- Ist fest mit \brand{Apple} und \brand{Google Maps} verbunden.
-Allein die Lizenz von \brand{Google} erlaubt es uns nicht, eigene Marker und andere Elemente auf der Kartenansicht darzustellen. \\
+ Ist fest mit \brand{Apple} und \brand{Google Maps} verbunden. \\
 \hline
 Wird von \brand{Facebook} empfohlen.
  & Native Map APIs sind für ein \brand{OpenStreetMap}-Projekt aus moralischen Gründen unpassend. \\
@@ -169,8 +168,10 @@ Wäre eine der einzigen Möglichkeiten, falls keine andere Variante in Frage kom
 \subsection{Fazit}
 
 Varianen, die Native Map APIs von \brand{Google} und \brand{Apple} verwenden, kamen für uns nicht in Frage.
-Wir möchten mit unserer App \brand{OpenStreetMap} Daten verbessern und setzen somit aus moralischen Aspekten auch auf diese Karten.
-Bei der \brand{React Native} Map-Komponente gab es keine Möglichkeit Bilder auf der Karte darzustellen und die Raster-Tiles "von Hand" anzuzeigen wäre schlicht zu aufwendig. 
+Wir möchten mit unserer App \brand{OpenStreetMap} Daten verbessern und möchten somit aus moralischen Aspekten auch auf diese Karte setzen. 
+Allein schon die Lizenz von \brand{Google} erlaubt es uns nicht, eigene Marker und andere Elemente auf ihren Kacheln darzustellen. 
+
+Bei der \brand{React Native} MapView-Komponente gab es keine Möglichkeit Bilder auf der Karte darzustellen und die Raster-Tiles "von Hand" anzuzeigen wäre schlicht zu aufwendig. 
 Es liesse sich auch nur sehr umständlich eine schöne Map designen.
 
 Somit sprang uns als erstes die Portierung von Leaflet für \brand{React} ins Auge. 
@@ -178,9 +179,10 @@ Nach dem betrachten vom Code fiel uns aber auf, dass diese Variante eventuell nu
 
 Als letzte Möglichkeit blieb die MapBox GL Library.
 Diese hat beim Testen auf Anhieb funktioniert und uns überzeugt.
-Der einzige Haken wären die Kosten, welche bei einer sehr hohen Benutzeranzahl (ab 50'000 Nutzern) beachtet werden müssen.
-Den Gedanken zur Offline-Unterstützung hatten wir auch.
-Nur gäbe es da Probleme mit der Grösse der App, da die Vektor-Kacheln und die Missionen im Voraus heruntergeladen und mit installiert werden müssten.
+Die Kosten bei, einer Anzahl von 50 000 Nutzern pro Monat, sind für dieses Projekt nicht problematisch. 
+
+Der Gedanken zur Offline-Unterstützung wurde auch besprochen.
+Nur gäbe es da Probleme mit der Grösse der App, da die Vektor-Kacheln und die Missionen im Voraus heruntergeladen und installiert werden müssten.
 
 \section{OAuth}
 Gebraucht wird ein Login-Dienst für \brand{Google}-, \brand{Facebook}- und \brand{OpenStreetMap}-Konten. 
@@ -193,8 +195,7 @@ Für die Authentifizierung wurden diese Möglichkeiten evaluiert:
 \subsubsection{Variante B: Open-Source-Projekte}
 
 Ein Projekt für die \brand{Google}-Authentifizierung wäre react-native-google-signin\footnote{\url{https://github.com/devfd/react-native-google-signin}}. 
-Für \brand{Facebook} bot sich react-native-facebook-login
-\footnote{\url{https://github.com/magus/react-native-facebook-login}} an.
+Für \brand{Facebook} bot sich react-native-facebook-login\footnote{\url{https://github.com/magus/react-native-facebook-login}} an.
 
 
 \begin{table}[H]
@@ -230,7 +231,8 @@ Wir hatten uns dazu entschieden, keine Backend-Anpassungen durchzuführen.
 
 \section{Plattformunabhängigkeit}
 Eine Stärke von \brand{React Native} ist die Plattformunabhängigkeit. 
-Wenn keine spezifische \brand{Android}- oder \brand{iOS}-Komponenten verwendet werden, kann der Code auch für beide Plattformen genutzt werden.
-Also haben wir beim Entwickeln der \brand{Android}-App darauf geachtet, möglichst keine spezifische Komponenten zu nutzen. 
-Mit einer Blacklist für Komponenten, die vom React Native Packager\footnote{\url{https://github.com/facebook/react-native/tree/master/packager}} angeboten wird, konnten wir das Maximum an wiederverwendbarem Code herausholen. 
-Wenn möglich wurden auch alle Dateien mit der Endung \textit{.android.js} ignoriert, da diese ein davon abweichendes Pendant für \brand{iOS} (mit der Endung \textit{.ios.js}) haben.
+Wenn keine spezifische \brand{Android}- oder \brand{iOS}-Komponenten verwendet werden, kann der Code für beide Plattformen genutzt werden.
+Also wurde beim Entwickeln der \brand{Android}-App darauf geachtet, möglichst keine Plattform spezifische Komponenten zu nutzen. 
+Das konnte in diesem Projekt erfolgreich umgesetzt werden. 
+Die \brand{iOS}-Version konnte aus Zeitgründen nicht getestet werden. 
+Es ist möglich, dass die Einbindung von den verwendeten Libraries überprüft werden muss. 
