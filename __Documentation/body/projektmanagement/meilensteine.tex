@@ -27,7 +27,10 @@
 		\item uservoice
 		\item Redmine
 		\item Installationsskripte
+		\item Dokumentation aufgesetzt
 	\end{itemize}
+	\item Einarbeitung in die \kort{}-\gls{WebApp}
+	\item GUI-Mockups
 \end{itemize}
 
 \subsubsection{Erledigte Arbeiten}
@@ -49,22 +52,25 @@ Für die detaillierte Erarbeitung der Testspezifikation fehlte noch die nötige 
 \textbf{Fällig am 08.04.2016}
 \subsubsection{Resultate}
 \begin{itemize}
+	\item Einarbeitung in \brand{JavaScript}, \brand{React} und \brand{React Native}
 	\item \brand{Android} Prototyp
 	\begin{itemize}
 		\item Tab-Navigation
 		\item Darstellung der Karte
 		\item Evaluation der flux-Architektur und Implementation des Grundgerüstes
 		\item Missionen auf Map anzeigen
-		\item Authentifizierung mit \gls{OAuth}
+		\item Authentifizierung mit \gls{OAuth} evaluiert
 	\end{itemize}
+	\item \brand{Travis-CI} Konfoguration aktualisieren
 \end{itemize}
 
 \subsubsection{Erledigte Arbeiten}
 Die Entwicklungsumgebung wurde optimiert. Das \brand{Travis}-Konfigurationsfile prüft den Code nun mit \brand{ESLint}\footnote{\url{http://eslint.org/}} (\brand{JavaScript} linter, checkt Styleguidelines) und \brand{flow}\footnote{\url{http://flowtype.org/}} (static type checker). 
 
-Für die Tab-Navigation konnte eine Demo mit react-native-router-flux\footnote{\url{https://github.com/aksonov/react-native-router-flux}} umgesetzt werden. Diese muss noch in der \kort{} App eingebaut werden. 
+Für die Tab-Navigation konnte eine Demo mit react-native-router-flux\footnote{\url{https://github.com/aksonov/react-native-router-flux}} umgesetzt werden. Diese muss noch in der \kort{} App implementiert werden. 
 
-\gls{OAuth} (nur Client-Seitig, ohne Backend Kommunikation) konnte ebenfalls anhand einer Demo getestet werden –- allerdings nur mit \brand{Facebook} und \brand{Google}.\newline
+\gls{OAuth} (nur Client-Seitig, ohne Backend Kommunikation) wurde evaluiert und konnte dann anhand einer Demo getestet werden --- allerdings nur mit \brand{Facebook} und \brand{Google}.
+
 Die Darstellung der Karte aus \nameref{pm-ms2} wurde leicht ausgebaut. Neu wird nun der Standort des Benutzers ermittelt.
 
 Wir haben die Architekturvarianten evaluiert und uns für die flux-Architektur entschieden.
@@ -89,7 +95,7 @@ Die Authentifizierung mit dem Backend konnte noch nicht umgesetzt werden.
 	\item 1. Prototyp fertig (s. \nameref{pm-ms3})
 	\begin{itemize}
 		\item Missionen auf Karte darstellen (Annotation-Marker)
-		\item Tab-Navigation eingebaut
+		\item Tab-Navigation implementiert
 	\end{itemize}
 	\item Zwischenpräsentation (Dauer ca. 30 Minuten)
 	\begin{itemize}
@@ -121,9 +127,16 @@ Zwischenzeitlich wurde aus diesem Grund das Erhalten des Login-Tokens, nach der 
 \textbf{Fällig am 20.05.2016}
 \subsubsection{Resultate}
 \begin{itemize}
+	\item native Location tracking implementiert
 	\item View-Komponenten fertig entworfen
+	\item Testing-\gls{Framework} aufgesetzt
 	\item Backend API mit der flux-Architektur eingebunden
 	\item Token basierte \brand{Google}-Authentifizierung im Frontend umgesetzt, nachdem das Backend von Stefan Oderbolz dafür angepasst wurde.
+	\item \kort{}-Datenbank für Tests lokal aufgesetzt
+	\item \kort{} ist \brand{iOS}-fähig
+	\item \brand{React}-\gls{WebApp} evaluiert
+	\item Validationen vom Backend als Missionen laden
+	\item Kurzvideo-Konzept besprochen
 \end{itemize}
 
 \subsubsection{Erledigte Arbeiten}
@@ -132,10 +145,19 @@ Es fehlte noch die dynamische Behandlung von gewissen View-Komponenten.
 Zum Beispiel die Unterscheidung ob beim Lösen einer Mission ein Picker, zum Auswählen der Antwort, gerendert wird, oder ob ein Text-Input-Feld angeboten wird.
 Gleichzeitig wurden alle API-Aufrufe mit der flux-Architektur eingebunden, aber noch nicht vollständig getestet.
 
+\kort{} erfolgreich auf \brand{iOS} getestet werden.
+
+Für die geplante Studienarbeit wurde evaluiert, ob \kort{} als \brand{React}-\gls{WebApp} umgesetzt werden könnte. 
+Nach einer Besprechung mit Herr Stefan Keller stellte sich das jedoch als zu aufwendig heraus. 
+
 \subsubsection{Probleme}
 Weiterhin war es nicht möglich mit der Router-Flux-Navigationskomponente eine Weiterleitung, nach Erfolgreichem Login, zur Kartenansicht umzusetzen.
 Hierbei handelte es sich um den bekannten Fehler dieser Komponente.
 Das Verzögerte leider das geplante Ziel: eine Mission zu lösen.
+
+Die \kort{}-Datenbank konnte nur bei einem Entwickler richtig aufgesetzt werden. 
+Es gab Probleme mit der Installation der Scripts auf \brand{OS X}.
+Aus diesem Grund wurde für Tests, nach Absprache mit Jürg Hunziker, das Development-\kort{}-Backend genutzt.
 
 \subsection{MS6: 2. Release}
 \label{pm-ms6}
@@ -144,8 +166,11 @@ Das Verzögerte leider das geplante Ziel: eine Mission zu lösen.
 \begin{itemize}
 	\item dynamische View-Komponenten fertiggestellt
 	\item Login Weiterleitung
+	\item Login-Logik mit Local Storage
 	\item Fertigstellung der Architektur
 	\item Testing abgeschlossen
+	\item Missionen und Validationen sind lösbar
+	\item Internationalisierung umgesetzt
 \end{itemize}
 
 \subsubsection{Erledigte Arbeiten}
@@ -154,8 +179,7 @@ Durch eine zusätzliche App-Loader-View konnte das Problem der Weiterleitung nac
 Diese Komponente lädt nun alles im Voraus und erst danach wird je nach Zustand, ob der Benutzer eingeloggt ist, oder nicht, die entsprechende Ansicht angezeigt.
 Parallel wurde die Architektur und die Logik fertiggestellt und konnte nach und nach von den View-Komponenten verwendet werden.
 
-Schlussendlich konnten wir erfolgreich eine Mission lösen.
-% ToDo: Weitere erledigte Arbeiten
+Schlussendlich konnten wir erfolgreich Missionen und Validationen lösen.
 
 \subsubsection{Probleme}
 
