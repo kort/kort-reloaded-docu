@@ -2,25 +2,23 @@
 \label{tb-einfuehrung}
 
 \section{Problemstellung}
-Das \brand{OpenStreetMap}-Projekt beinhaltet eine sehr grosse Menge an Geodaten, welche frei zugänglich sind.
+\brand{OpenStreetMap} (\brand{OSM}) beinhaltet eine sehr grosse Menge an Geodaten, welche frei zugänglich sind.
 Für die Pflege dieser Daten ist es daher naheliegend, auf unterstützende Software zurückzugreifen.
 Zu diesem Zweck gibt es eine Reihe von Applikationen, welche sich grob in zwei Kategorien einteilen lassen:
 Editoren und Tools zur Qualitätssicherung.
 
-Mit den Editoren lässt sich direkt oder indirekt die \brand{OpenStreetMap}-Karte verändern und ergänzen.
+Mit den Editoren lässt sich direkt oder indirekt die \brand{OSM}-Karte verändern und ergänzen.
 Die Qualitätssicherungstools haben sich zum Ziel gesetzt, fehlende oder falsche Daten aufzuspüren.
 Diese werden dann entweder automatisch korrigiert oder übersichtlich dargestellt, um eine manuelle Korrektur zu ermöglichen.
 
 Einige Tools wie \brand{KeepRight}\footnote{\url{http://keepright.ipax.at/}} oder \brand{Osmose}\footnote{\url{http://osmose.openstreetmap.fr/map/}} berechnen aus den Karten-Rohdaten die vorhandenen Fehler.
 Dazu werden einige Heuristiken verwendet oder einfache Plausibilitätsüberprüfung durchgeführt.
-Typische Fehler aus diesen Quellen sind \glspl{POI} ohne Namen oder Strassen ohne definierte Geschwindigkeitslimiten.
+Typische Fehler aus diesen Quellen sind \glspl{POI} ohne Namen oder Strassen ohne definierte Geschwindigkeitslimiten.\citep{ba-kort-2012}
 
 Zur Behebung dieser Fehler ist die \gls{WebApp} \kort{}\footnote{\url{http://play.kort.ch/}} in Form einer Bachelorarbeit von Jürg Hunziker und Stefan Oderbolz, im Herbstsemester 2012/13, entwickelt  worden.
 
 \kort{} wurde mit dem \brand{Sencha Touch 2} \gls{Framework} entwickelt.
-Die Implementation funktioniert auf neuen Browsern nicht mehr sinngemäss.
-Zum Beispiel ist das Scrollen blockiert.
-So ist es auf einem mobilen Gerät unmöglich, das Login-Feld überhaupt auszufüllen.
+Da sich HTML5 weiterentwickelt hat, funktioniert die Implementation auf neuen Browsern nicht mehr sinngemäss.
 Die Ortung und die HTTP Requests funktionieren nur noch mit dem \brand{Firefox}.
 \brand{Google Chrome} erlaubt die Geolocation nur noch mit einer HTTPS-Verbindung und diese wird vom \kort{}-Backend nicht unterstützt.
 
@@ -37,15 +35,15 @@ Zusätzlich gibt es optionale Ziele, wie das Erstellen der \brand{iOS}-App.
 Es entstand die Idee, den Validationsmechanismus von \kort{} abzulösen.
 Bis jetzt wurden viel zu viele Missionen gelöst, die nie von anderen Benutzern validiert worden sind.
 Das führte dazu, dass nur sehr wenige Änderungen überhaupt in der \brand{OpenStreetMap}-Datenbank eingefügt wurden.
-Die \brand{OpenStreetMap}-Community forderte aber, dass die Antworten geprüft werden müssen.
+Die \brand{OSM}-Community forderte aber, dass die Antworten geprüft werden müssen.
 Validationsaufträge werden dem Benutzer nun einfach als normalen Auftrag angezeigt.
 Sobald die abgeschickte Antwort mit der zu validierenden Antwort übereinstimmt, wird im Hintergrund eine positive Bewertung versendet.
-Ab drei positiven Bewertungen gilt die Antwort als korrekt und sie schafft es in die \brand{OpenStreetMap}-Datenbank.
+Ab drei positiven Bewertungen gilt die Antwort als korrekt und sie schafft es in die \brand{OSM}-Datenbank.
 
 % Ganze Sätze formulieren. Siehe Aufgabenstellung
 \begin{itemize}
 	\item Erstellen einer \brand{Android} App mit \brand{React-Native} - gleiche Funktionalität mit neuem Framework, damit die mobile App mit den neusten Technologien arbeitet und künftig besser wartbar ist.
-	\item Als Basis sollen Daten und Webdienste des \brand{OpenStreetMap}-Projekts verwendet werden.
+	\item Als Basis sollen Daten und Webdienste des \brand{OSM}-Projekts verwendet werden.
 	\item Validationsmechanismus soll abgelöst werden.
 	\item Neue Erkenntnisse zum aktuellen Framework (\brand{React-Native}), zur Realisierung von native mobile Apps, sammeln.
 	\item Es soll ein Erfahrungsbericht zu \brand{React-Native} erstellt werden.

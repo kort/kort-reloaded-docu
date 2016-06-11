@@ -2,15 +2,15 @@
 \label{tb-stand-der-technik}
 Es gibt eine grosse Anzahl von Projekten, mit dem Ziel \brand{OpenStreetMap} zu verbessern.
 Sowohl Editoren für erfahrene Benutzer, als auch Tools, die auf das finden und Beheben von Fehlern spezialisiert sind, werden angeboten.
-Zum Beispiel gibt es JOSM\footnote{\url{https://josm.openstreetmap.de/}} (\brand{Java OpenStreetMap Editor}) als Desktop Client für \brand{Windows}, \brand{Mac OS X} und \brand{Linux}.
+Zum Beispiel gibt es JOSM\footnote{\url{https://josm.openstreetmap.de/}} (\brand{Java \brand{OSM} Editor}) als Desktop Client für \brand{Windows}, \brand{Mac OS X} und \brand{Linux}.
 Sogar Geometrieobjekte sind damit editierbar.
 Daneben gibt es auch Dienste, welche Fehlerdaten sammeln und öffentlich anbieten.
 Ein bekanntes Beispiel ist \brand{KeepRight}\footnote{\url{http://www.keepright.at/}}.
 Es werden über 50 Fehlertypen angeboten.
 Mit diesen Werkzeugen können nun Daten korrigiert werden.
-Weitere Editoren sind auf dem \brand{OpenStreetMap}-Wiki\footnote{\url{http://wiki.openstreetmap.org/wiki/Editors\#Choice_of_editors/}} zu finden.
+Weitere Editoren sind auf dem \brand{OSM}-Wiki\footnote{\url{http://wiki.openstreetmap.org/wiki/Editors\#Choice_of_editors/}} zu finden.
 
-Die Zielgruppe dieser Werkzeuge sind Benutzer mit dem Interesse, die \brand{OpenStreetMap}-Daten zu verbessern.
+Die Zielgruppe dieser Werkzeuge sind Benutzer mit dem Interesse, die \brand{OSM}-Daten zu verbessern.
 Um diesen Prozess effizienter zu gestalten, würde sich ein \gls{Crowdsourcing}-Ansatz anbieten.
 Dafür muss die Zielgruppe aber erweitert werden.
 Ein sehr gutes Beispiel dazu ist MapRoulette\footnote{\url{http://wiki.openstreetmap.org/wiki/MapRoulette/}}.
@@ -18,7 +18,7 @@ Dem Benutzer werden Challenges präsentiert, die zum Beispiel ein Satellitenbild
 Nun muss der Benutzer entscheiden, ob es sich tatsächlich um ein Fussballfeld handelt, oder nicht.
 \gls{Gamification} durch Challenges bietet sich also sehr gut an.
 Die Spiel-Elemente halten den Spieler motiviert und binden ihn an das Spiel.
-Einige Projekte\footnote{\url{http://wiki.openstreetmap.org/wiki/Games\#Gamification_of_map_contributions}}, die durch \gls{Gamification} an \brand{OpenStreetMap}-Verbesserungen beitragen, sind bereits entstanden.
+Einige Projekte\footnote{\url{http://wiki.openstreetmap.org/wiki/Games\#Gamification_of_map_contributions}}, die durch \gls{Gamification} an \brand{OSM}-Verbesserungen beitragen, sind bereits entstanden.\cite{ba-kort-2012}
 
 \section{Bestehende Lösungsansätze und Normen}
 Da wir die \kort{}-\gls{WebApp} neu schreiben und es sich um eine Fortsetzungsarbeit handelt, übernehmen wir die bereits dort evaluierten Konzepte.
@@ -55,11 +55,11 @@ Viele Informationen sind in den Issues (aktuell sind 694 offene Issues vorhanden
 
 
 \section{OpenStreetMap OAuth}
-Im Gegensatz zu den anderen Social-Login-Varianten (\brand{Google} und \brand{Facebook}), die OAuth 2.0 anbieten, unterstützt \brand{OpenStreetMap} noch OAuth 1.0a\footnote{\url{http://wiki.openstreetmap.org/wiki/OAuth}}.
+Im Gegensatz zu den anderen Social-Login-Varianten (\brand{Google} und \brand{Facebook}), die OAuth 2.0 anbieten, unterstützt \brand{OSM} noch OAuth 1.0a\footnote{\url{http://wiki.openstreetmap.org/wiki/OAuth}}.
 
 
 \section{Kort Schnittstelle}
-Die \kort{}-\gls{WebApp} nutzte eine Session-basierte (Cookie-based) Authentifizierung. 
+Die \kort{}-\gls{WebApp} nutzte eine Session-basierte (Cookie-based) Authentifizierung.\cite{ba-kort-2012} 
 Eine Session-ID wird auf der Seite des Clients in einem Cookie gespeichert. 
 Bei jedem Request sendet der Client-Browser das Cookie an den Server und wird so wiedererkannt. 
 Der Server geht dann davon aus, dass es sich beim Client um den Inhaber der Session-ID handelt. 

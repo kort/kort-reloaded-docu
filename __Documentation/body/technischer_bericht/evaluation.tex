@@ -64,54 +64,28 @@ Während dem Verlauf vom Projekt sind dann aber vermehrt Fehler aufgetreten.
 Im Nachhinein wäre es sinnvoller gewesen, die Navigator-Komponente zu verwenden.
 Das Verhalten vom React-Native-Router-Flux war nicht voraussehbar.
 
-\section{Karte}
+\section{Karten Darstellung}
 \label{tb-evaluation-karte}
 
 Für die Darstellung der Karte mit \brand{React Native} sind mehrere Varianten ausfindig gemacht worden.
 
 \subsubsection{Variante A: React Native Map Komponente}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth]{images/technischer_bericht/react-native_mapview.png}
-	\caption{React Native Map Implementation\cite{react-native-map}}
-	\label{image-variante-a-map}
-\end{figure}
-
 Am \brand{React Native} Meetup wurde ein Blogpost zur \brand{React Native} Map-Komponente\footnote{\url{http://browniefed.com/blog/2015/05/30/create-a-map-with-react-art/}} vorgestellt. Diese Variante wird standardmässig als MapView-Komponente zur Verfügung gestellt.
 
 \subsubsection{Variante B: Extended React Native Map Komponente}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=8cm]{images/technischer_bericht/lelandrichardson_react-native-maps.png}
-	\caption{react-native-maps - Marker Verwendung}
-	\label{image-variante-b-map}
-\end{figure}
-
 Die Extended React Native Map Komponente\footnote{\url{https://github.com/lelandrichardson/react-native-maps}}) wird von \brand{Facebook} anstelle der Standard-MapView-Komponente, empfohlen.
 
 
 \subsubsection{Variante C: MapBox GL Library}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth]{images/technischer_bericht/react-native-mapbox-gl.jpg}
-	\caption{React Native Mapbox GL - Marker Verwendung}
-	\label{image-variante-c-map}
-\end{figure}
-
 \brand{MapBox} bietet mit dieser experimentellen \brand{React Native}-Komponente (MapBox GL Library\footnote{\url{https://libraries.io/npm/react-native-mapbox-gl}}) eine weitere Lösung für \brand{iOS} und \brand{Android}.
 
 
 \subsubsection{Variante D: Portierung von Leaflet nach React}
-
 Für \brand{React} gibt es eine Map-Komponente namens React-Leaflet\footnote{\url{https://github.com/PaulLeCam/react-leaflet}}. 
 Das liesse sich für \brand{React Native} portieren.
 Schon in der \kort{}-\gls{WebApp} wurde die \brand{Leaflet}\footnote{\url{http://leafletjs.com/t}}-Library verwendet.
 
 \subsubsection{Variante E: Raster-Kacheln selbst darstellen}
-
 Die letzte mögliche Variante war, dass wir die benötigten Raster-Kacheln, die der Benutzer braucht, entsprechend laden und anzeigen.
 
 \begin{table}[H]
@@ -123,7 +97,7 @@ Die letzte mögliche Variante war, dass wir die benötigten Raster-Kacheln, die 
 \hline
 Vorteile & Nachteile \\
 \hline
-Komponente von \brand{Facebook} - \brand{React Native} & Pattern Fill ist nicht implementiert und auch nicht in Planung.
+Komponente von \brand{Facebook} - \brand{React Native} & Pattern Fill ist nicht implementiert und auch nicht in Planung.\cite{react-native-mapview}
 Dadurch lassen sich keine eigene Marker auf der Kartenansicht darstellen. \\
 \hline
  & Es lassen sich keine Map-Kacheln von einem beliebigen Service darstellen.  \\
@@ -143,9 +117,7 @@ Wird von \brand{Facebook} empfohlen.
 \hline
 Vorteile & Nachteile \\
 \hline
-Lässt sich mit Offline-Kacheln von \brand{OSM2VectorTiles}\footnote{\url{http://osm2vectortiles.org/downloads/}} füttern (Vektor Kacheln) & Offline-Untestützung ist problematisch. \\
-\hline
- & Experimentelle Komponente. \\
+Lässt sich mit Offline-Kacheln von \brand{OSM2VectorTiles}\footnote{\url{http://osm2vectortiles.org/downloads/}} füttern (Vektor Kacheln) & Experimentelle Komponente.\cite{react-native-mapbox} \\
 \hline
 \multicolumn{2}{|c|}{\textbf{Variante D: Portierung von Leaflet nach React}} \\
 \hline
@@ -169,7 +141,6 @@ Wäre eine der einzigen Möglichkeiten, falls keine andere Variante in Frage kom
 
 Varianen, die Native Map APIs von \brand{Google} und \brand{Apple} verwenden, kamen für uns nicht in Frage.
 Wir möchten mit unserer App \brand{OpenStreetMap} Daten verbessern und möchten somit aus moralischen Aspekten auch auf diese Karte setzen. 
-Allein schon die Lizenz von \brand{Google} erlaubt es uns nicht, eigene Marker und andere Elemente auf ihren Kacheln darzustellen. 
 
 Bei der \brand{React Native} MapView-Komponente gab es keine Möglichkeit Bilder auf der Karte darzustellen und die Raster-Tiles "von Hand" anzuzeigen wäre schlicht zu aufwendig. 
 Es liesse sich auch nur sehr umständlich eine schöne Map designen.
@@ -184,7 +155,7 @@ Die Kosten bei, einer Anzahl von 50 000 Nutzern pro Monat, sind für dieses Proj
 Der Gedanken zur Offline-Unterstützung wurde auch besprochen.
 Nur gäbe es da Probleme mit der Grösse der App, da die Vektor-Kacheln und die Missionen im Voraus heruntergeladen und installiert werden müssten.
 
-\section{OAuth}
+\section{OAuth Implementation}
 Gebraucht wird ein Login-Dienst für \brand{Google}-, \brand{Facebook}- und \brand{OpenStreetMap}-Konten. 
 Für die Authentifizierung wurden diese Möglichkeiten evaluiert:
 
