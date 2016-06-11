@@ -57,7 +57,7 @@ Für die detaillierte Erarbeitung der Testspezifikation fehlte noch die nötige 
 	\begin{itemize}
 		\item Tab-Navigation
 		\item Darstellung der Karte
-		\item Evaluation der flux-Architektur und Implementation des Grundgerüstes
+		\item Evaluation der Architektur und Implementation des Grundgerüstes
 		\item Missionen auf Map anzeigen
 		\item Authentifizierung mit \gls{OAuth} evaluiert
 	\end{itemize}
@@ -73,9 +73,7 @@ Für die Tab-Navigation konnte eine Demo mit react-native-router-flux\footnote{\
 
 Die Darstellung der Karte aus \nameref{pm-ms2} wurde leicht ausgebaut. Neu wird nun der Standort des Benutzers ermittelt.
 
-Wir haben die Architekturvarianten evaluiert und uns für die flux-Architektur entschieden.
-Daraufhin wurde ein Grundgerüst für die Verwendung vom \kort{}-API mit der flux-Architektur erstellt. 
-Somit konnten die Missionen im Umkreis von fünf Kilometern geladen werden.
+Die Missionen konnten im Umkreis von fünf Kilometern geladen werden.
 
 \subsubsection{Probleme}
 Schwierigkeiten traten vor allem im Zusammenhang mit \brand{React Native} auf.
@@ -122,7 +120,7 @@ Dass der Benutzer nach dem Login automatisch zur Tab-Ansicht weitergeleitet wurd
 Zwischenzeitlich wurde aus diesem Grund das Erhalten des Login-Tokens, nach der Authentifizierung über \brand{Google} und \brand{Facebook}, in einer separaten App getestet.
 
 
-\subsection{MS5: 1. Release}
+\subsection{MS5: Basis-Komponenten}
 \label{pm-ms5}
 \textbf{Fällig am 20.05.2016}
 \subsubsection{Resultate}
@@ -130,7 +128,7 @@ Zwischenzeitlich wurde aus diesem Grund das Erhalten des Login-Tokens, nach der 
 	\item native Location tracking implementiert
 	\item View-Komponenten fertig entworfen
 	\item Testing-\gls{Framework} aufgesetzt
-	\item Backend API mit der flux-Architektur eingebunden
+	\item Backend API mit der flux-Architektur umgesetzt
 	\item Token basierte \brand{Google}-Authentifizierung im Frontend umgesetzt, nachdem das Backend von Stefan Oderbolz dafür angepasst wurde.
 	\item \kort{}-Datenbank für Tests lokal aufgesetzt
 	\item \kort{} ist \brand{iOS}-fähig
@@ -140,15 +138,15 @@ Zwischenzeitlich wurde aus diesem Grund das Erhalten des Login-Tokens, nach der 
 \end{itemize}
 
 \subsubsection{Erledigte Arbeiten}
-Unterdessen konnte die GUI grösstenteils fertiggestellt werden. 
+
+Wir haben die Architekturvarianten evaluiert und uns für die flux-Architektur entschieden.
+Daraufhin wurde das bestehende Grundgerüst, für die Verwendung vom \kort{}-API, aktualisiert und mit der flux-Architektur implementiert. 
+
+Unterdessen konnte das Grundgerüst der GUI grösstenteils fertiggestellt werden. 
 Es fehlte noch die dynamische Behandlung von gewissen View-Komponenten.
 Zum Beispiel die Unterscheidung ob beim Lösen einer Mission ein Picker, zum Auswählen der Antwort, gerendert wird, oder ob ein Text-Input-Feld angeboten wird.
-Gleichzeitig wurden alle API-Aufrufe mit der flux-Architektur eingebunden, aber noch nicht vollständig getestet.
 
-\kort{} erfolgreich auf \brand{iOS} getestet werden.
-
-Für die geplante Studienarbeit wurde evaluiert, ob \kort{} als \brand{React}-\gls{WebApp} umgesetzt werden könnte. 
-Nach einer Besprechung mit Herr Stefan Keller stellte sich das jedoch als zu aufwendig heraus. 
+\kort{} konnte erfolgreich auf \brand{iOS} getestet werden. 
 
 \subsubsection{Probleme}
 Weiterhin war es nicht möglich mit der Router-Flux-Navigationskomponente eine Weiterleitung, nach Erfolgreichem Login, zur Kartenansicht umzusetzen.
@@ -175,11 +173,14 @@ Aus diesem Grund wurde für Tests, nach Absprache mit Jürg Hunziker, das Develo
 
 \subsubsection{Erledigte Arbeiten}
 Alle View-Komponenten sind nun dynamisch und zeigen je nach Zustand der Komponente die entsprechende Oberfläche.
+
 Durch eine zusätzliche App-Loader-View konnte das Problem der Weiterleitung nach dem Login behoben werden.
 Diese Komponente lädt nun alles im Voraus und erst danach wird je nach Zustand, ob der Benutzer eingeloggt ist, oder nicht, die entsprechende Ansicht angezeigt.
-Parallel wurde die Architektur und die Logik fertiggestellt und konnte nach und nach von den View-Komponenten verwendet werden.
+Parallel wurde die Architektur und die Logik fertiggestellt und getestet.
+Nach und nach wurden die Platzhalter der View-Komponenten mit dynamischen Daten der Businesslogik ersetzt.
 
 Schlussendlich konnten wir erfolgreich Missionen und Validationen lösen.
+
 
 \subsubsection{Probleme}
 
@@ -217,5 +218,7 @@ Schlussendlich konnten wir erfolgreich Missionen und Validationen lösen.
 	\item Design Verbesserungen
 \end{itemize}
 
-\subsection{MS9: Salzburg-Konferenz}
+\subsection{MS9: Release für App Store}
 \label{pm-ms9}
+
+
