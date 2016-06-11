@@ -111,7 +111,7 @@ Bietet alle benötigten Funktionen (eigene klickbare Marker platzieren und viele
  Ist fest mit \brand{Apple} und \brand{Google Maps} verbunden. \\
 \hline
 Wird von \brand{Facebook} empfohlen.
- & Native Map APIs sind für ein \brand{OpenStreetMap}-Projekt aus moralischen Gründen unpassend. \\
+ & Native Map APIs sind für ein \brand{OSM}-Projekt aus moralischen Gründen unpassend. \\
 \hline
 \multicolumn{2}{|c|}{\textbf{Variante C: MapBox GL Library}} \\
 \hline
@@ -140,7 +140,7 @@ Wäre eine der einzigen Möglichkeiten, falls keine andere Variante in Frage kom
 \subsection{Fazit}
 
 Varianen, die Native Map APIs von \brand{Google} und \brand{Apple} verwenden, kamen für uns nicht in Frage.
-Wir möchten mit unserer App \brand{OpenStreetMap} Daten verbessern und möchten somit aus moralischen Aspekten auch auf diese Karte setzen. 
+Wir möchten mit unserer App \brand{OSM} Daten verbessern und möchten somit aus moralischen Aspekten auch auf diese Karte setzen. 
 
 Bei der \brand{React Native} MapView-Komponente gab es keine Möglichkeit Bilder auf der Karte darzustellen und die Raster-Tiles "von Hand" anzuzeigen wäre schlicht zu aufwendig. 
 Es liesse sich auch nur sehr umständlich eine schöne Map designen.
@@ -156,7 +156,7 @@ Der Gedanken zur Offline-Unterstützung wurde auch besprochen.
 Nur gäbe es da Probleme mit der Grösse der App, da die Vektor-Kacheln und die Missionen im Voraus heruntergeladen und installiert werden müssten.
 
 \section{OAuth Implementation}
-Gebraucht wird ein Login-Dienst für \brand{Google}-, \brand{Facebook}- und \brand{OpenStreetMap}-Konten. 
+Gebraucht wird ein Login-Dienst für \brand{Google}-, \brand{Facebook}- und \brand{OSM}-Konten. 
 Für die Authentifizierung wurden diese Möglichkeiten evaluiert:
 
 \subsubsection{Variante A: Auth0}
@@ -182,7 +182,7 @@ Sehr einfach Einbindung.
  & Keine \gls{OAuth} 1.0a Unterstützung. \\
 \hline
 Kostenlos für Open-Source-Projekte.
- & Schlecht erweiterbar mit eigenem Login für \brand{OpenStreetMap}. \\
+ & Schlecht erweiterbar mit eigenem Login für \brand{OSM}. \\
 \hline
 \end{tabular}
 \caption{Bewertung OAuth-Komponente}
@@ -190,7 +190,7 @@ Kostenlos für Open-Source-Projekte.
 
 
 \subsection{Fazit}
-\brand{Auth0} kam definitiv nicht in Frage, da es nicht mit einer \gls{OAuth} 1.0a-Authentifizierung, wie sie von \brand{OpenStreetMap} unterstützt wird, erweiterbar ist.
+\brand{Auth0} kam definitiv nicht in Frage, da es nicht mit einer \gls{OAuth} 1.0a-Authentifizierung, wie sie von \brand{OSM} unterstützt wird, erweiterbar ist.
 Entschieden haben wir uns für das react-native-google-signin-Projekt.
 Es funktioniert auf beiden Plattformen und liefert ein Token, das vom \kort{}-Backend überprüft werden kann.
 Der Nachteil ist, dass es kein Open Source Projekt gab, welches alle gewünschten Social-Logins für \brand{iOS} und \brand{Android} anbietet.
