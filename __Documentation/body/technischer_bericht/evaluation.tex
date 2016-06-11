@@ -150,10 +150,11 @@ Nach dem betrachten vom Code fiel uns aber auf, dass diese Variante eventuell nu
 
 Als letzte Möglichkeit blieb die MapBox GL Library.
 Diese hat beim Testen auf Anhieb funktioniert und uns überzeugt.
-Die Kosten bei, einer Anzahl von 50 000 Nutzern pro Monat, sind für dieses Projekt nicht problematisch. 
+Die Kosten bei, einer Anzahl von 50 000 Nutzern pro Monat, sind für dieses Projekt nicht problematisch.\cite{mapbox-pricing}
 
 Der Gedanken zur Offline-Unterstützung wurde auch besprochen.
-Nur gäbe es da Probleme mit der Grösse der App, da die Vektor-Kacheln und die Missionen im Voraus heruntergeladen und installiert werden müssten.
+Nur gäbe es da Probleme mit der Grösse der App und das Backend unterstützt dies nicht. 
+
 
 \section{OAuth Implementation}
 Gebraucht wird ein Login-Dienst für \brand{Google}-, \brand{Facebook}- und \brand{OSM}-Konten. 
@@ -178,8 +179,10 @@ Für \brand{Facebook} bot sich react-native-facebook-login\footnote{\url{https:/
 \hline
 Vorteile & Nachteile \\
 \hline
-Sehr einfach Einbindung.
- & Keine \gls{OAuth} 1.0a Unterstützung. \\
+Sehr einfach Einbindung
+ & Nur \gls{OAuth} 2 Unterstützung\cite{auth0-oauth} \\
+\hline
+ & Backend Anpassung nötig \\
 \hline
 Kostenlos für Open-Source-Projekte.
  & Schlecht erweiterbar mit eigenem Login für \brand{OSM}. \\
