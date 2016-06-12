@@ -1,6 +1,7 @@
 \chapter{Evaluation}
 \label{tb-evaluation}
-An einem \brand{React Native} Meetup an der HSR konnten erste Entscheidungen zur Software-Entwicklungsumgebung und welche Lösungskonzepte es für die Darstellung der Karte gibt, geklärt werden.
+An einem \brand{React Native} Meetup, am 8. März 2016 --- an der HSR, konnten erste Entscheidungen zur Software-Entwicklungsumgebung und welche Lösungskonzepte es für die Darstellung der Karte gibt, geklärt werden.
+
 Unter den vielen \brand{JavaScript}-Editoren haben wir uns für \brand{Atom} entschieden.
 \brand{Facebook} hat speziell für \brand{React}, \brand{React Native} das \brand{Atom}-Package \brand{Nuclide}\footnote{\url{https://nuclide.io/}} veröffentlicht. 
 \brand{Atom} ist Open Source und bietet viele weitere Community-Packages.
@@ -22,6 +23,14 @@ Weitere Hinweise zur Entwicklungsumgebung und den verwendeten Werkzeugen sind im
 
 
 \section{App Navigation}
+
+Um die Navigation von \kort{} zu implementieren gab es zwei Möglichkeiten. 
+Die erste Variante war die Umsetzung mit der von \brand{React Native} zur Verfügung gestellte Navigator-Komponente. 
+Für eine Tab-Ansicht müsste aber eine weitere Library evaluiert werden. 
+
+Als weitere Variante für die Navigation gab es die React-Native-Router-Flux Library. 
+Diese Komponente basiert auf dem Navigator von \brand{React Native} und unterstützt durch die bereits integrierte Tab-Library eine Tab-Ansicht.  
+
 \begin{table}[H]
 \centering
 \label{tb-evaluation-app-navigation}
@@ -32,10 +41,10 @@ Weitere Hinweise zur Entwicklungsumgebung und den verwendeten Werkzeugen sind im
 Vorteile & Nachteile \\
 \hline
 \brand{Android} und \brand{iOS} Unterstützung 
-& Schlechte Dokumentation zur Verwendung. \\
+& Schlechte Dokumentation zur Verwendung \\
 \hline
 Flexibel und für einfache Use Cases gedacht
- & Schlecht erweiterbar für komplexere Use Cases in zukünftigen Versionen \\
+ & Tab-Ansicht wird nicht unterstützt \\
 \hline
 \multicolumn{2}{|c|}{\textbf{Variante B: React-Native-Router-Flux\footnote{\url{https://github.com/aksonov/react-native-router-flux}}}} \\
 \hline
@@ -49,7 +58,7 @@ Leicht erweiterbar und wartbar.
 Integrierte Tab-Navigation.
  & Der aktuelle Navigationszustand ist nicht genau definiert. \\
 \hline
-Ein Wechsel der View ist mit einem Funktionsaufruf von überall aus möglich. 
+Ein Wechsel der View ist mit einem Funktionsaufruf von überall aus möglich. Daten lassen sich dabei einfach als Parameter weitergeben.
  & Die Hintergrundabläufe und der Lebenszyklus sind nicht erkennbar. \\
 \hline
 \end{tabular}
@@ -71,14 +80,15 @@ Das Verhalten vom React-Native-Router-Flux war nicht voraussehbar.
 Für die Darstellung der Karte mit \brand{React Native} sind mehrere Varianten ausfindig gemacht worden.
 
 \subsubsection{Variante A: React Native Map Komponente}
-Am \brand{React Native} Meetup wurde ein Blogpost zur \brand{React Native} Map-Komponente\footnote{\url{http://browniefed.com/blog/2015/05/30/create-a-map-with-react-art/}} vorgestellt. Diese Variante wird standardmässig als MapView-Komponente zur Verfügung gestellt.
+Diese Variante wird standardmässig von \brand{React Native} als MapView-Komponente zur Verfügung gestellt. 
+Die Möglichkeiten zur Verwendung sind eingeschränkt, denn es lassen sich auf \brand{Android} nur normale Pins als Marker einsetzen./cite{react-native-mapview-pin}
 
 \subsubsection{Variante B: Extended React Native Map Komponente}
-Die Extended React Native Map Komponente\footnote{\url{https://github.com/lelandrichardson/react-native-maps}}) wird von \brand{Facebook} anstelle der Standard-MapView-Komponente, empfohlen.
+Die Extended React Native Map Komponente\footnote{\url{https://github.com/lelandrichardson/react-native-maps}} wird von \brand{Facebook} anstelle der Standard-MapView-Komponente, empfohlen.
 
 
-\subsubsection{Variante C: MapBox GL Library}
-\brand{MapBox} bietet mit dieser experimentellen \brand{React Native}-Komponente (MapBox GL Library\footnote{\url{https://libraries.io/npm/react-native-mapbox-gl}}) eine weitere Lösung für \brand{iOS} und \brand{Android}.
+\subsubsection{Variante C: Mapbox GL Library}
+\brand{Mapbox} bietet mit dieser experimentellen \brand{React Native}-Komponente (Mapbox GL Library\footnote{\url{https://libraries.io/npm/react-native-mapbox-gl}}) eine weitere Lösung für \brand{iOS} und \brand{Android}.
 
 
 \subsubsection{Variante D: Portierung von Leaflet nach React}
@@ -87,7 +97,7 @@ Das liesse sich für \brand{React Native} portieren.
 Schon in der \kort{}-\gls{WebApp} wurde die \brand{Leaflet}\footnote{\url{http://leafletjs.com/t}}-Library verwendet.
 
 \subsubsection{Variante E: Raster-Kacheln selbst darstellen}
-Die letzte mögliche Variante war, dass wir die benötigten Raster-Kacheln, die der Benutzer braucht, entsprechend laden und anzeigen.
+Die letzte mögliche Variante war, dass wir die benötigten Raster-Kacheln, die der Benutzer braucht, mit einer eigenen Implementation entsprechend laden und anzeigen.
 
 \begin{table}[H]
 \centering
@@ -114,11 +124,13 @@ Bietet alle benötigten Funktionen (eigene klickbare Marker platzieren und viele
 Wird von \brand{Facebook} empfohlen.
  & Native Map APIs sind für ein \brand{OSM}-Projekt aus moralischen Gründen unpassend. \\
 \hline
-\multicolumn{2}{|c|}{\textbf{Variante C: MapBox GL Library}} \\
+\multicolumn{2}{|c|}{\textbf{Variante C: Mapbox GL Library}} \\
 \hline
 Vorteile & Nachteile \\
 \hline
 Lässt sich mit Offline-Kacheln von \brand{OSM2VectorTiles}\footnote{\url{http://osm2vectortiles.org/downloads/}} füttern (Vektor Kacheln) & Experimentelle Komponente.\cite{react-native-mapbox} \\
+\hline
+Eigene Marker-Bilder können eingesetzt werden &  \\
 \hline
 \multicolumn{2}{|c|}{\textbf{Variante D: Portierung von Leaflet nach React}} \\
 \hline
@@ -147,19 +159,21 @@ Bei der \brand{React Native} MapView-Komponente gab es keine Möglichkeit Bilder
 Es liesse sich auch nur sehr umständlich eine schöne Map designen.
 
 Somit sprang uns als erstes die Portierung von Leaflet für \brand{React} ins Auge. 
-Nach dem betrachten vom Code fiel uns aber auf, dass diese Variante eventuell nur möglich ist, wenn die Karte in einer WebView-Komponente von \brand{React Native} dargestellt wird.
+Nach genauerem Betrachten fiel uns aber auf, dass diese Variante nur möglich ist, wenn die Karte in einer WebView-Komponente von \brand{React Native} dargestellt wird. 
+Das heisst, dass die App müsste zur Browser-Ansicht wechseln müsste.
 
-Als letzte Möglichkeit blieb die MapBox GL Library.
+Als letzte Möglichkeit blieb die Mapbox GL Library.
 Diese hat beim Testen auf Anhieb funktioniert und uns überzeugt.
 Die Kosten bei, einer Anzahl von 50 000 Nutzern pro Monat, sind für dieses Projekt nicht problematisch.\cite{mapbox-pricing}
 
 Der Gedanken zur Offline-Unterstützung wurde auch besprochen.
-Nur gäbe es da Probleme mit der Grösse der App und das Backend unterstützt dies nicht. 
+Nur unterstützt dies das Backend nicht und es gäbe Probleme mit dem Speicherplatzbedarf der App. 
 
 
 \section{OAuth Implementation}
 Gebraucht wird ein Login-Dienst für \brand{Google}-, \brand{Facebook}- und \brand{OSM}-Konten. 
-Für die Authentifizierung wurden diese Möglichkeiten evaluiert:
+Für einen \brand{OSM}-Login muss eine eigene Lösung entwickelt werden. 
+Für die Implementation der Authentifizierung wurden diese Möglichkeiten evaluiert:
 
 \subsubsection{Variante A: Auth0}
 
@@ -167,8 +181,8 @@ Für die Authentifizierung wurden diese Möglichkeiten evaluiert:
 
 \subsubsection{Variante B: Open-Source-Projekte}
 
-Ein Projekt für die \brand{Google}-Authentifizierung wäre react-native-google-signin\footnote{\url{https://github.com/devfd/react-native-google-signin}}. 
-Für \brand{Facebook} bot sich react-native-facebook-login\footnote{\url{https://github.com/magus/react-native-facebook-login}} an.
+Ein geeignetes Open Source Projekt für die \brand{Google}-Authentifizierung wäre react-native-google-signin\footnote{\url{https://github.com/devfd/react-native-google-signin}}. 
+Für \brand{Facebook} bot sich react-native-facebook-login\footnote{\url{https://github.com/magus/react-native-facebook-login}} an. 
 
 
 \begin{table}[H]
@@ -194,13 +208,13 @@ Kostenlos für Open-Source-Projekte.
 
 
 \subsection{Fazit}
-\brand{Auth0} kam definitiv nicht in Frage, da es nicht mit einer \gls{OAuth} 1.0a-Authentifizierung, wie sie von \brand{OSM} unterstützt wird, erweiterbar ist.
+\brand{Auth0} kam definitiv nicht in Frage, da es in nächster Zukunft nicht mit einer \gls{OAuth} 1.0a-Authentifizierung, wie sie von \brand{OSM} unterstützt wird, erweiterbar ist.
 Entschieden haben wir uns für das react-native-google-signin-Projekt.
 Es funktioniert auf beiden Plattformen und liefert ein Token, das vom \kort{}-Backend überprüft werden kann.
 Der Nachteil ist, dass es kein Open Source Projekt gab, welches alle gewünschten Social-Logins für \brand{iOS} und \brand{Android} anbietet.
 
-\brand{Facebook} wird vom \kort{}-Backend derzeit nicht unterstützt und das react-native-facebook-login-Projekt auf Github liefert auch kein Token, wie es beim \brand{Google}-Login der Fall ist.
-Weitere Anpassungen am Backend wären nötig gewesen.
+\brand{Facebook} wird vom \kort{}-Backend derzeitig nicht unterstützt und das react-native-facebook-login-Projekt auf Github liefert auch kein Token, wie es beim \brand{Google}-Login der Fall ist.
+Um dies zu behandeln wären weitere Anpassungen am Backend nötig gewesen.
 Wir hatten uns dazu entschieden, keine Backend-Anpassungen durchzuführen.
 
 
