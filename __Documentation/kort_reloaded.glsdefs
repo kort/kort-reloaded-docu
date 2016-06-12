@@ -718,3 +718,33 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{Library}{}%
+{%
+\gls@defglossaryentry{Library}%
+{%
+name={Library},%
+sort={Library},%
+type={main},%
+first={Library},%
+firstplural={Librarys},%
+text={Library},%
+plural={Librarys},%
+description={{Eine Library (Programmbibliothek) bezeichnet in der Programmierung eine Sammlung von Unterprogrammen, die Lösungswege anbieten. Bibliotheken laufen im Unterschied zu Programmen nicht eigenständig, sondern sie enthalten Hilfsmodule, die angefordert werden können.\cite {library}} plural},%
+descriptionplural={Eine Library (Programmbibliothek) bezeichnet in der Programmierung eine Sammlung von Unterprogrammen, die Lösungswege anbieten. Bibliotheken laufen im Unterschied zu Programmen nicht eigenständig, sondern sie enthalten Hilfsmodule, die angefordert werden können.\cite {library}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
