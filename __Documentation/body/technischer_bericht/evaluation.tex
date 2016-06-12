@@ -8,6 +8,7 @@ Unter den vielen \brand{JavaScript}-Editoren haben wir uns für \brand{Atom} ent
 
 Weitere Hinweise zur Entwicklungsumgebung und den verwendeten Werkzeugen sind im Kapitel \nameref{pm-projektmanagement} beschrieben.
 
+
 \section{Architektur}
 \label{tb-evaluation-architektur}
 
@@ -23,7 +24,6 @@ Weitere Hinweise zur Entwicklungsumgebung und den verwendeten Werkzeugen sind im
 
 
 \section{App Navigation}
-
 Um die Navigation von \kort{} zu implementieren gab es zwei Möglichkeiten. 
 Die erste Variante war die Umsetzung mit der von \brand{React Native} zur Verfügung gestellte Navigator-Komponente. 
 Für eine Tab-Ansicht müsste aber eine weitere Library evaluiert werden. 
@@ -74,14 +74,17 @@ Während dem Verlauf vom Projekt sind dann aber vermehrt Fehler aufgetreten.
 Im Nachhinein wäre es sinnvoller gewesen, die Navigator-Komponente zu verwenden.
 Das Verhalten vom React-Native-Router-Flux war nicht voraussehbar.
 
+
 \section{Karten Darstellung}
 \label{tb-evaluation-karte}
+Für die Darstellung der Karte mit \brand{React Native} sind die Varianten A bis E ausfindig gemacht worden. 
+Diese Punkte beinhalten Libraries oder Ideen zur Umsetzung einer Kartenansicht für die App. 
 
-Für die Darstellung der Karte mit \brand{React Native} sind mehrere Varianten ausfindig gemacht worden.
 
 \subsubsection{Variante A: React Native Map Komponente}
 Diese Variante wird standardmässig von \brand{React Native} als MapView-Komponente zur Verfügung gestellt. 
 Die Möglichkeiten zur Verwendung sind eingeschränkt, denn es lassen sich auf \brand{Android} nur normale Pins als Marker einsetzen./cite{react-native-mapview-pin}
+
 
 \subsubsection{Variante B: Extended React Native Map Komponente}
 Die Extended React Native Map Komponente\footnote{\url{https://github.com/lelandrichardson/react-native-maps}} wird von \brand{Facebook} anstelle der Standard-MapView-Komponente, empfohlen.
@@ -95,6 +98,7 @@ Die Extended React Native Map Komponente\footnote{\url{https://github.com/leland
 Für \brand{React} gibt es eine Map-Komponente namens React-Leaflet\footnote{\url{https://github.com/PaulLeCam/react-leaflet}}. 
 Das liesse sich für \brand{React Native} portieren.
 Schon in der \kort{}-\gls{WebApp} wurde die \brand{Leaflet}\footnote{\url{http://leafletjs.com/t}}-Library verwendet.
+
 
 \subsubsection{Variante E: Raster-Kacheln selbst darstellen}
 Die letzte mögliche Variante war, dass wir die benötigten Raster-Kacheln, die der Benutzer braucht, mit einer eigenen Implementation entsprechend laden und anzeigen.
@@ -151,7 +155,6 @@ Wäre eine der einzigen Möglichkeiten, falls keine andere Variante in Frage kom
 \end{table}
 
 \subsection{Fazit}
-
 Varianen, die Native Map APIs von \brand{Google} und \brand{Apple} verwenden, kamen für uns nicht in Frage.
 Wir möchten mit unserer App \brand{OSM} Daten verbessern und möchten somit aus moralischen Aspekten auch auf diese Karte setzen. 
 
@@ -173,17 +176,16 @@ Nur unterstützt dies das Backend nicht und es gäbe Probleme mit dem Speicherpl
 \section{OAuth Implementation}
 Gebraucht wird ein Login-Dienst für \brand{Google}-, \brand{Facebook}- und \brand{OSM}-Konten. 
 Für einen \brand{OSM}-Login muss eine eigene Lösung entwickelt werden. 
-Für die Implementation der Authentifizierung wurden diese Möglichkeiten evaluiert:
+Für die Implementation der Authentifizierung wurden diese zwei Möglichkeiten evaluiert:
+
 
 \subsubsection{Variante A: Auth0}
-
 \brand{Auth0}\footnote{\url{https://github.com/auth0/react-native-lock}} \footnote{\url{https://auth0.com/}} bietet eine Implementation für beliebige \gls{OAuth} 2-Dienste. 
 
-\subsubsection{Variante B: Open-Source-Projekte}
 
+\subsubsection{Variante B: Open-Source-Projekte}
 Ein geeignetes Open Source Projekt für die \brand{Google}-Authentifizierung wäre react-native-google-signin\footnote{\url{https://github.com/devfd/react-native-google-signin}}. 
 Für \brand{Facebook} bot sich react-native-facebook-login\footnote{\url{https://github.com/magus/react-native-facebook-login}} an. 
-
 
 \begin{table}[H]
 \centering
