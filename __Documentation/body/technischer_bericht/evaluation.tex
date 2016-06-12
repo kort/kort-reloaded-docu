@@ -180,7 +180,7 @@ Für die Implementation der Authentifizierung wurden diese zwei Möglichkeiten e
 
 
 \subsubsection{Variante A: Auth0}
-\brand{Auth0}\footnote{\url{https://github.com/auth0/react-native-lock}} \footnote{\url{https://auth0.com/}} bietet eine Implementation für beliebige \gls{OAuth} 2-Dienste. 
+\brand{Auth0}\footnote{\url{https://github.com/auth0/react-native-lock}}\footnote{\url{https://auth0.com/}} bietet eine Implementation für beliebige \gls{OAuth} 2-Dienste. 
 
 
 \subsubsection{Variante B: Open-Source-Projekte}
@@ -218,6 +218,17 @@ Der Nachteil ist, dass es kein Open Source Projekt gab, welches alle gewünschte
 \brand{Facebook} wird vom \kort{}-Backend derzeitig nicht unterstützt und das react-native-facebook-login-Projekt auf Github liefert auch kein Token, wie es beim \brand{Google}-Login der Fall ist.
 Um dies zu behandeln wären weitere Anpassungen am Backend nötig gewesen.
 Wir hatten uns dazu entschieden, keine Backend-Anpassungen durchzuführen.
+
+
+\section{Internationalisierung}
+Für die Implementation der Internationalisierung (i18n) stand für \brand{React Native} eine Open Source Library (react-native-i18n\footnote{\url{https://github.com/AlexanderZaytsev/react-native-i18n}}) zur Verfügung. 
+
+Die Übersetzungen wurden in der \kort{}-Bachelorarbeit von 2012 mit \brand{Transifex}\footnote{\url{https://github.com/AlexanderZaytsev/react-native-i18n}} bereits durchgeführt.\cite{ba-kort-2012}
+\brand{Transifex} ist eine Plattform, bei der Projekte zur freiwilligen Übersetzung von dessen Benutzern, aufgeschaltet werden können. 
+Das heisst, dass sich ein Benutzer registriert und bei der Übersetzung von anderen Projekten beitragen kann. 
+
+Alle vorhandenen Übersetzungen sind im Java Properties-Format und konnten so nicht mit der verwendeten i18n-Library übernommen werden. 
+Aus diesem Grund wurden erstmals nur die deutschen und englischen Sprachdateien in das richtige Format (JSON Key-Value) von Hand umgewandelt und implementiert.
 
 
 \section{Plattformunabhängigkeit}
