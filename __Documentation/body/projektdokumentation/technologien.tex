@@ -2,7 +2,25 @@
 \label{pd-technologien}
 
 \section{React} 
+\brand{React}\footnote{\url{https://facebook.github.io/react/}}\footnote{\url{https://github.com/facebook/react}} ist eine Open Source \brand{JavaScript} \gls{Library} und dient für die Implementation der View vom \gls{MVC}-Pattern. 
+Die View besteht aus wiederverwendbaren Komponenten, die wiederum Komponenten beinhalten.
+\brand{React} wird von \brand{Facebook}, \brand{Instagram} und von der Community entwickelt und gewartet. 
+\cite{react}
+
+% One-way data flow
+
+
+Anstatt der \gls{DOM} nutzt \brand{React} die sogenannte \gls{Virtual DOM}.
+Wie der Begriff schon sagt, wird mit einer Abstraktion der echten \gls{DOM} --- also mit einer virtuellen DOM --- kommuniziert.
+Die komplette \gls{DOM}, also die Repräsentation der View vom HTML-Code, ist im lokalen Speicher abgelegt.\cite{virtual-dom} 
+In der render()-Methode wird eine Beschreibung der DOM zurückgeliefert, die \brand{React} mit der lokalen Kopie der \gls{DOM} vergleicht.
+Mit einem sehr effizienten Diffing-Algorithmus berechnet \brand{React} den Unterschied zwischen diesen  Versionen der \gls{DOM} und errechnet den schnellsten Weg um den Browser zu aktualisieren. 
+\cite{react-virtual-dom}
+
+% JSX
 
 
 \section{React Native}
+\brand{React Native}\footnote{\url{https://facebook.github.io/react-native/}}\footnote{\url{https://github.com/facebook/react-native}} 
+
 
