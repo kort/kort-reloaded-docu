@@ -14,20 +14,20 @@ Weiterhin sind Ideen aufgelistet, die keine grösseren Änderungen am Backend mi
 
 \section{Vorgehen}
 \label{pd-weiterentwicklung-vorgehen}
-Ein sehr wichtiges Feature, das bisher noch nicht umsetzbar war, ist das \brand{OSM}-Login.
-Neben den Änderungen am Backend, damit dieses Feature überhaupt realisierbar ist, gibt es folgende Schritte zu erledigen:
+Ein sehr wichtiges Feature, das bisher noch nicht umsetzbar war, ist der \brand{OSM}-Login.
+Neben den Änderungen am Backend, damit dieses Feature überhaupt brauchbar ist, gibt es folgende Schritte zu erledigen:
 
 \begin{enumerate}
 	\item App bei \brand{OSM} mit Callback-URL registrieren
 	\begin{itemize}
 		\item Als Callback-URL könnte zum Beispiel 'http://www.kort.ch/' verwendet werden.
 	\end{itemize}
-	\item Request-Token-URL aufrufen, um das OAuth-Token und das Token-Secret zu erhalten
-	\item Authorize-URL mit dem OAuth-Token aufrufen, damit sich der Benutzer auf der \brand{OSM}-Seite einloggen kann
+	\item \brand{OSM}-Request-Token-URL aufrufen, um das OAuth-Token und das Token-Secret zu erhalten
+	\item \brand{OSM}-Authorize-URL mit dem OAuth-Token aufrufen, damit sich der Benutzer auf der \brand{OSM}-Seite einloggen kann
 	\item WebView-Komponente öffnen, um auf die Callback-URL zu warten 
 	\item Wenn sich der Benutzer eingeloggt hat, wird er zur Callback-Seite, mit dem OAuth-Token und dem OAuth-Verifier in der URL, umgeleitet.
 	\item WebView schliessen
-	\item Request Access-Token-URL
+	\item Request \brand{OSM}-Access-Token-URL
 	\item dem Backend das Token zur Überprüfung senden
 \end{enumerate}
 
@@ -53,7 +53,9 @@ Dann wäre es eleganter, Meldungen in einem Fenster zu zeigen.
 	\item 
 \end{itemize}
 
-Um die Funktionalität der \gls{WebApp} komplett umgesetzt zu haben fehlt nur noch die zweite Highscore-Ansicht und die Karte, die beim Lösen einer Mission angezeigt wird.
+Um die Funktionalität der \gls{WebApp} komplett umgesetzt zu haben fehlt nur noch die zweite Highscore-Ansicht und die Karte, die beim Lösen einer Mission angezeigt wird. 
+Die zweite Highscore-Ansicht zeigt den eingeloggten Benutzer, mit seinen direkten Konkurrenten vor und nach ihm. 
+Wenn sich der Benutzer in der Ansicht zum Lösen einer Mission befindet, gäbe es in einem weiteren Tab eine Karte, die das Objekt der Mission markiert hervorgehoben anzeigt. 
 
 Gerne hätten wir noch Tests der Komponenten durchgeführt, doch die Priorität dafür war zu tief und die Zeit zu knapp. 
 Dazu haben wir für die Zukunft die Enzyme\footnote{\url{http://airbnb.io/enzyme/}}-Testing-API (für Komponenten-Tests) und das Mocha\footnote{\url{https://github.com/mochajs/mocha}}-\gls{Framework} (um die Tests laufen zu lassen) evaluiert.
