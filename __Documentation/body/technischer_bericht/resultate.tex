@@ -1,11 +1,65 @@
 \chapter{Resultate}
 \label{tb-resultate}
 
+Wir konnten die wichtigsten Hauptziele erreichen.
+\kort{} erfüllt nun die Grundlage aller wichtigen Anforderungen an eine moderne App.
+Nach dem Login wird der Benutzer wie schon bei der \kort{}-\gls{WebApp} zur Kartenansicht weitergeleitet.
+Er kann auf einen Marker klicken und gelangt direkt zur Ansicht, um die gewählte Mission zu lösen.
+Der Zwischenschritt, dass der Benutzer zuerst gefragt wird, ob er die Lösung kennt, wurde weggelassen.
+Somit entfällt ein weiterer Klick, was die Spielmechanik vereinfacht.
+Nur noch das Marker-Icon auf der Karte verrät etwas über den Missionstyp und weckt dabei immer noch die Neugier beim Benutzer.
+
+%ToDo: Screenshots
+
 \section{Zielerreichung}
 
+Erreichte Ziele:
+\begin{itemize}
+	\item \brand{Android}-App mit gleicher Grundfunktionalität, wie die \gls{WebApp}
+	\item \brand{iOS}-App mit gleicher Grundfunktionalität, wie die \gls{WebApp}
+	\begin{itemize}
+		\item Nicht getestet
+	\end{itemize}
+	\item neuer Validationsmechanismus
+	\item Erfahrungsbericht zu \brand{React-Native}
+	\item Internationalisierung umgesetzt
+\end{itemize}
+
+Das GUI-Design ist noch nicht ansprechend und erfüllt nur die minimalen Ansprüche.
+Für eine finale Version, die veröffentlicht werden kann, muss das Design aufgebessert werden. 
+
+Social-Login wurde nur für \brand{Google} realisiert.
+
+Die Badges, welche vom Backend empfangen werden, konnten durch den neuen Validationsmechanismus nicht mehr verwendet werden.
+Das Backend macht nämlich immer noch die Unterscheidung zwischen Missionen und Validationen.
+
+Leider hat es zeitlich auch nicht mehr gereicht, um die Kartenansicht beim Lösen einer Mission anzuzeigen.
+
+Die Veröffentlichung im \brand{Google-Play} Store ist im \hyperref[pm-ms9]{Meilenstein 9} aufgeführt.
+
+Wie diese zusätzlichen Arbeiten umgesetzt werden könnten wurde im Kapitel \hyperref[pd-weiterentwicklung-vorgehen]{Vorgehen} dokumentiert.
 
 \section{Ausblick}
+Offene Punkte und nächste geplante Arbeiten mit höherer Priorität:
 
+\begin{itemize}
+	\item \brand{OSM}-Login
+	\item Finale \brand{iOS}- und \brand{Android}-App
+	\item Veröffentlichung im \brand{Apple App Store} und \brand{Google Play Store} 
+	\item Promotions-Funktion
+\end{itemize}
+
+Das genaue Vorgehen, wie die offenen Punkte umgesetzt werden, wird im Kapitel \hyperref[pd-weiterentwicklung-vorgehen]{Vorgehen} beschrieben.
+Für die Zukunft gibt es bereits viele weitere Ideen. 
+Eine Liste wurde im Kapitel \hyperref[pd-weiterentwicklung-realistisch]{Weiterentwicklung} erstellt. 
 
 \section{Persönliche Berichte}
 
+\subsubsection{Dominic Mülhaupt}
+
+\subsubsection{Marino Melchiori}
+Beim Start von diesem Projekt hatte ich keine \brand{JavaScript}-Vorkenntnisse.
+Im Verlauf der Arbeit gelang es mir aber, dank der Zusammenarbeit in unserem Team, mich gut  einzuarbeiten.
+Das Highlight dieser Arbeit war für mich die Implementation der App mit \brand{React Native} und die Gestaltung der Benutzeroberfläche mit \brand{JSX}.
+Trotzt all den neuen und teilweise unreifen Technologien, ist es uns gelungen, eine gute App-Idee neu zu entwickeln.
+Ich bin froh, dass ich \brand{JavaScript}-Erfahrungen sammeln konnte.

@@ -1,29 +1,17 @@
 \chapter{Projektmanagement}
 \label{pm-projektmanagement}
-Hier finden Sie die Angaben zum Projekt, zu den eingesetzten Entwicklungs-Werkzeugen und zur eingesetzten Software.
+Hier finden Sie die Angaben zum Projekt, zu den eingesetzten Entwicklungswerkzeugen und zur eingesetzten Software.
 
 \begin{itemize}
-    \item Website: \url{http://play.kort.ch/} (\url{http://www.kort.ch/})
-    \item Source Code: \url{https://github.com/kort/}
-    \item Projektmanagement: Redmine
-    \item Issues: im Redmine Backlog (mit SK gekennzeichnet)
-    \item Dokumentation: \url{https://github.com/kort/kort-docu/}
-    \item Datenablage: Google-Drive
-    \item Entwicklungs-Werkzeuge:
-    \begin{itemize}
-    		\item Dokumentation: \LaTeX{} mit Texmaker
-    		\item Entwicklungsplattform: \brand{React Native}
-    		\item \brand{React Native}-Editor: Atom mit Nuclide-Erweiterung
-    		\item Git: \brand{GitHub}
-    		\item Map Darstellung: MapBox GL Library\footnote{\url{https://libraries.io/npm/react-native-mapbox-gl}}
-    		\item Code Dokumentation für React Native: Noch keine Tools vorhanden
-    		\item OAuth: 
-    \end{itemize}
+    \item Website: \url{http://www.kort.ch/} (\url{http://play.kort.ch/})
+    \item Source Code: \url{https://github.com/kort/kort-reloaded/}
+    \item Projektmanagement: Redmine (\url{sinv-56059.edu.hsr.ch/redmine/projects/ba-kort/ })
+    \item Issues: (\url{http://sinv-56059.edu.hsr.ch/redmine/projects/ba-kort/issues}  (Backlog: im Wiki auf Redmine (mit SK für eigene Issues gekennzeichnet)) 
+    \item Dokumentation: \url{https://github.com/kort/kort-reloaded-docu}
 \end{itemize}
 
-
 \section{Team}
-\label{pm-rollen}
+\label{pm-team}
 \begin{itemize}
 	\item \textit{Betreuer}: Prof. Stefan F. Keller
 	\item \textit{Projektpartner}: Liip AG, Limmatstrasse 183, CH-8005 Zürich
@@ -43,34 +31,47 @@ Diese Arbeit wird als Bachelorarbeit an der Abteilung Informatik durchgeführt v
 \end{itemize}
 
 
-\section{Prototypen, Releases}
-Der erste Prototyp wurde am 25.04.2016 released. 
-Geplant waren mindestens zwei Grundfunktionalitäten - das Anzeigen der Karte und der Missionen. 
-Optionale Ziele waren die Highscore-, Profil- und die About-Ansicht.
-
-%Was wurde im ersten Prototypen erreicht
-%Knapp, was fehlt noch bis zur fertigen Version/Vision
-
 \input{body/projektmanagement/risikomanagement.tex}
 
-%Vorgehen
-%	Projekt-infrastruktur aufsetzten
-%	Technologien abklären, festlegen, evaluieren, testen
-%	Technologien anwenden, ausgiebiger testen, WebView Example, MapBox Example editieren (Bilder auf Map)
-%	Prototyp Entwicklung starten
-%Zeitplanung
-%	(Erreichen der Ziele siehe sep. Kapitel "Bewertung und Ausblick").
-%	Zeitstrahl erklären?
 
 \section{Projektplan}
-% Sprints auflisten
+
+Die Planung wurde nach dem ersten \hyperref[pm-ms1]{Kickoff-Meeting} festgehalten. 
+Der erste Prototyp, für die Demo an der Zwischenpräsentation, war am 11.04.2016 geplant. 
+Am 16.05. war dann das erste Release, mit dem Missionen gelöst werden können, vorgesehen. 
+Um bei der Abgabe vom Projekt die App zu veröffentlichen, entstand der folgende Projektplan.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{images/projektmanagement/zeitstrahl.png}
-	\caption{Projektplan als Zeitstrahl dargestellt}
-	\label{image-project-plan-timeline}
+	\includegraphics[width=\textwidth]{images/projektmanagement/zeitstrahl_v1.png}
+	\caption{1. Projektplan als Zeitstrahl dargestellt}
+	\label{image-project-plan-timeline1}
 \end{figure}
-% Anwendung von Scrum in unserem Projekt
+
+Beim dritten Sprint wurde festgestellt, dass die Planung zu optimistisch war. 
+Die Planung wurde neu besprochen und in einem neuen \hyperref[image-project-plan-timeline2]{Zeitstrahl} festgehalten. 
+Es gab Schwierigkeiten bei der Evaluation der Architektur und von den Libraries. 
+Die Libraries und Komponenten wurden in einzelnen Projekten getestet. 
+Das hat uns zu neuen Erkenntnissen für die \hyperref[tb-evaluation-architektur]{Architekturentscheidung} verholfen. 
+
+Erst beim \hyperref[pm-ms5]{Meilenstein 5} konnte eine Version mit den definitiv evaluierten Komponenten entstehen. 
+Beim achten Meeting, am 29.04.2016, wurde mit Herrn Stefan Keller besprochen, dass wir das Projekt nach der Abgabe gerne weiterführen würden.
+Dann wäre es nämlich auch möglich, die App zu veröffentlichen.
+
+Bis zum Ende vom \hyperref[pm-ms6]{Meilenstein 6} entstand ein erstes Release, von einem Prototypen mit der geplanten Grundfunktionalität. 
+Bei der Abgabe ist das Projekt in einem Zustand, bei dem sich neue Features zügig implementieren lassen.
+Dieser aktuelle Stand wäre am Anfang vom Projekt für den "Meilenstein 5" geplant gewesen.
+
+Somit ist dieser neue Projektplan entstanden.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{images/projektmanagement/zeitstrahl_v2.png}
+	\caption{2. Projektplan als Zeitstrahl dargestellt}
+	\label{image-project-plan-timeline2}
+\end{figure}
+
+
+\input{body/projektmanagement/sprints.tex}
 
 \input{body/projektmanagement/meilensteine.tex}

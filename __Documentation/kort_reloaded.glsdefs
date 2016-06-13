@@ -688,3 +688,153 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{GUI}{}%
+{%
+\gls@defglossaryentry{GUI}%
+{%
+name={GUI},%
+sort={GUI},%
+type={main},%
+first={GUI},%
+firstplural={GUIs},%
+text={GUI},%
+plural={GUIs},%
+description={GUI ist eine Apkürzung für graphical user interface und bedeutet Grafische Benutzeroberfläche.\cite {gui}},%
+descriptionplural={GUI ist eine Apkürzung für graphical user interface und bedeutet Grafische Benutzeroberfläche.\cite {gui}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Library}{}%
+{%
+\gls@defglossaryentry{Library}%
+{%
+name={Library},%
+sort={Library},%
+type={main},%
+first={Library},%
+firstplural={Librarys},%
+text={Library},%
+plural={Librarys},%
+description={{Eine Library (Programmbibliothek) bezeichnet in der Programmierung eine Sammlung von Unterprogrammen, die Lösungswege anbieten. Bibliotheken laufen im Unterschied zu Programmen nicht eigenständig, sondern sie enthalten Hilfsmodule, die angefordert werden können.\cite {library}} plural},%
+descriptionplural={Eine Library (Programmbibliothek) bezeichnet in der Programmierung eine Sammlung von Unterprogrammen, die Lösungswege anbieten. Bibliotheken laufen im Unterschied zu Programmen nicht eigenständig, sondern sie enthalten Hilfsmodule, die angefordert werden können.\cite {library}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{DOM}{}%
+{%
+\gls@defglossaryentry{DOM}%
+{%
+name={DOM},%
+sort={DOM},%
+type={main},%
+first={DOM},%
+firstplural={DOMs},%
+text={DOM},%
+plural={DOMs},%
+description={DOM bedeutet Document Object Model und ist eine Spezifikation für den Zugriff auf HTML-Dokumente. Anhand der DOM kann ein Computerprogramm den Inhalt der HTML-Elemente dynamisch verändern. Für einen Webentwickler wäre das der HTML-Code.\cite {dom}},%
+descriptionplural={DOM bedeutet Document Object Model und ist eine Spezifikation für den Zugriff auf HTML-Dokumente. Anhand der DOM kann ein Computerprogramm den Inhalt der HTML-Elemente dynamisch verändern. Für einen Webentwickler wäre das der HTML-Code.\cite {dom}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Virtual DOM}{}%
+{%
+\gls@defglossaryentry{Virtual DOM}%
+{%
+name={Virtual DOM},%
+sort={Virtual DOM},%
+type={main},%
+first={Virtual DOM},%
+firstplural={Virtual DOMs},%
+text={Virtual DOM},%
+plural={Virtual DOMs},%
+description={Die virtual DOM ist eine Abstraktion der DOM. Es ist eine lokale Kopie der DOM. \cite {virtual-dom}},%
+descriptionplural={Die virtual DOM ist eine Abstraktion der DOM. Es ist eine lokale Kopie der DOM. \cite {virtual-dom}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{JSX}{}%
+{%
+\gls@defglossaryentry{JSX}%
+{%
+name={JSX},%
+sort={JSX},%
+type={main},%
+first={JSX},%
+firstplural={JSXs},%
+text={JSX},%
+plural={JSXs},%
+description={JSX ist eine \brand {JavaScript}-Syntax-Erweiterung, die ähnlich wie XML aussieht. \cite {jsx}},%
+descriptionplural={JSX ist eine \brand {JavaScript}-Syntax-Erweiterung, die ähnlich wie XML aussieht. \cite {jsx}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

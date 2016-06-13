@@ -1,0 +1,109 @@
+\chapter{Weiterentwicklung}
+\label{pd-weiterentwicklung}
+
+\kort{} hat ein grosses Potenzial um weiterentwickelt zu werden.
+Dieses umfasst vor allem zwei Bereiche:
+
+Wie kann \kort{} besser dazu beitragen, \brand{OSM} Daten zu verbessern?
+
+Und wie kann der Benutzer mithilfe von Konzepten der Gamification weiter motiviert werden, zur Datenpflegung beizutragen?
+
+Wir haben uns Gedanken dazu gemacht und hier zusammengefasst, wie \kort{} weiter optimiert werden könnte.
+Das Unterkapitel \hyperref[pd-weiterentwicklung-vorgehen]{Vorgehen} enthält Arbeiten, die beim derzeitigen Stand noch verbessert werden müssen. 
+Weiterhin sind Ideen aufgelistet, die keine grösseren Änderungen am Backend mit sich bringen.
+
+\section{Vorgehen}
+\label{pd-weiterentwicklung-vorgehen}
+Ein sehr wichtiges Feature, das bisher noch nicht umsetzbar war, ist der \brand{OSM}-Login.
+Neben den Änderungen am Backend, damit dieses Feature überhaupt brauchbar ist, gibt es folgende Schritte zu erledigen:
+
+\begin{enumerate}
+	\item App bei \brand{OSM} mit Callback-URL registrieren
+	\begin{itemize}
+		\item Als Callback-URL könnte zum Beispiel 'http://www.kort.ch/' verwendet werden.
+	\end{itemize}
+	\item \brand{OSM}-Request-Token-URL aufrufen, um das OAuth-Token und das Token-Secret zu erhalten
+	\item \brand{OSM}-Authorize-URL mit dem OAuth-Token aufrufen, damit sich der Benutzer auf der \brand{OSM}-Seite einloggen kann
+	\item WebView-Komponente öffnen, um auf die Callback-URL zu warten 
+	\item Wenn sich der Benutzer eingeloggt hat, wird er zur Callback-Seite, mit dem OAuth-Token und dem OAuth-Verifier in der URL, umgeleitet.
+	\item WebView schliessen
+	\item Request \brand{OSM}-Access-Token-URL
+	\item dem Backend das Token zur Überprüfung senden
+\end{enumerate}
+
+Dieses Vorgehen wurde noch nicht getestet und dient nur als Idee zur möglichen Umsetzung.
+Die korrekten Request-URLs können aus der Dokumentation im \brand{OSM}-Wiki\footnote{\url{http://wiki.openstreetmap.org/wiki/OAuth}} entnommen werden.
+
+Als nächstes müsste für den \gls{Gamification}-Ansatz das Design weiter verbessert werden. 
+Dafür wäre zuerst eine Änderung am Backend geplant, um die Validationen endgültig abzuschaffen, indem sie als normale Missionen gezählt werden. 
+Dann wäre es auch wieder möglich korrekte Badges für den Missionen-Counter anzuzeigen. 
+
+Durch den Einsatz von Farben oder einem Hintergrundbild beim Login-Screen würde das Design einen Spieler besser ansprechen. 
+Passend dazu könnten die verwendeten Bilder, Icons und Marker einheitlich gestaltet und erneuert werden. 
+
+Meldungen, die dem Benutzer die Anzahl gewonnener Koins anzeigen, erscheinen momentan im Vollbildmodus. 
+Das liegt an einem Fehler der eingesetzten Navigations-Komponente, die keine transparenten Hintergründe zulässt. 
+In Zukunft könnte das aber noch behoben werden. 
+Dann wäre es eleganter, Meldungen in einem Fenster zu zeigen.
+
+\subsubsection{GUI-Arbeiten}
+\begin{itemize}
+	\item Map-Marker ersetzen
+	\item Textfeld, um den Benutzernamen anzupassen, anbieten
+	\item 
+\end{itemize}
+
+Um die Funktionalität der \gls{WebApp} komplett umgesetzt zu haben fehlt nur noch die zweite Highscore-Ansicht und die Karte, die beim Lösen einer Mission angezeigt wird. 
+Die zweite Highscore-Ansicht zeigt den eingeloggten Benutzer, mit seinen direkten Konkurrenten vor und nach ihm. 
+Wenn sich der Benutzer in der Ansicht zum Lösen einer Mission befindet, gäbe es in einem weiteren Tab eine Karte, die das Objekt der Mission markiert hervorgehoben anzeigt. 
+
+Gerne hätten wir noch Tests der Komponenten durchgeführt, doch die Priorität dafür war zu tief und die Zeit zu knapp. 
+Dazu haben wir für die Zukunft die Enzyme\footnote{\url{http://airbnb.io/enzyme/}}-Testing-API (für Komponenten-Tests) und das Mocha\footnote{\url{https://github.com/mochajs/mocha}}-\gls{Framework} (um die Tests laufen zu lassen) evaluiert.
+
+\section{Realistische Arbeiten}
+\label{pd-weiterentwicklung-realistisch}
+Punkte, die \kort{} attraktiver machen würden:
+
+\begin{itemize}
+	\item Benutzerlogin mit weiteren \gls{OAuth}-Diensten erweitern (z.B. \brand{Twitter}, \brand{GitHub})
+	\item \gls{Gamification}
+	\begin{itemize}
+		\item von gesammelten \emph{Koins} abhängige Levels einführen (z.B. bestimmte Fehlertypen erst ab fortgeschrittenem Level anzeigen, Avatars, Levelbezeichnungen)
+		\item verschiedene Schwierigkeitsstufen
+		\item Einbindung in \brand{Game Center} der jeweiligen Plattform
+		\item weitere Badges einführen (viele Ideen finden sich hier: \url{https://wiki.openstreetmap.org/wiki/Badges}, zum Beispiel auch Badges für Spielertypen)
+		\item verschiedene Highscores anzeigen (zum Beispiel zeitlich oder Regional begrenzt, nach Fehlertypen kategorisiert, schnellste Aufsteiger)
+		\item zusätzliche Berechtigungen für erfahrene Benutzer (für den langfristigen Erfolg)
+	\end{itemize}
+	\item neue realistische Fehlertypen:\footnote{\url{https://github.com/kort/kort/issues/81}}
+	\begin{itemize}
+		\item Hausnummern einfügen
+		\item Stockwerk-Anzahl einfügen
+		\item Einbahnstrassen erfassen
+		\item Öffnungszeiten von öffentlichen Gebäuden festhalten
+	\end{itemize}
+	\item weniger realistische Fehlertypen:
+		\begin{itemize}
+			\item Kreisel erfassen
+			\item Bushaltestellen von \brand{DIDOK}\footnote{\url{https://didok.osm.ch/}} erfassen
+		\end{itemize}
+	\item Erkennen von Benutzern, die nicht sorgfältig validieren\footnote{\url{https://github.com/kort/kort/issues/7}}
+	\item ausführliche Statistiken für individuelle Benutzer\footnote{\url{https://github.com/kort/kort/issues/71}}
+	\item Aufträge aus \brand{wheelmap}\footnote{\url{http://wheelmap.org}}	einfügen
+	\item Offline-Fähigkeit (offline Maps für \brand{React Native} wären erforderlich)
+	\item wenn Aufträge zum Beispiel drei Mal nicht gelöst werden können, soll eine \brand{OSM}-Notiz generiert werden
+\end{itemize}
+
+\subsubsection{Unrealistische Arbeiten}
+Punkte, die für \kort{} als weniger geeignet empfunden wurden:
+
+\begin{itemize}
+	\item Erweitern der Verifizierung mit der Möglichkeit, ein Foto als Beweis hochzuladen
+	\begin{itemize}
+	  \item \emph{Begründung:} Aspekte des Datenschutzes bergen ein gewisses Risiko. Benutzer müssten für das Hochladen von Bildern zusätzliche Bedingungen akzeptieren.
+	\end{itemize}
+	\item standortunabhängige Aufgaben lösen (Gefahr von Couch Mapping)
+	\begin{itemize}
+	  \item \emph{Begründung:} Es ist ein Anliegen der \brand{OSM} Community, dass die Mapper vor Ort sein sollen um Aufträge zu lösen. 
+	\end{itemize}
+\end{itemize}

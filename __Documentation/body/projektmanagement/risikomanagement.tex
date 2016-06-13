@@ -1,74 +1,176 @@
 \section{Risikomanagement}
 \label{pm-projektmanagement-risikomanagement}
 Daher, dass  \kort{} bereits in einer vorhergehenden Bachelorarbeit erfolgreich umgesetzt werden konnte und Anklang gefunden hat, wurden bereits viele Risiken abgedeckt.\newline
-Dennoch sollte das Risikomanagement nicht vernachlässigt werden.
+Dennoch wurde das Risikomanagement nicht vernachlässigt.
+Alle bekannten Risiken sind gesammelt aufgelistet und wurden nach jedem Meilenstein neu evaluiert.
 
-\subsection{Risikoanalyse Sprint 1}
-Am 17. März 2016 wurden folgende Risiken identifiziert:
+\subsection{Risikoanalyse}
+\label{pm-projektmanagement-risikoanalyse}
+Am Anfang der Bachelorarbeit wurden folgende Risiken identifiziert:
 
-\subsubsection{Mangelnde Erfahrung mit JavaScript, React und React Native wirkt sich negativ auf Design und Programmcode aus}
 \begin{table}[H]
 \centering
-\begin{tabular}{|p{0.25\twocelltabwidth}|p{0.75\twocelltabwidth}|}
-\hline 
-\small{\textbf{Auswirkung}} & Da wir uns mit den zugrundeliegenden Programmierkonzepten vertraut machen während wir bereits planen und Entscheidungen treffen, teilweise sogar schon programmieren müssen, kann und wird es vorkommen, dass gewisse Entscheidungen schlecht getroffen und gewisse Konzepte nicht sauber umgesetzt werden. 
+\label{pm-projektmanagement-risikomanagement-r01}
+\begin{tabular}{|p{4.5cm}|p{11cm}|}
+\hline
+\multicolumn{2}{|l|}{\textbf{R01: Mangelnde Erfahrung mit \brand{JavaScript}, \brand{React} und \brand{React Native}}} \\
+\hline
+\textbf{Beschreibung} & Wirkt sich negativ auf Design und Programmcode aus. \\
+\hline
+\textbf{Schadenspotential} & 60h \\
+\hline
+\textbf{Eintrittswahrsch.} & 65\% \\
+\hline
+\textbf{Auswirkung} & Da die Entwickler sich mit den zugrundeliegenden Programmierkonzepten vertraut machen während sie bereits planen und Entscheidungen treffen, teilweise sogar schon programmieren müssen, kann und wird es vorkommen, dass gewisse Entscheidungen schlecht getroffen und gewisse Konzepte nicht sauber umgesetzt werden. 
 Dies kann zu Verspätungen oder unsauberem Programmcode führen. \\
-\hline 
-\small{\textbf{Wahrscheinlichkeit}} & hoch \\
-\hline 
-\small{\textbf{Massnahme zur Verhinderung}} & Wir haben mit Herr Keller besprochen, dass das \gls{Minimum Viable Product} der Bachelorarbeit eine Android App mit der gleichen Funktionalität, wie sie bereits im ursprünglichen Kort Game umgesetzt wurde, sein wird.
-So laufen wir nicht Gefahr, dass wir am Ende viele begonnene Arbeiten und dennoch kein brauchbares Produkt haben.\newline
-Da im Rahmen dieser Arbeit schlicht keine Zeit bleibt um sich umfassend in die Technologien einzuarbeiten bevor die restliche Arbeit angepackt wird, wird vor allem zu Beginn vermehrt auf \gls{Pair Programming} gesetzt.
-Wir werden uns auch in regelmässigen Abständen die Zeit nehmen, ein Code Review durchzuführen.
-Ausserdem ist es wichtig, dass bei Schwierigkeiten nicht zu lange gezögert wird, den Kontakt zu Experten im jeweiligen Bereich zu suchen. \\
+\hline
+\textbf{Vorbeugung} & Die Entwickler haben mit Herr Keller besprochen, dass das \gls{Minimum Viable Product} der Bachelorarbeit eine Android App mit der gleichen Funktionalität, wie sie bereits im ursprünglichen Kort Game umgesetzt wurde, sein wird.
+Da im Rahmen dieser Arbeit schlicht keine Zeit bleibt um sich umfassend in die Technologien einzuarbeiten bevor die restliche Arbeit angepackt ist, wird vor allem zu Beginn vermehrt auf \gls{Pair Programming} gesetzt.
+Die Entwickler haben sich auch in regelmässigen Abständen die Zeit genommen, ein Code Review durchzuführen.
+Ausserdem ist es wichtig, dass bei Schwierigkeiten nicht zu lange gezögert wird, den Kontakt zu Experten im jeweiligen Bereich zu suchen.  \\
+\hline
+\textbf{Massnahmen beim Eintreffen} & Komplexe Features vereinfachen und so gestalten, dass sie leicht erweiterbar sind. \\
 \hline
 \end{tabular}
+\caption{Risiko R01}
 \end{table}
 
-\subsubsection{Es existiert keine passende Map Library für \brand{React Native}}
 \begin{table}[H]
 \centering
-\begin{tabular}{|p{0.25\twocelltabwidth}|p{0.75\twocelltabwidth}|}
-\hline 
-\small{\textbf{Auswirkung}} & Es müsste statt \brand{React Native} ein alternatives mobiles \gls{Framework} gefunden werden, mit welchem wir die  \brand{\gls{OpenStreetMap}}-Daten anzeigen können. \\
-\hline 
-\small{\textbf{Wahrscheinlichkeit}} & tief \\
-\hline 
-\small{\textbf{Massnahme zur Verhinderung}} & Zu Beginn des Projektes muss eine \brand{React Native} Prototyp-Applikation implementiert werden, welche \brand{\gls{OpenStreetMap}}-Daten auf der Karte darstellt. \\
+\label{pm-projektmanagement-risikomanagement-r02}
+\begin{tabular}{|p{4.5cm}|p{11cm}|}
+\hline
+\multicolumn{2}{|l|}{\textbf{R02: Es existiert keine passende Map Library für \brand{React Native}}} \\
+\hline
+\textbf{Schadenspotential} & 70h \\
+\hline
+\textbf{Eintrittswahrsch.} & 30\% \\
+\hline
+\textbf{Auswirkung} & Es müsste statt \brand{React Native} ein alternatives mobiles \gls{Framework} gefunden werden, welches die \brand{OSM}-Daten anzeigen kann. \\
+\hline
+\textbf{Vorbeugung} & Zu Beginn des Projektes muss eine \brand{React Native} Prototyp-Applikation implementiert werden, welche \brand{OSM}-Daten auf der Karte darstellt.  \\
+\hline
+\textbf{Massnahmen beim Eintreffen} & Auf eine aufwendigere Variante der Kartendarstellung, die im Kapitel \hyperref[tb-evaluation-karte]{Evaluation} evaluiert wurde, zurückgreifen. \\
 \hline
 \end{tabular}
+\caption{Risiko R02}
 \end{table}
 
-\subsubsection{\brand{KeepRight} stellt den Dienst ein}
 \begin{table}[H]
 \centering
-\begin{tabular}{|p{0.25\twocelltabwidth}|p{0.75\twocelltabwidth}|}
-\hline 
-\small{\textbf{Auswirkung}} & Die Anzahl der zur Verfügung stehenden Missionen würde stark eingeschränkt werden.
+\label{pm-projektmanagement-risikomanagement-r03}
+\begin{tabular}{|p{4.5cm}|p{11cm}|}
+\hline
+\multicolumn{2}{|l|}{\textbf{R03: \brand{KeepRight} stellt den Dienst ein}} \\
+\hline
+\textbf{Schadenspotential} & 70h \\
+\hline
+\textbf{Eintrittswahrsch.} & 10\% \\
+\hline
+\textbf{Auswirkung} & Die Anzahl der zur Verfügung stehenden Missionen würde stark eingeschränkt werden.
 Ausserdem wären diese auf die Schweiz beschränkt.
-Ein anderer Dienst (z.B. \brand{Osmose}) müsste eingesetzt werden, was vor allem Änderungen im Backend erfordern würde.\\
-\hline 
-\small{\textbf{Wahrscheinlichkeit}} & tief \\
-\hline 
-\small{\textbf{Massnahme zur Verhinderung}} & Bereits früh im Projekt wird das Thema mit dem \hyperref[pm-rollen]{Projektpartner} besprochen um festzustellen, ob dieser bereit wäre, sich dieser Problematik anzunehmen. \\
+Ein anderer Dienst (z.B. \brand{Osmose}) müsste eingesetzt werden, was vor allem Änderungen im Backend erfordern würde. \\
+\hline
+\textbf{Vorbeugung} & Bereits früh im Projekt wird das Thema mit dem \hyperref[pm-team]{Projektpartner} besprochen um festzustellen, ob dieser bereit wäre, sich dieser Problematik anzunehmen. \\
+\hline
+\textbf{Massnahmen beim Eintreffen} & Ausarbeitung einer neuen Aufgabenstellung mit Herrn Prof. S. Keller, Jürg Hunziker und Stefan Oderbolz, die Änderungen am Backend beinhaltet. \\
 \hline
 \end{tabular}
+\caption{Risiko R03}
 \end{table}
 
-\subsubsection{\brand{React Native} ist noch nicht ausgereift genug für \brand{Android}}
 \begin{table}[H]
 \centering
-\begin{tabular}{|p{0.25\twocelltabwidth}|p{0.75\twocelltabwidth}|}
-\hline 
-\small{\textbf{Auswirkung}} & \brand{Android} wird erst seit Oktober 2015 durch \brand{React Native} unterstützt. 
+\label{pm-projektmanagement-risikomanagement-r04}
+\begin{tabular}{|p{4.5cm}|p{11cm}|}
+\hline
+\multicolumn{2}{|l|}{\textbf{R04: \brand{React Native} ist noch nicht ausgereift genug für \brand{Android}}} \\
+\hline
+\textbf{Schadenspotential} & 20h \\
+\hline
+\textbf{Eintrittswahrsch.} & 30\% \\
+\hline
+\textbf{Auswirkung} & \brand{Android} wird erst seit Oktober 2015 durch \brand{React Native} unterstützt. 
 Es stehen noch nicht alle Funktionalitäten wie für \brand{iOS} zur Verfügung. \\
-\hline 
-\small{\textbf{Wahrscheinlichkeit}} & tief \\
-\hline 
-\small{\textbf{Massnahme zur Verhinderung}} & Die mangelnden Funktionalitäten – wie z.B. im Testing – werden bereits bevor mit der Implementation begonnen wird, so weit möglich, analysiert.
+\hline
+\textbf{Vorbeugung} & Die mangelnden Funktionalitäten (wie zum Beispiel im Testing) werden bereits bevor mit der Implementation begonnen wird, so weit möglich, analysiert.
 Grundsätzlich sollte es möglich sein, die App für \brand{Android} umzusetzen da bereits komplexere Apps damit erstellt wurden.
 Wahrscheinlich wird es vorkommen, dass Workarounds nötig sein werden. 
 Im schlimmsten Fall müsste während der Entwicklung auf \brand{iOS} umgestellt werden, was grundsätzlich möglich ist. \\
 \hline
+\textbf{Massnahmen beim Eintreffen} & Ausarbeitung einer neuen Aufgabenstellung mit Herrn Prof. S. Keller, die eine \brand{iOS}-Version bevorzugt. \\
+\hline
 \end{tabular}
+\caption{Risiko R04}
 \end{table}
+
+\begin{table}[H]
+\centering
+\label{pm-projektmanagement-risikomanagement-r05}
+\begin{tabular}{|p{4.5cm}|p{11cm}|}
+\hline
+\multicolumn{2}{|l|}{\textbf{R05: Mangelnde Erfahrung mit der flux-Architektur}} \\
+\hline
+\textbf{Beschreibung} & Wirkt sich negativ auf Design und Programmcode aus. \\
+\hline
+\textbf{Schadenspotential} & 30h \\
+\hline
+\textbf{Eintrittswahrsch.} & 40\% \\
+\hline
+\textbf{Auswirkung} & Da die Konzepte der flux-Architektur neu erarbeitet werden müssen und flux in der Community als eher komplex eingestuft ist, kann die Entwicklung mehr Zeit beanspruchen. \\
+\hline
+\textbf{Vorbeugung} & Die korrekte Umsetzung wird bereits vor dem Start der Implementation so weit wie möglich analysiert.
+Dabei wurden die Themengebiete zum Einlesen aufgeteilt und am schlussendlich besprochen und erklärt. \\
+\hline
+\textbf{Massnahmen beim Eintreffen} & Rücksprache mit dem IFS-Team, das an einem \brand{React}-Projekt arbeitet. \\
+\hline
+\end{tabular}
+\caption{Risiko R05}
+\end{table}
+
+\begin{table}[H]
+\centering
+\label{pm-projektmanagement-risikomanagement-r06}
+\begin{tabular}{|p{4.5cm}|p{11cm}|}
+\hline
+\multicolumn{2}{|l|}{\textbf{R06: Mangelnde Erfahrung mit \gls{OAuth}}} \\
+\hline
+\textbf{Beschreibung} & Keiner der Entwickler ist mit \gls{OAuth} vertraut. Dadurch, dass sich die Implementation der Authentifizierung bei einem native Client zu einer Implementation einer \gls{WebApp} unterscheidet (Token- vs. Session-Basiert), wird mehr Zeit beansprucht. \\
+\hline
+\textbf{Schadenspotential} & 40h \\
+\hline
+\textbf{Eintrittswahrsch.} & 60\% \\
+\hline
+\textbf{Auswirkung} & Die \brand{OSM}-Community würde nur sehr ungern auf einen entsprechenden Login verzichten. \\
+\hline
+\textbf{Vorbeugung} & Mehr Aufwand in die Evaluation stecken. \\
+\hline
+\textbf{Massnahmen beim Eintreffen} & Rücksprache mit Herrn Prof. S. Keller \\
+\hline
+\end{tabular}
+\caption{Risiko R06}
+\end{table}
+
+\subsubsection{Risikoanalyse MS2: Ende Elaboration}
+Am 29. März 2016 (Fälligkeitsdatum des Meilensteins) wurden die Risiken erneut besprochen.
+
+\textbf{R01: Mangelnde Erfahrung mit \brand{JavaScript}, \brand{React} und \brand{React Native}}: Die Eintrittswahrscheinlichkeit konnte auf 50\% gesenkt werden. 
+
+\textbf{R03: \brand{KeepRight} stellt den Dienst ein}: Wurde nach Absprache mit Jürg Hunziker und Stefan Oderbolz ganz eliminiert.
+
+\subsubsection{Risikoanalyse MS3: 1. Prototyp}
+\textbf{R02: Es existiert keine passende Map Library für \brand{React Native}}: Die Wahrscheinlichkeit des Eintretens konnte nach erfolgreicher Implementation auf 20\% gesenkt werden. Dadurch, dass noch keine Missionen gelöst wurden, galt das Risiko noch nicht als behoben.
+
+\subsubsection{Risikoanalyse MS4: Zwischenpräsentation}
+Das Eintreten von \textbf{R02} konnte weiterhin auf 10\% gesenkt werden. Die Marker waren klickbar und sie enthielten alle nötigen Informationen für das Lösen einer Mission.
+
+\subsubsection{Risikoanalyse MS5: 1. Release}
+\textbf{R02} wurde eliminiert, \textbf{R01} auf 20\% gesenkt und \textbf{R05} als tief eingeschätzt (10\%).
+
+\subsubsection{Risikoanalyse MS6: 2. Release}
+\textbf{R05} wurde ebenfalls eliminiert - die flux-Architektur war stabil und eine Mission konnte erfolgreich gelöst werden.
+
+\subsubsection{Risikoanalyse MS7: Schlussabgabe}
+\textbf{R04: \brand{React Native} ist noch nicht ausgereift genug für \brand{Android}}: Wurde dank einer Lauffähigen Version auf 10\% gesenkt.
+
+\textbf{R06: Mangelnde Erfahrung mit \gls{OAuth}}: Dies ist ein weiterhin bestehendes Risiko - die \brand{OSM}-Authentifizierung konnte leider nicht umgesetzt werden.
