@@ -808,3 +808,33 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{JSX}{}%
+{%
+\gls@defglossaryentry{JSX}%
+{%
+name={JSX},%
+sort={JSX},%
+type={main},%
+first={JSX},%
+firstplural={JSXs},%
+text={JSX},%
+plural={JSXs},%
+description={JSX ist eine \brand {JavaScript}-Syntax-Erweiterung, die ähnlich wie XML aussieht. \cite {jsx}},%
+descriptionplural={JSX ist eine \brand {JavaScript}-Syntax-Erweiterung, die ähnlich wie XML aussieht. \cite {jsx}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

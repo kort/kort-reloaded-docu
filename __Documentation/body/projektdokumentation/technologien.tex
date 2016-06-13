@@ -2,25 +2,27 @@
 \label{pd-technologien}
 
 \section{React} 
-\brand{React}\footnote{\url{https://facebook.github.io/react/}} \footnote{\url{https://github.com/facebook/react}} ist eine Open Source \brand{JavaScript} \gls{Library} und dient für die Implementation der View vom \gls{MVC}-Pattern. 
+\brand{React}\footnote{\url{https://facebook.github.io/react/}, \url{https://github.com/facebook/react}} ist eine Open Source \brand{JavaScript} \gls{Library} und dient für die Implementation der View vom \gls{MVC}-Pattern. 
 Die View besteht aus wiederverwendbaren Komponenten, die wiederum Komponenten beinhalten.
 \brand{React} wird von \brand{Facebook}, \brand{Instagram} und von der Community entwickelt und gewartet. 
 \cite{react}
 
-% One-way data flow
-
+Für \brand{React} wird \gls{JSX}, welches eine HTML ähnliche Syntax nutzt, zur Erstellung der Komponenten empfohlen. 
+So lassen sich Komponenten-Bäume direkt mit \brand{JavaScript} erstellen. 
+Anders formuliert können \brand{JavaScript}-Objekte mit einer HTML-Syntax erzeugt werden. 
+Eine Hauptkomponente gibt seine Daten per Props an die Kind-Komponenten weiter (one-way-dataflow). 
+\gls{JSX} wird nicht zwingend benötigt. 
+% JSX https://facebook.github.io/react/docs/displaying-data.html#jsx-syntax
+% https://facebook.github.io/react/docs/multiple-components.html\#data-flow
 
 Anstatt der \gls{DOM} nutzt \brand{React} die sogenannte \gls{Virtual DOM}.
 Wie der Begriff schon sagt, wird mit einer Abstraktion der echten \gls{DOM} --- also mit einer virtuellen DOM --- kommuniziert.
-Die komplette \gls{DOM}, also die Repräsentation der View vom HTML-Code, ist im lokalen Speicher abgelegt.\cite{virtual-dom} 
-In der render()-Methode wird eine Beschreibung der DOM zurückgeliefert, die \brand{React} mit der lokalen Kopie der \gls{DOM} vergleicht.
+Die komplette \gls{DOM}, also die Repräsentation der View vom HTML-Code, ist im lokalen Speicher abgelegt.\cite{virtual-dom}
+In der \textit{render()}-Methode einer Klasse wird eine Beschreibung der DOM zurückgeliefert, die \brand{React} mit der lokalen Kopie der \gls{DOM} vergleicht.
 Mit einem sehr effizienten Diffing-Algorithmus berechnet \brand{React} den Unterschied zwischen diesen  Versionen der \gls{DOM} und errechnet den schnellsten Weg um den Browser zu aktualisieren. 
 \cite{react-virtual-dom}
 
-% JSX
-
-
 \section{React Native}
-\brand{React Native}\footnote{\url{https://facebook.github.io/react-native/}} \footnote{\url{https://github.com/facebook/react-native}} 
+Der Ansatz von \brand{React Native}\footnote{\url{https://facebook.github.io/react-native/}, \url{https://github.com/facebook/react-native}} ist \textit{learn once - write anywhere} --- lerne eine Technologie und nutze sie für alle unterstützten Plattformen.\cite{react-native}
 
 
