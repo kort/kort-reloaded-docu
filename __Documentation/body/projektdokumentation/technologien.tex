@@ -18,7 +18,7 @@ Eine Hauptkomponente gibt seine Daten per Props an die Kind-Komponenten weiter (
 Anstatt der \gls{DOM} nutzt \brand{React} die sogenannte \gls{Virtual DOM}.
 Wie der Begriff schon sagt, wird mit einer Abstraktion der echten \gls{DOM} --- also mit einer virtuellen DOM --- kommuniziert.
 Die komplette \gls{DOM}, also die Repräsentation der View vom HTML-Code, ist im lokalen Speicher abgelegt.\cite{virtual-dom}
-In der \textit{render()}-Methode einer Klasse wird eine Beschreibung der DOM zurückgeliefert, die \brand{React} mit der lokalen Kopie der \gls{DOM} vergleicht.
+In der \inlinecode{render()}-Methode einer Klasse wird eine Beschreibung der DOM zurückgeliefert, die \brand{React} mit der lokalen Kopie der \gls{DOM} vergleicht.
 Mit einem sehr effizienten Diffing-Algorithmus berechnet \brand{React} den Unterschied zwischen diesen  Versionen der \gls{DOM} und errechnet den schnellsten Weg um den Browser zu aktualisieren. 
 \cite{react-virtual-dom}
 
