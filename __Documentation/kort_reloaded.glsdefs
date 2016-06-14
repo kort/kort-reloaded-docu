@@ -838,3 +838,93 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{Backend}{}%
+{%
+\gls@defglossaryentry{Backend}%
+{%
+name={Backend},%
+sort={Backend},%
+type={main},%
+first={Backend},%
+firstplural={Backends},%
+text={Backend},%
+plural={Backends},%
+description={Als Backend wird das auf dem Server laufenden Programm bezeichnet.},%
+descriptionplural={Als Backend wird das auf dem Server laufenden Programm bezeichnet.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Frontend}{}%
+{%
+\gls@defglossaryentry{Frontend}%
+{%
+name={Frontend},%
+sort={Frontend},%
+type={main},%
+first={Frontend},%
+firstplural={Frontends},%
+text={Frontend},%
+plural={Frontends},%
+description={Als Frontend wird das beim Client laufende Programm bezeichnet.},%
+descriptionplural={Als Frontend wird das beim Client laufende Programm bezeichnet.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{DTO}{}%
+{%
+\gls@defglossaryentry{DTO}%
+{%
+name={DTO},%
+sort={DTO},%
+type={main},%
+first={DTO},%
+firstplural={DTOs},%
+text={DTO},%
+plural={DTOs},%
+description={Ein Datentransferobjekt ist ein Objekt},%
+descriptionplural={Ein Datentransferobjekt ist ein Objekt},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
