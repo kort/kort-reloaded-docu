@@ -84,14 +84,13 @@ Testing & 22.00 h \\
 
 \subsection{Soll-Ist-Zeitvergleich}
 Die Tabelle zum \ref{pm-arbeitsaufwand-kategorie-ges} zeigt, wie das Projekt kategorisiert wurde. 
-In der \textit{Kort Projekt}-Kategorie ging es vor allem um die Implementation der Architektur und die Verwendung von \brand{React Native}. 
+In der \textit{Kort Projekt}-Kategorie ging es vor allem um die Implementation der Architektur und die Verwendung und Einrichtung von \brand{React Native}. 
 Die Kategorien \textit{Login}, \textit{Missionen}, \textit{Profil} und \textit{Highscore} enthalten die Implementation der \gls{GUI}. 
-\textit{Map} und \textit{Internationalisierung} sind Kategorien, bei denen es um die Einrichtung der entsprechend verwendeten \glslink{Library}{Libraries} ging. 
+\textit{Map} und \textit{Internationalisierung} sind Kategorien, bei denen es um die Installation der entsprechend verwendeten \glslink{Library}{Libraries} ging. 
 In der Kategorie \textit{Technologien} wurde die Einarbeitungszeit gebucht. 
 Die \textit{Qualitätssicherung} beinhaltet das Testing und die Kategorie \textit{Allgemein} die Evaluation von verwendeten Konzepten und \glslink{Library}{Libraries}.
 
 Die Schätzung fand jeweils bei der Erstellung eines Tickets in einer Kategorie statt. 
-Der zu hoch geschätzte Aufwand im Bereich \textit{Gamification und Design} entstand, weil noch nicht alle Tickets abgeschlossen sind.
 
 Die Differenz der \textit{Kort Projekt}-Kategorie lässt sich durch die häufigen Build-Fehler erklären. 
 Das Suchen nach Lösungen im Internet war sehr Zeitaufwendig. 
@@ -133,7 +132,7 @@ Qualitätssicherung & 36.50 h & 30.00 h & -6.50 h \\
 \hline
 Internationalisierung & 4.50 h & 4.25 h & -0.25 h \\
 \hline
-Dokumentation & 124.00 & 118.25 h & -5.75 h \\
+Dokumentation & 124.00 h & 118.25 h & -5.75 h \\
 \hline
 Allgemein & 152.75 h & 144.50 h & -8.25 h \\
 \hline
@@ -148,8 +147,7 @@ Meeting & 61.75 h & 59.25 h & -2.50 h \\
 \section{Code-Statistik}
 
 % Anzahl Zeilen pro Package (Actions, Stores, etc...)
-
-\subsection{Codezeilen}
+Zur groben Einschätzung, der Grösse vom Projekt wurde in der Tabelle \ref{pm-cloc} die Gesamtanzahl der Dateien und der Code-Zeilen (ohne Code-Kommentare) gezählt.
 
 \begin{table}[H]
 \centering
@@ -160,10 +158,14 @@ Meeting & 61.75 h & 59.25 h & -2.50 h \\
 \brand{JavaScript} & ... & ... \\
 \hline 
 \end{tabular}
-\caption{Codezeilen pro Datei}
+\caption{Dateien und Codezeilen}
 \label{pm-cloc}
 \end{table}
 
+Die Tabelle \ref{pm-package-cloc} zeigt die Anzahl an Code-Zeilen in einem Package. 
+Die Packages \textit{Actions}, \textit{Data}, \textit{Dispatcher}, \textit{DTO} und \textit{Stores} sind von der verwendeten Architektur gegeben. 
+\textit{Constants} beinhaltet Konstanten, IDs und sonstige fixe Parameter. 
+Im Package \textit{Components} befinden sich die \gls{GUI}-Komponenten. 
 
 \begin{table}[H]
 \centering
@@ -191,5 +193,5 @@ Meeting & 61.75 h & 59.25 h & -2.50 h \\
 \hline 
 \end{tabular}
 \caption{Codezeilen pro Package}
-\label{pm-cloc}
+\label{pm-package-cloc}
 \end{table}
