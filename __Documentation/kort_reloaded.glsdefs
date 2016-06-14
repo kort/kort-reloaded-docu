@@ -928,3 +928,33 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{IDE}{}%
+{%
+\gls@defglossaryentry{IDE}%
+{%
+name={IDE},%
+sort={IDE},%
+type={main},%
+first={IDE},%
+firstplural={IDEs},%
+text={IDE},%
+plural={IDEs},%
+description={.},%
+descriptionplural={.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
