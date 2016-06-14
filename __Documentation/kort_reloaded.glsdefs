@@ -958,3 +958,33 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{IDEtest}{}%
+{%
+\gls@defglossaryentry{IDEtest}%
+{%
+name={IDE},%
+sort={IDE},%
+type={main},%
+first={IDE},%
+firstplural={IDEs},%
+text={IDE},%
+plural={IDEs},%
+description={IDE bedeutet Integrierte Entwicklungsumgebung --- auf englisch integrated development environment.\cite {ide}},%
+descriptionplural={IDE bedeutet Integrierte Entwicklungsumgebung --- auf englisch integrated development environment.\cite {ide}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
