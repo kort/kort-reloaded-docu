@@ -928,3 +928,33 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{Singleton}{}%
+{%
+\gls@defglossaryentry{Singleton}%
+{%
+name={Singleton},%
+sort={Singleton},%
+type={main},%
+first={Singleton},%
+firstplural={Singletons},%
+text={Singleton},%
+plural={Singletons},%
+description={Das Singleton beschreibt ein Entwurfsmuster},%
+descriptionplural={Das Singleton beschreibt ein Entwurfsmuster},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
