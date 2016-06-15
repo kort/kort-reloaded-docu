@@ -3,15 +3,33 @@
 
 
 \section{IDE}
+Die Funktionalitäten und Features wurden alle mit \brand{Atom} implementiert. 
+Für das Debugging waren die native \glslink{IDE}{IDEs}, \brand{Android Studio} und \brand{Xcode}, aber besser geeignet. 
+Das Debuggen in er \brand{Atom}-\gls{IDE} oder im \brand{Google Chrome} Browser war oft fehlerhaft. 
+Ansonsten wurden die native \glslink{IDE}{IDEs} nur für das Einfügen von statischen Bildern, mit passenden Auflösungen für entsprechende Displays, genutzt. 
 
 
 \section{Continuous Integration}
+Für die Continuous Integration (\gls{CI}) nutzen wir den freien Dienst von \brand{Travis-CI}\footnote{\url{https://travis-ci.org/}}.
+Dieses Setup lässt sich bequem in Verbindung mit \brand{Github} nutzen. 
+Dabei wird jeder Neuerung auf dem master- und develop-Branch über \brand{Travis-CI} ein neuer Build erstellt. 
+Die Konfigurationsdatei für \brand{Travis-CI} befindet sich im \brand{Github}-Repository von \kort{}\footnote{\url{https://github.com/kort/kort-reloaded}}. 
+Darin sind auch die Tools, um die \nameref{pd-entwicklungsumgebung-cr} zu überprüfen, konfiguriert. 
 
 
-\section{Projektmanagement}
+\section{Projektmanagement-Tool}
+Als Projektmanagement-Tool wurde \brand{Redmine} verwendet. 
+Die Links zu den entsprechenden Seiten sind im Kapitel \hyperref[pm-projektmanagement]{Projektmanagement} dokumentiert.
 
 
 \section{Testing}
+Für die Unit-Tests wurde \brand{Jest}\footnote{\url{https://facebook.github.io/jest/}} eingesetzt. 
+\brand{Jest} ist ein \brand{JavaScript} Testing-\gls{Framework} und wird zum Beispiel von \brand{Facebook} zum Testen von \brand{React}-Applikationen verwendet. 
 
 
 \section{Code-Richtlinien}
+\label{pd-entwicklungsumgebung-cr}
+
+Um die Style-Guidelines von \brand{JavaScript} einzuhalten, wurde \brand{ES-Lint}\footnote{\url{https://facebook.github.io/jest/}} eingesetzt. 
+Dieses Tool prüft den ganzen Code auf Einheitlichkeit. 
+

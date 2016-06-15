@@ -1,7 +1,195 @@
 \chapter{Projektmonitoring}
 \label{pm-projektmonitoring}
 
-\section{Soll-Ist-Zeitvergleich}
+\section{Zeitanalyse}
+Für eine Bachelorarbeit werden 12 ECTS-Punkte vergeben, wobei ein Punkt einem Aufwand von 30 Stunden entspricht.
+In einem Team von zwei Entwicklern, entspricht dies 360 Stunden Aufwand pro Person. 
+Leider haben wir diese Vorgabe (siehe Tabelle \ref{pm-arbeitsaufwand}) überschritten. 
 
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|r|}
+\hline 
+\multicolumn{1}{|c|}{\textbf{Person}} & \multicolumn{1}{|c|}{\textbf{Aufwand}} \\
+\hline 
+Marino Melchiori & 421.5 h \\
+\hline 
+Dominic Mülhaupt & 427 h \\  
+\hline 
+\end{tabular}
+\caption{Arbeitsaufwand pro Person}
+\label{pm-arbeitsaufwand}
+\end{table}
+
+Wenn die gleich folgenden Tabellen \ref{pm-arbeitsaufwand-aktivität-mm} und \ref{pm-arbeitsaufwand-aktivität-dm} verglichen werden, ist die Arbeitsaufteilung sehr gut erkennbar. 
+Dies ist in den Unterschieden des Aufwandes, in den Aktivitäten Analyse, Implementation, Dokumentation und Testing, erkennbar. 
+Bei neuen Erfahrungen haben sich die Entwickler ausgetauscht und waren so immer auf dem aktuellen Stand. 
+
+\begin{table}[H]
+\centering
+\label{pm-arbeitsaufwand-aktivität-mm}
+\begin{tabular}{|l|r|}
+\hline
+\multicolumn{2}{|l|}{\textbf{Marino Melchiori}} \\
+\hline
+\multicolumn{1}{|c|}{\textbf{Aktivität}} & \multicolumn{1}{|c|}{\textbf{Aufwand}} \\
+\hline
+Analyse \& Design & 106.00 h \\
+\hline
+Implementation & 125.00 h \\
+\hline
+Dokumentation & 101.00 h \\
+\hline
+Requirements & 30.75 h \\
+\hline
+Deployment & 16.25 h \\
+\hline
+Allgemein & 16.75 h \\
+\hline
+Projektmanagement & 25.75 h \\
+\hline
+\end{tabular}
+\caption{Aufwand pro Aktivität --- Marino Melchiori}
+\end{table}
+
+\begin{table}[H]
+\centering
+\label{pm-arbeitsaufwand-aktivität-dm}
+\begin{tabular}{|l|r|}
+\hline
+\multicolumn{2}{|l|}{\textbf{Dominic Mülhaupt}} \\
+\hline
+\multicolumn{1}{|c|}{\textbf{Aktivität}} & \multicolumn{1}{|c|}{\textbf{Aufwand}} \\
+\hline
+Analyse \& Design & 49.50 h \\
+\hline
+Implementation & 191.75 h \\
+\hline
+Dokumentation & 26.25 h \\
+\hline
+Requirements & 26.00 h \\
+\hline
+Deployment & 7.00 h \\
+\hline
+Allgemein & 52.50 h \\
+\hline
+Projektmanagement & 52.00 h \\
+\hline
+Testing & 22.00 h \\
+\hline
+\end{tabular}
+\caption{Aufwand pro Aktivität --- Dominic Mülhaupt}
+\end{table}
+
+
+\subsection{Soll-Ist-Zeitvergleich}
+Die Tabelle zum \ref{pm-arbeitsaufwand-kategorie-ges} zeigt, wie das Projekt kategorisiert wurde. 
+In der \textit{Kort Projekt}-Kategorie ging es vor allem um die Implementation der Architektur und die Verwendung von \brand{React Native}. 
+Die Kategorien \textit{Login}, \textit{Missionen}, \textit{Profil} und \textit{Highscore} enthalten die Implementation der \gls{GUI}. 
+\textit{Map} und \textit{Internationalisierung} sind Kategorien, bei denen es um die Einrichtung der entsprechend verwendeten \glslink{Library}{Libraries} ging. 
+In der Kategorie \textit{Technologien} wurde die Einarbeitungszeit gebucht. 
+Die \textit{Qualitätssicherung} beinhaltet das Testing und die Kategorie \textit{Allgemein} die Evaluation von verwendeten Konzepten und \glslink{Library}{Libraries}.
+
+Die Schätzung fand jeweils bei der Erstellung eines Tickets in einer Kategorie statt. 
+Der zu hoch geschätzte Aufwand im Bereich \textit{Gamification und Design} entstand, weil noch nicht alle Tickets abgeschlossen sind.
+
+Die Differenz der \textit{Kort Projekt}-Kategorie lässt sich durch die häufigen Build-Fehler erklären. 
+Das Suchen nach Lösungen im Internet war sehr Zeitaufwendig. 
+
+Bei der Kategorie \textit{Missionen} wurden 15 Stunden zu viel geschätzt. 
+In diesem Fall setzten wir vermehrt auf \gls{Pair Programming}, da es sich dort um eine der ersten umgesetzten Funktionen handelte.
+Somit konnte kostbare Zeit, die für das Refactoring geplant war, eingespart werden. 
+Später folgende Features, der Kategorien \textit{Login}, \textit{Profil} und \textit{Highscore}, wurden viel besser geschätzt.
+
+Schlussendlich wurden 21 Stunden zu viel geschätzt, was bei einem Arbeitstag von 8 Stunden etwa 2.5 Arbeitstagen entspricht. 
+
+
+\begin{table}[H]
+\centering
+\label{pm-arbeitsaufwand-kategorie-ges}
+\begin{tabular}{|l|r|r|r|}
+\hline
+\multicolumn{4}{|l|}{\textbf{Soll-Ist-Vergleich vom Gesamtaufwand der Kategorien}} \\
+\hline
+\multicolumn{1}{|c|}{\textbf{Kategorie}} & \multicolumn{1}{|c|}{\textbf{Soll-Aufwand}} & \multicolumn{1}{|c|}{\textbf{Ist-Aufwand}} & \multicolumn{1}{|c|}{\textbf{Differenz}}\\
+\hline
+Kort Projekt & 71.75 h & 88.25 h & +16.50 h \\
+\hline
+Login & 91.50 h & 92.50 h & +1.00 h \\
+\hline
+Map & 47.75	h & 45.50 h & -2.25 h \\
+\hline
+Missionen & 59.75 h & 44.75 h & -15.00 h \\
+\hline
+Highscore & 11.50 h & 12.70 h & +1,20 h \\
+\hline
+Profil & 18.00 h & 16.25 h & -1.75 h \\
+\hline
+Technologien & 182.50 h & 187.55 h & +0.05 h \\
+\hline
+Gamification und Design & 7.25 h & 4.75 h & -2.50 h \\
+\hline
+Qualitätssicherung & 36.50 h & 30.00 h & -6.50 h \\
+\hline
+Internationalisierung & 4.50 h & 4.25 h & -0.25 h \\
+\hline
+Dokumentation & 124.00 & 118.25 h & -5.75 h \\
+\hline
+Allgemein & 152.75 h & 144.50 h & -8.25 h \\
+\hline
+Meeting & 61.75 h & 59.25 h & -2.50 h \\
+\hline
+\textbf{Total} & \textbf{895.00 h} & \textbf{846.50 h} & \textbf{-21.00 h} \\
+\hline
+\end{tabular}
+\caption{Soll-Ist-Vergleich --- Gesamtaufwand pro Kategorie}
+\end{table}
 
 \section{Code-Statistik}
+
+% Anzahl Zeilen pro Package (Actions, Stores, etc...)
+
+\subsection{Codezeilen}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline 
+\textbf{Sprache} & \textbf{Dateien} & \textbf{Zeilen} \\ 
+\hline 
+\brand{JavaScript} & ... & ... \\
+\hline 
+\end{tabular}
+\caption{Codezeilen pro Datei}
+\label{pm-cloc}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|}
+\hline 
+\textbf{Package} & \textbf{Zeilen} \\ 
+\hline 
+\brand{Actions} & ... \\
+\hline 
+\brand{Components} & ... \\
+\hline 
+\brand{Constants} & ... \\
+\hline 
+\brand{Data} & ... \\
+\hline 
+\brand{Dispatcher} & ... \\
+\hline 
+\brand{DTOs ohne Tests} & ... \\
+\hline 
+\brand{DTO Tests} & ... \\
+\hline 
+\brand{Stores ohne Tests} & ... \\
+\hline 
+\brand{Store Tests} & ... \\
+\hline 
+\end{tabular}
+\caption{Codezeilen pro Package}
+\label{pm-cloc}
+\end{table}

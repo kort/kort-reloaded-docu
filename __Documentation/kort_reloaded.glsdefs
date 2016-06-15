@@ -726,10 +726,10 @@ name={Library},%
 sort={Library},%
 type={main},%
 first={Library},%
-firstplural={Librarys},%
+firstplural={Libraries},%
 text={Library},%
-plural={Librarys},%
-description={{Eine Library (Programmbibliothek) bezeichnet in der Programmierung eine Sammlung von Unterprogrammen, die Lösungswege anbieten. Bibliotheken laufen im Unterschied zu Programmen nicht eigenständig, sondern sie enthalten Hilfsmodule, die angefordert werden können.\cite {library}} plural},%
+plural={Libraries},%
+description={Eine Library (Programmbibliothek) bezeichnet in der Programmierung eine Sammlung von Unterprogrammen, die Lösungswege anbieten. Bibliotheken laufen im Unterschied zu Programmen nicht eigenständig, sondern sie enthalten Hilfsmodule, die angefordert werden können.\cite {library}},%
 descriptionplural={Eine Library (Programmbibliothek) bezeichnet in der Programmierung eine Sammlung von Unterprogrammen, die Lösungswege anbieten. Bibliotheken laufen im Unterschied zu Programmen nicht eigenständig, sondern sie enthalten Hilfsmodule, die angefordert werden können.\cite {library}},%
 symbol={\relax },%
 symbolplural={\relax },%
@@ -789,8 +789,8 @@ first={Virtual DOM},%
 firstplural={Virtual DOMs},%
 text={Virtual DOM},%
 plural={Virtual DOMs},%
-description={Die virtual DOM ist eine Abstraktion der DOM. Es ist eine lokale Kopie der DOM. \cite {virtual-dom}},%
-descriptionplural={Die virtual DOM ist eine Abstraktion der DOM. Es ist eine lokale Kopie der DOM. \cite {virtual-dom}},%
+description={Die virtual DOM ist eine Abstraktion der DOM. Es ist eine lokale Kopie der DOM.\cite {virtual-dom}},%
+descriptionplural={Die virtual DOM ist eine Abstraktion der DOM. Es ist eine lokale Kopie der DOM.\cite {virtual-dom}},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -909,8 +909,8 @@ first={DTO},%
 firstplural={DTOs},%
 text={DTO},%
 plural={DTOs},%
-description={Ein Datentransferobjekt ist ein Objekt},%
-descriptionplural={Ein Datentransferobjekt ist ein Objekt},%
+description={Ein Datentransferobjekt ist ein Objekt, das nur zur Übertragung von Daten oder Informationen dient und keine logischen Komponenten enthält.},%
+descriptionplural={Ein Datentransferobjekt ist ein Objekt, das nur zur Übertragung von Daten oder Informationen dient und keine logischen Komponenten enthält.},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -939,8 +939,38 @@ first={Singleton},%
 firstplural={Singletons},%
 text={Singleton},%
 plural={Singletons},%
-description={Das Singleton beschreibt ein Entwurfsmuster},%
-descriptionplural={Das Singleton beschreibt ein Entwurfsmuster},%
+description={Das Singleton beschreibt ein Entwurfsmuster, wonach sichergestellt wird, dass von einer Klasse immer höchstens ein Objekt existiert, welches üblicherweise global verfügbar ist.\cite {singleton}},%
+descriptionplural={Das Singleton beschreibt ein Entwurfsmuster, wonach sichergestellt wird, dass von einer Klasse immer höchstens ein Objekt existiert, welches üblicherweise global verfügbar ist.\cite {singleton}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{IDE}{}%
+{%
+\gls@defglossaryentry{IDE}%
+{%
+name={IDE},%
+sort={IDE},%
+type={main},%
+first={IDE},%
+firstplural={IDEs},%
+text={IDE},%
+plural={IDEs},%
+description={IDE bedeutet Integrierte Entwicklungsumgebung (von englisch integrated development environment)\cite {ide}.},%
+descriptionplural={IDE bedeutet Integrierte Entwicklungsumgebung (von englisch integrated development environment)\cite {ide}.},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
