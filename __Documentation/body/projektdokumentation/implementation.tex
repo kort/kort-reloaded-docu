@@ -1,40 +1,53 @@
 \chapter{Implementation}
 \label{pd-implementation}
-% Hinweis Einrichtung
+Dieses Kapitel beschreibt, wie die folgenden Punkte eingerichtet und implementiert wurden. 
+
 
 \section{Kort Backend}
-% Verweis auf BA
+Das \kort{}-Backend existierte bereits und wurde von den Entwicklern nicht mehr abgeändert. 
+Es ist im Kapitel 10.2. \gls{REST}-Schnittstellen der Bachelorarbeit von Jürg Hunziker und Stefan Oderbolz dokumentiert.\cite{ba-kort-2012}
 
 
 \section{Libraries}
 Damit die entsprechenden \glslink{Library}{Libraries} genutzt werden können, mussten sie mit dem Node-Package-Manager (npm) heruntergeladen werden. 
 Mit dem \inlinecode{npm install}-Befehl wurden alle aufgelisteten Abhängigkeiten in der  \inlinecode{package.json}-Datei installiert und im Ordner \inlinecode{node-modules} gespeichert.
-Das Linken der \glslink{Library}{Libraries} fand dann in der MainActivity und in \brand{Xcode} statt. 
-Nun konnten die \glslink{Library}{Libraries} in einer \brand{JavaScript}-Komponente importiert und verwendet werden. 
+Das Linken der \glslink{Library}{Libraries} fand dann im \brand{Android}- und \brand{iOS}-Projekt statt. 
+Dann konnten die \glslink{Library}{Libraries} in einer \brand{JavaScript}-Komponente importiert und verwendet werden. 
 
 
 \section{Navigation}
-Wie die Navigations-Komponente verwendet wird, ist auf der \brand{Github}-Seite erklärt. 
-
-% Aufbau
-% Deklaration der Scenes - beim Kompilieren
-% Reducer
-% Actions
+Die Implementation der Navigation wurde in der Einstiegs-Komponente der App umgesetzt. 
+Alle Scenes werden mit einem Key deklariert und falls nötig mit Optionen für eine Tab-Ansicht erweitert. 
+Die definierten Scenes werden als Kind-Komponenten einem Router übergeben. 
+Jede Scene kann mit einem Funktionsaufruf ...
+\begin{itemize}
+	\item ... die Properties aktualisieren
+	\item ... sich selber schliessen
+	\item ... eine andere Scene mit dem Key und mit optionalen Properties, als Parameter, aufrufen
+\end{itemize} 
+Die \gls{API} der Navigations-Komponente ist auf der entsprechenden \brand{Github}-Seite\footnote{\url{https://github.com/aksonov/react-native-router-flux}} dokumentiert. 
 
 
 \section{Karte}
-% Mapbox
-% Annotations vom Store
-% Parameter
-% Token
-% Location-tracking Einstellung
+Um die Map-Komponente von \brand{Mapbox} zu nutzen und ein Access-Token zu erhalten, muss auf der \brand{Mapbox}-Webseite\footnote{\url{https://www.mapbox.com/}} ein Benutzerkonto angelegt werden. 
+
+Damit die Marker an richtiger Position angezeigt werden, wurden der \brand{Mapbox}-Komponente ein Array mit Annotations als Parameter übergeben. 
+Das Annotation-Array wird fortlaufend mit allen Missionen vom \gls{Backend}, in der Umgebung des Benutzers, aktualisiert. 
+Eine Annotation enthält die Koordinaten und die ID einer Mission. 
+Es war von der \brand{Mapbox}-\gls{API} her nicht möglich, einer Annotation direkt die Mission als Objekt mitzugeben. 
+Bei einem Klick auf einen Marker wird die Funktion \inlinecode{onOpenAnnotation} aufgerufen.
+Diese Funktion öffnet wiederum eine Scene, die es dem Benutzer erlaubt, die gewählte Mission zu lösen.
+Die \brand{Mapbox}-\gls{API} ist auf der entsprechenden \brand{Github}-Seite\footnote{\url{https://github.com/mapbox/react-native-mapbox-gl}} dokumentiert. 
 
 
 \section{OAuth}
-% Google signin
-% Google Konfigurationsdatei generieren mit Debug Keystore
-% Google Developer Account für Web-Client-ID und iOS-Client-ID
-% Secret config
+Für die Authentifizierung über \brand{Google} wurde eine Open Source \gls{Library} evaluiert (Kapitel Evaluation \nameref{tb-evaluation-oauth}). 
+Damit die App sich mit der \brand{Google}-\gls{API} verbinden kann, muss eine \inlinecode{google-services.json}-Datei auf der \brand{Google}-Webseite\footnote{\url{https://developers.google.com/cloud-messaging/android/client}} generiert werden. 
+Diese Datei enthält die Konfiguration vom \brand{Google}-Developer Konto. 
+
+Über diese \gls{Library} enthält die App, nach dem Login des Benutzers, das Benutzer-Token von \brand{Google}.
+Dieses Token wird dann von der App dem \kort{}-\gls{Backend} mitgeteilt und von dort aus bei \brand{Google} überprüft. 
+Wie die Authentifizierung auf der \gls{Backend}-Seite weiter verläuft ist im Kapitel 10.4.1. der Bachelorarbeit von Jürg Hunziker und Stefan Oderbolz beschrieben.\cite{ba-kort-2012}
 
 
 \section{Internationalisierung}
