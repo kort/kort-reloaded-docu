@@ -1,8 +1,6 @@
 \chapter{Implementation}
 \label{pd-implementation}
 
-\section{Libraries}
-
 
 \section{Kort Backend}
 
@@ -16,13 +14,35 @@
 \section{Components}
 
 
+\section{Libraries}
+Damit die entsprechenden \glslink{Library}{Libraries} genutzt werden können, mussten sie mit dem Node-Package-Manager (npm) heruntergeladen werden. 
+Mit dem \inlinecode{npm install}-Befehl wurden alle aufgelisteten Abhängigkeiten in der  \inlinecode{package.json}-Datei installiert und im Ordner \inlinecode{node-modules} gespeichert.
+Das Linken der \glslink{Library}{Libraries} fand dann in der MainActivity und in \brand{Xcode} statt. 
+Nun konnten die \glslink{Library}{Libraries} in einer \brand{JavaScript}-Komponente importiert und verwendet werden. 
+
+
 \section{Navigation}
+Wie die Navigations-Komponente verwendet wird, ist auf der \brand{Github}-Seite erklärt. 
+
+% Aufbau
+% Deklaration der Scenes - beim Kompilieren
+% Reducer
+% Actions
 
 
 \section{Karte}
+% Mapbox
+% Annotations vom Store
+% Parameter
+% Token
+% Location-tracking Einstellung
 
 
 \section{OAuth}
+% Google signin
+% Google Konfigurationsdatei generieren mit Debug Keystore
+% Google Developer Account für Web-Client-ID und iOS-Client-ID
+% Secret config
 
 
 \section{Internationalisierung}
