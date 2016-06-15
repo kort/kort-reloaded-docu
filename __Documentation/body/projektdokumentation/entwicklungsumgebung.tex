@@ -1,7 +1,5 @@
 \chapter{Entwicklungsumgebung}
 \label{pd-entwicklungsumgebung}
-
-
 \section{IDE}
 Die Funktionalitäten und Features der App wurden alle mit \brand{Atom} implementiert. 
 Für das Debugging waren die native \glslink{IDE}{IDEs}, \brand{Android Studio} und \brand{Xcode}, aber besser geeignet. 
@@ -26,13 +24,13 @@ Weiterführende Links zum Redmine-Projekt, das für die Ticketerfassung verwende
 
 
 \section{Testing}
-Fürs Testing wurden \glslink[Unit Test]{Unit Tests}, \glslink[Integration Test]{Integration Tests} und \glslink[Funktionaler Test]{Funktionalen Tests} evaluiert.
+Fürs Testing wurden \glslink{Unit Test}{Unit Tests}, \glslink{Integration Test}{Integration Tests} und \glslink{Funktionaler Test}{Funktionalen Tests} evaluiert.
 Letztlich konnten -- zum Zeitpunkt der Abgabe -- lediglich die Unit Tests umgesetzt werden.
 Integration Tests wären für die \inlinecode{data} Klassen wünschenswert gewesen, konnten aber aus Zeitgründen nicht umgesetzt werden.
 Automated UI Tests sind mit \brand{React Native} möglich\footnote{Einen guten Überblick bietet diese Seite: \url{http://testdroid.com/tech/testing-react-native-apps-on-android-and-ios}}, sind aber sehr aufwendig einzurichten.
 Für die Unit Tests wurde \brand{Jest}\footnote{\url{https://facebook.github.io/jest/}} eingesetzt. 
 \brand{Jest} ist ein \brand{JavaScript} Testing-\gls{Framework} und wird zum Beispiel von \brand{Facebook} zum Testen von \brand{React}-Applikationen verwendet.\newline
-Eine besondere Eigenschaft von \brand{Jest} ist, dass standardmässig für alle Module automatisch \gls[Mock]{Mocks} bereitgestellt werden.
+Eine besondere Eigenschaft von \brand{Jest} ist, dass standardmässig für alle Module automatisch \glslink{Mock}{Mocks} bereitgestellt werden.
 Somit wird verhindert, dass aus Versehen das Verhalten anderer Module getestet wird.
 
 \section{Code-Richtlinien}
