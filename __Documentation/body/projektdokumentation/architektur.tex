@@ -14,6 +14,7 @@ Das Pattern beschreibt folgende vier Hauptbestandteile: die Stores, die Views (o
  	\label{image-flux-overview-simple}
 \end{figure}
 \subsection{Stores}
+\label{pd-flux-stores}
 Stores enthalten den Applikationszustand und die Applikationslogik.
 Verglichen mit dem \gls{MVC}-Pattern entsprechen sie am ehesten dem Model.
 Sie unterscheiden sich aber insofern, dass sie nicht unbedingt einzelne Modellklassen repräsentieren sollen, sondern domänenspezifische Aufgaben übernehmen.
@@ -24,6 +25,7 @@ Sie registrieren sich beim Dispatcher um Updates zu erhalten und ihren Zustand e
 Views wiederum können sich bei den Stores registrieren um neue Informationen zu erhalten, können die Stores aber nicht direkt anweisen, sich zu aktualisieren.
 
 \subsection{Views}
+\label{pd-flux-views}
 Der Applikationsanwender kommuniziert seine Absichten über die View.
 Deshalb gilt die View in \brand{Flux} als Auslöser für neue Aktionen.
 In \brand{React} kann zwischen \emph{Views} und \emph{Controller-Views} unterschieden werden.\newline
@@ -33,6 +35,7 @@ Diese untergeordneten \emph{Views} wiederum reagieren auf Zustandsänderungen in
 Somit bleiben \emph{View} Komponenten modular austauschbar, da sie unabhängig von ihrem Kontext eingesetzt werden können.
 
 \subsection{Actions}
+\label{pd-flux-actions}
 Actions sind Helfermethoden, welche im Dispatcher ein Ereignis und somit in den Stores ein Update auslösen.
 Sie werden ausschliesslich durch Views ausgelöst, da diese für den Kontrollmechanismus der Applikation zuständig sind.
 Ausnahmen wären hier denkbar, waren aber nicht nötig.
@@ -43,6 +46,7 @@ Somit kann sichergestellt werden, dass verschiedene Stores, welche auf dieselbe 
 In Abbildung \ref{image-flux-overview-detailed} ist dies ersichtlich.
 
 \subsection{Dispatcher}
+\label{pd-flux-dispatcher}
 Der Dispatcher ist der zentrale Knotenpunkt, durch den der gesamte Datenfluss der Applikation koordiniert wird.
 Seine einzige Aufgabe ist die Verteilung der Actions an die Stores.
 Er enthält also keine intelligente Logik, sondern ist grundsätzlich ein Register von Callbacks.\newline
