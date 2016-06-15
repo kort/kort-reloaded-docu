@@ -1,3 +1,4 @@
+
 % Glossar
 \newglossaryentry{NativeApp} {
 	name = Native App,
@@ -82,7 +83,7 @@
 
 \newglossaryentry{Gamification} {
 	name = Gamification,
-	description = {Unter Gamification versteht man das Hinzufügen von Spiel-Elementen in einem nicht spieltypischen Kontext.\cite{for-the-win}}
+	description = {Unter Gamification versteht man das Hinzufügen von Spiel-Elementen in einem nicht spieltypischen Kontext\cite{for-the-win.}}
 }
 
 \newglossaryentry{MVC} {
@@ -169,3 +170,26 @@
 	name = IDE,
 	description = {IDE bedeutet Integrierte Entwicklungsumgebung -- auf englisch integrated development environment.\cite{ide}}
 }
+
+\newglossaryentry{Unit Test}{
+	name = Unit Test,
+	description = {Unit Tests werden geschrieben um kleine Teile des Codes -- üblicherweise Module -- zu testen.
+	Da wirklich nur das Verhalten des entsprechenden Moduls getestet werden soll, müssen Abhängigkeiten dieses Moduls durch \glslink[Mock]{Mocks} ersetzt werden.}
+}
+
+\newglossaryentry{Integration Test}{
+	name = Integration Test,
+	description = {In Integration Tests wird die Zusammenarbeit von Systemteilen getestet.}
+}
+
+\newglossaryentry{Funktionaler Test}{
+	name = Funktionaler Test,
+	description = {Funktionale Tests überprüfen das Gesamtverhalten des Systems.
+	Mit einem automatisierten UI Testing Tool werden verschiedene Szenarien durchlaufen, welche aus den Use Cases abgeleitet werden können.
+	Funktionale Tests werden im Vergleich zu \glslink[Unit Test]{Unit Tests} und \glslink[Integration Test]{Integration Tests} eher spärlich eingesetzt.}
+}
+	
+\newglossaryentry{Mock}{
+	name = Mock,
+	description = {Mock-Objekte werden in diversen Tests verwendet um das Verhalten eines anderen Objekts für spezifische Fälle zu simulieren ohne es tatsächlich zu implementieren.}
+} 
