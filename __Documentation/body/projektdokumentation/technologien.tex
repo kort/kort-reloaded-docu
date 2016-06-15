@@ -1,6 +1,7 @@
 \chapter{Technologien}
 \label{pd-technologien}
 
+
 \section{React} 
 \brand{React}\footnote{\url{https://facebook.github.io/react/}, \url{https://github.com/facebook/react}} wurde im März 2013 veröffentlicht\cite{react-release-date}, ist eine Open Source \brand{JavaScript} \gls{Library} und dient für die Implementation der View vom \gls{MVC}-Pattern. 
 Die View besteht aus wiederverwendbaren Komponenten, die wiederum Komponenten beinhalten.
@@ -18,6 +19,7 @@ Die komplette \gls{DOM}, also die Repräsentation der View vom HTML-Code, ist im
 In der \inlinecode{render()}-Methode einer Klasse wird eine Beschreibung der DOM zurückgeliefert, die \brand{React} mit der lokalen Kopie der \gls{DOM} vergleicht.
 Mit einem sehr effizienten Diffing-Algorithmus berechnet \brand{React} den Unterschied zwischen diesen  Versionen der \gls{DOM} und errechnet den schnellsten Weg um den Browser zu aktualisieren.\cite{react-virtual-dom}
 
+
 \section{React Native}
 Der Ansatz von \brand{React Native}\footnote{\url{https://facebook.github.io/react-native/}, \url{https://github.com/facebook/react-native}} ist \textit{learn once -- write anywhere}, das heisst, lerne eine Technologie und nutze sie für alle unterstützten Plattformen.\cite{react-native}
 
@@ -27,6 +29,8 @@ Im Oktober 2015 kam \brand{Android} dazu.\cite{react-native-release}
 Die Desktop Unterstützung für \brand{OSX} ist ebenfalls in Entwicklung\footnote{\url{https://github.com/ptmt/react-native-desktop}}. 
 Am 13. April 2016 kündigten \brand{Microsoft} und \brand{Facebook}, an der \brand{Facebook} Developer Konferenz, den Support für die \brand{Universal Windows Platform} (\brand{UWP}) an.\cite{react-native-windows} 
 
+
+\subsection{Technische Details}
 \brand{React Native} nutzt einen \brand{JavaScript}-Layer, beziehungsweise \brand{JavaScriptCore}, um den Code auszuführen.\cite{react-native-javascriptcore} 
 Die native Komponenten werden auf die \brand{JavaScript}-Komponenten, der jeweiligen Plattform gemappt. 
 Das Endprodukt ist also keine \gls{WebApp} im Browser und wird auch nicht in native Code kompiliert. 
@@ -42,8 +46,19 @@ Seit dem Release gibt es alle zwei Wochen eine neue Version.
 Durch diese häufigen Änderungen konnten sich noch keine Best Practices etablieren. 
 Auch die meisten Open Source Projekte verfolgen eigene Implementationsansätze.
 
-Auch die Community wirkt zerstreut. 
-Viele Informationen sind in den Issues (aktuell sind 733 offene Issues vorhanden) vom \brand{React Native} GitHub-Repository\footnote{\url{https://github.com/facebook/react-native/issues}}  versteckt.
+
+\subsection{Plattformunabhängigkeit}
+Eine Stärke von \brand{React Native} ist die Plattformunabhängigkeit. 
+Wenn keine spezifische \brand{Android}- oder \brand{iOS}-Komponenten verwendet werden, kann der Code für beide Plattformen genutzt werden.
+Also wurde beim Entwickeln der \brand{Android}-App darauf geachtet, möglichst keine Plattform spezifische Komponenten zu nutzen. 
+Das konnte in diesem Projekt erfolgreich umgesetzt werden. 
+Die \brand{iOS}-Version konnte aus Zeitgründen nicht getestet werden. 
+Es ist möglich, dass die Einbindung von den verwendeten Libraries überprüft werden muss. 
+
+
+\subsection{Community}
+Die Community wirkt sehr zerstreut, denn viele Informationen sind in den Issues vom \brand{React Native} GitHub-Repository\footnote{\url{https://github.com/facebook/react-native/issues}} versteckt.
+Ausserdem sind aktuell, am 15.06.2016, 733 offene Issues vorhanden.
 
 \begin{itemize}
 	\item Vorhanden ist eine öffentliche, aktive und hilfsbereite \brand{Facebook}-Gruppe\footnote{\url{https://www.facebook.com/groups/react.native.community/}}, mit derzeit ca. 3 500 Mitgliedern.
@@ -58,7 +73,9 @@ Viele Informationen sind in den Issues (aktuell sind 733 offene Issues vorhanden
 \end{itemize}
 
 
+\subsection{Zusammenfassung}
+
+
 % Gründe für React Native:
 % Navigator-Komponente (url zu docs), wiederverwendbare open source komponenten, langfristig,
-% immer mehr Apps im Showcase, das führt zu neuen Pull-requests und Beiträgen, 
-
+% immer mehr Apps im Showcase, das führt zu neuen Pull-requests und Beiträgen
