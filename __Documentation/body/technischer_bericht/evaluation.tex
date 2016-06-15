@@ -11,17 +11,48 @@ Weitere Hinweise zur Entwicklungsumgebung und den verwendeten Werkzeugen sind im
 
 \section{Architektur}
 \label{tb-evaluation-architektur}
+Bei der Evaluation, welches Architektur-Pattern wir anwenden würden, konnten wir uns auf \gls{Frontend}-Architekturen beschränken.
+Dabei kamen für uns zwei Patterns in Frage: Traditionelles \gls{MVC} und \hyperref[pd-architektur]{\brand{Flux}}\footnote{\url{https://facebook.github.io/flux/}}.\newline
 
-
-\subsubsection{Variante A: flux-Architektur}
-
-
-\subsubsection{Variante B: MVC}
-
+\begin{table}[H]
+\centering
+\label{tb-evaluation-architektur}
+\begin{tabular}{|p{7cm}|p{7cm}|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Variante A: MVC}} \\
+\hline
+Vorteile & Nachteile \\
+\hline
+Unidirektionaler Datenfluss
+& Grösserer Aufwand für erstmalige Einrichtung \\
+\hline
+Kaum Kopplung -- Anpassungen in späteren Arbeiten relativ problemlos möglich
+& Viele Callbacks nötig \\
+\hline
+Abstraktion des Applikationszustands passend für unseren Anwendungsfall
+&  \\
+\hline
+Nutzt wichtige Konzepte von \brand{React}
+&  \\
+\hline
+\multicolumn{2}{|c|}{\textbf{Variante B: \brand{Flux}}} \\
+\hline
+Vorteile & Nachteile \\
+\hline
+Pattern ist bekannt, keine Einarbeitung nötig
+ &  \\
+\hline
+\end{tabular}
+\caption{Bewertung Navigations-Komponente}
+\end{table}
 
 \subsection{Fazit}
-
-
+Die Architektur-Entscheidung fiel zu Beginn sehr schwer da vorgängig noch nicht genügend Erfahrungen im Umgang mit \brand{React} gesammelt werden konnten.
+Entsprechend unserem \hyperref[pm-projektplan]{Projektplan} und der Grundidee, erst Erfahrungen mit für uns neuen Technologien (\brand{JavaScript}, \brand{React} und \brand{React Native}) zu sammeln, haben wir uns in einem ersten Ansatz dazu entschlossen, die ersten Schritte -- das Darstellen der Missionen auf der Karte -- mit dem \gls{MVC}-Pattern umzusetzen.
+Welche Auswirkungen der Einsatz von \brand{Flux} hätte, war zu Beginn zu wenig voraussehbar.\newline
+Als die Wahl der Architektur im Zusammenhang mit \hyperref[pm-ms5]{Meilenstein 5} neu evaluiert wurde, konnten wir leichte Vorteile in der \brand{Flux}- gegenüber einer MVC-Architektur sehen.
+Einen guten Einblick in die Thematik verschafft der Artikel \emph{Why we are doing MVC and FLUX wrong}\cite{mvc-vs-flux}.\newline
+Wir haben uns letztlich aufgrund der oben aufgelisteten Vorteile auf \brand{Flux} festgelegt.
 
 \section{App Navigation}
 Um die Navigation von \kort{} zu implementieren gab es zwei Möglichkeiten. 
