@@ -3,7 +3,7 @@
 
 
 \section{IDE}
-Die Funktionalitäten und Features wurden alle mit \brand{Atom} implementiert. 
+Die Funktionalitäten und Features der App wurden alle mit \brand{Atom} implementiert. 
 Für das Debugging waren die native \glslink{IDE}{IDEs}, \brand{Android Studio} und \brand{Xcode}, aber besser geeignet. 
 Das Debuggen in er \brand{Atom}-\gls{IDE} oder im \brand{Google Chrome} Browser war oft fehlerhaft. 
 Ansonsten wurden die native \glslink{IDE}{IDEs} nur für das Einfügen von statischen Bildern, mit passenden Auflösungen für entsprechende Displays, genutzt. 
@@ -19,7 +19,7 @@ Darin sind auch die Tools, um die \nameref{pd-entwicklungsumgebung-cr} zu überp
 
 \section{Projektmanagement-Tool}
 Als Projektmanagement-Tool wurde \brand{Redmine} verwendet. 
-Die Links zu den entsprechenden Seiten sind im Kapitel \hyperref[pm-projektmanagement]{Projektmanagement} dokumentiert.
+Weiterführende Links zum Redmine-Projekt, das für die Ticketerfassung verwendet wurde, sind im Kapitel \hyperref[pm-projektmanagement]{Projektmanagement} dokumentiert.
 
 
 \section{Testing}
@@ -31,5 +31,7 @@ Für die Unit-Tests wurde \brand{Jest}\footnote{\url{https://facebook.github.io/
 \label{pd-entwicklungsumgebung-cr}
 
 Um die Style-Guidelines von \brand{JavaScript} einzuhalten, wurde \brand{ES-Lint}\footnote{\url{https://facebook.github.io/jest/}} eingesetzt. 
-Dieses Tool prüft den ganzen Code auf Einheitlichkeit. 
+Dieses Tool prüft den ganzen Code auf Style-Einheitlichkeit und stellt sicher, dass ein aktueller Code-Standard eingehalten wird. 
+Das erhöht die Lesbarkeit und Wartbarkeit vom Code. 
+Die Konfiguration von \brand{ES-Lint} stammt von \brand{airbnb}\footnote{\url{...}} und konnte als Open Source Plugin, mit \brand{npm}, in das Projekt eingebunden werden. 
 
