@@ -18,7 +18,7 @@ Stores enthalten den Applikationszustand und die Applikationslogik.
 Verglichen mit dem \gls{MVC}-Pattern entsprechen sie am ehesten dem Model.
 Sie unterscheiden sich aber insofern, dass sie nicht unbedingt einzelne Modellklassen repräsentieren sollen, sondern domänenspezifische Aufgaben übernehmen.
 Da \kort{} keine besonders komplexe Domäne enthält, ist diese Unterscheidung allerdings nicht von grosser Bedeutung.
-Ein Beispiel für diese Einteilung nach Domäne und nicht nach Modell findet man in der Aufteilung von \inlinecode{UserStore} und \{inlinecode{AuthenticationStore}\newline
+Ein Beispiel für diese Einteilung nach Domäne und nicht nach Modell findet man in der Aufteilung von \inlinecode{UserStore} und \inlinecode{AuthenticationStore}\newline
 Stores sind als \glslink{Singleton}{Singletons} umgesetzt.
 Sie registrieren sich beim Dispatcher um Updates zu erhalten und ihren Zustand entsprechend anzupassen.
 Views wiederum können sich bei den Stores registrieren um neue Informationen zu erhalten, können die Stores aber nicht direkt anweisen, sich zu aktualisieren.
@@ -29,7 +29,7 @@ Deshalb gilt die View in \brand{Flux} als Auslöser für neue Aktionen.
 In \brand{React} kann zwischen \emph{Views} und \emph{Controller-Views} unterschieden werden.\newline
 \emph{Controller-Views} finden sich an der Spitze der View-Hierarchie.
 Sie warten auf Updates der Stores und reichen die Daten entlang der Kette ihrer untergeordneten \emph{Views} weiter.\newline
-Diese untergeordneten \emph{Views} wiederum reagieren auf Zustandsänderungen indem ihre \inlinecode{render()} Methode neu aufgerufen wird.
+Diese untergeordneten \emph{Views} wiederum reagieren auf Zustandsänderungen indem ihre \newline\inlinecode{render()} Methode neu aufgerufen wird.
 Somit bleiben \emph{View} Komponenten modular austauschbar, da sie unabhängig von ihrem Kontext eingesetzt werden können.
 
 \subsection{Actions}
