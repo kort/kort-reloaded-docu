@@ -132,7 +132,7 @@ Zwischenzeitlich wurde aus diesem Grund das Erhalten des Login-Tokens, nach der 
 	\item native location tracking implementiert
 	\item View-Komponenten fertig entworfen
 	\item Testing-\gls{Framework} aufgesetzt
-	\item Backend API mit der flux-Architektur umgesetzt
+	\item Architektur-Entscheid und -Implementation
 	\item Token basierte \brand{Google}-Authentifizierung im Frontend umgesetzt, nachdem das Backend von Stefan Oderbolz dafür angepasst wurde.
 	\item \kort{}-Datenbank für Tests lokal aufgesetzt
 	\item \kort{} ist \brand{iOS}-fähig
@@ -143,8 +143,8 @@ Zwischenzeitlich wurde aus diesem Grund das Erhalten des Login-Tokens, nach der 
 
 \subsubsection{Erledigte Arbeiten}
 
-Wir haben die Architekturvarianten evaluiert und uns für die flux-Architektur entschieden.
-Daraufhin wurde das bestehende Grundgerüst, für die Verwendung vom \kort{}-API, aktualisiert und mit der flux-Architektur implementiert. 
+Wir haben die Architekturvarianten evaluiert und uns für die \brand{Flux}-Architektur entschieden.
+Daraufhin wurde das bestehende -- noch sehr schlanke -- Grundgerüst, welches mit dem MVC-Pattern umgesetzt wurde, durch \brand{Flux} ersetzt.
 
 Unterdessen konnte das Grundgerüst der \gls{GUI} grösstenteils fertiggestellt werden. 
 Es fehlte noch die dynamische Behandlung von gewissen View-Komponenten.
@@ -169,7 +169,6 @@ Aus diesem Grund wurde für Tests, nach Absprache mit Jürg Hunziker, das Develo
 	\item dynamische View-Komponenten fertiggestellt
 	\item Login Weiterleitung
 	\item Login-Logik mit Local Storage
-	\item Fertigstellung der Architektur
 	\item Testing abgeschlossen
 	\item Missionen und Validationen sind lösbar
 	\item Internationalisierung umgesetzt
@@ -180,7 +179,6 @@ Alle View-Komponenten sind nun dynamisch und zeigen je nach Zustand der Komponen
 
 Durch eine zusätzliche App-Loader-View konnte das Problem der Weiterleitung nach dem Login behoben werden.
 Diese Komponente lädt nun alles im Voraus und erst danach wird je nach Zustand, ob der Benutzer eingeloggt ist, oder nicht, die entsprechende Ansicht angezeigt.
-Parallel wurde die Architektur und die Logik fertiggestellt und getestet.
 Nach und nach wurden die Platzhalter der View-Komponenten mit dynamischen Daten der Businesslogik ersetzt.
 
 Schlussendlich konnten wir erfolgreich Missionen und Validationen lösen.
