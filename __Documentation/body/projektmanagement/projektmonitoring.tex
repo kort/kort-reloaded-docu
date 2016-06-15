@@ -145,7 +145,9 @@ Meeting & 61.75 h & 59.25 h & -2.50 h \\
 \end{table}
 
 \section{Code-Statistik}
-Zur groben Einschätzung, der Grösse vom Projekt wurde in der Tabelle \ref{pm-cloc} die Gesamtanzahl der Dateien und der Code-Zeilen (ohne Code-Kommentare) gezählt.
+Zur groben Einschätzung, der Grösse vom Projekt wurde in der Tabelle \ref{pm-cloc} die Gesamtanzahl der \brand{JavaScript} der Code-Zeilen (ohne Code-Kommentare) gezählt. 
+Beim Linken von \glslink{Library}{Libraries} gab es auch Anpassungen im \brand{Android}- und \brand{iOS}-Projekt. 
+Der Umfang dieser Änderungen wurde nicht dokumentiert, da es sich vor allem um Anpassungen an vorhandenen Dateien handelte. 
 
 \begin{table}[H]
 \centering
@@ -161,9 +163,10 @@ Zur groben Einschätzung, der Grösse vom Projekt wurde in der Tabelle \ref{pm-c
 \end{table}
 
 Die Tabelle \ref{pm-package-cloc} zeigt die Anzahl an Code-Zeilen in einem Package. 
-Die Packages \textit{Actions}, \textit{Data}, \textit{Dispatcher}, \textit{DTO} und \textit{Stores} sind von der verwendeten Architektur gegeben. 
-\textit{Constants} beinhaltet Konstanten, IDs und sonstige fixe Parameter. 
-Im Package \textit{Components} befinden sich die \gls{GUI}-Komponenten. 
+Die Packages \inlinecode{Actions}, \inlinecode{Data}, \inlinecode{Dispatcher}, \inlinecode{DTO} und \inlinecode{Stores} sind von der verwendeten Architektur gegeben. 
+\inlinecode{Constants} beinhaltet Konstanten, IDs und sonstige fixe Parameter. 
+Im Package \inlinecode{Components} befinden sich die \gls{GUI}-Komponenten. 
+Die \inlinecode{Shared Components} enthalten Buttons und weitere Komponenten, die oft wiederverwendet wurden. 
 
 \begin{table}[H]
 \centering
@@ -173,7 +176,7 @@ Im Package \textit{Components} befinden sich die \gls{GUI}-Komponenten.
 \hline 
 \textit{Components} & 1042 \\
 \hline 
-\textit{Shared components} & 463 \\
+\textit{Shared Components} & 463 \\
 \hline 
 \textbf{Total Components} & \textbf{1511} \\
 \hline 
