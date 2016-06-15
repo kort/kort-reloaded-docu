@@ -12,9 +12,9 @@ Leider haben wir diese Vorgabe (siehe Tabelle \ref{pm-arbeitsaufwand}) überschr
 \hline 
 \multicolumn{1}{|c|}{\textbf{Person}} & \multicolumn{1}{|c|}{\textbf{Aufwand}} \\
 \hline 
-Marino Melchiori & 421.5 h \\
+Marino Melchiori & 461.5 h \\
 \hline 
-Dominic Mülhaupt & 427 h \\  
+Dominic Mülhaupt & 467 h \\  
 \hline 
 \end{tabular}
 \caption{Arbeitsaufwand pro Person}
@@ -38,7 +38,7 @@ Analyse \& Design & 106.00 h \\
 \hline
 Implementation & 125.00 h \\
 \hline
-Dokumentation & 101.00 h \\
+Dokumentation & 141.00 h \\
 \hline
 Requirements & 30.75 h \\
 \hline
@@ -65,7 +65,7 @@ Analyse \& Design & 49.50 h \\
 \hline
 Implementation & 191.75 h \\
 \hline
-Dokumentation & 26.25 h \\
+Dokumentation & 66.25 h \\
 \hline
 Requirements & 26.00 h \\
 \hline
@@ -132,30 +132,30 @@ Qualitätssicherung & 36.50 h & 30.00 h & -6.50 h \\
 \hline
 Internationalisierung & 4.50 h & 4.25 h & -0.25 h \\
 \hline
-Dokumentation & 124.00 h & 118.25 h & -5.75 h \\
+Dokumentation & 204.00 h & 198.25 h & -5.75 h \\
 \hline
 Allgemein & 152.75 h & 144.50 h & -8.25 h \\
 \hline
 Meeting & 61.75 h & 59.25 h & -2.50 h \\
 \hline
-\textbf{Total} & \textbf{895.00 h} & \textbf{846.50 h} & \textbf{-21.00 h} \\
+\textbf{Total} & \textbf{975.00 h} & \textbf{926.50 h} & \textbf{-21.00 h} \\
 \hline
 \end{tabular}
 \caption{Soll-Ist-Vergleich --- Gesamtaufwand pro Kategorie}
 \end{table}
 
 \section{Code-Statistik}
-
-% Anzahl Zeilen pro Package (Actions, Stores, etc...)
-Zur groben Einschätzung, der Grösse vom Projekt wurde in der Tabelle \ref{pm-cloc} die Gesamtanzahl der Dateien und der Code-Zeilen (ohne Code-Kommentare) gezählt.
+Zur groben Einschätzung, der Grösse vom Projekt wurde in der Tabelle \ref{pm-cloc} die Gesamtanzahl der \brand{JavaScript} der Code-Zeilen (ohne Code-Kommentare) gezählt. 
+Beim Linken von \glslink{Library}{Libraries} gab es auch Anpassungen im \brand{Android}- und \brand{iOS}-Projekt. 
+Der Umfang dieser Änderungen wurde nicht dokumentiert, da es sich vor allem um Anpassungen an vorhandenen Dateien handelte. 
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|l|l|l|}
+\begin{tabular}{|l|r|}
 \hline 
-\textbf{Sprache} & \textbf{Dateien} & \textbf{Zeilen} \\ 
+\textbf{Sprache} & \multicolumn{1}{|c|}{\textbf{Zeilen}} \\ 
 \hline 
-\brand{JavaScript} & ... & ... \\
+\brand{JavaScript} & 3913 \\
 \hline 
 \end{tabular}
 \caption{Dateien und Codezeilen}
@@ -163,33 +163,42 @@ Zur groben Einschätzung, der Grösse vom Projekt wurde in der Tabelle \ref{pm-c
 \end{table}
 
 Die Tabelle \ref{pm-package-cloc} zeigt die Anzahl an Code-Zeilen in einem Package. 
-Die Packages \textit{Actions}, \textit{Data}, \textit{Dispatcher}, \textit{DTO} und \textit{Stores} sind von der verwendeten Architektur gegeben. 
-\textit{Constants} beinhaltet Konstanten, IDs und sonstige fixe Parameter. 
-Im Package \textit{Components} befinden sich die \gls{GUI}-Komponenten. 
+Die Packages \inlinecode{Actions}, \inlinecode{Data}, \inlinecode{Dispatcher}, \inlinecode{DTO} und \inlinecode{Stores} sind von der verwendeten Architektur gegeben. 
+\inlinecode{Constants} beinhaltet Konstanten, IDs und sonstige fixe Parameter. 
+Im Package \inlinecode{Components} befinden sich die \gls{GUI}-Komponenten. 
+Die \inlinecode{Shared Components} enthalten Buttons und weitere Komponenten, die oft wiederverwendet wurden. 
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|l|l|}
+\begin{tabular}{|l|r|}
 \hline 
-\textbf{Package} & \textbf{Zeilen} \\ 
+\textbf{Package} & \multicolumn{1}{|c|}{\textbf{Zeilen}} \\ 
 \hline 
-\brand{Actions} & ... \\
+\textit{Components} & 1042 \\
 \hline 
-\brand{Components} & ... \\
+\textit{Shared Components} & 463 \\
 \hline 
-\brand{Constants} & ... \\
+\textbf{Total Components} & \textbf{1511} \\
 \hline 
-\brand{Data} & ... \\
+\textit{Actions} & 267 \\
 \hline 
-\brand{Dispatcher} & ... \\
+\textit{Data} & 513 \\
 \hline 
-\brand{DTOs ohne Tests} & ... \\
+\textit{Dispatcher ohne Tests} & 2 \\
 \hline 
-\brand{DTO Tests} & ... \\
+\textit{Dispatcher Tests} & 43 \\
 \hline 
-\brand{Stores ohne Tests} & ... \\
+\textit{DTOs ohne Tests} & 199 \\
 \hline 
-\brand{Store Tests} & ... \\
+\textit{DTO Tests} & 69 \\
+\hline 
+\textit{Stores ohne Tests} & 408 \\
+\hline 
+\textit{Store Tests} & 466 \\
+\hline 
+\textbf{Total Logik ohne Tests} & \textbf{1389} \\
+\hline 
+\textit{Constants} & 441 \\
 \hline 
 \end{tabular}
 \caption{Codezeilen pro Package}

@@ -1,8 +1,9 @@
 \chapter{Technologien}
 \label{pd-technologien}
 
+
 \section{React} 
-\brand{React}\footnote{\url{https://facebook.github.io/react/}, \url{https://github.com/facebook/react}} ist eine Open Source \brand{JavaScript} \gls{Library} und dient für die Implementation der View vom \gls{MVC}-Pattern. 
+\brand{React}\footnote{\url{https://facebook.github.io/react/}, \url{https://github.com/facebook/react}} wurde im März 2013 veröffentlicht\cite{react-release-date}, ist eine Open Source \brand{JavaScript} \gls{Library} und dient für die Implementation der View vom \gls{MVC}-Pattern. 
 Die View besteht aus wiederverwendbaren Komponenten, die wiederum Komponenten beinhalten.
 \brand{React} wird von \brand{Facebook}, \brand{Instagram} und von der Community entwickelt und gewartet.\cite{react}
 
@@ -13,14 +14,68 @@ Eine Hauptkomponente gibt seine Daten per Props an die Kind-Komponenten weiter (
 \gls{JSX} wird nicht zwingend benötigt.\cite{jsx-syntax} 
 
 Anstatt der \gls{DOM} nutzt \brand{React} die sogenannte \gls{Virtual DOM}.
-Wie der Begriff schon sagt, wird mit einer Abstraktion der echten \gls{DOM} --- also mit einer virtuellen DOM --- kommuniziert.
+Wie der Begriff schon sagt, wird mit einer Abstraktion der echten \gls{DOM} -- also mit einer virtuellen DOM -- kommuniziert.
 Die komplette \gls{DOM}, also die Repräsentation der View vom HTML-Code, ist im lokalen Speicher abgelegt.\cite{virtual-dom}
 In der \inlinecode{render()}-Methode einer Klasse wird eine Beschreibung der DOM zurückgeliefert, die \brand{React} mit der lokalen Kopie der \gls{DOM} vergleicht.
-Mit einem sehr effizienten Diffing-Algorithmus berechnet \brand{React} den Unterschied zwischen diesen  Versionen der \gls{DOM} und errechnet den schnellsten Weg um den Browser zu aktualisieren. 
-\cite{react-virtual-dom}
-% Diffing-Algorithmus in den Glossar?
+Mit einem sehr effizienten Diffing-Algorithmus berechnet \brand{React} den Unterschied zwischen diesen  Versionen der \gls{DOM} und errechnet den schnellsten Weg um den Browser zu aktualisieren.\cite{react-virtual-dom}
+
 
 \section{React Native}
-Der Ansatz von \brand{React Native}\footnote{\url{https://facebook.github.io/react-native/}, \url{https://github.com/facebook/react-native}} ist \textit{learn once - write anywhere} --- lerne eine Technologie und nutze sie für alle unterstützten Plattformen.\cite{react-native}
+Der Ansatz von \brand{React Native}\footnote{\url{https://facebook.github.io/react-native/}, \url{https://github.com/facebook/react-native}} ist \textit{learn once -- write anywhere}, das heisst, lerne eine Technologie und nutze sie für alle unterstützten Plattformen.\cite{react-native}
+
+Veröffentlicht wurde \brand{React Native} am 26. März 2015 erstmals für \brand{iOS} veröffentlicht.
+Im Oktober 2015 kam \brand{Android} dazu.\cite{react-native-release}
+
+Die Desktop Unterstützung für \brand{OSX} ist ebenfalls in Entwicklung\footnote{\url{https://github.com/ptmt/react-native-desktop}}. 
+Am 13. April 2016 kündigten \brand{Microsoft} und \brand{Facebook}, an der \brand{Facebook} Developer Konferenz, den Support für die \brand{Universal Windows Platform} (\brand{UWP}) an.\cite{react-native-windows} 
 
 
+\subsection{Technische Details}
+\brand{React Native} nutzt einen \brand{JavaScript}-Layer, beziehungsweise \brand{JavaScriptCore}, um den Code auszuführen.\cite{react-native-javascriptcore} 
+Die native Komponenten werden auf die \brand{JavaScript}-Komponenten, der jeweiligen Plattform gemappt. 
+Das Endprodukt ist also keine \gls{WebApp} im Browser und wird auch nicht in native Code kompiliert. 
+Der \brand{JavaScript}-Code wird auf einem separaten Thread ausgeführt und nicht auf dem UI-Thread. 
+Dadurch wirken zum Beispiel die Animationen sehr flüssig.\cite{react-native-javascript-thread}
+
+
+% Wie die Komponenten native übersetzt werden (Bridges)
+% Kommunikation native und js, dass selber Komponenten umgesetzt werden können, 
+% Projektstruktur
+
+Seit dem Release gibt es alle zwei Wochen eine neue Version. 
+Durch diese häufigen Änderungen konnten sich noch keine Best Practices etablieren. 
+Auch die meisten Open Source Projekte verfolgen eigene Implementationsansätze.
+
+
+\subsection{Plattformunabhängigkeit}
+Eine Stärke von \brand{React Native} ist die Plattformunabhängigkeit. 
+Wenn keine spezifische \brand{Android}- oder \brand{iOS}-Komponenten verwendet werden, kann der Code für beide Plattformen genutzt werden.
+Also wurde beim Entwickeln der \brand{Android}-App darauf geachtet, möglichst keine Plattform spezifische Komponenten zu nutzen. 
+Das konnte in diesem Projekt erfolgreich umgesetzt werden. 
+Die \brand{iOS}-Version konnte aus Zeitgründen nicht getestet werden. 
+Es ist möglich, dass die Einbindung von den verwendeten Libraries überprüft werden muss. 
+
+
+\subsection{Community}
+Die Community wirkt sehr zerstreut, denn viele Informationen sind in den Issues vom \brand{React Native} GitHub-Repository\footnote{\url{https://github.com/facebook/react-native/issues}} versteckt.
+Ausserdem sind aktuell, am 15.06.2016, 733 offene Issues vorhanden.
+
+\begin{itemize}
+	\item Vorhanden ist eine öffentliche, aktive und hilfsbereite \brand{Facebook}-Gruppe\footnote{\url{https://www.facebook.com/groups/react.native.community/}}, mit derzeit ca. 3 500 Mitgliedern.
+	\item Es gibt eine \brand{Stack-Overflow}-Kategorie\footnote{\url{http://stackoverflow.com/questions/tagged/react-native}} - leider nur mit wenigen Antworten und Lösungen.
+	\item JS.coach\footnote{\url{https://js.coach/}} - listet viele Open Source Projekte auf.
+	\item Übersicht über aktuelle Artikel und Blogposts: 
+	\begin{itemize}
+		\item reactnative.com\footnote{\url{http://www.reactnative.com/}}
+		\item \brand{React Native} Newsletter\footnote{\url{http://reactnative.cc/}}
+	\end{itemize}
+	\item Es ist ebenfalls ein aktiver Subreddit\footnote{\url{https://www.reddit.com/r/reactnative}} vorhanden.
+\end{itemize}
+
+
+\subsection{Zusammenfassung}
+
+
+% Gründe für React Native:
+% Navigator-Komponente (url zu docs), wiederverwendbare open source komponenten, langfristig,
+% immer mehr Apps im Showcase, das führt zu neuen Pull-requests und Beiträgen
