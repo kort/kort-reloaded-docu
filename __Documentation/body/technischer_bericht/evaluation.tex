@@ -20,7 +20,7 @@ Dabei kamen für uns zwei Patterns in Frage: Traditionelles \gls{MVC} und \hyper
 \label{tb-evaluation-architektur}
 \begin{tabular}{|p{7cm}|p{7cm}|}
 \hline
-\multicolumn{2}{|c|}{\textbf{Variante A: MVC}} \\
+\multicolumn{2}{|c|}{\textbf{Variante A: Flux}} \\
 \hline
 \textbf{Vorteile} & \textbf{Nachteile} \\
 \hline
@@ -36,7 +36,7 @@ Abstraktion des Applikationszustands passend für unseren Anwendungsfall
 Nutzt wichtige Konzepte von \brand{React}
 &  \\
 \hline
-\multicolumn{2}{|c|}{\textbf{Variante B: \brand{Flux}}} \\
+\multicolumn{2}{|c|}{\textbf{Variante B: \brand{MVC}}} \\
 \hline
 \textbf{Vorteile} & \textbf{Nachteile} \\
 \hline
@@ -58,7 +58,7 @@ Wir haben uns letztlich aufgrund der oben aufgelisteten Vorteile auf \brand{Flux
 \section{App Navigation}
 Um die Navigation von \kort{} zu implementieren, gab es zwei Möglichkeiten. 
 Die erste Variante war die Umsetzung mit der von \brand{React Native} zur Verfügung gestellten Navigator-Komponente. 
-Für eine Tab-Ansicht müsste aber eine weitere Library evaluiert werden. 
+Für eine Tab-Ansicht müsste aber eine weitere \gls{Library} evaluiert werden. 
 
 Als weitere Variante für die Navigation gab es die React-Native-Router-Flux Library. 
 Diese Komponente basiert auf dem Navigator von \brand{React Native} und unterstützt durch die bereits integrierte Tab-Library eine Tab-Ansicht.  
@@ -99,7 +99,7 @@ Ein Wechsel der View ist mit einem Funktionsaufruf von überall aus möglich. Da
 
 \subsection{Fazit}
 Da \brand{React Native} standardmässig keine Tab-Navigation anbietet, wurde React-Native-Router-Flux als Navigations-Variante evaluiert.
-Der erste Prototyp mit dieser Library erfüllte die Anforderungen.
+Der erste Prototyp mit dieser \gls{Library} erfüllte die Anforderungen.
 Alle Views sind an einem Ort im Code festgelegt und es lassen sich bequem weitere hinzufügen.
 
 Im Verlaufe des Projektes sind dann aber vermehrt Fehler aufgetreten.
@@ -163,7 +163,7 @@ Wird von \brand{Facebook} empfohlen.
 \hline
 \textbf{Vorteile} & \textbf{Nachteile} \\
 \hline
-Lässt sich mit Offline-Kacheln von \brand{OSM2VectorTiles}\footnote{\url{http://osm2vectortiles.org/downloads/}} füttern (Vektor Kacheln). & Diese Library ist eine experimentelle Komponente.\cite{react-native-mapbox} \\
+Lässt sich mit Offline-Kacheln von \brand{OSM2VectorTiles}\footnote{\url{http://osm2vectortiles.org/downloads/}} füttern (Vektor Kacheln). & Diese \gls{Library} ist eine experimentelle Komponente.\cite{react-native-mapbox} \\
 \hline
 Es können eigene Marker-Bilder eingesetzt werden. &  \\
 \hline
@@ -203,6 +203,7 @@ Nur unterstützt dies das Backend nicht und es gäbe Probleme mit dem Speicherpl
 
 
 \section{OAuth Implementation}
+\label{tb-evaluation-oauth}
 Gebraucht wird ein Login-Dienst für \brand{Google}-, \brand{Facebook}- und \brand{OSM}-Konten. 
 Für einen \brand{OSM}-Login muss eine eigene Lösung entwickelt werden. 
 Für die Implementation der Authentifizierung wurden folgende zwei Möglichkeiten evaluiert:
@@ -215,7 +216,7 @@ Für die Implementation der Authentifizierung wurden folgende zwei Möglichkeite
 \subsubsection{Variante B: Open-Source-Projekte}
 Ein geeignetes Open Source Projekt für die \brand{Google}-Authentifizierung wäre react-native-google-signin\footnote{\url{https://github.com/devfd/react-native-google-signin}}. 
 Für \brand{Facebook} bot sich react-native-facebook-login\footnote{\url{https://github.com/magus/react-native-facebook-login}} an. 
-Diese Variante ist zu generell und wurde nicht in einer Tabellenansicht dargestellt. 
+Diese Open Source Variante ist zu generell und wurde nicht in einer Tabellenansicht dargestellt. 
 
 \begin{table}[H]
 \centering
@@ -242,7 +243,7 @@ Kostenlos für Open-Source-Projekte.
 \subsection{Fazit}
 \brand{Auth0} kam definitiv nicht in Frage, da es in nächster Zukunft nicht mit einer \gls{OAuth} 1.0a-Authentifizierung, wie sie von \brand{OSM} unterstützt wird, erweiterbar ist.
 Entschieden haben wir uns für das react-native-google-signin-Projekt.
-Es funktioniert auf beiden Plattformen und liefert ein Token, das vom \kort{}-Backend überprüft werden kann.
+Es funktioniert auf beiden Plattformen und liefert ein Token, das vom \kort{}-\-gls{Backend} überprüft werden kann.
 Der Nachteil ist, dass es kein Open Source Projekt gab, welches alle gewünschten Social-Logins für \brand{iOS} und \brand{Android} anbietet.
 
 \brand{Facebook} wird vom \kort{}-Backend derzeitig nicht unterstützt und das react-native-facebook-login-Projekt auf \brand{GitHub} liefert auch kein Token, wie es beim \brand{Google}-Login der Fall ist.
@@ -258,7 +259,7 @@ Das heisst, dass sich ein Benutzer registriert und bei der Übersetzung von ande
 Die Übersetzungen sind allerdings im Java Properties Format, was eine Schwierigkeit darstellen würde.
 
 Bei der Umsetzung der I18n müssen folgende Punkte umgesetzt werden: Auslesen des Locales aus den Geräteinformationen, entsprechendes Einsetzen der Übersetzungen und Einbinden der Übersetzungen, welche auf \brand{Transifex} zur Verfügung stehen.
-Eine Library, die eine \brand{React Native} Bridge zum Auslesen des Locales, die I18n-Funktionalität zur Verfügung stellt und \inlinecode{.properties} Dateien entgegennimmt, gibt es leider nicht.
+Eine \gls{Library}, die eine \brand{React Native} Bridge zum Auslesen des Locales, die I18n-Funktionalität zur Verfügung stellt und \inlinecode{.properties} Dateien entgegennimmt, gibt es leider nicht.
 
 Es boten sich folgende Alternativen an:
 \begin{enumerate}
@@ -266,6 +267,6 @@ Es boten sich folgende Alternativen an:
 \item Auslesen des Locales und Übersetzen mit einer Library für \brand{React Native}\footnote{\url{https://github.com/AlexanderZaytsev/react-native-i18n}} und manuelles Umwandeln der Java Properties Files in JSON
 \end{enumerate}
 
-Die 1. Variante kam für uns nicht in Frage, da JQuery nicht ins Projekt eingebunden werden soll.
+Die 1. Variante kam für uns nicht in Frage, da \brand{JQuery} nicht ins Projekt eingebunden werden soll.
 So haben wir uns für die 2. Variante entschieden, vorerst aber nur Deutsch und Englisch ins richtige Format umgewandelt.
 Die weiteren Sprachen werden noch nach der Abgabe übernommen.
