@@ -1,7 +1,5 @@
 \chapter{Entwicklungsumgebung}
 \label{pd-entwicklungsumgebung}
-
-
 \section{IDE}
 Die Funktionalitäten und Features der App wurden alle mit \brand{Atom} implementiert. 
 Für das Debugging waren die native \glslink{IDE}{IDEs}, \brand{Android Studio} und \brand{Xcode}, aber besser geeignet. 
@@ -10,12 +8,15 @@ Ansonsten wurden die native \glslink{IDE}{IDEs} nur für das Einfügen von stati
 
 
 \section{Continuous Integration}
+Als Versionsverwaltungssystem wurde \brand{git}\footnote{\url{https://git-scm.com/}} zusammen mit dem Online-Dienst \brand{GitHub}\footnote{\url{https://github.com}} verwendet: \url{https://github.com/kort/kort-reloaded}.
+Dabei haben wir folgendes Branching Model eingesetzt: Der master Branch wird nur für Releases verwendet.
+Für die Entwicklung wurde der develop Branch genutzt, wobei jedes Feature und jeder Fix eines Bugs einen eigenen Branch erhielt, welcher nach Fertigstellung wieder in den develop Branch gemerged wurde.\newline
+\newline
 Für die Continuous Integration (\gls{CI}) nutzen wir den freien Dienst von \brand{Travis-CI}\footnote{\url{https://travis-ci.org/}}.
-Dieses Setup lässt sich bequem in Verbindung mit \brand{Github} nutzen. 
-Dabei wird jeder Neuerung auf dem master- und develop-Branch über \brand{Travis-CI} ein neuer Build erstellt. 
-Die Konfigurationsdatei für \brand{Travis-CI} befindet sich im \brand{Github}-Repository von \kort{}\footnote{\url{https://github.com/kort/kort-reloaded}}. 
-Darin sind auch die Tools, um die \nameref{pd-entwicklungsumgebung-cr} zu überprüfen, konfiguriert. 
-
+Dieses Setup lässt sich bequem in Verbindung mit \brand{GitHub} nutzen. 
+Dabei wird bei jeder Neuerung auf dem master und develop Branch über \brand{Travis-CI} ein neuer Build erstellt.
+Bei jedem Build werden die Tests durchlaufen und der Code auf die Einhaltung der \nameref{pd-entwicklungsumgebung-cr} überprüft.\newline
+Die Konfigurationsdatei für \brand{Travis-CI} (\inlinecode{.travis.yml}) befindet sich im \brand{GitHub}-Repository von \kort{}.
 
 \section{Projektmanagement-Tool}
 Als Projektmanagement-Tool wurde \brand{Redmine} verwendet. 
@@ -23,15 +24,19 @@ Weiterführende Links zum Redmine-Projekt, das für die Ticketerfassung verwende
 
 
 \section{Testing}
-Für die Unit-Tests wurde \brand{Jest}\footnote{\url{https://facebook.github.io/jest/}} eingesetzt. 
-\brand{Jest} ist ein \brand{JavaScript} Testing-\gls{Framework} und wird zum Beispiel von \brand{Facebook} zum Testen von \brand{React}-Applikationen verwendet. 
-
+Fürs Testing wurden \glslink{Unit Test}{Unit Tests}, \glslink{Integration Test}{Integration Tests} und \glslink{Funktionaler Test}{Funktionalen Tests} evaluiert.
+Letztlich konnten -- zum Zeitpunkt der Abgabe -- lediglich die Unit Tests umgesetzt werden.
+Integration Tests wären für die \inlinecode{data} Klassen wünschenswert gewesen, konnten aber aus Zeitgründen nicht umgesetzt werden.
+Automated UI Tests sind mit \brand{React Native} möglich\footnote{Einen guten Überblick bietet diese Seite: \url{http://testdroid.com/tech/testing-react-native-apps-on-android-and-ios}}, sind aber sehr aufwendig einzurichten.
+Für die Unit Tests wurde \brand{Jest}\footnote{\url{https://facebook.github.io/jest/}} eingesetzt. 
+\brand{Jest} ist ein \brand{JavaScript} Testing-\gls{Framework} und wird zum Beispiel von \brand{Facebook} zum Testen von \brand{React}-Applikationen verwendet.\newline
+Eine besondere Eigenschaft von \brand{Jest} ist, dass standardmässig für alle Module automatisch \glslink{Mock}{Mocks} bereitgestellt werden.
+Somit wird verhindert, dass aus Versehen das Verhalten anderer Module getestet wird.
 
 \section{Code-Richtlinien}
 \label{pd-entwicklungsumgebung-cr}
-
-Um die Style-Guidelines von \brand{JavaScript} einzuhalten, wurde \brand{ES-Lint}\footnote{\url{https://facebook.github.io/jest/}} eingesetzt. 
-Dieses Tool prüft den ganzen Code auf Style-Einheitlichkeit und stellt sicher, dass ein aktueller Code-Standard eingehalten wird. 
-Das erhöht die Lesbarkeit und Wartbarkeit vom Code. 
-Die Konfiguration von \brand{ES-Lint} stammt von \brand{airbnb}\footnote{\url{...}} und konnte als Open Source Plugin, mit \brand{npm}, in das Projekt eingebunden werden. 
-
+Um Code-Richtlinien festzulegen und deren Einhaltung zu prüfen, wurde \brand{ESLint}\footnote{\url{http://eslint.org/}} eingesetzt.
+Dadurch wird die die Lesbarkeit und Wartbarkeit vom Code erhöht.
+Die Konfiguration von \brand{ESLint} stammt von \brand{Airbnb}\footnote{\url{https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb}}.
+Darüber hinaus wurden Plugins für \brand{React}\footnote{\url{https://github.com/yannickcr/eslint-plugin-react}} und \brand{React Native}\footnote{\url{https://github.com/Intellicode/eslint-plugin-react-native}} eingesetzt.\newline
+Die Konfiguration findet sich in der Datei \inlinecode{.eslintrc.json}.

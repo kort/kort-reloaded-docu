@@ -205,7 +205,6 @@ Nur unterstützt dies das Backend nicht und es gäbe Probleme mit dem Speicherpl
 
 
 \section{OAuth Implementation}
-\label{tb-evaluation-oauth}
 Gebraucht wird ein Login-Dienst für \brand{Google}-, \brand{Facebook}- und \brand{OSM}-Konten. 
 Für einen \brand{OSM}-Login muss eine eigene Lösung entwickelt werden. 
 Für die Implementation der Authentifizierung wurden diese zwei Möglichkeiten evaluiert:
@@ -253,11 +252,29 @@ Wir hatten uns dazu entschieden, keine Backend-Anpassungen durchzuführen.
 
 
 \section{Internationalisierung}
-Für die Implementation der Internationalisierung (i18n) stand für \brand{React Native} eine Open Source Library (react-native-i18n\footnote{\url{https://github.com/AlexanderZaytsev/react-native-i18n}}) zur Verfügung. 
-
-Die Übersetzungen wurden in der \kort{}-Bachelorarbeit von 2012 mit \brand{Transifex}\footnote{\url{https://www.transifex.com/}} bereits durchgeführt.\cite{ba-kort-2012}
+Die Übersetzungen, die für die Internationalisierung (I18n) der App zur Verfügung stehen, wurden in der \kort{}-Bachelorarbeit von 2012 mit \brand{Transifex}\footnote{\url{https://www.transifex.com/}} bereits erhoben.\cite{ba-kort-2012}
+Es stehen bereits 13 vollständig und weitere 13 teilweise übersetzte Sprachen zur Verfügung.
 \brand{Transifex} ist eine Plattform, bei der Projekte zur freiwilligen Übersetzung von dessen Benutzern, aufgeschaltet werden können. 
-Das heisst, dass sich ein Benutzer registriert und bei der Übersetzung von anderen Projekten beitragen kann. 
+Das heisst, dass sich ein Benutzer registriert und bei der Übersetzung von anderen Projekten beitragen kann.
+Die Übersetzungen sind allerdings im Java Properties Format, was eine Schwierigkeit darstellen würde.
 
-Alle vorhandenen Übersetzungen sind im Java Properties-Format und konnten so nicht mit der verwendeten i18n-Library übernommen werden. 
-Aus diesem Grund wurden erstmals nur die deutschen und englischen Sprachdateien in das richtige Format (JSON Key-Value) von Hand umgewandelt und implementiert.
+Bei der Umsetzung der I18n müssen folgende Punkte umgesetzt werden: Auslesen des Locales aus den Geräteinformationen, entsprechendes Einsetzen der Übersetzungen und Einbinden der Übersetzungen, welche auf \brand{Transifex} zur Verfügung stehen.
+Eine Library, die eine \brand{React Native} Bridge zum Auslesen des Locales, die I18n-Funktionalität zur Verfügung stellt und \inlinecode{.properties} Dateien entgegennimmt, gibt es leider nicht.
+
+Es boten sich folgende Alternativen an:
+\begin{enumerate}
+\item Auslesen des Locales mit einer Library für \brand{React Native}\footnote{\url{https://github.com/fixd/react-native-locale}} und Übersetzen anhand von Java Properties Files mit einer anderen Library\footnote{\url{https://github.com/jquery-i18n-properties/jquery-i18n-properties}}
+\item Auslesen des Locales und Übersetzen mit einer Library für \brand{React Native}\footnote{\url{https://github.com/AlexanderZaytsev/react-native-i18n}} und manuelles Umwandeln der Java Properties Files in JSON
+\end{enumerate}
+
+Die 1. Variante kam für uns nicht in Frage, da JQuery nicht ins Projekt eingebunden werden soll.
+So haben wir uns für die 2. Variante entschieden, vorerst aber nur Deutsch und Englisch ins richtige Format umgewandelt.
+Die weiteren Sprachen werden noch nach der Abgabe übernommen.
+
+\section{Plattformunabhängigkeit}
+Eine Stärke von \brand{React Native} ist die Plattformunabhängigkeit. 
+Wenn keine spezifische \brand{Android}- oder \brand{iOS}-Komponenten verwendet werden, kann der Code für beide Plattformen genutzt werden.
+Also wurde beim Entwickeln der \brand{Android}-App darauf geachtet, möglichst keine Plattform spezifische Komponenten zu nutzen. 
+Das konnte in diesem Projekt erfolgreich umgesetzt werden. 
+Die \brand{iOS}-Version konnte aus Zeitgründen nicht getestet werden. 
+Es ist möglich, dass die Einbindung von den verwendeten Libraries überprüft werden muss. 
