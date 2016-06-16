@@ -6,10 +6,11 @@ In diesem Kapitel werden zwei Varianten beschrieben, wie die App getestet werden
 
 \section{Installation mit Source Code}
 Um die App anhand des Source Codes zu installieren, muss die \brand{React Native} Entwicklungsumgebung aufgesetzt sein. 
-Wie diese eingerichtet wird ist in der Getting-Started-Anleitung, der online Dokumentation von \brand{React Native}\footnote{\url{https://facebook.github.io/react-native/docs/getting-started.html}}, erklärt.
+Wie diese eingerichtet wird, ist in der Getting-Started-Anleitung, der Onlinedokumentation von \brand{React Native}\footnote{\url{https://facebook.github.io/react-native/docs/getting-started.html}}, erklärt.
 Diese Anleitung erklärt Schritt für Schritt den Ablauf von der Einrichtung der Entwicklungsumgebung auf einem \brand{Mac}-, \brand{Linux}- oder \brand{Windows}-Rechner (für \brand{iOS} und \brand{Android}) bis zum Starten der App.
 
-Hier muss noch beachtet werden, dass die SecretConfig.js-Datei \newline\inlinecode{(/kort-reloaded/js/constants/SecretConfig.js)}\newline mit folgenden Werten ergänzt werden sollte:
+Hier muss noch beachtet werden, dass die SecretConfig.js-Datei mit folgenden Werten ergänzt werden sollte.
+Der Dateipfad lautet: \inlinecode{/kort-reloaded/js/constants/SecretConfig.js}\newline
 
 \begin{itemize}
 	\item Mapbox Access Token
@@ -19,7 +20,7 @@ Hier muss noch beachtet werden, dass die SecretConfig.js-Datei \newline\inlineco
 	
 	\item Google Client ID 
 	\begin{itemize}
-		\item Wie die Google Client ID erhalten wird, ist in der Anleitung vom Github-Projekt der Google-Signin-Library erklärt.\footnote{\url{https://www.mapbox.com/help/create-api-access-token/}}
+		\item Wie die Google Client ID erhalten wird, ist in der Anleitung vom \brand{GitHub}-Projekt der Google-Signin-Library erklärt.\footnote{\url{https://www.mapbox.com/help/create-api-access-token/}}
 		\item Wichtig ist, dass anhand dieser Anleitung auch die google-services.json-Datei neu generiert und in das Projekt eingefügt werden muss.
 	\end{itemize}
 \end{itemize}

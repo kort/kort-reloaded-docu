@@ -21,7 +21,7 @@ Die Meilensteine \hyperref[pm-ms8]{MS 8} und \hyperref[pm-ms9]{MS 9} finden nach
 	\begin{itemize}
 		\item Datenbank
 		\item \gls{CI}
-		\item uservoice
+		\item \brand{UserVoice}
 		\item Redmine
 		\item Installationsskripte
 		\item Dokumentation aufgesetzt
@@ -40,11 +40,11 @@ Die Meilensteine \hyperref[pm-ms8]{MS 8} und \hyperref[pm-ms9]{MS 9} finden nach
 \subsubsection{Erledigte Arbeiten}
 Eine erste Version der Aufgabenstellung konnte erarbeitet werden. 
 Die Dokumentation wurde eingeleitet.
-Es gelang uns einen automatisierten Build der App, aus dem \brand{GitHub}-Sourcecode, mit \brand{Travis CI} aufzusetzen.
-Für die Map Komponente wurde die MapBox GL \gls{Library}\footnote{\url{https://libraries.io/npm/react-native-mapbox-gl}} mit den Vektor Daten von osm2vectortiles\footnote{\url{http://osm2vectortiles.org/}} evaluiert und getestet.
-Nebenbei konnten wichtige Erfahrungen in den verwendeten Technologien (\brand{Java Script}, \brand{React} und \brand{React Native}) gemacht werden.
+Es gelang uns einen automatisierten Build der App aus dem \brand{GitHub}-Sourcecode mit \brand{Travis CI} aufzusetzen.
+Für die Map-Komponente wurde die MapBox GL \gls{Library}\footnote{\url{https://libraries.io/npm/react-native-mapbox-gl}} mit den Vektor Daten von osm2vectortiles\footnote{\url{http://osm2vectortiles.org/}} evaluiert und getestet.
+Nebenbei konnten wichtige Erfahrungen in den verwendeten Technologien (\brand{JavaScript}, \brand{React} und \brand{React Native}) gemacht werden.
 Zusätzlich wurde ein für \brand{Android} angepasstes Design entworfen und Grundkonzepte der Architektur erarbeitet.
-Die Architektur ist noch nicht final, sie erleichtert uns aber den Einstig beim Programmieren.
+Die Architektur ist noch nicht final, sie erleichtert uns aber den Einstieg beim Programmieren.
 Die Infrastruktur ist soweit aufgesetzt.
 
 \subsubsection{Probleme}
@@ -69,11 +69,11 @@ Für die detaillierte Erarbeitung der Testspezifikation fehlte noch die nötige 
 \end{itemize}
 
 \subsubsection{Erledigte Arbeiten}
-Die Entwicklungsumgebung wurde optimiert. Das \brand{Travis}-Konfigurationsfile prüft den Code nun mit \brand{ESLint}\footnote{\url{http://eslint.org/}} (\brand{JavaScript} linter, checkt Styleguidelines) und \brand{flow}\footnote{\url{http://flowtype.org/}} (static type checker). 
+Die Entwicklungsumgebung wurde optimiert. Das \brand{Travis}-Konfigurationsfile prüft den Code nun mit \brand{ESLint}\footnote{\url{http://eslint.org/}} (\brand{JavaScript} linter, prüft Styleguidelines) und \brand{flow}\footnote{\url{http://flowtype.org/}} (static type checker). 
 
 Für die Tab-Navigation konnte eine Demo mit react-native-router-flux\footnote{\url{https://github.com/aksonov/react-native-router-flux}} umgesetzt werden. Diese muss noch in der \kort{} App implementiert werden. 
 
-\gls{OAuth} (nur Client-Seitig, ohne Backend Kommunikation) wurde evaluiert und konnte dann anhand einer Demo getestet werden --- allerdings nur mit \brand{Facebook} und \brand{Google}.
+\gls{OAuth} (nur clientseitig, ohne Backend Kommunikation) wurde evaluiert und konnte dann anhand einer Demo getestet werden -- allerdings nur mit \brand{Facebook} und \brand{Google}.
 
 Die Darstellung der Karte aus \nameref{pm-ms2} wurde leicht ausgebaut. Neu wird nun der Standort des Benutzers ermittelt.
 
@@ -82,7 +82,7 @@ Die Missionen konnten im Umkreis von fünf Kilometern geladen werden.
 \subsubsection{Probleme}
 Schwierigkeiten traten vor allem im Zusammenhang mit \brand{React Native} auf.
 Oft gab es Build-Fehler bei gleicher Code-Basis.
-Die Fehlerbehandlung hat uns enorm viel Zeit gekostet und es war schwer im Internet Hilfestellungen zu erhalten.
+Die Fehlerbehandlung hat uns enorm viel Zeit gekostet und es war schwer, im Internet Hilfestellungen zu erhalten.
 Da \brand{React Native} jede zwei Wochen ein Update erhält, sind die Dokumentationen oder die Diskussionen im Internet teilweise schon wieder veraltet.\newline
 Im Austausch mit anderen \brand{React Native} Entwicklern haben wir dasselbe Feedback erhalten.\newline
 Der Prototyp konnte nicht wie geplant fertiggestellt werden und einige Arbeiten mussten auf den nächsten Meilenstein ausgelagert werden.
@@ -120,7 +120,7 @@ Deswegen wurde es auf den \hyperref[pm-ms9]{Meilenstein 9: Release für App Stor
 \subsubsection{Probleme}
 Weiterhin traten Schwierigkeiten mit willkürlichen Fehlern der \brand{React Native} App auf. 
 Aus diesen Gründen konnte die Navigation und die Struktur der App nicht abschliessend umgesetzt werden.
-Dass der Benutzer nach dem Login automatisch zur Tab-Ansicht weitergeleitet wurde, hatte wegen einem Fehler in der Navigations-\gls{Library} nicht geklappt.
+Dass der Benutzer nach dem Login automatisch zur Tab-Ansicht weitergeleitet wurde, hatte wegen eines Fehlers in der Navigations-\gls{Library} nicht geklappt.
 Zwischenzeitlich wurde aus diesem Grund das Erhalten des Login-Tokens, nach der Authentifizierung über \brand{Google} und \brand{Facebook}, in einer separaten App getestet.
 
 
@@ -129,7 +129,7 @@ Zwischenzeitlich wurde aus diesem Grund das Erhalten des Login-Tokens, nach der 
 \textbf{Fällig am 20.05.2016}
 \subsubsection{Resultate}
 \begin{itemize}
-	\item native location tracking implementiert
+	\item Native Location Tracking implementiert
 	\item View-Komponenten fertig entworfen
 	\item Testing-\gls{Framework} aufgesetzt
 	\item Architektur-Entscheid und -Implementation
@@ -148,18 +148,18 @@ Daraufhin wurde das bestehende -- noch sehr schlanke -- Grundgerüst, welches mi
 
 Unterdessen konnte das Grundgerüst der \gls{GUI} grösstenteils fertiggestellt werden. 
 Es fehlte noch die dynamische Behandlung von gewissen View-Komponenten.
-Zum Beispiel die Unterscheidung ob beim Lösen einer Mission ein Picker, zum Auswählen der Antwort, gerendert wird, oder ob ein Text-Input-Feld angeboten wird.
+Zum Beispiel die Unterscheidung, ob beim Lösen einer Mission ein Picker zum Auswählen der Antwort gerendert wird, oder ob ein Text-Input-Feld angeboten wird.
 
 \kort{} konnte erfolgreich auf \brand{iOS} getestet werden. 
 
 \subsubsection{Probleme}
-Weiterhin war es nicht möglich mit der Router-Flux-Navigationskomponente eine Weiterleitung, nach Erfolgreichem Login, zur Kartenansicht umzusetzen.
+Weiterhin war es nicht möglich mit der Router-Flux-Navigationskomponente eine Weiterleitung nach erfolgreichem Login zur Kartenansicht umzusetzen.
 Hierbei handelte es sich um den bekannten Fehler dieser Komponente.
-Das Verzögerte leider das geplante Ziel: eine Mission zu lösen.
+Das verzögerte leider das geplante Ziel: eine Mission zu lösen.
 
 Die \kort{}-Datenbank konnte nur bei einem Entwickler richtig aufgesetzt werden. 
 Es gab Probleme mit der Installation der Scripts auf \brand{OS X}.
-Aus diesem Grund wurde für Tests, nach Absprache mit Jürg Hunziker, das Development-\kort{}-Backend genutzt.
+Aus diesem Grund wurde für Tests nach Absprache mit dem Projektpartner (Jürg Hunziker), das Development-\kort{}-Backend genutzt.
 
 \subsection{MS6: Beta-Release mit Grundfunktionalität}
 \label{pm-ms6}
@@ -178,7 +178,7 @@ Aus diesem Grund wurde für Tests, nach Absprache mit Jürg Hunziker, das Develo
 Alle View-Komponenten sind nun dynamisch und zeigen je nach Zustand der Komponente die entsprechende Oberfläche.
 
 Durch eine zusätzliche App-Loader-View konnte das Problem der Weiterleitung nach dem Login behoben werden.
-Diese Komponente lädt nun alles im Voraus und erst danach wird je nach Zustand, ob der Benutzer eingeloggt ist, oder nicht, die entsprechende Ansicht angezeigt.
+Diese Komponente lädt nun alles im Voraus und erst danach wird je nach Zustand, ob der Benutzer eingeloggt ist oder nicht, die entsprechende Ansicht angezeigt.
 Nach und nach wurden die Platzhalter der View-Komponenten mit dynamischen Daten der Businesslogik ersetzt.
 
 Schlussendlich konnten wir erfolgreich Missionen und Validationen lösen.
@@ -195,7 +195,7 @@ Schlussendlich konnten wir erfolgreich Missionen und Validationen lösen.
 \subsubsection{Resultate}
 
 \begin{itemize}
-	\item gebundene, vollständige Dokumentation eingereicht
+	\item Gebundene, vollständige Dokumentation eingereicht
 	\item CD mit Abgabe eingereicht
 	\item Abstract eingereicht
 	\item Poster eingereicht
@@ -211,7 +211,7 @@ Schlussendlich konnten wir erfolgreich Missionen und Validationen lösen.
 
 \begin{itemize}
 	\item Badges anzeigen
-	\item aktualisierte Dokumentation
+	\item Aktualisierte Dokumentation
 	\item Design Verbesserungen
 	\item Präsentation fertiggestellt
 	\item Handouts ausgedruckt

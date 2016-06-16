@@ -102,20 +102,21 @@ Die vollständige Übersicht aller Abhängigkeiten finden sich in der Datei \inl
 Die Implementation der Navigation wurde in der Einstiegs-Komponente der App umgesetzt. 
 Alle Scenes werden mit einem Key deklariert und falls nötig mit Optionen für eine Tab-Ansicht erweitert. 
 Die definierten Scenes werden als Kind-Komponenten einem Router übergeben. 
-Jede Scene kann mit einem Funktionsaufruf ...
+Jede Scene kann mit einem Funktionsaufruf 
 \begin{itemize}
-	\item ... die Properties aktualisieren
-	\item ... sich selber schliessen
-	\item ... eine andere Scene mit dem Key und mit optionalen Properties, als Parameter, aufrufen
+	\item die Properties aktualisieren
+	\item sich selber schliessen
+	\item eine andere Scene mit dem Key und mit optionalen Properties, als Parameter, aufrufen
 \end{itemize} 
-Die \gls{API} der Navigations-Komponente ist auf der entsprechenden \brand{Github}-Seite\footnote{\url{https://github.com/aksonov/react-native-router-flux}} dokumentiert. 
+Die \gls{API} der Navigations-Komponente ist auf der entsprechenden \brand{GitHub}-Seite\footnote{\url{https://github.com/aksonov/react-native-router-flux}} dokumentiert. 
 
 
 \subsection{Karte}
 Um die Map-Komponente von \brand{Mapbox} zu nutzen und ein Access-Token zu erhalten, muss auf der \brand{Mapbox}-Webseite\footnote{\url{https://www.mapbox.com/}} ein Benutzerkonto angelegt werden. 
 
-Damit die Marker an richtiger Position angezeigt werden, wurden der \brand{Mapbox}-Komponente ein Array mit Annotations als Parameter übergeben. 
-Das Annotation-Array wird fortlaufend mit allen Missionen vom \gls{Backend}, in der Umgebung des Benutzers, aktualisiert. 
+Damit die Marker an der richtigen Position angezeigt werden, wurden der \brand{Mapbox}-Komponente ein Array mit Annotations als Parameter übergeben. 
+Das Annotation-Array wird fortlaufend mit allen Missionen vom \gls{Backend} aktualisiert. 
+Dabei werden nur Missionen in der Umgebung des Benutzers geladen. 
 Eine Annotation enthält die Koordinaten und die ID einer Mission. 
 Es war von der \brand{Mapbox}-\gls{API} her nicht möglich, einer Annotation direkt die Mission als Objekt mitzugeben. 
 Bei einem Klick auf einen Marker wird die Funktion \inlinecode{onOpenAnnotation} aufgerufen.
@@ -128,6 +129,6 @@ Für die Authentifizierung über \brand{Google} wurde eine Open Source \gls{Libr
 Damit die App sich mit der \brand{Google}-\gls{API} verbinden kann, muss eine \inlinecode{google-services.json}-Datei auf der \brand{Google}-Webseite\footnote{\url{https://developers.google.com/cloud-messaging/android/client}} generiert werden. 
 Diese Datei enthält die Konfiguration vom \brand{Google}-Developer Konto. 
 
-Über diese \gls{Library} enthält die App, nach dem Login des Benutzers, das Benutzer-Token von \brand{Google}.
+Nach dem Login des Benutzers erhält die App über diese \gls{Library} das Benutzer-Token von \brand{Google}.
 Dieses Token wird dann von der App dem \kort{}-\gls{Backend} mitgeteilt und von dort aus bei \brand{Google} überprüft. 
 Wie die Authentifizierung auf der \gls{Backend}-Seite weiter verläuft ist im Kapitel 10.4.1. der Bachelorarbeit von Jürg Hunziker und Stefan Oderbolz beschrieben.\cite{ba-kort-2012}

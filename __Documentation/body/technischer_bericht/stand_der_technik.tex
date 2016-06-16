@@ -1,7 +1,7 @@
 \chapter{Stand der Technik}
 \label{tb-stand-der-technik}
 Es gibt eine grosse Anzahl von Projekten, mit dem Ziel \brand{OpenStreetMap} zu verbessern.
-Sowohl Editoren für erfahrene Benutzer, als auch Tools, die auf das finden und Beheben von Fehlern spezialisiert sind, werden angeboten.
+Sowohl Editoren für erfahrene Benutzer, als auch Tools, die auf das Finden und Beheben von Fehlern spezialisiert sind, werden angeboten.
 Zum Beispiel gibt es JOSM\footnote{\url{https://josm.openstreetmap.de/}} (\brand{Java \brand{OSM} Editor}) als Desktop Client für \brand{Windows}, \brand{Mac OS X} und \brand{Linux}.
 Sogar Geometrieobjekte sind damit editierbar.
 Daneben gibt es auch Dienste, welche Fehlerdaten sammeln und öffentlich anbieten.
@@ -25,12 +25,12 @@ Da wir die \kort{}-\gls{WebApp} neu schreiben und es sich um eine Fortsetzungsar
 
 
 \section{React Native}
-Aktuell befindet sich \brand{React Native} in der Version 0.28.
+Aktuell, am 17.06.2016, befindet sich \brand{React Native} in der Version 0.28.
 Dieses Projekt startete mit \brand{React Native} 0.19 (veröffentlicht am 29. Januar 2016).
 \brand{React Native} ist ganz neu und noch in der Entwicklungsphase.
 Momentan erscheint immer noch alle zwei Wochen ein neues Release, mit Änderungen, die teilweise sehr nützlich und wichtig sind.
 Es ist aber auch schon vorgekommen, dass Updates ausgelassen werden mussten, da die App nicht mehr lauffähig war.
-Build-Probleme sind des öfteren aufgetreten.
+Build-Probleme sind des Öfteren aufgetreten.
 
 Die offizielle Dokumentation\footnote{\url{https://facebook.github.io/react-native/docs/getting-started.html}} ist immer noch spärlich und Best Practices gibt es in vielen Bereichen gar keine.
 
@@ -40,7 +40,7 @@ Im Gegensatz zu den anderen Social-Login-Varianten (\brand{Google} und \brand{Fa
 
 
 \section{Kort Schnittstelle}
-Die \kort{}-\gls{WebApp} nutzte eine Session-basierte (Cookie-based) Authentifizierung.\cite{ba-kort-2012} 
+Die \kort{}-\gls{WebApp} nutzte eine Cookie-based Authentifizierung.\cite{ba-kort-2012} 
 Eine Session-ID wird auf der Seite des Clients in einem Cookie gespeichert. 
 Bei jedem Request sendet der Client-Browser das Cookie an den Server und wird so wiedererkannt. 
 Der Server geht dann davon aus, dass es sich beim Client um den Inhaber der Session-ID handelt. 

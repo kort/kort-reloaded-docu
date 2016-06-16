@@ -3,8 +3,7 @@
 
 \section{Zeitanalyse}
 Für eine Bachelorarbeit werden 12 ECTS-Punkte vergeben, wobei ein Punkt einem Aufwand von 30 Stunden entspricht.
-In einem Team von zwei Entwicklern, entspricht dies 360 Stunden Aufwand pro Person. 
-Leider haben wir diese Vorgabe (siehe Tabelle \ref{pm-arbeitsaufwand}) überschritten. 
+In einem Team von zwei Entwicklern, entspricht dies 360 Stunden Aufwand pro Person (siehe Tabelle \ref{pm-arbeitsaufwand}).
 
 \begin{table}[H]
 \centering
@@ -22,7 +21,7 @@ Dominic Mülhaupt & 467 h \\
 \end{table}
 
 Wenn die gleich folgenden Tabellen \ref{pm-arbeitsaufwand-aktivität-mm} und \ref{pm-arbeitsaufwand-aktivität-dm} verglichen werden, ist die Arbeitsaufteilung sehr gut erkennbar. 
-Dies ist in den Unterschieden des Aufwandes, in den Aktivitäten Analyse, Implementation, Dokumentation und Testing, erkennbar. 
+Dies ist in den Unterschieden des Aufwandes in den Aktivitäten Analyse, Implementation, Dokumentation und Testing erkennbar. 
 Bei neuen Erfahrungen haben sich die Entwickler ausgetauscht und waren so immer auf dem aktuellen Stand. 
 
 \begin{table}[H]
@@ -49,7 +48,7 @@ Allgemein & 16.75 h \\
 Projektmanagement & 25.75 h \\
 \hline
 \end{tabular}
-\caption{Aufwand pro Aktivität --- Marino Melchiori}
+\caption{Aufwand pro Aktivität (Marino Melchiori)}
 \end{table}
 
 \begin{table}[H]
@@ -78,14 +77,14 @@ Projektmanagement & 52.00 h \\
 Testing & 22.00 h \\
 \hline
 \end{tabular}
-\caption{Aufwand pro Aktivität --- Dominic Mülhaupt}
+\caption{Aufwand pro Aktivität (Dominic Mülhaupt)}
 \end{table}
 
 
 \subsection{Soll-Ist-Zeitvergleich}
 Die Tabelle zum \ref{pm-arbeitsaufwand-kategorie-ges} zeigt, wie das Projekt kategorisiert wurde. 
-In der \textit{Kort Projekt}-Kategorie ging es vor allem um die Implementation der Architektur und die Verwendung und Einrichtung von \brand{React Native}. 
-Die Kategorien \textit{Login}, \textit{Missionen}, \textit{Profil} und \textit{Highscore} enthalten die Implementation der \gls{GUI}. 
+In der \kort{} \textit{Projekt}-Kategorie ging es vor allem um die Implementation der Architektur und die Verwendung und Einrichtung von \brand{React Native}. 
+Die Kategorien \textit{Login}, \textit{Missionen}, \textit{Profil} und \textit{Highscore} enthalten die Implementation des \gls{GUI}. 
 \textit{Map} und \textit{Internationalisierung} sind Kategorien, bei denen es um die Installation der entsprechend verwendeten \glslink{Library}{Libraries} ging. 
 In der Kategorie \textit{Technologien} wurde die Einarbeitungszeit gebucht. 
 Die \textit{Qualitätssicherung} beinhaltet das Testing und die Kategorie \textit{Allgemein} die Evaluation von verwendeten Konzepten und \glslink{Library}{Libraries}.
@@ -93,12 +92,12 @@ Die \textit{Qualitätssicherung} beinhaltet das Testing und die Kategorie \texti
 Die Schätzung fand jeweils bei der Erstellung eines Tickets in einer Kategorie statt. 
 
 Die Differenz der \textit{Kort Projekt}-Kategorie lässt sich durch die häufigen Build-Fehler erklären. 
-Das Suchen nach Lösungen im Internet war sehr Zeitaufwendig. 
+Das Suchen nach Lösungen im Internet war sehr zeitaufwendig. 
 
 Bei der Kategorie \textit{Missionen} wurden 15 Stunden zu viel geschätzt. 
 In diesem Fall setzten wir vermehrt auf \gls{Pair Programming}, da es sich dort um eine der ersten umgesetzten Funktionen handelte.
 Somit konnte kostbare Zeit, die für das Refactoring geplant war, eingespart werden. 
-Später folgende Features, der Kategorien \textit{Login}, \textit{Profil} und \textit{Highscore}, wurden viel besser geschätzt.
+Später folgende Features der Kategorien \textit{Login}, \textit{Profil} und \textit{Highscore} wurden viel besser geschätzt.
 
 Schlussendlich wurden 21 Stunden zu viel geschätzt, was bei einem Arbeitstag von 8 Stunden etwa 2.5 Arbeitstagen entspricht. 
 
@@ -141,11 +140,11 @@ Meeting & 61.75 h & 59.25 h & -2.50 h \\
 \textbf{Total} & \textbf{975.00 h} & \textbf{926.50 h} & \textbf{-21.00 h} \\
 \hline
 \end{tabular}
-\caption{Soll-Ist-Vergleich --- Gesamtaufwand pro Kategorie}
+\caption{Soll-Ist-Vergleich: Gesamtaufwand pro Kategorie}
 \end{table}
 
 \section{Code-Statistik}
-Zur groben Einschätzung, der Grösse vom Projekt wurde in der Tabelle \ref{pm-cloc} die Gesamtanzahl der \brand{JavaScript} der Code-Zeilen (ohne Code-Kommentare) gezählt. 
+Zur groben Einschätzung der Grösse vom Projekt wurde in der Tabelle \ref{pm-cloc} die Gesamtanzahl der \brand{JavaScript} Codezeilen (ohne Code-Kommentare) gezählt. 
 Beim Linken von \glslink{Library}{Libraries} gab es auch Anpassungen im \brand{Android}- und \brand{iOS}-Projekt. 
 Der Umfang dieser Änderungen wurde nicht dokumentiert, da es sich vor allem um Anpassungen an vorhandenen Dateien handelte. 
 
@@ -162,7 +161,7 @@ Der Umfang dieser Änderungen wurde nicht dokumentiert, da es sich vor allem um 
 \label{pm-cloc}
 \end{table}
 
-Die Tabelle \ref{pm-package-cloc} zeigt die Anzahl an Code-Zeilen in einem Package. 
+Die Tabelle \ref{pm-package-cloc} zeigt die Anzahl an Codezeilen in einem Package. 
 Die Packages \inlinecode{Actions}, \inlinecode{Data}, \inlinecode{Dispatcher}, \inlinecode{DTO} und \inlinecode{Stores} sind von der verwendeten Architektur gegeben. 
 \inlinecode{Constants} beinhaltet Konstanten, IDs und sonstige fixe Parameter. 
 Im Package \inlinecode{Components} befinden sich die \gls{GUI}-Komponenten. 
