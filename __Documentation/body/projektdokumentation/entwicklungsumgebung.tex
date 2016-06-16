@@ -3,7 +3,7 @@
 \section{IDE}
 Die Funktionalitäten und Features der App wurden alle mit \brand{Atom} implementiert. 
 Für das Debugging waren die native \glslink{IDE}{IDEs}, \brand{Android Studio} und \brand{Xcode}, aber besser geeignet. 
-Das Debuggen in er \brand{Atom}-\gls{IDE} oder im \brand{Google Chrome} Browser war oft fehlerhaft. 
+Das Debuggen in der \brand{Atom}-\gls{IDE} oder im \brand{Google Chrome} Browser war oft fehlerhaft. 
 Ansonsten wurden die native \glslink{IDE}{IDEs} nur für das Einfügen von statischen Bildern, mit passenden Auflösungen für entsprechende Displays, genutzt. 
 
 
@@ -12,7 +12,7 @@ Als Versionsverwaltungssystem wurde \brand{git}\footnote{\url{https://git-scm.co
 Dabei haben wir folgendes Branching Model eingesetzt: Der master Branch wird nur für Releases verwendet.
 Für die Entwicklung wurde der develop Branch genutzt, wobei jedes Feature und jeder Fix eines Bugs einen eigenen Branch erhielt, welcher nach Fertigstellung wieder in den develop Branch gemerged wurde.\newline
 \newline
-Für die Continuous Integration (\gls{CI}) nutzen wir den freien Dienst von \brand{Travis-CI}\footnote{\url{https://travis-ci.org/}}.
+Für die \gls{CI} (CI) nutzen wir den freien Dienst von \brand{Travis-CI}\footnote{\url{https://travis-ci.org/}}.
 Dieses Setup lässt sich bequem in Verbindung mit \brand{GitHub} nutzen. 
 Dabei wird bei jeder Neuerung auf dem master und develop Branch über \brand{Travis-CI} ein neuer Build erstellt.
 Bei jedem Build werden die Tests durchlaufen und der Code auf die Einhaltung der \nameref{pd-entwicklungsumgebung-cr} überprüft.\newline
