@@ -46,7 +46,7 @@ Dadurch wirken zum Beispiel die Animationen sehr flüssig.\cite{react-native-jav
 \subsubsection{Native Module}
 Damit ein \brand{iOS} Native-Modul in \brand{React Native} verwendet werden kann, muss das konkrete Modul das \newline\inlinecode{RCTBridgeModule}-Protokoll\footnote{RCT ist eine Abkürzung für ReaCT} implementieren und das Makro \newline\inlinecode{RCT\_EXPORT\_MODULE()} enthalten. 
 Das Protokoll dient nur dazu, das Modul in einem Array zu speichern, damit es später von der Bridge gefunden werden kann. 
-Wenn die \brand{JavaScript}-Seite der Bridge initialisiert ist, kann sie darauf zugreifen. 
+Wenn die \brand{JavaScript}-Seite der Bridge initialisiert ist, kann sie auf diese Daten zugreifen. 
 Dem Makro kann auf der \brand{JavaScript}-Seite ein optionaler Namen als Parameter mitgegeben werden. 
 Falls dieser Parameter fehlt, wird die Komponente auf \brand{JavaScript}-Seite nach dem \brand{Objective-C}-Klassennamen benannt. 
 Das Gleiche Vorgehen gilt für ein \brand{Swift}-Modul. 
