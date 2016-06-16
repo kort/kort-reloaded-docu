@@ -1,5 +1,7 @@
 \chapter{Technologien}
 \label{pd-technologien}
+In diesem Kapitel sind Informationen zur Funktionsweise der Technologien \brand{React} und \brand{React Native} dokumentiert. 
+Das Unterkapitel zu \brand{React Native} beschreibt ebenfalls unsere Erfahrungen und Schlüsse.
 
 
 \section{React} 
@@ -43,6 +45,8 @@ Dadurch wirken zum Beispiel die Animationen sehr flüssig.\cite{react-native-jav
 
 \subsubsection{Native Module}
 Damit ein \brand{iOS} Native-Modul in \brand{React Native} verwendet werden kann, muss das konkrete Modul das \newline\inlinecode{RCTBridgeModule}-Protokoll\footnote{RCT ist eine Abkürzung für ReaCT} implementieren und das Makro \newline\inlinecode{RCT\_EXPORT\_MODULE()} enthalten. 
+Das Protokoll dient nur dazu, das Modul in einem Array zu speichern, damit es später von der Bridge gefunden werden kann. 
+Wenn die \brand{JavaScript}-Seite der Bridge initialisiert ist, kann sie darauf zugreifen. 
 Dem Makro kann auf der \brand{JavaScript}-Seite ein optionaler Namen als Parameter mitgegeben werden. 
 Falls dieser Parameter fehlt, wird die Komponente auf \brand{JavaScript}-Seite nach dem \brand{Objective-C}-Klassennamen benannt. 
 Das Gleiche Vorgehen gilt für ein \brand{Swift}-Modul. 
@@ -56,13 +60,17 @@ Eine genaue Anleitung dazu ist ebenfalls in der \brand{React Native}-Dokumentati
 Mit diesem Feature lässt sich bereits vorhandenen native Code wiederverwenden. 
 
 
-\subsection{Projektstruktur}
+\subsection{Setup}
+Die Entwicklungsumgebung lässt sich am schnellsten und einfachsten auf \brand{OS X} einrichten. 
+\brand{Windows} und \brand{Linux} sind mittlerweile ebenfalls geeignet, was am Anfang dieser Bachelorarbeit nicht der Fall war. 
 
+Mit dem \brand{React Native}-CLI (Command Line Interface) können neue Projekte initialisiert werden und Projekte auf einem Emulator oder einem Gerät getestet werden. 
+Nur die \brand{iOS}-App muss über \brand{Xcode} erzeugt werden. 
 
-
-\subsection{Plattformunabhängigkeit}
-Eine Stärke von \brand{React Native} ist die Plattformunabhängigkeit. 
-Wenn keine spezifische \brand{Android}- oder \brand{iOS}-Komponenten verwendet werden, kann der Code für beide Plattformen genutzt werden.
+Die Projektstruktur vom \brand{JavaScript} Code hat vor allem die verwendete \hyperref[pd-architektur]{Architektur} vorgegeben. 
+Komponenten der Architektur sind in die entsprechenden Hauptbestandteile eingeordnet. 
+Konstanten, IDs und Access-Tokens befinden sich im \inlinecode{Constants}-Ordner. 
+Alle \gls{GUI}-Komponenten wurden im \inlinecode{Components}-Ordner erstellt. 
 
 
 \subsection{Community}
@@ -83,8 +91,9 @@ Ausserdem sind aktuell, am 15.06.2016, 733 offene Issues vorhanden.
 
 
 \subsection{Zusammenfassung}
-
+Eine Stärke von \brand{React Native} ist die Plattformunabhängigkeit. 
+Wenn keine spezifische \brand{Android}- oder \brand{iOS}-Komponenten verwendet werden, kann der Code für beide Plattformen genutzt werden.
 
 % Gründe für React Native:
 % Navigator-Komponente (url zu docs), wiederverwendbare open source komponenten, langfristig,
-% immer mehr Apps im Showcase, das führt zu neuen Pull-requests und Beiträgen
+% immer mehr Apps im Showcase, das führt zu neuen Pull-requests und Beiträgen, reload
