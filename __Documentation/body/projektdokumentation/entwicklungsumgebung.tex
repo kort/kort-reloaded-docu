@@ -2,9 +2,9 @@
 \label{pd-entwicklungsumgebung}
 \section{IDE}
 Die Funktionalitäten und Features der App wurden alle mit \brand{Atom} implementiert. 
-Für das Debugging waren die native \glslink{IDE}{IDEs}, \brand{Android Studio} und \brand{Xcode}, aber besser geeignet. 
+Für das Debugging waren die native \glslink{IDE}{IDEs} \brand{Android Studio} und \brand{Xcode} aber besser geeignet. 
 Das Debuggen in der \brand{Atom}-\gls{IDE} oder im \brand{Google Chrome} Browser war oft fehlerhaft. 
-Ansonsten wurden die native \glslink{IDE}{IDEs} nur für das Einfügen von statischen Bildern, mit passenden Auflösungen für entsprechende Displays, genutzt. 
+Ansonsten wurden die native \glslink{IDE}{IDEs} nur für das Einfügen von statischen Bildern mit passenden Auflösungen für entsprechende Displays genutzt. 
 
 
 \section{Continuous Integration}
@@ -37,7 +37,7 @@ Somit wird verhindert, dass aus Versehen das Verhalten anderer Module getestet w
 \section{Code-Richtlinien}
 \label{pd-entwicklungsumgebung-cr}
 Um Code-Richtlinien festzulegen und deren Einhaltung zu prüfen, wurde \brand{ESLint}\footnote{\url{http://eslint.org/}} eingesetzt.
-Dadurch wird die die Lesbarkeit und Wartbarkeit vom Code erhöht.
+Dadurch wird die die Lesbarkeit und Wartbarkeit des Codes erhöht.
 Die Konfiguration von \brand{ESLint} stammt von \brand{Airbnb}\footnote{\url{https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb}}.
 Darüber hinaus wurden Plugins für \brand{React}\footnote{\url{https://github.com/yannickcr/eslint-plugin-react}} und \brand{React Native}\footnote{\url{https://github.com/Intellicode/eslint-plugin-react-native}} eingesetzt.\newline
 Die Konfiguration findet sich in der Datei \inlinecode{.eslintrc.json}.

@@ -6,7 +6,7 @@ Zu den nachfolgend beschriebenen Konzepten der \brand{Flux}-Architektur mussten 
 Die Beschreibungen entsprechen also unserer Implementation.\newline
 \brand{Flux} ist eine Architektur, die in \gls{Frontend}-Applikationen eingesetzt wird.
 Ein unidirektionaler Datenfluss ist das Grundprinzip, auf welchem \brand{Flux} aufbaut, und in welchem es sich von \gls{MVC}-Architekturen unterscheidet.
-Das Pattern beschreibt folgende vier Hauptbestandteile: die Stores, die Views (oder Controller-Views), die Actions und der Dispatcher.
+Das Pattern beschreibt folgende vier Hauptbestandteile: die Stores, die Views (oder Controller-Views), die Actions und den Dispatcher.
 \begin{figure}[H]
  	\centering
  	\includegraphics[width=\textwidth]{images/projektdokumentation/flux-uebersicht-weiss.png}
@@ -17,7 +17,7 @@ Das Pattern beschreibt folgende vier Hauptbestandteile: die Stores, die Views (o
 \label{pd-flux-stores}
 Stores enthalten den Applikationszustand und die Applikationslogik.
 Verglichen mit dem \gls{MVC}-Pattern entsprechen sie am ehesten dem Model.
-Sie unterscheiden sich aber insofern, dass sie nicht unbedingt einzelne Modellklassen repräsentieren sollen, sondern domänenspezifische Aufgaben übernehmen.
+Sie unterscheiden sich aber insofern, dass sie nicht unbedingt einzelne Model-Klassen repräsentieren sollen, sondern domänenspezifische Aufgaben übernehmen.
 Da \kort{} keine besonders komplexe Domäne enthält, ist diese Unterscheidung allerdings nicht von grosser Bedeutung.
 Ein Beispiel für diese Einteilung nach Domäne und nicht nach Modell findet man in der Aufteilung von \inlinecode{UserStore} und \inlinecode{AuthenticationStore}.\newline
 Stores sind als \glslink{Singleton}{Singletons} umgesetzt.
@@ -31,8 +31,8 @@ Deshalb gilt die View in \brand{Flux} als Auslöser für neue Aktionen.
 In \brand{React} kann zwischen \emph{Views} und \emph{Controller-Views} unterschieden werden.\newline
 \emph{Controller-Views} finden sich an der Spitze der View-Hierarchie.
 Sie warten auf Updates der Stores und reichen die Daten entlang der Kette ihren untergeordneten \emph{Views} weiter.\newline
-Diese untergeordneten \emph{Views} wiederum reagieren auf Zustandsänderungen indem ihre \newline\inlinecode{render()} Methode neu aufgerufen wird.
-Somit bleiben \emph{View} Komponenten modular austauschbar, da sie unabhängig von ihrem Kontext eingesetzt werden können.
+Diese untergeordneten \emph{Views} wiederum reagieren auf Zustandsänderungen indem ihre \newline\inlinecode{render()}-Methode neu aufgerufen wird.
+Somit bleiben \emph{View}-Komponenten modular austauschbar, da sie unabhängig von ihrem Kontext eingesetzt werden können.
 
 \subsection{Actions}
 \label{pd-flux-actions}

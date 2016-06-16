@@ -5,7 +5,7 @@ Das Unterkapitel zu \brand{React Native} beschreibt ebenfalls unsere Erfahrungen
 
 
 \section{React} 
-\brand{React}\footnote{\url{https://facebook.github.io/react/}, \url{https://github.com/facebook/react}} wurde im März 2013 veröffentlicht\cite{react-release}, ist eine Open Source \brand{JavaScript} \gls{Library} und dient für die Implementation der View vom \gls{MVC}-Pattern. 
+\brand{React}\footnote{\url{https://facebook.github.io/react/}, \url{https://github.com/facebook/react}} wurde im März 2013 veröffentlicht\cite{react-release}, ist eine Open Source \brand{JavaScript} \gls{Library} und dient für die Implementation der View des \gls{MVC}-Patterns. 
 Die View besteht aus wiederverwendbaren Komponenten, die wiederum Komponenten beinhalten.
 \brand{React} wird von \brand{Facebook}, \brand{Instagram} und von der Community entwickelt und gewartet.\cite{react}
 
@@ -17,9 +17,9 @@ Eine Hauptkomponente gibt seine Daten per Props an die Kind-Komponenten weiter (
 
 Anstatt der \gls{DOM} nutzt \brand{React} die sogenannte \gls{Virtual DOM}.
 Wie der Begriff schon sagt, wird mit einer Abstraktion der echten \gls{DOM} -- also mit einer virtuellen DOM -- kommuniziert.
-Die komplette \gls{DOM}, also die Repräsentation der View vom HTML-Code, ist im lokalen Speicher abgelegt.\cite{virtual-dom}
-In der \inlinecode{render()}-Methode jeder \brand{React}-Klasse wird eine Beschreibung der DOM zurückgeliefert, die \brand{React} mit der lokalen Kopie der \gls{DOM} vergleicht.
-Mit einem sehr effizienten Diffing-Algorithmus berechnet \brand{React} den Unterschied zwischen diesen  Versionen der \gls{DOM} und errechnet den schnellsten Weg um den Browser zu aktualisieren.\cite{react-virtual-dom}
+Das komplette \gls{DOM} (also die Repräsentation der View vom HTML-Code) ist im lokalen Speicher abgelegt.\cite{virtual-dom}
+In der \inlinecode{render()}-Methode jeder \brand{React}-Klasse wird eine Beschreibung des DOM zurückgeliefert, die \brand{React} mit der lokalen Kopie der \gls{DOM} vergleicht.
+Mit einem sehr effizienten Diffing-Algorithmus berechnet \brand{React} den Unterschied zwischen diesen  Versionen des \gls{DOM} und errechnet den schnellsten Weg um den Browser zu aktualisieren.\cite{react-virtual-dom}
 
 
 \section{React Native}
@@ -32,7 +32,7 @@ Durch diese häufigen Änderungen konnten sich noch keine Best Practices etablie
 Auch die meisten Open Source Projekte verfolgen eigene Implementationsansätze.
 
 Eine Desktop Unterstützung für \brand{OSX} ist ebenfalls in Entwicklung\footnote{\url{https://github.com/ptmt/react-native-desktop}}. 
-Und am 13. April 2016, an der \brand{Facebook} Developer Konferenz, kündigten \brand{Microsoft} und \brand{Facebook} den Support für die \brand{Universal Windows Platform} (\brand{UWP}) an.\cite{react-native-windows}
+Und am 13. April 2016 an der \brand{Facebook} Developer Konferenz kündigten \brand{Microsoft} und \brand{Facebook} den Support für die \brand{Universal Windows Platform} (\brand{UWP}) an.\cite{react-native-windows}
 
 
 \subsection{Layout}
@@ -52,11 +52,11 @@ Dadurch wirken zum Beispiel die Animationen sehr flüssig.\cite{react-native-jav
 Damit ein \brand{iOS} Native-Modul in \brand{React Native} verwendet werden kann, muss das konkrete Modul das \newline\inlinecode{RCTBridgeModule}-Protokoll\footnote{RCT ist eine Abkürzung für ReaCT} implementieren und das Makro \newline\inlinecode{RCT\_EXPORT\_MODULE()} enthalten. 
 Das Protokoll dient nur dazu, das Modul in einem Array zu speichern, damit es später von der Bridge gefunden werden kann. 
 Wenn die \brand{JavaScript}-Seite der Bridge initialisiert ist, kann sie auf diese Daten zugreifen. 
-Dem Makro kann auf der \brand{JavaScript}-Seite ein optionaler Namen als Parameter mitgegeben werden. 
+Dem Makro kann auf der \brand{JavaScript}-Seite ein optionaler Name als Parameter mitgegeben werden. 
 Falls dieser Parameter fehlt, wird die Komponente auf \brand{JavaScript}-Seite nach dem \brand{Objective-C}-Klassennamen benannt. 
 Ein Ähnliches Vorgehen gilt für \brand{Swift}- und \brand{Android}-Module. 
 Genauere Hinweise sind in der \brand{React Native}-Dokumentation unter \textit{Native Modules} beschrieben.\cite{react-native-module-ios}\cite{react-native-module-android}
-Mit diesem Feature lässt sich bereits vorhandenen native Code wiederverwenden. 
+Mit diesem Feature lässt sich bereits vorhandene native Code wiederverwenden. 
 % Für \brand{Android}-Module muss die gewünschte Klasse, die in \brand{React Native} verwendet werden möchte, von der Klasse \inlinecode{ReactContextBaseJavaModule} erben. 
 % Das erfordert dann die Implementation der \inlinecode{getName()}-Methode. 
 % Diese Methode soll dann den Namen, für die Verwendung der Komponente in \brand{React Native}, zurückgeben. 
@@ -69,19 +69,19 @@ Die Entwicklungsumgebung lässt sich am schnellsten und einfachsten auf \brand{O
 Mit dem \brand{React Native}-CLI (Command Line Interface) können neue Projekte initialisiert werden und Projekte auf einem Emulator oder einem Gerät getestet werden. 
 Nur die \brand{iOS}-App muss über \brand{Xcode} erzeugt werden. 
 
-Die Projektstruktur vom \brand{JavaScript} Code hat vor allem die verwendete \hyperref[pd-architektur]{Architektur} vorgegeben. 
+Die Projektstruktur des \brand{JavaScript} Codes hat vor allem die verwendete \hyperref[pd-architektur]{Architektur} vorgegeben. 
 Komponenten der Architektur sind in die entsprechenden Hauptbestandteile eingeordnet. 
 Konstanten, IDs und Access-Tokens befinden sich im \inlinecode{Constants}-Ordner. 
 Alle \gls{GUI}-Komponenten wurden im \inlinecode{Components}-Ordner erstellt. 
 
 
 \subsection{Community}
-Die Community wirkt sehr zerstreut, denn viele Informationen sind in den Issues vom \brand{React Native} GitHub-Repository\footnote{\url{https://github.com/facebook/react-native/issues}} versteckt.
-Ausserdem sind aktuell, am 15.06.2016, 733 offene Issues vorhanden.
+Die Community wirkt sehr zerstreut, denn viele Informationen sind in den Issues des \brand{React Native} GitHub-Repositorys\footnote{\url{https://github.com/facebook/react-native/issues}} versteckt.
+Ausserdem sind aktuell (am 16.06.2016) 741 offene Issues vorhanden -- am 29.04.2016 waren es noch rund 500.
 
 \begin{itemize}
-	\item Vorhanden ist eine öffentliche, aktive und hilfsbereite \brand{Facebook}-Gruppe\footnote{\url{https://www.facebook.com/groups/react.native.community/}}, mit derzeit ca. 3 500 Mitgliedern.
-	\item Es gibt eine \brand{Stack-Overflow}-Kategorie\footnote{\url{http://stackoverflow.com/questions/tagged/react-native}} - leider nur mit wenigen Antworten und Lösungen.
+	\item Vorhanden ist eine öffentliche, aktive und hilfsbereite \brand{Facebook}-Gruppe\footnote{\url{https://www.facebook.com/groups/react.native.community/}} mit derzeit ca. 3 500 Mitgliedern.
+	\item Es gibt eine \brand{Stack-Overflow}-Kategorie\footnote{\url{http://stackoverflow.com/questions/tagged/react-native}} -- leider mit nur wenigen Antworten und Lösungen.
 	\item JS.coach\footnote{\url{https://js.coach/}} - listet viele Open Source Projekte auf.
 	\item Übersicht über aktuelle Artikel und Blogposts: 
 	\begin{itemize}
@@ -92,11 +92,11 @@ Ausserdem sind aktuell, am 15.06.2016, 733 offene Issues vorhanden.
 \end{itemize}
 
 
-\subsection{Zusammenfassung}
+\subsection{Erfahrungen}
 Eine Stärke von \brand{React Native} ist die Plattformunabhängigkeit. 
-Wenn keine spezifische \brand{Android}- oder \brand{iOS}-Komponenten verwendet werden, kann der Code für beide Plattformen genutzt werden.
+Wenn keine spezifischen \brand{Android}- oder \brand{iOS}-Komponenten verwendet werden, kann der Code für beide Plattformen genutzt werden.
 
-Die grössten Hürden von \brand{React Native} sind das Erlernen von\brand{React} und \brand{Flexbox}. 
+Die grössten Hürden von \brand{React Native} sind das Erlernen von \brand{React} und \brand{Flexbox}. 
 Denn \brand{Flexbox} für \brand{React Native} unterscheidet sich in vielen Details vom \brand{Flexbox} für Webseiten. 
 %Ein wichtiges Detail ist, dass bei \brand{Flexbox} für \brand{React Native} Komponenten nur übereinander (im Z-Index) gerendert werden können, wenn die Anordnung und Reihenfolge der Komponenten in den Containern stimmt. 
 Einerseits ist das Grundkonzept für das Layout bei vielen verschachtelten Komponenten schwer zu verstehen. 
@@ -105,18 +105,18 @@ Andererseits wirkt es, nachdem viele Stunden in das Lernen investiert wurden, do
 Dazu kommt, dass durch \brand{Flexbox} die definierten Styles gut wiederverwendbar sind. 
 Das Gleiche gilt für jegliche Komponenten, die auch gut durch Inspiration aus anderen Open Source Projekten erstellt werden können.
 Durch die wachsende Community gibt es immer mehr solcher Projekte, Pull-Requests und Beiträge an \brand{React Native} selber. 
-Das macht \brand{React Native}, langfristig gesehen, zu einer immer besseren und wichtigeren Technologie. 
+Das macht \brand{React Native} langfristig gesehen zu einer immer besseren und wichtigeren Technologie. 
 
 Die Umstellung von der native Entwicklung zu \brand{React Native} ist Anfangs auch schwer. 
-Vor Allem wenn Fehler auf \brand{React Native}-Seite existieren, die native elegant und knapp lösbar sind. 
+Vor allem wenn Fehler auf \brand{React Native}-Seite existieren, die native elegant und knapp lösbar sind. 
 Mit der Zeit zeigen sich aber die grossen Vorteile von \brand{React}-\brand{JavaScript}. 
 Jede einzelne Komponente wird allein durch ihren State kontrolliert. 
 Je nach State kann die Komponente durch die eigene \inlinecode{render()}-Methode kontrolliert und verändert werden. 
 
 Ein ausschlaggebender Vorteil ist das Live- oder Hot-Reload Feature. 
-Nur beim ersten Ausführen der app muss ein Build erstellt werden.
-Dank dem gleichzeitigen Starten vom \gls{Packager} kann die Ansicht auf dem Emulator oder dem Smartphone, direkt während dem Programmieren, aktualisiert werden. 
+Nur beim ersten Ausführen der App muss ein Build erstellt werden.
+Dank dem gleichzeitigen Starten des \gls{Packager}s kann die Ansicht auf dem Emulator oder dem Smartphone direkt während des Programmierens, aktualisiert werden. 
 Die Hot-Reload Funktion erlaubt ein manuelles Aktualisieren der App. 
 
-Der App-Showcase, der offiziellen \brand{React Native}-Dokumentation, wächst stetig\footnote{\url{https://facebook.github.io/react-native/showcase.html}}.\cite{react-native-showcase} 
+Der App-Showcase der offiziellen \brand{React Native}-Dokumentation wächst stetig\footnote{\url{https://facebook.github.io/react-native/showcase.html}}.\cite{react-native-showcase} 
 Nach uns werden Apps in Zukunft nur noch mit \brand{React Native} entwickelt.
