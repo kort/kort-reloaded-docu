@@ -11,15 +11,94 @@ Aus Zeitgründen konnte die \brand{iOS}-Version aber nicht getestet werden.
 Das \kort{}-Backend existierte bereits und wurde von den Entwicklern nicht mehr abgeändert. 
 Es ist im Kapitel 10.2. \gls{REST}-Schnittstellen der Bachelorarbeit von Jürg Hunziker und Stefan Oderbolz dokumentiert.\cite{ba-kort-2012}
 
+\section{View Components}
+Components entsprechen den \hyperref[pd-flux-views]{Views} der \brand{Flux}-Architektur.
+Component Klassen erweitern \inlinecode{React.Component}\footnote{\url{https://facebook.github.io/react/docs/component-api.html}} und implementieren mindestens die \inlinecode{render()} Methode\footnote{\url{https://facebook.github.io/react/docs/component-specs.html}}. 
+In der \inlinecode{render()} Methode wird in \gls{JSX} Syntax definiert, wie die Component dargestellt werden soll.\newline
+Eine Component kann andere Components wiederverwenden,
+Dadurch wird sowohl ein hierarchischer Aufbau der View, als auch ein modularer Einsatz von Components  ermöglicht.\newline
+Ein weiteres Konzept, das von Components realisiert wird, ist die Unterscheidung von Property und State.
+Eine Property repräsentiert eine sich nicht ändernde Eigenschaft einer Component, während der State den aktuellen Zustand ausdrückt.
+Properties werden vom Owner\footnote{Die Owner-Ownee-Beziehung wird unter \emph{Ownership} beschrieben: \url{https://facebook.github.io/react/docs/multiple-components.html}} gesetzt und können durch den Ownee als \inlinecode{propTypes} deklariert werden.
+Wird eine State Variable neu gesetzt, führt dies zu einem erneuten Aufruf der \inlinecode{render()} Methode.\newline
+Components dürfen den Zustand -- der in den Stores gehalten wird -- nie direkt manipulieren, sondern müssen dies über Actions auslösen.
+In den Callbacks, welche sie bei den Stores registriert haben, können sie dann die Getter aufrufen um den neuen Zustand zu erhalten.
+Components sollen nicht mehr über den Applikationszustand wissen als für ihre Ansicht nötig ist.
+Die Logik sollte also so weit möglich in den Stores umgesetzt sein.\newline
 
 \section{Libraries}
 Damit die entsprechenden \glslink{Library}{Libraries} genutzt werden können, mussten sie mit dem Node-Package-Manager (npm) heruntergeladen werden. 
 Mit dem \inlinecode{npm install}-Befehl wurden alle aufgelisteten Abhängigkeiten in der  \inlinecode{package.json}-Datei installiert und im Ordner \newline\inlinecode{node-modules} gespeichert.
-Das Linken der \glslink{Library}{Libraries} fand dann im \brand{Android}- und \brand{iOS}-Projekt statt. 
-Dann konnten die \glslink{Library}{Libraries} in einer \brand{JavaScript}-Komponente importiert und verwendet werden. 
+Wenn eine Library eine Bridge zu nativem Code verwendet, muss sie zusätzlich im \brand{Android}- und \brand{iOS}-Projekt gelinkt werden. 
+Dann konnten die Libraries in einer \brand{JavaScript}-Komponente importiert und verwendet werden.
 
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{0.25\threecelltabwidth}|p{0.15\threecelltabwidth}|p{0.60\threecelltabwidth}|}
+\hline 
+\textbf{Library} & \textbf{Version} & \textbf{Verwendung} \\
+\hline 
+flux & 2.1.1 & Nutzung des \hyperref[pd-flux-dispatcher]{Dispatchers} \\
+\hline 
+react & 15.0.2. & Entwicklung vom User Interface \\
+\hline 
+react-native & 0.26.3 & Entwicklung von native Apps mit \brand{React} \\
+\hline 
+react-native-google-signin & 0.6.0 & Native Authentifizierung mit Google OAuth \\
+\hline 
+react-native-i18n & 0.0.8 & Internationalisierung der Benutzeroberfläche \\
+\hline 
+react-native-mapbox-gl & 4.1.1 & Darstellung der Karte \\
+\hline 
+react-native-router-flux & 3.26.15 & Navigation im User Interface \\
+\hline 
+\end{tabular}
+\caption{Abhängigkeiten im \brand{JavaScript}-Code}
+\label{table-dependencies}
+\end{table}
 
-\section{Navigation}
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{0.25\threecelltabwidth}|p{0.15\threecelltabwidth}|p{0.60\threecelltabwidth}|}
+\hline 
+\textbf{Library} & \textbf{Version} & \textbf{Verwendung} \\
+\hline 
+babel-eslint \newline
+babel-jest \newline
+babel-polyfill \newline
+babel-preset-es2015 \newline
+babel-preset-react \newline
+babel-preset-react-native-stage-0
+& 
+6.0.4 \newline
+12.1.0 \newline
+6.9.0 \newline
+6.6.0 \newline
+6.5.0 \newline
+1.0.1
+& Compiler für die verschiedenen Libraries und \brand{ES2015} \\
+\hline 
+eslint \newline
+eslint-config-airbnb \newline
+eslint-plugin-react \newline
+eslint-plugin-react-native
+&
+2.11.1 \newline
+6.2.0 \newline
+4.3.0 \newline
+1.0.0
+& Einhaltung der \nameref{pd-entwicklungsumgebung-cr} \\
+\hline 
+jest & 12.1.1 & \nameref{pd-entwicklungsumgebung-testing} \\
+\hline 
+\end{tabular}
+\caption{Abhängigkeiten für die Entwicklung}
+\label{table-dev-dependencies}
+\end{table}
+
+Die vollständige Übersicht aller Abhängigkeiten finden sich in der Datei \inlinecode{package.json}.
+
+\subsection{Navigation}
 Die Implementation der Navigation wurde in der Einstiegs-Komponente der App umgesetzt. 
 Alle Scenes werden mit einem Key deklariert und falls nötig mit Optionen für eine Tab-Ansicht erweitert. 
 Die definierten Scenes werden als Kind-Komponenten einem Router übergeben. 
@@ -32,7 +111,7 @@ Jede Scene kann mit einem Funktionsaufruf ...
 Die \gls{API} der Navigations-Komponente ist auf der entsprechenden \brand{Github}-Seite\footnote{\url{https://github.com/aksonov/react-native-router-flux}} dokumentiert. 
 
 
-\section{Karte}
+\subsection{Karte}
 Um die Map-Komponente von \brand{Mapbox} zu nutzen und ein Access-Token zu erhalten, muss auf der \brand{Mapbox}-Webseite\footnote{\url{https://www.mapbox.com/}} ein Benutzerkonto angelegt werden. 
 
 Damit die Marker an richtiger Position angezeigt werden, wurden der \brand{Mapbox}-Komponente ein Array mit Annotations als Parameter übergeben. 
@@ -44,7 +123,7 @@ Diese Funktion öffnet wiederum eine Scene, die es dem Benutzer erlaubt, die gew
 Die \brand{Mapbox}-\gls{API} ist auf der entsprechenden \brand{Github}-Seite\footnote{\url{https://github.com/mapbox/react-native-mapbox-gl}} dokumentiert. 
 
 
-\section{OAuth}
+\subsection{OAuth}
 Für die Authentifizierung über \brand{Google} wurde eine Open Source \gls{Library} evaluiert (Kapitel Evaluation \nameref{tb-evaluation-oauth}). 
 Damit die App sich mit der \brand{Google}-\gls{API} verbinden kann, muss eine \inlinecode{google-services.json}-Datei auf der \brand{Google}-Webseite\footnote{\url{https://developers.google.com/cloud-messaging/android/client}} generiert werden. 
 Diese Datei enthält die Konfiguration vom \brand{Google}-Developer Konto. 
@@ -52,8 +131,3 @@ Diese Datei enthält die Konfiguration vom \brand{Google}-Developer Konto.
 Über diese \gls{Library} enthält die App, nach dem Login des Benutzers, das Benutzer-Token von \brand{Google}.
 Dieses Token wird dann von der App dem \kort{}-\gls{Backend} mitgeteilt und von dort aus bei \brand{Google} überprüft. 
 Wie die Authentifizierung auf der \gls{Backend}-Seite weiter verläuft ist im Kapitel 10.4.1. der Bachelorarbeit von Jürg Hunziker und Stefan Oderbolz beschrieben.\cite{ba-kort-2012}
-
-
-\section{Internationalisierung}
-% Properties und Json Umwandlung hier?
-
