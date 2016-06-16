@@ -1,6 +1,6 @@
 \chapter{Implementation}
 \label{pd-implementation}
-Dieses Kapitel beschreibt, wie die folgenden Punkte eingerichtet und implementiert wurden. 
+Dieses Kapitel beschreibt die Einrichtung und Implementation von den folgenden \glslink{Library}{Libraries} und Komponenten. 
 Beim Entwickeln der \brand{Android}-App wurde darauf geachtet, dass möglichst keine Plattform spezifische Komponenten zu nutzen. 
 Das konnte in diesem Projekt erfolgreich umgesetzt werden. 
 Die einzige spezifische Komponente ist der Ladebildschirm, der jeweils auch für die \brand{iOS}-Version erstellt wurde.
@@ -104,9 +104,9 @@ Alle Scenes werden mit einem Key deklariert und falls nötig mit Optionen für e
 Die definierten Scenes werden als Kind-Komponenten einem Router übergeben. 
 Jede Scene kann mit einem Funktionsaufruf 
 \begin{itemize}
-	\item die Properties aktualisieren
-	\item sich selber schliessen
-	\item eine andere Scene mit dem Key und mit optionalen Properties, als Parameter, aufrufen
+	\item die Properties aktualisieren.
+	\item sich selber schliessen.
+	\item eine andere Scene mit dem Key und mit optionalen Properties, als Parameter, aufrufen.
 \end{itemize} 
 Die \gls{API} der Navigations-Komponente ist auf der entsprechenden \brand{GitHub}-Seite\footnote{\url{https://github.com/aksonov/react-native-router-flux}} dokumentiert. 
 
@@ -127,7 +127,7 @@ Die \brand{Mapbox}-\gls{API} ist auf der entsprechenden \brand{Github}-Seite\foo
 \subsection{OAuth}
 Für die Authentifizierung über \brand{Google} wurde eine Open Source \gls{Library} evaluiert (Kapitel Evaluation \nameref{tb-evaluation-oauth}). 
 Damit die App sich mit der \brand{Google}-\gls{API} verbinden kann, muss eine \inlinecode{google-services.json}-Datei auf der \brand{Google}-Webseite\footnote{\url{https://developers.google.com/cloud-messaging/android/client}} generiert werden. 
-Diese Datei enthält die Konfiguration vom \brand{Google}-Developer Konto. 
+Diese Datei enthält die Konfiguration des \brand{Google}-Developer Kontos. 
 
 Nach dem Login des Benutzers erhält die App über diese \gls{Library} das Benutzer-Token von \brand{Google}.
 Dieses Token wird dann von der App dem \kort{}-\gls{Backend} mitgeteilt und von dort aus bei \brand{Google} überprüft. 

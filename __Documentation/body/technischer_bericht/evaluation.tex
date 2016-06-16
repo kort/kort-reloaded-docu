@@ -1,7 +1,7 @@
 \chapter{Evaluation}
 \label{tb-evaluation}
-An einem \brand{React Native} Meetup, am 8. März 2016 -- an der HSR, konnten erste Entscheidungen zur Software-Entwicklungsumgebung geklärt werden.
-Es wurde auch besprochen, welche Lösungskonzepte es für die Darstellung der Karte gibt.
+An einem \brand{React Native} Meetup am 8. März 2016 -- an der HSR, konnten erste Entscheidungen zur Software-Entwicklungsumgebung geklärt werden.
+Es wurden auch Lösungskonzepte für die Darstellung der Karte besprochen.
 
 Unter den vielen \brand{JavaScript}-Editoren haben wir uns für \brand{Atom} entschieden.
 \brand{Facebook} hat speziell für \brand{React}, \brand{React Native} das \brand{Atom}-Package \brand{Nuclide}\footnote{\url{https://nuclide.io/}} veröffentlicht. 
@@ -56,7 +56,7 @@ Einen guten Einblick in die Thematik verschafft der Artikel \emph{Why we are doi
 Wir haben uns letztlich aufgrund der oben aufgelisteten Vorteile auf \brand{Flux} festgelegt.
 
 \section{App Navigation}
-Um die Navigation von \kort{} zu implementieren gab es zwei Möglichkeiten. 
+Um die Navigation von \kort{} zu implementieren, gab es zwei Möglichkeiten. 
 Die erste Variante war die Umsetzung mit der von \brand{React Native} zur Verfügung gestellten Navigator-Komponente. 
 Für eine Tab-Ansicht müsste aber eine weitere Library evaluiert werden. 
 
@@ -84,7 +84,7 @@ Flexibel und für einfache Use Cases gedacht.
 \hline
 Alle Views (Scenes) sind an einem Ort deklariert. 
 Es müssen keine Navigator-Objekte herumgereicht werden. 
- & Stellt eine weitere Abhängigkeit an ein externes Projekt dar \\
+ & Stellt eine weitere Abhängigkeit an ein externes Projekt dar. \\
 \hline
 Leicht erweiterbar und wartbar.
 Integrierte Tab-Navigation.
@@ -102,7 +102,7 @@ Da \brand{React Native} standardmässig keine Tab-Navigation anbietet, wurde Rea
 Der erste Prototyp mit dieser Library erfüllte die Anforderungen.
 Alle Views sind an einem Ort im Code festgelegt und es lassen sich bequem weitere hinzufügen.
 
-Während dem Verlauf vom Projekt sind dann aber vermehrt Fehler aufgetreten.
+Im Verlaufe des Projektes sind dann aber vermehrt Fehler aufgetreten.
 Im Nachhinein wäre es sinnvoller gewesen, die Navigator-Komponente zu verwenden.
 Das Verhalten vom React-Native-Router-Flux war nicht voraussehbar.
 
@@ -128,7 +128,7 @@ Die Extended React Native Map Komponente\footnote{\url{https://github.com/leland
 
 \subsubsection{Variante D: Portierung von Leaflet nach React}
 Für \brand{React} gibt es eine Map-Komponente namens React-Leaflet\footnote{\url{https://github.com/PaulLeCam/react-leaflet}}. 
-Das liesse sich für \brand{React Native} portieren.
+Diese liesse sich für \brand{React Native} portieren.
 Schon in der \kort{}-\gls{WebApp} wurde die \brand{Leaflet}\footnote{\url{http://leafletjs.com/t}}-Library verwendet.
 
 
@@ -144,8 +144,8 @@ Die letzte mögliche Variante war, dass wir die benötigten Raster-Kacheln, die 
 \hline
 \textbf{Vorteile} & \textbf{Nachteile} \\
 \hline
-Komponente von \brand{Facebook} - \brand{React Native} & Pattern Fill ist nicht implementiert und auch nicht in Planung.\cite{react-native-mapview}
-Dadurch lassen sich keine eigene Marker auf der Kartenansicht darstellen. \\
+Komponente von \brand{Facebook} -- \brand{React Native}. & Pattern Fill ist nicht implementiert und auch nicht in Planung.\cite{react-native-mapview}
+Dadurch lassen sich keine eigenen Marker auf der Kartenansicht darstellen. \\
 \hline
  & Es lassen sich keine Map-Kacheln von einem beliebigen Service darstellen.  \\
 \hline
@@ -190,7 +190,7 @@ Dies wäre eine der einzigen Möglichkeiten, falls keine andere Variante in Frag
 Varianten, die native Map APIs von \brand{Google} und \brand{Apple} verwenden, kamen für uns nicht in Frage.
 Wir möchten mit unserer App \brand{OSM} Daten verbessern und möchten somit aus moralischen Aspekten auch auf diese Karte setzen. 
 
-Bei der \brand{React Native} MapView-Komponente gab es keine Möglichkeit Bilder auf der Karte darzustellen und die Raster-Tiles von Hand anzuzeigen wäre schlicht zu aufwendig. 
+Bei der \brand{React Native} MapView-Komponente gab es keine Möglichkeit, Bilder auf der Karte darzustellen und die Raster-Tiles von Hand anzuzeigen wäre schlicht zu aufwendig. 
 Es liesse sich auch nur sehr umständlich eine schöne Map designen.
 
 Somit sprang uns als erstes die Portierung von Leaflet für \brand{React} ins Auge. 
@@ -199,16 +199,16 @@ Das heisst, die App müsste zur Browser-Ansicht wechseln.
 
 Als letzte Möglichkeit blieb die Mapbox GL Library.
 Diese hat beim Testen auf Anhieb funktioniert und uns überzeugt.
-Die Kosten bei -- einer Anzahl von 50 000 Nutzern pro Monat -- sind für dieses Projekt nicht problematisch.\cite{mapbox-pricing}
+Die Kosten bei einer Anzahl von 50 000 Nutzern pro Monat sind für dieses Projekt nicht problematisch.\cite{mapbox-pricing}
 
-Der Gedanken zur Offline-Unterstützung wurde auch besprochen.
+Der Gedanke einer Offline-Unterstützung wurde auch besprochen.
 Nur unterstützt dies das Backend nicht und es gäbe Probleme mit dem Speicherplatzbedarf der App. 
 
 
 \section{OAuth Implementation}
 Gebraucht wird ein Login-Dienst für \brand{Google}-, \brand{Facebook}- und \brand{OSM}-Konten. 
 Für einen \brand{OSM}-Login muss eine eigene Lösung entwickelt werden. 
-Für die Implementation der Authentifizierung wurden diese zwei Möglichkeiten evaluiert:
+Für die Implementation der Authentifizierung wurden folgende zwei Möglichkeiten evaluiert:
 
 
 \subsubsection{Variante A: Auth0}
@@ -229,13 +229,13 @@ Diese Variante ist zu generell und wurde nicht in einer Tabellenansicht dargeste
 \hline
 \textbf{Vorteile} & \textbf{Nachteile} \\
 \hline
-Sehr einfach Einbindung
- & Nur \gls{OAuth} 2 Unterstützung\cite{auth0-oauth} \\
+Sehr einfach Einbindung.
+ & Nur \gls{OAuth} 2 Unterstützung.\cite{auth0-oauth} \\
 \hline
- & Backend Anpassung nötig \\
+ & Backend Anpassung nötig. \\
 \hline
-Kostenlos für Open-Source-Projekte
- & Schlecht erweiterbar mit eigenem Login für \brand{OSM} \\
+Kostenlos für Open-Source-Projekte.
+ & Schlecht erweiterbar mit eigenem Login für \brand{OSM}. \\
 \hline
 \end{tabular}
 \caption{Bewertung OAuth-Komponente}
@@ -256,7 +256,7 @@ Wir hatten uns dazu entschieden, keine Backend-Anpassungen durchzuführen.
 \section{Internationalisierung}
 Die Übersetzungen, die für die Internationalisierung (I18n) der App zur Verfügung stehen, wurden in der \kort{}-Bachelorarbeit von 2012 mit \brand{Transifex}\footnote{\url{https://www.transifex.com/}} bereits erhoben.\cite{ba-kort-2012}
 Es stehen bereits 13 vollständig und weitere 13 teilweise übersetzte Sprachen zur Verfügung.
-\brand{Transifex} ist eine Plattform, bei der Projekte zur freiwilligen Übersetzung von dessen Benutzern, aufgeschaltet werden können. 
+\brand{Transifex} ist eine Plattform, bei der Projekte zur freiwilligen Übersetzung von dessen Benutzern aufgeschaltet werden können. 
 Das heisst, dass sich ein Benutzer registriert und bei der Übersetzung von anderen Projekten beitragen kann.
 Die Übersetzungen sind allerdings im Java Properties Format, was eine Schwierigkeit darstellen würde.
 
