@@ -24,6 +24,7 @@ Mit einem sehr effizienten Diffing-Algorithmus berechnet \brand{React} den Unter
 
 \section{React Native}
 Der Ansatz von \brand{React Native}\footnote{\url{https://facebook.github.io/react-native/}, \url{https://github.com/facebook/react-native}} ist \textit{learn once -- write anywhere}, das heisst, lerne eine Technologie und nutze sie für alle unterstützten Plattformen.\cite{react-native}
+Dieses Kredo bezieht sich darauf, dass \brand{JavaScript} sehr weit verbreitet ist und man mit \brand{React Native} nicht extra eine neue Programmiersprache erlernen muss um Apps für \brand{Android} und \brand{iOS} zu schreiben.
 
 Am 26. März 2015 wurde \brand{React Native} erstmals für \brand{iOS} veröffentlicht.
 Im Oktober 2015 kam \brand{Android} dazu.\cite{react-native-release}
@@ -38,7 +39,7 @@ Und am 13. April 2016 an der \brand{Facebook} Developer Konferenz kündigten \br
 \subsection{Layout}
 Alle \gls{GUI}-Komponenten befinden sich in sogenannten Containern. 
 Ein Container wird durch eine \inlinecode{View}-Komponente definiert. 
-Das Layout und die Gestaltung der Container und Komponenten wird mit \brand{Flexbox} geregelt. 
+Das Layout und die Gestaltung der Container und Komponenten wird mit \brand{Flexbox}\footnote{\url{https://facebook.github.io/react-native/docs/flexbox.html}. Dabei handelt es sich um einen Polyfill für die durch das \brand{W3C} spezifizierte \brand{Flexible Box}: \url{https://www.w3.org/TR/2016/CR-css-flexbox-1-20160526/}} geregelt. 
 
 \subsection{Technische Details}
 \brand{React Native} nutzt einen \brand{JavaScript}-Layer, beziehungsweise \brand{JavaScriptCore} als Engine, um den Code auszuführen.\cite{react-native-javascriptcore} 
@@ -49,14 +50,14 @@ Dadurch wirken zum Beispiel die Animationen sehr flüssig.\cite{react-native-jav
 
 
 \subsubsection{Native Module}
-Damit ein \brand{iOS} Native-Modul in \brand{React Native} verwendet werden kann, muss ein das Modul das \inlinecode{RCTBridgeModule}-Protokoll\footnote{RCT ist eine Abkürzung für ReaCT} implementieren und das Makro \inlinecode{RCT\_EXPORT\_MODULE()} enthalten. 
+Damit ein \brand{iOS} Native-Modul in \brand{React Native} verwendet werden kann, muss das Modul das \inlinecode{RCTBridgeModule}-Protokoll\footnote{RCT ist eine Abkürzung für ReaCT} implementieren und das Makro \inlinecode{RCT\_EXPORT\_MODULE()} enthalten. 
 Das Protokoll dient nur dazu, das Modul in einem Array zu speichern, damit es später von der Bridge gefunden werden kann. 
 Wenn die \brand{JavaScript}-Seite der Bridge initialisiert ist, kann sie auf diese Daten zugreifen. 
 Dem Makro kann auf der \brand{JavaScript}-Seite ein optionaler Name als Parameter mitgegeben werden. 
 Falls dieser Parameter fehlt, wird die Komponente auf \brand{JavaScript}-Seite nach dem \brand{Objective-C}-Klassennamen benannt. 
 Ein Ähnliches Vorgehen gilt für \brand{Swift}- und \brand{Android}-Module. 
 Genauere Hinweise sind in der \brand{React Native}-Dokumentation unter \textit{Native Modules} beschrieben.\cite{react-native-module-ios}\cite{react-native-module-android}
-Mit diesem Feature lässt sich bereits vorhandene native Code wiederverwenden. 
+Mit diesem Feature lässt sich bereits vorhandener native Code wiederverwenden. 
 % Für \brand{Android}-Module muss die gewünschte Klasse, die in \brand{React Native} verwendet werden möchte, von der Klasse \inlinecode{ReactContextBaseJavaModule} erben. 
 % Das erfordert dann die Implementation der \inlinecode{getName()}-Methode. 
 % Diese Methode soll dann den Namen, für die Verwendung der Komponente in \brand{React Native}, zurückgeben. 
@@ -64,19 +65,27 @@ Mit diesem Feature lässt sich bereits vorhandene native Code wiederverwenden.
 
 \subsection{Setup}
 Die Entwicklungsumgebung lässt sich am schnellsten und einfachsten auf \brand{OS X} einrichten. 
-\brand{Windows} und \brand{Linux} sind mittlerweile ebenfalls geeignet, was am Anfang dieser Bachelorarbeit nicht der Fall war. 
+\brand{Windows} und \brand{Linux} sind mittlerweile ebenfalls geeignet, was zu Beginn dieser Bachelorarbeit nicht der Fall war. 
 
 Mit dem \brand{React Native}-CLI (Command Line Interface) können neue Projekte initialisiert werden und Projekte auf einem Emulator oder einem Gerät getestet werden. 
-Nur die \brand{iOS}-App muss über \brand{Xcode} erzeugt werden. 
+Das initialisierte Projekt enthält wiederum ein \brand{Android}- und ein \brand{iOS}-Projekt.
+Diese Ordner enthalten den vorgegebenen Aufbau für Projekte der jeweiligen Plattformen.
+Ausserdem befinden sich die beiden Dateien \inlinecode{index.android.js} und \inlinecode{index.ios.js} im generierten Ordner.
+Diese werden beim Starten der App ausgeführt und verwenden weitere \brand{JavaScript} Module, welche sich bei uns im \inlinecode{js} Ordner befinden.
 
-Die Projektstruktur des \brand{JavaScript} Codes hat vor allem die verwendete \hyperref[pd-architektur]{Architektur} vorgegeben. 
-Komponenten der Architektur sind in die entsprechenden Hauptbestandteile eingeordnet. 
-Konstanten, IDs und Access-Tokens befinden sich im \inlinecode{Constants}-Ordner. 
-Alle \gls{GUI}-Komponenten wurden im \inlinecode{Components}-Ordner erstellt. 
+\subsection{Cross Platform}
+Auch wenn es nicht der ursprüngliche Gedanke von \brand{React Native} war, ein Cross Platform Framework anzubieten -- \brand{React Native} hat ursprünglich nur \brand{iOS} unterstützt --, sind die Konzepte dafür sehr ausgereift.
 
+Zum einen gibt es \brand{JavaScript} Module, die die native Module der beiden unterstützten Plattformen unter der selben API anbieten (\inlinecode{AsyncStorage}\footnote{\url{https://facebook.github.io/react-native/docs/asyncstorage.html}} oder \inlinecode{ListView}\footnote{\url{https://facebook.github.io/react-native/docs/listview.html}} sind Beispiele dafür).\newline
+Zum anderen -- wenn ein plattformspezifischeres Verhalten erforderlich ist -- kann es sein, dass für die verschiedenen native Module auch unterschiedliche \brand{JavaScript} Module angeboten werden (als Beispiel dafür dient die Lade-Anzeige mit \inlinecode{ProgressBarAndroid}\footnote{\url{https://facebook.github.io/react-native/docs/progressbarandroid.html}} und \inlinecode{ActivityIndicatorIOS}\footnote{\url{https://facebook.github.io/react-native/docs/activityindicatorios.html}}).
+In diesem Fall gibt es zwei Möglichkeiten, die Module im Client Code zu verwenden.
+Die eine Möglichkeit ist, in einem \inlinecode{if}-Statement zu überprüfen, auf welcher Plattform die App läuft (\inlinecode{if (Platform.OS === 'ios')}) und das passende Modul einzusetzen.\footnote{Es gibt auch noch weitere Varianten: \url{https://facebook.github.io/react-native/docs/platform-specific-code.html}}.
+Die andere Möglichkeit ist, dass der Client Code auf zwei verschiedene Dateien aufgeteilt wird, die durch die Endung \inlinecode{.android.js} respektive \inlinecode{.ios.js} unterschieden werden.
+
+Diese Konzepte bauen auf dem modularen Ansatz von \brand{React} auf und bieten die Freiheit, auf elegante Weise eine plattformunabhängige App zu entwickeln.
 
 \subsection{Community}
-Die Community wirkt sehr zerstreut, denn viele Informationen sind in den Issues des \brand{React Native} GitHub-Repositorys\footnote{\url{https://github.com/facebook/react-native/issues}} versteckt.
+Die Community ist auf mehrere Portale verstreut, wobei viele wichtige Informationen in den Issues des \brand{React Native} GitHub-Repositorys\footnote{\url{https://github.com/facebook/react-native/issues}} verborgen sind.
 Ausserdem sind aktuell (am 16.06.2016) 741 offene Issues vorhanden -- am 29.04.2016 waren es noch rund 500.
 
 \begin{itemize}
@@ -108,15 +117,14 @@ Durch die wachsende Community gibt es immer mehr solcher Projekte, Pull-Requests
 Das macht \brand{React Native} langfristig gesehen zu einer immer besseren und wichtigeren Technologie. 
 
 Die Umstellung von der native Entwicklung zu \brand{React Native} ist Anfangs auch schwer. 
-Vor allem wenn Fehler auf \brand{React Native}-Seite existieren, die native elegant und knapp lösbar sind. 
+Vor allem wenn Fehler auf \brand{React Native}-Seite existieren, die bei der native Entwicklung nicht durch unschöne Workarounds übersteuert werden müssten. 
 Mit der Zeit zeigen sich aber die grossen Vorteile von \brand{React}-\brand{JavaScript}. 
 Jede einzelne Komponente wird allein durch ihren State kontrolliert. 
-Je nach State kann die Komponente durch die eigene \inlinecode{render()}-Methode kontrolliert und verändert werden. 
+Je nach State kann die Darstellung der Component durch die eigene \inlinecode{render()}-Methode kontrolliert und verändert werden. 
 
-Ein ausschlaggebender Vorteil ist das Live- oder Hot-Reload Feature. 
+Ein angenehmes Feature für die Entwicklung ist das Live- und das Hot-Reload Feature. 
 Nur beim ersten Ausführen der App muss ein Build erstellt werden.
-Dank dem gleichzeitigen Starten des \gls{Packager}s kann die Ansicht auf dem Emulator oder dem Smartphone direkt während des Programmierens, aktualisiert werden. 
-Die Hot-Reload Funktion erlaubt ein manuelles Aktualisieren der App. 
+Dank dem gleichzeitigen Starten des \gls{Packager}s kann neu geschriebener \brand{JavaScript}-Code direkt in  die auf dem Emulator oder dem Smartphone laufende App geladen werden.
 
-Der App-Showcase der offiziellen \brand{React Native}-Dokumentation wächst stetig\footnote{\url{https://facebook.github.io/react-native/showcase.html}}.\cite{react-native-showcase} 
-Nach uns werden Apps in Zukunft nur noch mit \brand{React Native} entwickelt.
+Der App-Showcase der offiziellen \brand{React Native}-Dokumentation wächst stetig\footnote{\url{https://facebook.github.io/react-native/showcase.html}}.
+Wir gehen davon aus, dass \brand{React Native} zusammen mit \brand{Xamarin}\footnote{\url{https://www.xamarin.com/}} in Zukunft eine wichtige Rolle in der mobilen Cross-Platform-Entwicklung einnehmen wird.
