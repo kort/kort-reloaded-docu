@@ -2,11 +2,13 @@
 \label{pm-projektmonitoring}
 
 \section{Zeitanalyse}
+\label{pm-zeitanalyse}
 Für eine Bachelorarbeit werden 12 ECTS-Punkte vergeben, wobei ein Punkt einem Aufwand von 30 Stunden entspricht.
 In einem Team von zwei Entwicklern, entspricht dies 360 Stunden Aufwand pro Person (siehe Tabelle \ref{pm-arbeitsaufwand}).
 
 \begin{table}[H]
 \centering
+\label{pm-arbeitsaufwand}
 \begin{tabular}{|l|r|}
 \hline 
 \multicolumn{1}{|c|}{\textbf{Person}} & \multicolumn{1}{|c|}{\textbf{Aufwand}} \\
@@ -17,7 +19,6 @@ Dominic Mülhaupt & 467 h \\
 \hline 
 \end{tabular}
 \caption{Arbeitsaufwand pro Person}
-\label{pm-arbeitsaufwand}
 \end{table}
 
 Wenn die gleich folgenden Tabellen \ref{pm-arbeitsaufwand-aktivität-mm} und \ref{pm-arbeitsaufwand-aktivität-dm} verglichen werden, ist die Arbeitsaufteilung sehr gut erkennbar. 
@@ -26,7 +27,6 @@ Bei neuen Erfahrungen haben sich die Entwickler ausgetauscht und waren so immer 
 
 \begin{table}[H]
 \centering
-\label{pm-arbeitsaufwand-aktivität-mm}
 \begin{tabular}{|l|r|}
 \hline
 \multicolumn{2}{|l|}{\textbf{Marino Melchiori}} \\
@@ -48,12 +48,11 @@ Allgemein & 16.75 h \\
 Projektmanagement & 25.75 h \\
 \hline
 \end{tabular}
-\caption{Aufwand pro Aktivität (Marino Melchiori)}
+\caption{Aufwand pro Aktivität (Marino Melchiori)}\label{pm-arbeitsaufwand-aktivität-mm}
 \end{table}
 
 \begin{table}[H]
 \centering
-\label{pm-arbeitsaufwand-aktivität-dm}
 \begin{tabular}{|l|r|}
 \hline
 \multicolumn{2}{|l|}{\textbf{Dominic Mülhaupt}} \\
@@ -77,7 +76,7 @@ Projektmanagement & 52.00 h \\
 Testing & 22.00 h \\
 \hline
 \end{tabular}
-\caption{Aufwand pro Aktivität (Dominic Mülhaupt)}
+\caption{Aufwand pro Aktivität (Dominic Mülhaupt)}\label{pm-arbeitsaufwand-aktivität-dm}
 \end{table}
 
 
@@ -104,7 +103,6 @@ Schlussendlich wurden 21 Stunden zu viel geschätzt, was bei einem Arbeitstag vo
 
 \begin{table}[H]
 \centering
-\label{pm-arbeitsaufwand-kategorie-ges}
 \begin{tabular}{|l|r|r|r|}
 \hline
 \multicolumn{4}{|l|}{\textbf{Soll-Ist-Vergleich vom Gesamtaufwand der Kategorien}} \\
@@ -140,7 +138,7 @@ Meeting & 61.75 h & 59.25 h & -2.50 h \\
 \textbf{Total} & \textbf{975.00 h} & \textbf{926.50 h} & \textbf{-21.00 h} \\
 \hline
 \end{tabular}
-\caption{Soll-Ist-Vergleich: Gesamtaufwand pro Kategorie}
+\caption{Soll-Ist-Vergleich: Gesamtaufwand pro Kategorie}\label{pm-arbeitsaufwand-kategorie-ges}
 \end{table}
 
 \section{Code-Statistik}
@@ -157,8 +155,7 @@ Der Umfang dieser Änderungen wurde nicht dokumentiert, da es sich vor allem um 
 \brand{JavaScript} & 3913 \\
 \hline 
 \end{tabular}
-\caption{Dateien und Codezeilen}
-\label{pm-cloc}
+\caption{Dateien und Codezeilen}\label{pm-cloc}
 \end{table}
 
 Die Tabelle \ref{pm-package-cloc} zeigt die Anzahl an Codezeilen in einem Package. 
@@ -200,6 +197,5 @@ Die \inlinecode{Shared Components} enthalten Buttons und weitere Komponenten, di
 \textit{Constants} & 441 \\
 \hline 
 \end{tabular}
-\caption{Codezeilen pro Package}
-\label{pm-package-cloc}
+\caption{Codezeilen pro Package}\label{pm-package-cloc}
 \end{table}
