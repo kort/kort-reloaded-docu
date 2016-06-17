@@ -131,7 +131,7 @@ Zwischenzeitlich wurde aus diesem Grund das Erhalten des Login-Tokens nach der A
 \subsubsection{Resultate}
 \begin{itemize}
 	\item Native Location Tracking implementiert
-	\item View-Komponenten fertig entworfen
+	\item \gls{GUI} fertig entworfen
 	\item Testing-\gls{Framework} aufgesetzt
 	\item Architektur-Entscheid und -Implementation
 	\item Token basierte \brand{Google}-Authentifizierung im Frontend umgesetzt, nachdem das Backend vom Projektpartner, Stefan Oderbolz und Jürg Hunziker, dafür angepasst wurde
@@ -148,7 +148,7 @@ Wir haben die Architekturvarianten evaluiert und uns für die \brand{Flux}-Archi
 Daraufhin wurde das bestehende -- noch sehr schlanke -- Grundgerüst, welches mit dem MVC-Pattern umgesetzt wurde, durch \brand{Flux} ersetzt.
 
 Unterdessen konnte das Grundgerüst des \gls{GUI} grösstenteils fertiggestellt werden. 
-Es fehlte noch die dynamische Behandlung von gewissen View-Komponenten.
+Es fehlte noch die dynamische Behandlung von gewissen GUI-Komponenten.
 Zum Beispiel die Unterscheidung, ob beim Lösen einer Mission ein Picker zum Auswählen der Antwort gerendert wird, oder ob ein Text-Input-Feld angeboten wird.
 
 \kort{} konnte erfolgreich auf \brand{iOS} getestet werden. 
@@ -167,7 +167,7 @@ Aus diesem Grund wurde für Tests nach Absprache mit dem Projektpartner (Jürg H
 \textbf{Fällig am 06.06.2016}
 \subsubsection{Resultate}
 \begin{itemize}
-	\item dynamische View-Komponenten fertiggestellt
+	\item dynamische \gls{GUI} fertiggestellt
 	\item Login Weiterleitung
 	\item Login-Logik mit Local Storage
 	\item Testing abgeschlossen
@@ -176,18 +176,16 @@ Aus diesem Grund wurde für Tests nach Absprache mit dem Projektpartner (Jürg H
 \end{itemize}
 
 \subsubsection{Erledigte Arbeiten}
-Alle View-Komponenten sind nun dynamisch und zeigen je nach Zustand der Komponente die entsprechende Oberfläche.
-
 Durch eine zusätzliche App-Loader-View konnte das Problem der Weiterleitung nach dem Login behoben werden.
 Diese Komponente lädt nun alles im Voraus und erst danach wird je nach Zustand, ob der Benutzer eingeloggt ist oder nicht, die entsprechende Ansicht angezeigt.
-Nach und nach wurden die Platzhalter der View-Komponenten mit dynamischen Daten der Businesslogik ersetzt.
+Nach und nach wurden die Platzhalter der GUI mit dynamischen Daten der Businesslogik ersetzt. 
+Die GUI ist nun dynamisch und zeigt je nach Zustand einer \inlinecode{Component} die entsprechende Oberfläche. 
 
 Schlussendlich konnten wir erfolgreich Missionen und Validationen lösen.
 
 
 \subsubsection{Probleme}
 Im \gls{Backend} sind Fehler aufgetreten wenn Validationen negativ beantwortet wurden. 
-
 
 
 \subsection{MS7: Schlussabgabe}
