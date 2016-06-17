@@ -1,4 +1,3 @@
-% Inhalt der CD
 \chapter*{Inhalt der CD}
 % Titel auch in Kopfzeile anzeigen
 \markboth{Inhalt der CD}{Inhalt der CD}
@@ -6,11 +5,12 @@
 \addcontentsline{toc}{chapter}{Inhalt der CD}
 
 \begin{forest}
+  l sep+=1em,
   for tree={
     font=\sffamily,
     text=white,
     text width=10cm,
-    minimum height=0.75cm,
+    minimum height=0.4cm,
     if level=0
       {fill=root}
       {fill=folder1},
@@ -32,12 +32,12 @@
     },
     fit=band,
     s sep=8pt,
-    before computing xy={l=15pt},
+    before computing xy={l=10pt},
   }
 [/
   [Dokumentation/, for tree={fill=folder1}
     [Kort Reloaded - Marino Melchiori und Dominic Mülhaupt.pdf, for tree={fill=folder2}]
-    [Anhänge/, for tree={fill=folder2}
+    [Anhänge/, for tree={fill=folder2,inner sep=3}
       [Abstract.pdf, for tree={fill=folder3}]
       [Aufgabenstellung.pdf , for tree={fill=folder3}]
       [Eigenständigkeitserklärung.pdf , for tree={fill=folder3}]
@@ -50,12 +50,11 @@
     ]
   ]
   [Kort/, for tree={fill=folder1}
-	[Sourcecode/, for tree={fill=folder2}
+	[Sourcecode/, for tree={fill=folder2,inner sep=3}
 	  [kort-reloaded/, for tree={fill=folder3}
 	    [android/, for tree={fill=folder4}]
 	    [ios/, for tree={fill=folder4}]
 	    [js/, for tree={fill=folder4}]
-	    [package.json, for tree={fill=folder4}]
 	  ]
 	]
 	[kort.apk, for tree={fill=folder1}]
