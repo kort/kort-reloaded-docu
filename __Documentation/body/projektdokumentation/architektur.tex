@@ -6,21 +6,24 @@ Zu den nachfolgend beschriebenen Konzepten der \brand{Flux}-Architektur mussten 
 Die Beschreibungen entsprechen also unserer Implementation.\newline
 \brand{Flux} ist eine Architektur, die in \gls{Frontend}-Applikationen eingesetzt wird.
 Ein unidirektionaler Datenfluss ist das Grundprinzip, auf welchem \brand{Flux} aufbaut, und in welchem es sich von \gls{MVC}-Architekturen unterscheidet.
-Das Pattern beschreibt folgende vier Hauptbestandteile: die Stores, die Views (oder Controller-Views), die Actions und der Dispatcher.
+Das Pattern beschreibt folgende vier Hauptbestandteile: die Stores, die Views (oder Controller-Views), die Actions und der Dispatcher. 
+Ein Beispiel, wie die Architektur in der Abbildung ~\ref{image-flux-overview-simple} umgesetzt wurde, ist im Sequenzdiagramm zum \hyperref[pd-sequenzdiagramme-mission]{Lösen einer Mission} beschrieben. 
+
 \begin{figure}[H]
  	\centering
  	\includegraphics[width=\textwidth]{images/projektdokumentation/flux-uebersicht-weiss.png}
  	\caption{Idee der \brand{Flux}-Architektur}
  	\label{image-flux-overview-simple}
 \end{figure}
+
 \subsection{Stores}
 \label{pd-flux-stores}
 Stores enthalten den Applikationszustand und die Applikationslogik.
 Verglichen mit dem \gls{MVC}-Pattern entsprechen sie am ehesten dem Model.
 Sie unterscheiden sich aber insofern, dass sie nicht unbedingt einzelne Modellklassen repräsentieren sollen, sondern domänenspezifische Aufgaben übernehmen.
 Da \kort{} keine besonders komplexe Domäne enthält, ist diese Unterscheidung allerdings nicht von grosser Bedeutung.
-Ein Beispiel für diese Einteilung nach Domäne und nicht nach Modell findet man in der Aufteilung von \inlinecode{UserStore} und \{inlinecode{AuthenticationStore}\newline
-Stores sind als \glslink{Singleton}{Singletons} umgesetzt.
+Ein Beispiel für diese Einteilung nach Domäne und nicht nach Modell ist in der Aufteilung von \inlinecode{UserStore} und \inlinecode{AuthenticationStore} zu finden. 
+Stores sind als \glslink{Singleton}{Singletons} umgesetzt. 
 Sie registrieren sich beim Dispatcher um Updates zu erhalten und ihren Zustand entsprechend anzupassen.
 Views wiederum können sich bei den Stores registrieren um neue Informationen zu erhalten, können die Stores aber nicht direkt anweisen, sich zu aktualisieren.
 
