@@ -18,13 +18,13 @@ Eine Hauptkomponente gibt seine Daten per Props an die Kind-Komponenten weiter (
 Anstatt der \gls{DOM} nutzt \brand{React} die sogenannte \gls{Virtual DOM}.
 Wie der Begriff schon sagt, wird mit einer Abstraktion der echten \gls{DOM} -- also mit einer virtuellen DOM -- kommuniziert.
 Das komplette \gls{DOM} (also die Repräsentation der View vom HTML-Code) ist im lokalen Speicher abgelegt.\cite{virtual-dom}
-In der \inlinecode{render()}-Methode jeder \brand{React}-Klasse wird eine Beschreibung des DOM zurückgeliefert, die \brand{React} mit der lokalen Kopie der \gls{DOM} vergleicht.
+In der \inlinecode{render()} Methode jeder \brand{React}-Klasse wird eine Beschreibung des DOM zurückgeliefert, die \brand{React} mit der lokalen Kopie der \gls{DOM} vergleicht.
 Mit einem sehr effizienten Diffing-Algorithmus berechnet \brand{React} den Unterschied zwischen diesen  Versionen des \gls{DOM} und errechnet den schnellsten Weg um den Browser zu aktualisieren.\cite{react-virtual-dom}
 
 
 \section{React Native}
 Der Ansatz von \brand{React Native}\footnote{\url{https://facebook.github.io/react-native/}, \url{https://github.com/facebook/react-native}} ist \textit{learn once -- write anywhere}, das heisst, lerne eine Technologie und nutze sie für alle unterstützten Plattformen.\cite{react-native}
-Dieses Kredo bezieht sich darauf, dass \brand{JavaScript} sehr weit verbreitet ist und man mit \brand{React Native} nicht extra eine neue Programmiersprache erlernen muss um Apps für \brand{Android} und \brand{iOS} zu schreiben.
+Dieses Kredo bezieht sich darauf, dass \brand{JavaScript} sehr weit verbreitet ist und mit \brand{React Native} nicht extra eine neue Programmiersprache erlernt werden muss um Apps für \brand{Android} und \brand{iOS} zu schreiben.
 
 Am 26. März 2015 wurde \brand{React Native} erstmals für \brand{iOS} veröffentlicht.
 Im Oktober 2015 kam \brand{Android} dazu.\cite{react-native-release}
@@ -96,8 +96,10 @@ Ausserdem sind aktuell (am 16.06.2016) 741 offene Issues vorhanden -- am 29.04.2
 	\begin{itemize}
 		\item reactnative.com\footnote{\url{http://www.reactnative.com/}}
 		\item \brand{React Native} Newsletter\footnote{\url{http://reactnative.cc/}}
+		
 	\end{itemize}
 	\item Es ist ebenfalls ein aktiver Subreddit\footnote{\url{https://www.reddit.com/r/reactnative}} vorhanden.
+	\item Das bekannte Awesome React Native\footnote{\url{https://github.com/jondot/awesome-react-native}} \brand{GitHub} Repository listet viele Artikel, Tutorials, Libraries und mehr. 
 \end{itemize}
 
 
@@ -120,7 +122,7 @@ Die Umstellung von der native Entwicklung zu \brand{React Native} ist Anfangs au
 Vor allem wenn Fehler auf \brand{React Native}-Seite existieren, die bei der native Entwicklung nicht durch unschöne Workarounds übersteuert werden müssten. 
 Mit der Zeit zeigen sich aber die grossen Vorteile von \brand{React}-\brand{JavaScript}. 
 Jede einzelne Komponente wird allein durch ihren State kontrolliert. 
-Je nach State kann die Darstellung der Component durch die eigene \inlinecode{render()}-Methode kontrolliert und verändert werden. 
+Je nach State kann die Darstellung der Component durch die eigene \inlinecode{render()} Methode kontrolliert und verändert werden. 
 
 Ein angenehmes Feature für die Entwicklung ist das Live- und das Hot-Reload Feature. 
 Nur beim ersten Ausführen der App muss ein Build erstellt werden.

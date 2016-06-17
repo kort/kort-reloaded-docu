@@ -13,7 +13,7 @@
     minimum height=0.75cm,
     if level=0
       {fill=root}
-      {fill=folder},
+      {fill=folder1},
     rounded corners=4pt,
     grow'=0,
     child anchor=west,
@@ -35,26 +35,27 @@
     before computing xy={l=15pt},
   }
 [/
-  [Dokumentation/
-    [Kort Reloaded - Marino Melchiori und Dominic Mülhaupt.pdf]
-    [Anhänge/
-      [Abstract.pdf]
-      [Aufgabenstellung.pdf]
-      [Eigenständigkeitserklärung.pdf]
-      [Einverständniserklärung Publikation auf eprints.pdf]
-      [Gamified Mobile App für die Verbesserung von OpenStreetMap - Jürg Hunziker und Stefan Oderbolz.pdf]
-      [Poster.pdf]
-      [Diagramme/]
-      [Organisatorisches/]
-      [Sitzungsprotokolle/]
+  [Dokumentation/, for tree={fill=folder1}
+    [Kort Reloaded - Marino Melchiori und Dominic Mülhaupt.pdf, for tree={fill=file}]
+    [Anhänge/, for tree={fill=folder2}
+      [Abstract.pdf, for tree={fill=file}]
+      [Aufgabenstellung.pdf , for tree={fill=file}]
+      [Eigenständigkeitserklärung.pdf , for tree={fill=file}]
+      [Einverständniserklärung Publikation auf eprints.pdf , for tree={fill=file}]
+      [Gamified Mobile App für die Verbesserung von OpenStreetMap - Jürg Hunziker und Stefan Oderbolz.pdf , for tree={fill=file}]
+      [Poster.pdf, for tree={fill=file}]
+      [Diagramme/, for tree={fill=folder3}]
+      [Organisatorisches/, for tree={fill=folder3}]
+      [Sitzungsprotokolle/, for tree={fill=folder3}]
     ]
   ]
-  [Kort/
-	[Sourcecode/
-	  [kort-reloaded/
-	    [android/]
-	    [ios/]
-	    [js/]
+  [Kort/, for tree={fill=folder1}
+	[Sourcecode/, for tree={fill=folder2}
+	  [kort-reloaded/, for tree={fill=folder3}
+	    [android/, for tree={fill=folder4}]
+	    [ios/, for tree={fill=folder4}]
+	    [js/, for tree={fill=folder4}]
+	    [package.json, for tree={fill=file}]
 	  ]
 	]
 	[APK]
