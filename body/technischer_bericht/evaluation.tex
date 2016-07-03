@@ -1,6 +1,6 @@
 \chapter{Evaluation}
 \label{tb-evaluation}
-An einem \brand{React Native} Meetup am 8. März 2016 -- an der HSR, konnten erste Entscheidungen zur Software-Entwicklungsumgebung geklärt werden.
+An einem \brand{React Native} Meetup zu Beginn des Projekts konnten erste Entscheidungen zur Software-Entwicklungsumgebung geklärt werden.
 Es wurden auch Lösungskonzepte für die Darstellung der Karte besprochen.
 
 Unter den vielen \brand{JavaScript}-Editoren haben wir uns für \brand{Atom} entschieden.
@@ -47,7 +47,6 @@ Pattern ist bekannt, keine Einarbeitung nötig
 \caption{Bewertung Komponente für die Navigation}
 \end{table}
 
-\subsection{Fazit}
 Die Architektur-Entscheidung fiel zu Beginn sehr schwer, da vorgängig noch nicht genügend Erfahrungen im Umgang mit \brand{React} gesammelt werden konnten.
 Entsprechend unserem \hyperref[pm-projektplan]{Projektplan} und der Grundidee, erst Erfahrungen mit für uns neuen Technologien (\brand{JavaScript}, \brand{React} und \brand{React Native}) zu sammeln, haben wir uns in einem ersten Ansatz dazu entschlossen, die ersten Schritte -- das Darstellen der Missionen auf der Karte -- mit dem \gls{MVC}-Pattern umzusetzen.
 Welche Auswirkungen der Einsatz von \brand{Flux} hätte, war zu Beginn zu wenig voraussehbar.\newline
@@ -56,11 +55,11 @@ Einen guten Einblick in die Thematik verschafft der Artikel \emph{Why we are doi
 Wir haben uns letztlich aufgrund der oben aufgelisteten Vorteile auf \brand{Flux} festgelegt.
 
 \section{App Navigation}
-Um die Navigation von \kort{} zu implementieren, gab es zwei Möglichkeiten. 
+Um die Navigation innerhalb der App zu implementieren, gab es zwei Möglichkeiten. 
 Die erste Variante war die Umsetzung mit der von \brand{React Native} zur Verfügung gestellten Navigator-Komponente. 
-Für eine Tab-Ansicht müsste aber eine weitere \gls{Library} evaluiert werden. 
+Damit müsste für die geplante Tab-Ansicht eine weitere \gls{Library} evaluiert werden. 
 
-Als weitere Variante für die Navigation gab es die React-Native-Router-Flux Library. 
+Als weitere Variante für die Navigation gab es die Library react-native-router-flux\footnote{\url{https://github.com/aksonov/react-native-router-flux/}}.
 Diese Komponente basiert auf dem Navigator von \brand{React Native} und unterstützt durch die bereits integrierte Tab-Library eine Tab-Ansicht.  
 
 \begin{table}[H]
@@ -73,7 +72,7 @@ Diese Komponente basiert auf dem Navigator von \brand{React Native} und unterst�
 \textbf{Vorteile} & \textbf{Nachteile} \\
 \hline
 Es gibt eine Unterstützung für \brand{Android} und \brand{iOS}.
-& Die Dokumentation zur korrekten Verwendung ist nicht vorhanden. \\
+& Die Dokumentation ist sehr knapp gehalten. \\
 \hline
 Flexibel und für einfache Use Cases gedacht.
  & Die Tab-Ansicht wird nicht unterstützt. \\
@@ -93,17 +92,20 @@ Integrierte Tab-Navigation.
 Ein Wechsel der View ist mit einem Funktionsaufruf von überall aus möglich. Daten lassen sich dabei einfach als Parameter weitergeben.
  & Die Hintergrundabläufe und der Lebenszyklus sind nicht erkennbar. \\
 \hline
+Es gibt eine Unterstützung für \brand{Android} und \brand{iOS}.
+& Die Dokumentation ist sehr knapp gefasst. \\
+\hline
 \end{tabular}
 \caption{Bewertung Navigations-Komponente}
 \end{table}
 
-\subsection{Fazit}
 Da \brand{React Native} standardmässig keine Tab-Navigation anbietet, wurde React-Native-Router-Flux als Navigations-Variante evaluiert.
 Der erste Prototyp mit dieser \gls{Library} erfüllte die Anforderungen.
 Alle Views sind an einem Ort im Code festgelegt und es lassen sich bequem weitere hinzufügen.
 
 Im Verlaufe des Projektes sind dann aber vermehrt Fehler aufgetreten.
-Im Nachhinein wäre es sinnvoller gewesen, die Navigator-Komponente zu verwenden.
+Diese entstanden zum einen durch den Einsatz von \brand{React Native}s experimentellen Navigator\footnote{\url{http://www.reactnative.com/first-look-at-react-native-navigation-experimental/}}, waren aber auch in der Library selbst enthalten.
+Im Nachhinein wäre es wahrscheinlich sinnvoller gewesen, die Navigator-Komponente zu verwenden.
 
 
 \section{Kartendarstellung}
@@ -114,7 +116,7 @@ Diese Punkte beinhalten Libraries oder Ideen zur Umsetzung einer Kartenansicht f
 
 \subsubsection{Variante A: React Native Map Komponente}
 Diese Variante wird standardmässig von \brand{React Native} als MapView-Komponente zur Verfügung gestellt. 
-Die Möglichkeiten zur Verwendung sind eingeschränkt, denn es lassen sich auf \brand{Android} nur normale Pins als Marker einsetzen.\cite{react-native-mapview-pin}
+Die Möglichkeiten sind eingeschränkt, es lassen sich auf \brand{Android} zum Beispiel nur normale Pins als Marker einsetzen.\cite{react-native-mapview-pin}
 
 
 \subsubsection{Variante B: Extended React Native Map Komponente}
@@ -183,7 +185,6 @@ Es können eigene Marker-Bilder eingesetzt werden. &  \\
 \caption{Bewertung Map-Komponente}
 \end{table}
 
-\subsection{Fazit}
 Varianten, die native Map APIs von \brand{Google} und \brand{Apple} verwenden, kamen für uns nicht in Frage.
 Wir möchten mit unserer App \brand{OSM} Daten verbessern und möchten somit aus moralischen Aspekten auch auf diese Karte setzen. 
 
@@ -194,8 +195,8 @@ Somit sprang uns als erstes die Portierung von Leaflet für \brand{React} ins Au
 Nach genauerem Betrachten fiel uns aber auf, dass diese Variante nur möglich ist, wenn die Karte in einer WebView-Komponente von \brand{React Native} dargestellt wird. 
 Das heisst, die App müsste zur Browser-Ansicht wechseln.
 
-Als letzte Möglichkeit blieb die Mapbox GL Library.
-Diese hat beim Testen auf Anhieb funktioniert und uns überzeugt.
+Als letzte Möglichkeit blieb die \brand{Mapbox} Library.
+Diese konnte unsere Anforderungen trotz des experimentellen Zustands erfüllen und es war ersichtlich, dass \brand{Mapbox} viel investiert um offene Fehler möglichst bald zu beheben.
 Die Kosten bei einer Anzahl von 50 000 Nutzern pro Monat sind für dieses Projekt nicht problematisch.\cite{mapbox-pricing}
 
 Der Gedanke einer Offline-Unterstützung wurde auch besprochen.
@@ -210,7 +211,7 @@ Für die Implementation der Authentifizierung wurden folgende zwei Möglichkeite
 
 
 \subsubsection{Variante A: Auth0}
-\brand{Auth0}\footnote{\url{https://github.com/auth0/react-native-lock}, \url{https://auth0.com/}} bietet eine Implementation für beliebige \gls{OAuth} 2-Dienste. 
+\brand{Auth0}\footnote{\url{https://github.com/auth0/react-native-lock}, \url{https://auth0.com/}} bietet eine Implementation für beliebige \gls{OAuth} 2 Dienste. 
 
 
 \subsubsection{Variante B: Open-Source-Projekte}
@@ -230,23 +231,21 @@ Diese Open Source Variante ist zu generell und wurde nicht in einer Tabellenansi
 Sehr einfach Einbindung.
  & Nur \gls{OAuth} 2 Unterstützung.\cite{auth0-oauth} \\
 \hline
+Kostenlos für Open-Source-Projekte.
  & Backend Anpassung nötig. \\
 \hline
-Kostenlos für Open-Source-Projekte.
  & Schlecht erweiterbar mit eigenem Login für \brand{OSM}. \\
 \hline
 \end{tabular}
 \caption{Bewertung OAuth-Komponente}
 \end{table}
 
-
-\subsection{Fazit}
 \brand{Auth0} kam definitiv nicht in Frage, da es in nächster Zukunft nicht mit einer \gls{OAuth} 1.0a-Authentifizierung, wie sie von \brand{OSM} unterstützt wird, erweiterbar ist.
 Entschieden haben wir uns für das react-native-google-signin-Projekt.
-Es funktioniert auf beiden Plattformen und liefert ein Token, das vom \kort{}-\-gls{Backend} überprüft werden kann.
+Es funktioniert auf beiden Plattformen und liefert ein Token, das vom \kort{}-\gls{Backend} überprüft werden kann.
 Der Nachteil ist, dass es kein Open Source Projekt gab, welches alle gewünschten Social-Logins für \brand{iOS} und \brand{Android} anbietet.
 
-\brand{Facebook} wird vom \kort{}-Backend derzeitig nicht unterstützt und das react-native-facebook-login-Projekt auf \brand{GitHub} liefert auch kein Token, wie es beim \brand{Google}-Login der Fall ist.
+\brand{Facebook} wird vom \kort{}-Backend derzeit nicht unterstützt und das react-native-facebook-login-Projekt auf \brand{GitHub} liefert auch kein Token, wie es beim \brand{Google}-Login der Fall ist.
 Um dies zu behandeln wären weitere Anpassungen am Backend nötig gewesen.
 Wir hatten uns dazu entschieden, keine Backend-Anpassungen durchzuführen.
 
