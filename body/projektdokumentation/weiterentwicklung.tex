@@ -1,8 +1,8 @@
 \chapter{Weiterentwicklung}
 \label{pd-weiterentwicklung}
 
-\kort{} hat grosses Potenzial um weiterentwickelt zu werden.
-Dieses umfasst vor allem zwei Bereiche:
+\kort{} hat grosses Potenzial für weiterführende Arbeiten.
+Diese umfassen vor allem zwei Bereiche:
 
 \begin{itemize}
 	\item Wie kann \kort{} besser dazu beitragen, \brand{OSM} Daten zu verbessern?
@@ -11,10 +11,11 @@ Dieses umfasst vor allem zwei Bereiche:
 
 Wir haben uns Gedanken dazu gemacht und hier zusammengefasst, wie \kort{} weiter optimiert werden könnte.
 Das Unterkapitel \hyperref[pd-weiterentwicklung-vorgehen]{Vorgehen} enthält Arbeiten, die beim derzeitigen Stand noch verbessert werden müssen. 
-Weiterhin sind Ideen aufgelistet, die keine grösseren Änderungen am Backend mit sich bringen.
+Weiterhin sind Ideen aufgelistet, die Anpassungen am Backend erfordern.
 
 \section{Vorgehen}
 \label{pd-weiterentwicklung-vorgehen}
+\subsubsection{OpenStreetMap Login}
 Ein sehr wichtiges Feature, das bisher noch nicht umsetzbar war, ist der \brand{OSM}-Login.
 Neben den Änderungen am Backend (damit dieses Feature überhaupt brauchbar ist) gibt es folgende Schritte zu erledigen:
 
@@ -59,7 +60,8 @@ Diese wären die zweite Highscore-Ansicht und die Karte, die beim Lösen einer M
 Die zweite Highscore-Ansicht zeigt den eingeloggten Benutzer mit seinen direkten Konkurrenten, die vor und nach ihm platziert sind. 
 Wenn sich der Benutzer in der Ansicht zum Lösen einer Mission befindet, sollte in einem weiteren Tab eine Karte, die das Objekt der Mission hervorhebt, angezeigt werden. 
 
-Gerne hätten wir noch Tests der \inlinecode{Components} durchgeführt, doch die Priorität dafür war zu tief und die Zeit zu knapp. 
+\subsubsection{Testing}
+Gerne hätten wir noch funktionale Tests mit den \inlinecode{Components} durchgeführt, doch die Priorität dafür war zu tief und die Zeit zu knapp. 
 Dazu haben wir für die Zukunft die Enzyme\footnote{\url{http://airbnb.io/enzyme/}}-Testing-API (für \inlinecode{Component}-Tests) und das Mocha\footnote{\url{https://github.com/mochajs/mocha}}-\gls{Framework} (um die Tests laufen zu lassen) evaluiert.
 
 \section{Weiterführende Arbeiten}
@@ -67,6 +69,7 @@ Dazu haben wir für die Zukunft die Enzyme\footnote{\url{http://airbnb.io/enzyme
 Punkte, die \kort{} attraktiver machen würden:
 
 \begin{itemize}
+	\item \kort{} zusätzlich als Web-App -- umgesetzt mit \brand{React} -- anbieten
 	\item Benutzerlogin mit weiteren \gls{OAuth}-Diensten erweitern (z.\,B. \brand{Twitter}, \brand{GitHub})
 	\item \gls{Gamification}
 	\begin{itemize}
