@@ -1,15 +1,11 @@
 \chapter{Implementation}
 \label{pd-implementation}
-Dieses Kapitel beschreibt die Einrichtung und Implementation von den folgenden \glslink{Library}{Libraries} und Komponenten. 
-Beim Entwickeln der \brand{Android}-App wurde darauf geachtet, dass möglichst keine Plattform spezifische Komponenten zu nutzen. 
-Das konnte in diesem Projekt erfolgreich umgesetzt werden. 
-Die einzige spezifische Komponente ist der Ladebildschirm, der jeweils auch für die \brand{iOS}-Version erstellt wurde.
-Aus Zeitgründen konnte die \brand{iOS}-Version aber nicht getestet werden. 
-
+Dieses Kapitel beschreibt die Einrichtung und Implementation von einigen der verwendeten \glslink{Library}{Libraries} sowie weiteren Komponenten.
 
 \section{Kort Backend}
 Das \kort{}-Backend existierte bereits und wurde von den Entwicklern nicht mehr abgeändert. 
-Es ist im Kapitel 10.2. \gls{REST}-Schnittstellen der Bachelorarbeit von Jürg Hunziker und Stefan Oderbolz dokumentiert.\cite{ba-kort-2012}
+Das Backend konnte von uns über die \gls{REST}-Schnittstelle angesprochen werden.
+Dieses ist im Kapitel 10.2. REST-Schnittstellen der Bachelorarbeit von Jürg Hunziker und Stefan Oderbolz dokumentiert.\cite{ba-kort-2012}
 
 \section{View Components}
 \label{pd-implementation-components}
@@ -32,6 +28,8 @@ Damit die entsprechenden \glslink{Library}{Libraries} genutzt werden können, mu
 Mit dem \inlinecode{npm install}-Befehl wurden alle aufgelisteten Abhängigkeiten in der  \inlinecode{package.json}-Datei installiert und im Ordner \newline\inlinecode{node-modules} gespeichert.
 Wenn eine Library eine Bridge zu nativem Code verwendet, muss sie zusätzlich im \brand{Android}- und \brand{iOS}-Projekt gelinkt werden. 
 Dann konnten die Libraries in einer \brand{JavaScript}-Komponente importiert und verwendet werden.
+
+Nachfolgend sind die wichtigsten Libraries aufgeführt, die von uns verwendet wurden.
 
 \begin{table}[H]
 \centering
@@ -100,7 +98,7 @@ jest & 12.1.1 & \nameref{pd-entwicklungsumgebung-testing} \\
 Die vollständige Übersicht aller Abhängigkeiten finden sich in der Datei \inlinecode{package.json}.
 
 \subsection{Navigation}
-Die Implementation der Navigation wurde in der Einstiegs-Komponente der App umgesetzt. 
+Die Navigation ist in der Component \inlinecode{App} deklariert.
 Alle Scenes werden mit einem Key deklariert und falls nötig mit Optionen für eine Tab-Ansicht erweitert. 
 Die definierten Scenes werden als Kind-Komponenten einem Router übergeben. 
 Jede Scene kann mit einem Funktionsaufruf 
@@ -128,7 +126,7 @@ Die \brand{Mapbox}-\gls{API} ist auf der entsprechenden \brand{Github}-Seite\foo
 \subsection{OAuth}
 Für die Authentifizierung über \brand{Google} wurde eine Open Source \gls{Library} evaluiert (Kapitel Evaluation \nameref{tb-evaluation-oauth}). 
 Damit die App sich mit der \brand{Google}-\gls{API} verbinden kann, muss eine \inlinecode{google-services.json}-Datei auf der \brand{Google}-Webseite\footnote{\url{https://developers.google.com/cloud-messaging/android/client}} generiert werden. 
-Diese Datei enthält die Konfiguration des \brand{Google}-Developer Kontos. 
+Diese Datei verknüpft die \brand{Google}-\brand{OAuth}-Konfiguration mit einem eindeutigen Identifier für die App (Bundle ID und Signing Key).
 
 Nach dem Login des Benutzers erhält die App über diese \gls{Library} das Benutzer-Token von \brand{Google}.
 Dieses Token wird dann von der App dem \kort{}-\gls{Backend} mitgeteilt und von dort aus bei \brand{Google} überprüft. 
