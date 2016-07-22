@@ -55,10 +55,9 @@ Dann wäre es eleganter, Meldungen in einem Fenster zu zeigen.
 	\item Tab-Icons für \brand{iOS} einfügen.
 \end{itemize}
 
-Bis die Funktionalität der \gls{WebApp} komplett umgesetzt ist, fehlen noch zwei Features. 
-Diese wären die zweite Highscore-Ansicht und die Karte, die beim Lösen einer Mission angezeigt wird. 
-Die zweite Highscore-Ansicht zeigt den eingeloggten Benutzer mit seinen direkten Konkurrenten, die vor und nach ihm platziert sind. 
-Wenn sich der Benutzer in der Ansicht zum Lösen einer Mission befindet, sollte in einem weiteren Tab eine Karte, die das Objekt der Mission hervorhebt, angezeigt werden. 
+Bei der Highscore sollte noch eine Möglichkeit angeboten werden, den eigenen Eintrag anzusehen ohne die ganze Liste durchgehen zu müssen.\newline
+Ausserdem dauert es noch zu lange bis die Ansicht um eine Mission zu lösen geladen ist nachdem auf den entsprechenden Marker in der Map-Ansicht gedrückt wurde.
+Dies kann gelöst werden indem zuerst die Ansicht dargestellt wird und erst nach dem Event \inlinecode{componentDidMount} die Karte geladen wird.
 
 \subsubsection{Testing}
 Gerne hätten wir noch funktionale Tests mit den \inlinecode{Components} durchgeführt, doch die Priorität dafür war zu tief und die Zeit zu knapp. 
